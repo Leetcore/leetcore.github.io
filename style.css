@@ -1,0 +1,52 @@
+body {
+    background-color: #333;
+    color: #00FF2F;
+    font-family: monospace;
+    text-shadow: 0px 0px 0px #00FF2F;
+    line-height: 170%;
+    font-size: 115%;
+}
+h1, h2 {
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px #00FF2F;
+}
+h2::after {
+    content: "_";
+}
+a, a:link, a:visited {
+    color: #00FF5D;
+    text-decoration: none;
+    border-bottom: 1px solid #00FF2F;
+    padding: 0px 3px;
+}
+a:hover {
+    background-color: #00FF2F;
+    color: #111;
+    cursor: pointer;
+}
+abbr {
+    border-bottom: 1px dashed #00FF5F;
+    cursor: help;
+}
+#main {
+    max-width: 800px;
+    margin: 0px auto;
+}
+.row1 {
+    float: left;
+    width: 50%;
+}
+.row2 {
+    float: right;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+@media (max-width: 800px) {
+    .row1, .row2 {
+        float: none;
+        width: auto;
+    }
+}
