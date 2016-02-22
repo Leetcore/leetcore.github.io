@@ -28,6 +28,9 @@ abbr {
     border-bottom: 1px dashed #00FF5F;
     cursor: help;
 }
+img {
+    max-width: 100%;
+}
 #main {
     max-width: 800px;
     margin: 0px auto;
