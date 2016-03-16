@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: #333;
     color: #00FF2F;
@@ -41,6 +44,15 @@ img {
 }
 .row2 {
     float: right;
+}
+.row1-3, .row2-3, .row3-3 {
+    width: 33%;
+    float: left;
+}
+.row3-3:after {
+    content: "";
+    clear: both;
+    display: block;
 }
 hr {
     border: 0;
