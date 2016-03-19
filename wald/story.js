@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = 'b561b710c1';
+squiffy.story.id = 'c20012ba4e';
 squiffy.story.sections = {
 	'_default': {
 		'text': "",
@@ -711,7 +711,7 @@ squiffy.story.sections = {
 			},
 		},
 	},
-	'körper': {
+	'Körper': {
 		'text': "<p>Du driffst den Körper, während der Wolf seine Fangzähne in deinen Arm schiebt. Du heulst vor Schmerz, aber nicht mehr lange, denn der zweite Biss sitzt.</p>\n<p>{gameover}</p>",
 		'passages': {
 		},
