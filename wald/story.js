@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = 'fd6c098f93';
+squiffy.story.id = 'fc5fe836a6';
 squiffy.story.sections = {
 	'_default': {
 		'text': "",
@@ -664,7 +664,7 @@ squiffy.story.sections = {
 		},
 	},
 	'renn2': {
-		'text': "<p>Das Geräusch beunruhigt dich. Außerdem bist du völlig außer Atmen. Du bleibst einige Sekunde stehen, um wieder Luft zu bekommen. Es ist nicht zu orten, aus welcher Richtung das Heulen kam und du hoffst daran vorbei zu laufen.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"wolf1\" role=\"link\" tabindex=\"0\">Etwas bewegt sich auf dich zu.</a></p>",
+		'text': "<p>Das Geräusch beunruhigt dich. Außerdem bist du völlig außer Atem. Du bleibst einige Sekunde stehen, um wieder Luft zu bekommen. Es ist nicht zu orten, aus welcher Richtung das Heulen kam und du hoffst daran vorbei zu laufen.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"wolf1\" role=\"link\" tabindex=\"0\">Etwas bewegt sich auf dich zu.</a></p>",
 		'js': function() {
 			playAudio("https://www.youtube.com/audiolibrary_download?vid=fc1a709809deb6e0")
 		},
