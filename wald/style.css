@@ -10,9 +10,12 @@ body {
   background-position-x: center;
   background-size: 200% auto;
 }
+h1 {
+    line-height: 120%;
+}
 #squiffy {
     transition: visibility 0s, opacity 0.5s linear;
-    margin-top: 30%;
+    margin-top: 10%;
 }
 a.squiffy-link, a
 {
@@ -67,3 +70,9 @@ hr {
   padding: 2px 5px;
   background-color: #000;
 }
+
+@media (max-width: 1000px) { 
+    body {
+          background-size: 500% auto;
+    }
+ }
