@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = '8327049a37';
+squiffy.story.id = 'b561b710c1';
 squiffy.story.sections = {
 	'_default': {
 		'text': "",
@@ -646,7 +646,7 @@ squiffy.story.sections = {
 		},
 	},
 	'renn1': {
-		'text': "<p>Du rennst los in das dunkle Unbekannte. Auf dem Pfad sind ein paar Spuren, aber du kannst sie nicht zuordnen. Du weißt nicht, wie lange du dort gelegen hast, vielleicht ist es schon zu spät? Du rennst so schnell es geht.</p>\n<p>Ein Ast bringt dich zum Stolpern. Du fällst und drehst dich in Richtung <a class=\"squiffy-link link-section\" data-section=\"Hügel\" role=\"link\" tabindex=\"0\">Hügel</a> oder einem kleinen <a class=\"squiffy-link link-section\" data-section=\"Abhang\" role=\"link\" tabindex=\"0\">Abhang</a>, um den Sturz abzufangen.</p>",
+		'text': "<p>Du rennst los in das dunkle Unbekannte. Auf dem Pfad sind ein paar Spuren, aber du kannst sie nicht zuordnen. Du weißt nicht, wie lange du dort gelegen hast, vielleicht ist es schon zu spät? Du rennst so schnell es geht.</p>\n<p>Ein Ast bringt dich zum Stolpern. Du fällst und drehst dich in Richtung <a class=\"squiffy-link link-section\" data-section=\"Mauer\" role=\"link\" tabindex=\"0\">Hügel</a> oder einem kleinen <a class=\"squiffy-link link-section\" data-section=\"Abhang\" role=\"link\" tabindex=\"0\">Abhang</a>, um den Sturz abzufangen.</p>",
 		'passages': {
 		},
 	},
