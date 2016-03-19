@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = 'c20012ba4e';
+squiffy.story.id = '871eb7f770';
 squiffy.story.sections = {
 	'_default': {
 		'text': "",
@@ -659,7 +659,7 @@ squiffy.story.sections = {
 		},
 	},
 	'Abhang': {
-		'text': "<p>Du sackst etwas ab, aber landest im Moos. Die nasse Erde macht dir nichts aus. Du ignorierst den Schmerz und stehst wieder auf. Du bist etwas wackelig auf den Beinen, aber es muss weiter gehen. Der Pfad teilt sich vor dir. Du musst dich entscheiden welchen Weg du weiter läufst.</p>\n<p>Es gibt zwei kleine Schilder, die in verschiedene Richtungen zeigen. Beide sind nicht mehr zu lesen.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"renn2\" role=\"link\" tabindex=\"0\">Weg 1</a> oder <a class=\"squiffy-link link-section\" data-section=\"renn3\" role=\"link\" tabindex=\"0\">Weg 2</a>.</p>",
+		'text': "<p>Du sackst etwas ab, aber landest im Moos. Die nasse Erde macht dir nichts aus. Du ignorierst den Schmerz und stehst wieder auf. Du bist etwas wackelig auf den Beinen, aber es muss weiter gehen. Der Pfad teilt sich vor dir. Du musst dich entscheiden welchen Weg du weiter läufst.</p>\n<p>Es gibt zwei kleine Schilder, die in verschiedene Richtungen zeigen. Beide sind nicht mehr zu lesen. </p>\n<p><a class=\"squiffy-link link-section\" data-section=\"renn2\" role=\"link\" tabindex=\"0\">Auf dem Pfad bleiben</a> oder <a class=\"squiffy-link link-section\" data-section=\"renn3\" role=\"link\" tabindex=\"0\">den Pfad mit einem kleinen Bach daneben weiter gehen</a>.</p>",
 		'passages': {
 		},
 	},
@@ -777,7 +777,7 @@ squiffy.story.sections = {
 		'text': "<p>Du bist völlig erschöpft und verängstigt, deshalb kannst du nicht mehr weiter laufen. Du versuchst langsam weiter zu gehen. Ein Schritt nach dem anderen.</p>\n<p>Der Pfad führt etwas weiter hinauf auf einen Hügel. Als du an einem großen Baum vorbei kommst, siehst du ein Mädchen auf dem Weg. Das ist sie. Du hast Lara gefunden!</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"ende1\" role=\"link\" tabindex=\"0\">Du rennst zu ihr.</a></p>",
 		'passages': {
 			'ende1': {
-				'text': "<p>Sie bewegt sich kaum, ist geschockt und halb erfrohren. Du drückst sie fest an dich.</p>\n<p>Sie ist ganz still und voller Blut.</p>\n<p>&quot;Wo warst du?&quot;\n&quot;Bist du verletzt?&quot;\n&quot;Was ist passiert?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"finish\" role=\"link\" tabindex=\"0\">Du drückst sie nochmal an dich.</a></p>",
+				'text': "<p>Sie bewegt sich kaum, ist geschockt und halb erfrohren. Du drückst sie fest an dich.</p>\n<p>Sie ist ganz still und voller Blut.</p>\n<p>&quot;Wo warst du?&quot;<br/>\n&quot;Bist du verletzt?&quot;<br/>\n&quot;Was ist passiert?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"finish\" role=\"link\" tabindex=\"0\">Du drückst sie nochmal an dich.</a></p>",
 			},
 		},
 	},
