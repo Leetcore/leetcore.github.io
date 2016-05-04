@@ -10,11 +10,16 @@ body {
 }
 h1, h2 {
     text-transform: uppercase;
-    text-shadow: 0px 0px 3px #00FF2F;
+    /*text-shadow: 0px 0px 3px #00FF2F;*/
+    animation-duration: 0.1s;
+    animation-name: glowme;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 h2::after {
     content: "_";
 }
+
 a, a:link, a:visited {
     color: #00FF5D;
     text-decoration: none;
@@ -64,4 +69,13 @@ hr {
         float: none;
         width: auto;
     }
+}
+@keyframes glowme {
+  from {
+    text-shadow: 0px 0px 3px #00FF2F;
+  }
+
+  to {
+    text-shadow: 0px 0px 0px #00FF2F;
+  }
 }
