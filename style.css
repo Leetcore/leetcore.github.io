@@ -71,8 +71,8 @@ hr {
 }
 @keyframes glowme {
   0% { text-shadow: 0px 0px 0px #00FF2F; }
-  25% { text-shadow: 0px 0px 2px #00FF2F; }
+  25% { text-shadow: 0px 0px 3px #00FF2F; }
   50% { text-shadow: 0px 0px 5px #00FF2F; }
-  75% { text-shadow: 0px 0px 2px #00FF2F; }
+  75% { text-shadow: 0px 0px 3px #00FF2F; }
   100% { text-shadow: 0px 0px 0px #00FF2F; }
 }
