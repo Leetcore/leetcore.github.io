@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = '79db2a3094';
+squiffy.story.id = '2bbf6d7d75';
 squiffy.story.sections = {
 	'': {
 		'text': "",
@@ -626,7 +626,7 @@ squiffy.story.sections = {
 		'text': "<p>Es war ein warmer Sommerabend. Dein Geschäft lieft gut an. Erst heute Vormittag hattest du ein Gespräch mit einem potenziellen Kunden. Er war begeistert von den <a class=\"squiffy-link link-passage\" data-passage=\"infofähig\" role=\"link\" tabindex=\"0\">Erfolgen</a> deiner <a class=\"squiffy-link link-passage\" data-passage=\"infodetek\" role=\"link\" tabindex=\"0\">Detektei</a>. Du sitzt in einem schönen Restaurant auf der Terasse und <a class=\"squiffy-link link-section\" data-section=\"go1\" role=\"link\" tabindex=\"0\">stellst dir einen neuen Fall vor.</a></p>",
 		'attributes': ["points = 0","turns = 0"],
 		'js': function() {
-			playAudioBackground("https://www.youtube.com/audiolibrary_download?vid=6690108cc1feab38")
+			playAudioBackground("https://www.youtube.com/audiolibrary_download?vid=e3d12f674d972779")
 			squiffy.set("canplay", "true")
 		},
 		'passages': {
@@ -671,7 +671,7 @@ squiffy.story.sections = {
 		},
 	},
 	'ort': {
-		'text': "<p>Vielleicht findest du in der <a class=\"squiffy-link link-passage\" data-passage=\"Küche\" role=\"link\" tabindex=\"0\">Küche</a>{if beweis:}{else:, <a class=\"squiffy-link link-section\" data-section=\"tisch\" role=\"link\" tabindex=\"0\">am Tisch</a>}, an der <a class=\"squiffy-link link-passage\" data-passage=\"Gaderobe\" role=\"link\" tabindex=\"0\">Gaderobe</a> oder <a class=\"squiffy-link link-passage\" data-passage=\"WC\" role=\"link\" tabindex=\"0\">im WC</a> einen Hinweis auf den Täter?</p>",
+		'text': "<p>Vielleicht findest du in der <a class=\"squiffy-link link-passage\" data-passage=\"kueche\" role=\"link\" tabindex=\"0\">Küche</a>{if beweis:}{else:, <a class=\"squiffy-link link-section\" data-section=\"tisch\" role=\"link\" tabindex=\"0\">am Tisch</a>}, an der <a class=\"squiffy-link link-passage\" data-passage=\"Gaderobe\" role=\"link\" tabindex=\"0\">Gaderobe</a> oder <a class=\"squiffy-link link-passage\" data-passage=\"WC\" role=\"link\" tabindex=\"0\">im WC</a> einen Hinweis auf den Täter?</p>",
 		'passages': {
 			'kueche': {
 				'text': "<p>Kurz vor der Tur wirst du vom Personal abgefangen.</p>\n<p>&quot;Entschuldigung, die Küche ist nur für Mitarbeiter.&quot;</p>\n<p>&quot;Kann ich mich dort mal umsehen?&quot;</p>\n<p>&quot;Das geht leider nicht.&quot;</p>",
@@ -836,13 +836,19 @@ squiffy.story.sections = {
 	},
 	'finish': {
 		'clear': true,
-		'text': "<p>&quot;Wow, das war gute Arbeit. Wir konnten alle Beweise sichern. Diese beiden sind gesuchte Betrüger. Allerdings hat sich der Junge direkt aus dem Staub gemacht. Herr XXX wird sich sicher großzügig zeigen.&quot; sagt der Polizist und schleift die beiden Kriminellen in seinen Streifenwagen.</p>\n<p>Perfekt kombiniert, du konntest den Fall lösen. </p>\n<p>{stats}</p>",
+		'text': "<p>&quot;Wow, das war gute Arbeit. Wir konnten alle Beweise sichern. Diese beiden Diebe waren sogar gesuchte Betrüger. Allerdings hat sich die Aushilfe direkt aus dem Staub gemacht.&quot; sagt der Polizist und schiebt den alten Mann in seinen Streifenwagen.</p>\n<p>Perfekt kombiniert, du konntest den Fall lösen. </p>\n<p>{stats}</p>",
+		'js': function() {
+			playAudio("https://www.youtube.com/audiolibrary_download?vid=7a66710a6b83c23a")
+		},
 		'passages': {
 		},
 	},
 	'gamoveranswer': {
 		'clear': true,
 		'text': "<p>Die Polizei hat deine Theorie geprüft und konnte keine Beweise finden. Alles falsch. Du bist ein lausiger Detektiv!</p>\n<p>{stats}</p>",
+		'js': function() {
+			playAudio("https://www.youtube.com/audiolibrary_download?vid=eaea3afc8466b5d2")
+		},
 		'passages': {
 		},
 	},
