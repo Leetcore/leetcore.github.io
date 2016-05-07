@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = '1cc539e3c5';
+squiffy.story.id = 'ac7e67e863';
 squiffy.story.sections = {
 	'': {
 		'text': "",
@@ -708,7 +708,7 @@ squiffy.story.sections = {
 				'text': "<p>Hinter der Tischdecke werden die <a class=\"squiffy-link link-passage\" data-passage=\"checkgeraet\" role=\"link\" tabindex=\"0\">Kartengeräte</a> aufbewahrt.</p>",
 			},
 			'checkgeraet': {
-				'text': "<p>Du schaust dir die Geräte an und eines davon sieht anders aus. Es ist tatsächlich ein anderes <a class=\"squiffy-link link-section\" data-section=\"getgeraet\" role=\"link\" tabindex=\"0\">Gerät</a>, dass Chipkarten lesen und schreiben kann. Damit könnte die Karte von {if seen getopfername:<a class=\"squiffy-link link-section\" data-section=\"opfer\" role=\"link\" tabindex=\"0\">Herr Selleck</a>}{else:<a class=\"squiffy-link link-section\" data-section=\"opfer\" role=\"link\" tabindex=\"0\">dem Opfer</a>} kopiert worden sein.</p>",
+				'text': "<p>Du schaust dir die Geräte an und eines davon sieht anders aus. Es ist tatsächlich ein anderes <a class=\"squiffy-link link-section\" data-section=\"getgeraet\" role=\"link\" tabindex=\"0\">Gerät</a>, dass Chipkarten lesen und schreiben kann. Damit könnte die Karte von {if seen getopfername:Herr Selleck}{else:dem Opfer} kopiert worden sein.</p>",
 			},
 		},
 	},
