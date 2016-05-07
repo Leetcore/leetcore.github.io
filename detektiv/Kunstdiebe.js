@@ -610,6 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
+squiffy.story.id = '49a5cd7ad1';
 squiffy.story.sections = {
 	'': {
 		'text': "",
