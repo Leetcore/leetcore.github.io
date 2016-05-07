@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = '2bbf6d7d75';
+squiffy.story.id = 'aa6b75f666';
 squiffy.story.sections = {
 	'': {
 		'text': "",
@@ -640,7 +640,7 @@ squiffy.story.sections = {
 	},
 	'go1': {
 		'clear': true,
-		'text': "<p>Plötzlich rutscht ein Mann von seinem Stuhl auf den Boden. Rumms!</p>\n<p>Die junge Kellnerin kommt ihm zur Hilfe. Vielleicht ein Schwächeanfall?</p>\n<p>&quot;Geht es Ihnen gut?&quot; fragt sie ihn.</p>\n<p>Er ist ansprechbar, sieht aber sehr müde aus. In Lebensgefahr schwebt er nicht. Es hat sich eine kleine Menschentraube gebildet. Ein weiterer Kellner kam hinzu und ein paar andere Leute, die den Mann kennen. Langsam richtet er sich wieder auf. Die Kellnerin bleibt noch bei ihm, während sich die Stimmung wieder normalisiert.</p>\n<p>&quot;Wo... Wo ist denn meine Brieftasche?&quot; fragt der Mann sichtlich erschöpft.</p>\n<p>Die Kellnerin findet sie unter dem Nachbarstuhl und gibt sie ihm wieder.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"fragebrieftasche\" role=\"link\" tabindex=\"0\">Mh, das kommt mir komisch vor.</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">Gut. Die Brieftasche ist wieder da.</a></p>",
+		'text': "<p>Plötzlich rutscht ein Mann von seinem Stuhl auf den Boden. Rumms!</p>\n<p>Die junge Kellnerin kommt ihm zur Hilfe. Vielleicht ein Schwächeanfall?</p>\n<p>&quot;Geht es Ihnen gut?&quot; fragt sie ihn.</p>\n<p>Er ist ansprechbar, sieht aber sehr müde aus. In Lebensgefahr schwebt er nicht. Es hat sich eine kleine Menschentraube gebildet. Ein weiterer Kellner kam hinzu und ein paar andere Leute, die den Mann kennen. Langsam richtet er sich wieder auf. Die Kellnerin bleibt noch bei ihm, während sich die Stimmung wieder normalisiert.</p>\n<p>&quot;Wo... Wo ist denn meine Brieftasche?&quot; fragt der Mann sichtlich erschöpft.</p>\n<p>Die Kellnerin findet sie unter dem Nachbarstuhl und gibt sie ihm wieder.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"fragebrieftasche\" role=\"link\" tabindex=\"0\">&quot;Mh, das kommt mir komisch vor.&quot;</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Gut. Die Brieftasche ist wieder da.&quot;</a></p>",
 		'js': function() {
 			playAudio("https://www.youtube.com/audiolibrary_download?vid=7bfd179eef1283d4")
 		},
@@ -654,13 +654,13 @@ squiffy.story.sections = {
 		},
 	},
 	'nachfragegeld': {
-		'text': "<p>&quot;Eine Kreditkarte, Schlüsselkarte und ein paar Fotos.&quot; antwortet er.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"introdetektiv\" role=\"link\" tabindex=\"0\">&quot;Das kommt mir ungewöhnlich vor. Die Brieftasche lag viel zu weit weg. Rufen Sie die Polizei. Es befindet sich ein Dieb unter den Gästen.&quot;, sagst du zur Kellnerin</a></p>",
+		'text': "<p>&quot;Eine Kreditkarte, Schlüsselkarte und ein paar Fotos.&quot; antwortet er.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"introdetektiv\" role=\"link\" tabindex=\"0\">&quot;Das kommt mir ungewöhnlich vor. Die Brieftasche lag viel zu weit weg. Rufen Sie die Polizei. Es befindet sich ein Dieb unter den Gästen&quot;, flüsterst du zur Kellnerin</a></p>",
 		'passages': {
 		},
 	},
 	'introdetektiv': {
 		'clear': true,
-		'text': "<p>Der blonde Kellner telefoniert gerade mit der Polizei. Alle Sitzplätze sind wieder besetzt. Der Dieb müsste also noch hier sein. Du musst die Beweise finden und den Täter überführen bevor die Polizei eintrifft.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Das ist genau mein Fall!</a></p>",
+		'text': "<p>Die Kellnerin telefoniert gerade mit der Polizei. Alle Sitzplätze sind wieder besetzt. Der Dieb müsste also noch hier sein. Du musst die Beweise finden und den Täter überführen bevor die Polizei eintrifft.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Das ist genau mein Fall!</a></p>",
 		'passages': {
 		},
 	},
@@ -803,7 +803,7 @@ squiffy.story.sections = {
 		},
 	},
 	'woistkarte': {
-		'text': "<p>&quot;Sie ist in der Jacke meines Onkels an der Gaderobe.&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Weiter überlegen was zu tun ist.</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"showdown\" role=\"link\" tabindex=\"0\">Du kannst dein Ergebnis der Polizei präsentieren.</a>}</p>",
+		'text': "<p>&quot;Sie ist in der Jacke meines Onkels an der Gaderobe.&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Weiter überlegen was zu tun ist.</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"showdown\" role=\"link\" tabindex=\"0\">Du kannst dein Ergebnis der Polizei präsentieren.</a></p>",
 		'attributes': ["canplay=false","kartegefunden"],
 		'passages': {
 		},
@@ -827,7 +827,7 @@ squiffy.story.sections = {
 		},
 	},
 	'prefinish': {
-		'text': "<p>&quot;Und was hatte er damit vor?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"gamoveranswer\" role=\"link\" tabindex=\"0\">&quot;Er wollten ihn vergiften!&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"komplizen\" role=\"link\" tabindex=\"0\">&quot;Sie wollten ihn ausrauben. Es sind zwei.&quot;</a></p>",
+		'text': "<p>&quot;Und was hatte er damit vor?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"gamoveranswer\" role=\"link\" tabindex=\"0\">&quot;Er wollten ihn vergiften!&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"komplizen\" role=\"link\" tabindex=\"0\">&quot;Sie wollten ihn ausrauben. Es sind sogar zwei.&quot;</a></p>",
 		'passages': {
 			'komplizen': {
 				'text': "<p>&quot;Es gibt einen Komplizen? Wen denn?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Die Kellnerin war es.&quot;</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Der Küchenchef!&quot;</a><br/>\n{if dermannweises:<a class=\"squiffy-link link-section\" data-section=\"finish\" role=\"link\" tabindex=\"0\">&quot;Der alten Mann am Kamin.&quot;</a>}</p>",
@@ -836,7 +836,7 @@ squiffy.story.sections = {
 	},
 	'finish': {
 		'clear': true,
-		'text': "<p>&quot;Wow, das war gute Arbeit. Wir konnten alle Beweise sichern. Diese beiden Diebe waren sogar gesuchte Betrüger. Allerdings hat sich die Aushilfe direkt aus dem Staub gemacht.&quot; sagt der Polizist und schiebt den alten Mann in seinen Streifenwagen.</p>\n<p>Perfekt kombiniert, du konntest den Fall lösen. </p>\n<p>{stats}</p>",
+		'text': "<p>&quot;Wow, das war gute Arbeit. Wir konnten alle Beweise sichern. Diese beiden Diebe waren sogar gesuchte Betrüger. Allerdings hat sich die Aushilfe direkt aus dem Staub gemacht.&quot; sagt der Polizist und schiebt den alten Mann in seinen Streifenwagen.</p>\n<p>Perfekt kombiniert, du konntest den Fall lösen.</p>\n<p>{stats}</p>",
 		'js': function() {
 			playAudio("https://www.youtube.com/audiolibrary_download?vid=7a66710a6b83c23a")
 		},
@@ -859,7 +859,7 @@ squiffy.story.sections = {
 		},
 	},
 	'stats': {
-		'text': "<p>Du konntest {turns} Entscheidungen treffen. Du hast {points} Bonuspunkte gesammelt.</p>",
+		'text': "<p>Du konntest {turns} Entscheidungen treffen.</p>",
 		'passages': {
 		},
 	},
