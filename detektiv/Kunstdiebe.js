@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = '49a5cd7ad1';
+squiffy.story.id = '79db2a3094';
 squiffy.story.sections = {
 	'': {
 		'text': "",
@@ -623,9 +623,10 @@ squiffy.story.sections = {
 		},
 	},
 	'start': {
-		'text': "<p>Es war ein warmer Sommerabend. Dein Geschäft lieft gut an. Erst heute Vormittag hattest du ein Gespräch mit einem potenziellen Kunden. Er war begeistert von den <a class=\"squiffy-link link-passage\" data-passage=\"infofähig\" role=\"link\" tabindex=\"0\">Erfolgen</a> deiner <a class=\"squiffy-link link-passage\" data-passage=\"infodetek\" role=\"link\" tabindex=\"0\">Detektei</a>. Du sitzt in einem schönen Restaurant auf der Terasse. Plötzlich <a class=\"squiffy-link link-section\" data-section=\"go1\" role=\"link\" tabindex=\"0\">rutscht ein Mann von seinem Stuhl auf den Boden.</a> Rumms!</p>",
+		'text': "<p>Es war ein warmer Sommerabend. Dein Geschäft lieft gut an. Erst heute Vormittag hattest du ein Gespräch mit einem potenziellen Kunden. Er war begeistert von den <a class=\"squiffy-link link-passage\" data-passage=\"infofähig\" role=\"link\" tabindex=\"0\">Erfolgen</a> deiner <a class=\"squiffy-link link-passage\" data-passage=\"infodetek\" role=\"link\" tabindex=\"0\">Detektei</a>. Du sitzt in einem schönen Restaurant auf der Terasse und <a class=\"squiffy-link link-section\" data-section=\"go1\" role=\"link\" tabindex=\"0\">stellst dir einen neuen Fall vor.</a></p>",
 		'attributes': ["points = 0","turns = 0"],
 		'js': function() {
+			playAudioBackground("https://www.youtube.com/audiolibrary_download?vid=6690108cc1feab38")
 			squiffy.set("canplay", "true")
 		},
 		'passages': {
@@ -639,7 +640,10 @@ squiffy.story.sections = {
 	},
 	'go1': {
 		'clear': true,
-		'text': "<p>Die junge Kellnerin kommt ihm zur Hilfe. Vielleicht ein Schwächeanfall?</p>\n<p>&quot;Geht es Ihnen gut?&quot; fragt sie ihn.</p>\n<p>Er ist ansprechbar, sieht aber sehr müde aus. In Lebensgefahr schwebt er nicht. Es hat sich eine kleine Menschentraube gebildet. Ein weiterer Kellner kam hinzu und ein paar andere Leute, die den Mann kennen. Langsam richtet er sich wieder auf. Die Kellnerin bleibt noch bei ihm, während sich die Stimmung wieder normalisiert.</p>\n<p>&quot;Wo... Wo ist denn meine Brieftasche?&quot; fragt der Mann sichtlich erschöpft.</p>\n<p>Die Kellnerin findet sie unter dem Nachbarstuhl und gibt sie ihm wieder.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"fragebrieftasche\" role=\"link\" tabindex=\"0\">Mh, das kommt mir komisch vor.</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">Gut. Die Brieftasche ist wieder da.</a></p>",
+		'text': "<p>Plötzlich rutscht ein Mann von seinem Stuhl auf den Boden. Rumms!</p>\n<p>Die junge Kellnerin kommt ihm zur Hilfe. Vielleicht ein Schwächeanfall?</p>\n<p>&quot;Geht es Ihnen gut?&quot; fragt sie ihn.</p>\n<p>Er ist ansprechbar, sieht aber sehr müde aus. In Lebensgefahr schwebt er nicht. Es hat sich eine kleine Menschentraube gebildet. Ein weiterer Kellner kam hinzu und ein paar andere Leute, die den Mann kennen. Langsam richtet er sich wieder auf. Die Kellnerin bleibt noch bei ihm, während sich die Stimmung wieder normalisiert.</p>\n<p>&quot;Wo... Wo ist denn meine Brieftasche?&quot; fragt der Mann sichtlich erschöpft.</p>\n<p>Die Kellnerin findet sie unter dem Nachbarstuhl und gibt sie ihm wieder.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"fragebrieftasche\" role=\"link\" tabindex=\"0\">Mh, das kommt mir komisch vor.</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">Gut. Die Brieftasche ist wieder da.</a></p>",
+		'js': function() {
+			playAudio("https://www.youtube.com/audiolibrary_download?vid=7bfd179eef1283d4")
+		},
 		'passages': {
 		},
 	},
