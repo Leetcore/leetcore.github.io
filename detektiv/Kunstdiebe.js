@@ -623,7 +623,7 @@ squiffy.story.sections = {
 		},
 	},
 	'start': {
-		'text': "<p>Es war in kühler Frühlingsabend. Dein Geschäft lieft gut an. Erst heute Vormittag hattest du ein Gespräch mit einem potenziellen Kunden. Er war begeistert von den <a class=\"squiffy-link link-passage\" data-passage=\"infofähig\" role=\"link\" tabindex=\"0\">Erfolgen</a> deiner <a class=\"squiffy-link link-passage\" data-passage=\"infodetek\" role=\"link\" tabindex=\"0\">Detektei</a>. Du sitzt in einem schönen Restaurant auf der Terasse und <a class=\"squiffy-link link-section\" data-section=\"go1\" role=\"link\" tabindex=\"0\">fragst dich was dein neuer Fall wird.</a></p>",
+		'text': "<p>Es war in kühler Frühlingsabend. Dein Geschäft lieft gut an. Erst heute Vormittag hattest du ein Gespräch mit einem potenziellen Kunden. Er war begeistert von den <a class=\"squiffy-link link-passage\" data-passage=\"infofähig\" role=\"link\" tabindex=\"0\">Erfolgen</a> deiner <a class=\"squiffy-link link-passage\" data-passage=\"infodetek\" role=\"link\" tabindex=\"0\">Detektei</a>. Du sitzt in einem schönen Restaurant auf der Terrasse und <a class=\"squiffy-link link-section\" data-section=\"go1\" role=\"link\" tabindex=\"0\">fragst dich was dein neuer Fall wird.</a></p>",
 		'attributes': ["points = 0","turns = 0"],
 		'js': function() {
 			playAudioBackground("https://www.youtube.com/audiolibrary_download?vid=e3d12f674d972779")
