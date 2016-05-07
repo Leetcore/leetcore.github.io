@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = '0ca57ec781';
+squiffy.story.id = '58f25e40e4';
 squiffy.story.sections = {
 	'': {
 		'text': "",
@@ -659,7 +659,7 @@ squiffy.story.sections = {
 		},
 	},
 	'nachfragegeld': {
-		'text': "<p>&quot;Eine Kreditkarte, Schlüsselkarte und ein paar Fotos.&quot; antwortet er.</p>\n<p>Du sagst nicht weiter dazu, aber gehst zur Kellnerin.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"introdetektiv\" role=\"link\" tabindex=\"0\">&quot;Das kommt mir ungewöhnlich vor. Die Brieftasche lag zu weit weg. Rufen Sie die Polizei. Es befindet sich ein Dieb unter den Gästen&quot;, flüsterst du zur Kellnerin</a></p>",
+		'text': "<p>&quot;Eine Kreditkarte, Schlüsselkarte und ein paar Fotos.&quot; antwortet er.</p>\n<p>Du sagst nichts weiter dazu, aber gehst zur Kellnerin.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"introdetektiv\" role=\"link\" tabindex=\"0\">&quot;Das kommt mir ungewöhnlich vor. Die Brieftasche lag zu weit weg. Rufen Sie die Polizei. Es befindet sich ein Dieb unter den Gästen&quot;, flüsterst du zur Kellnerin</a></p>",
 		'passages': {
 		},
 	},
@@ -676,10 +676,10 @@ squiffy.story.sections = {
 		},
 	},
 	'ort': {
-		'text': "<p>Vielleicht findest du in der <a class=\"squiffy-link link-passage\" data-passage=\"kueche\" role=\"link\" tabindex=\"0\">Küche</a>{if beweis:}{else:, <a class=\"squiffy-link link-section\" data-section=\"tisch\" role=\"link\" tabindex=\"0\">am Tisch</a>}, an der <a class=\"squiffy-link link-passage\" data-passage=\"Gaderobe\" role=\"link\" tabindex=\"0\">Gaderobe</a> oder <a class=\"squiffy-link link-passage\" data-passage=\"WC\" role=\"link\" tabindex=\"0\">im WC</a> einen Hinweis auf den Täter?</p>",
+		'text': "<p>Vielleicht findest du in der <a class=\"squiffy-link link-passage\" data-passage=\"kueche\" role=\"link\" tabindex=\"0\">Küche</a>{if beweis:}{else:, <a class=\"squiffy-link link-section\" data-section=\"tisch\" role=\"link\" tabindex=\"0\">am Tisch</a>}, an der <a class=\"squiffy-link link-passage\" data-passage=\"Garderobe\" role=\"link\" tabindex=\"0\">Garderobe</a> oder <a class=\"squiffy-link link-passage\" data-passage=\"WC\" role=\"link\" tabindex=\"0\">im WC</a> einen Hinweis auf den Täter?</p>",
 		'passages': {
 			'kueche': {
-				'text': "<p>Kurz vor der Tur wirst du vom Personal abgefangen.</p>\n<p>&quot;Entschuldigungen Sie, die Küche ist nur für Mitarbeiter.&quot;</p>\n<p>&quot;Kann ich mich dort mal umsehen?&quot;</p>\n<p>&quot;Das geht leider nicht.&quot;</p>",
+				'text': "<p>Kurz vor der Tür wirst du vom Personal abgefangen.</p>\n<p>&quot;Entschuldigungen Sie, die Küche ist nur für Mitarbeiter.&quot;</p>\n<p>&quot;Kann ich mich dort mal umsehen?&quot;</p>\n<p>&quot;Das geht leider nicht.&quot;</p>",
 			},
 			'WC': {
 				'text': "<p>Die Räume sind sauber und nicht zu beanstanden.</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"pippi\" role=\"link\" tabindex=\"0\">Du musst dringend pinkeln.</a></p>",
@@ -687,7 +687,7 @@ squiffy.story.sections = {
 			'pippi': {
 				'text': "<p>Zipp!</p>\n<p>Pssssssssss!</p>\n<p>Zipp.</p>\n<p>Fertig!</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Erneut überlegen was zu tun ist.</a></p>",
 			},
-			'Gaderobe': {
+			'Garderobe': {
 				'text': "<p>Hier hängen ein paar Jacken der Gäste. Nichts besonderes. Die Jacken für das Personal werden anderswo aufbewahrt.</p>",
 			},
 		},
@@ -699,7 +699,7 @@ squiffy.story.sections = {
 				'text': "<p>Alles sieht normal aus.</p>",
 			},
 			'checkwein': {
-				'text': "<p>Der Wein riecht etwas komisch.</p>\n<p>&quot;Ist das ein guter Jahrgang? Darf ich probieren.&quot;</p>\n<p>&quot;Natürlich, sie sind ein Kenner.&quot;</p>\n<p>Er schmeckt etwas ungewöhnlich und du wirst direkt müde. Hier wurde nachgeholfen.</p>\n<p>&quot;Trinken Sie den besser nicht mehr.&quot;</p>\n<p>&quot;Wie Sie meinen. Ich habe sowieso das Gefühl zu viel getrunken zu haben. Dabei war es nur ein einziges Glas.&quot;</p>",
+				'text': "<p>Der Wein riecht etwas komisch.</p>\n<p>&quot;Ist das ein guter Jahrgang? Darf ich probieren?&quot;</p>\n<p>&quot;Natürlich, Sie sind ein Kenner.&quot;</p>\n<p>Er schmeckt etwas ungewöhnlich und du wirst direkt müde. Hier wurde nachgeholfen.</p>\n<p>&quot;Trinken Sie den besser nicht mehr.&quot;</p>\n<p>&quot;Wie Sie meinen. Ich habe sowieso das Gefühl zu viel getrunken zu haben. Dabei war es nur ein einziges Glas.&quot;</p>",
 			},
 			'checkwagen': {
 				'text': "<p>Ein Servierwagen mit einer langen, weißen <a class=\"squiffy-link link-passage\" data-passage=\"checkdecke\" role=\"link\" tabindex=\"0\">Tischdecke</a>.</p>",
@@ -725,7 +725,7 @@ squiffy.story.sections = {
 	},
 	'opfer': {
 		'clear': true,
-		'text': "<p>&quot;Guten Abend, ich muss Ihnen leider mitteilen, dass Sie Opfer eines Verbrecherns geworden sind.&quot;</p>\n<p>&quot;Wirklich? Was ist denn passiert?&quot;</p>\n<p>&quot;Keine Sorge. Das werde ich noch aufklären. Würden Sie mir dazu ein paar Fragen beantworten?&quot;</p>\n<p>&quot;Selbstverständlich.&quot;</p>\n<p>{if seen getopfername:}{else:<a class=\"squiffy-link link-passage\" data-passage=\"getopfername\" role=\"link\" tabindex=\"0\">&quot;Wie ist Ihr Name?&quot;</a><br/>}\n{if seen sindsiereich:}{else:<a class=\"squiffy-link link-passage\" data-passage=\"sindsiereich\" role=\"link\" tabindex=\"0\">&quot;Wer könnte Ihnen schaden wollen? Sind Sie besonders reich?&quot;</a><br/>}\n{if seen wirklichtresor:}{else:<a class=\"squiffy-link link-passage\" data-passage=\"wozuschluesselkarte\" role=\"link\" tabindex=\"0\">&quot;Wohin führt die Schlüsselkarte in Ihrem Geldbeutel?&quot;</a><br/>}\n{if seen habensiefeinde:}{else:<a class=\"squiffy-link link-passage\" data-passage=\"habensiefeinde\" role=\"link\" tabindex=\"0\">&quot;Haben Sie irgendwelche persönlichen Feinde?&quot;</a><br/>}\n<a class=\"squiffy-link link-section\" data-section=\"kreditkartenklau\" role=\"link\" tabindex=\"0\">&quot;Jemand könnte Ihre Kreditkarte kopiert haben.&quot;</a></p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Erneut überlegen was zu tun ist.</a></p>",
+		'text': "<p>&quot;Guten Abend, ich muss Ihnen leider mitteilen, dass Sie Opfer eines Verbrechens geworden sind.&quot;</p>\n<p>&quot;Wirklich? Was ist denn passiert?&quot;</p>\n<p>&quot;Keine Sorge. Das werde ich noch aufklären. Würden Sie mir dazu ein paar Fragen beantworten?&quot;</p>\n<p>&quot;Selbstverständlich.&quot;</p>\n<p>{if seen getopfername:}{else:<a class=\"squiffy-link link-passage\" data-passage=\"getopfername\" role=\"link\" tabindex=\"0\">&quot;Wie ist Ihr Name?&quot;</a><br/>}\n{if seen sindsiereich:}{else:<a class=\"squiffy-link link-passage\" data-passage=\"sindsiereich\" role=\"link\" tabindex=\"0\">&quot;Wer könnte Ihnen schaden wollen? Sind Sie besonders reich?&quot;</a><br/>}\n{if seen wirklichtresor:}{else:<a class=\"squiffy-link link-passage\" data-passage=\"wozuschluesselkarte\" role=\"link\" tabindex=\"0\">&quot;Wohin führt die Schlüsselkarte in Ihrem Geldbeutel?&quot;</a><br/>}\n{if seen habensiefeinde:}{else:<a class=\"squiffy-link link-passage\" data-passage=\"habensiefeinde\" role=\"link\" tabindex=\"0\">&quot;Haben Sie irgendwelche persönlichen Feinde?&quot;</a><br/>}\n<a class=\"squiffy-link link-section\" data-section=\"kreditkartenklau\" role=\"link\" tabindex=\"0\">&quot;Jemand könnte Ihre Kreditkarte kopiert haben.&quot;</a></p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Erneut überlegen was zu tun ist.</a></p>",
 		'passages': {
 			'getopfername': {
 				'text': "<p>&quot;Selleck, Timothy Selleck.&quot;</p>",
@@ -771,7 +771,7 @@ squiffy.story.sections = {
 	},
 	'befragealtenMann': {
 		'clear': true,
-		'text': "<p>Du gehst zu dem alten Mann im Sessel. Er raucht seine Zigarre und beobachtet das Kaminfeuer.</p>\n<p>&quot;Guten Abend, sind Sie öfters hier?&quot;</p>\n<p>&quot;Hallo junger Mann. Dieser Laden gefällt mir, ich war aber erst ein paar mal hier.&quot;</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"kennsiedenmann\" role=\"link\" tabindex=\"0\">&quot;Kennen Sie denn Mann, der den Schwächanfall hatte?&quot;</a></p>",
+		'text': "<p>Du gehst zu dem alten Mann im Sessel. Er raucht seine Zigarre und beobachtet das Kaminfeuer.</p>\n<p>&quot;Guten Abend, sind Sie öfters hier?&quot;</p>\n<p>&quot;Hallo junger Mann. Dieser Laden gefällt mir, ich war aber erst ein paar mal hier.&quot;</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"kennsiedenmann\" role=\"link\" tabindex=\"0\">&quot;Kennen Sie den Mann, der den Schwächanfall hatte?&quot;</a></p>",
 		'passages': {
 			'kennsiedenmann': {
 				'text': "<p>&quot;Nein, keine Ahnung!&quot;</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"eristkunstsammler\" role=\"link\" tabindex=\"0\">&quot;Sein neues Hobby scheint stressig zu sein. Das hätte ich mir nicht so vorgestellt.&quot;</a></p>",
@@ -784,7 +784,7 @@ squiffy.story.sections = {
 	},
 	'aushilfebefragen': {
 		'clear': true,
-		'text': "<p>Du gehst in die Küche und siehst einen jungen Mann, der versucht drei große Teller auf einer Hand zu balancieren. Seine Hose hat ein paar rote Flecken vom Essen abbekommen.</p>\n<p>{if beweis:\n&quot;Hallo nochmal. Wie landete eigentlich diese rote Grütze auf diesem Kartenlesegerät?&quot;</p>\n<p>&quot;Oh, em keine Ahnung. Damit muss ich wohl abgerechnet haben.&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"fangdendieb\" role=\"link\" tabindex=\"0\">&quot;Als Aushilfe dürfen Sie doch nicht abrechnen.&quot;</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">&quot;Naja dann!&quot;</a>\n}{else:\n&quot;Hallo, arbeiten Sie schon lange hier?&quot;</p>\n<p>&quot;Nur heute.&quot;</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"warumgastro\" role=\"link\" tabindex=\"0\">&quot;Warum musste es ausgerechnet die Gastronomie sein?&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"warwaskomisch\" role=\"link\" tabindex=\"0\">&quot;Ist dir etwas Ungewöhnliches aufgefallen?&quot;</a>\n}</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Erneut überlegen was zu tun ist.</a></p>",
+		'text': "<p>Du gehst in die Küche und siehst einen jungen Mann, der versucht drei große Teller auf einer Hand zu balancieren. Seine Hose hat ein paar rote Flecken vom Essen abbekommen.</p>\n<p>{if beweis:\n&quot;Hallo nochmal. Wie landete eigentlich diese rote Grütze auf diesem Kartenlesegerät?&quot;</p>\n<p>&quot;Oh, ähm keine Ahnung. Damit muss ich wohl abgerechnet haben.&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"fangdendieb\" role=\"link\" tabindex=\"0\">&quot;Als Aushilfe dürfen Sie doch nicht abrechnen.&quot;</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">&quot;Naja dann!&quot;</a>\n}{else:\n&quot;Hallo, arbeiten Sie schon lange hier?&quot;</p>\n<p>&quot;Nur heute.&quot;</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"warumgastro\" role=\"link\" tabindex=\"0\">&quot;Warum musste es ausgerechnet die Gastronomie sein?&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"warwaskomisch\" role=\"link\" tabindex=\"0\">&quot;Ist dir etwas Ungewöhnliches aufgefallen?&quot;</a>\n}</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Erneut überlegen was zu tun ist.</a></p>",
 		'passages': {
 			'warumgastro': {
 				'text': "<p>&quot;Das ist nur ein Nebenjob.&quot;</p>",
@@ -805,7 +805,7 @@ squiffy.story.sections = {
 		},
 	},
 	'woistkarte': {
-		'text': "<p>&quot;Sie ist in seiner Jacke an der Gaderobe.&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Weiter überlegen was zu tun ist.</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"showdown\" role=\"link\" tabindex=\"0\">Du kannst dein Ergebnis der Polizei präsentieren.</a></p>",
+		'text': "<p>&quot;Sie ist in seiner Jacke an der Garderobe.&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Weiter überlegen was zu tun ist.</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"showdown\" role=\"link\" tabindex=\"0\">Du kannst dein Ergebnis der Polizei präsentieren.</a></p>",
 		'attributes': ["canplay=false","kartegefunden"],
 		'passages': {
 		},
@@ -829,10 +829,10 @@ squiffy.story.sections = {
 		},
 	},
 	'prefinish': {
-		'text': "<p>&quot;Und was hatte er damit vor?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"gamoveranswer\" role=\"link\" tabindex=\"0\">&quot;Er wollten Ihn vergiften!&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"komplizen\" role=\"link\" tabindex=\"0\">&quot;Sie wollten Ihn ausrauben. Es sind sogar zwei.&quot;</a></p>",
+		'text': "<p>&quot;Und was hatte er damit vor?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"gamoveranswer\" role=\"link\" tabindex=\"0\">&quot;Er wollte Ihn vergiften!&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"komplizen\" role=\"link\" tabindex=\"0\">&quot;Sie wollten Ihn ausrauben. Es sind sogar zwei.&quot;</a></p>",
 		'passages': {
 			'komplizen': {
-				'text': "<p>&quot;Es gibt einen Komplizen? Wen denn?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Die Kellnerin war es.&quot;</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Der Küchenchef!&quot;</a><br/>\n{if dermannweises:<a class=\"squiffy-link link-section\" data-section=\"finish\" role=\"link\" tabindex=\"0\">&quot;Der alten Mann am Kamin.&quot;</a>}</p>",
+				'text': "<p>&quot;Es gibt einen Komplizen? Wen denn?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Die Kellnerin war es.&quot;</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Der Küchenchef!&quot;</a><br/>\n{if dermannweises:<a class=\"squiffy-link link-section\" data-section=\"finish\" role=\"link\" tabindex=\"0\">&quot;Der alte Mann am Kamin.&quot;</a>}</p>",
 			},
 		},
 	},
