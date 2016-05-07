@@ -9,6 +9,7 @@ body {
   background-position-y: top;
   background-position-x: center;
   background-size: 120% auto;
+  background-attachment: fixed;
 }
 h1 {
     line-height: 120%;
