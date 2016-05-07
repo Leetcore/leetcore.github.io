@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = 'ac7e67e863';
+squiffy.story.id = '4ec43571f7';
 squiffy.story.sections = {
 	'': {
 		'text': "",
@@ -822,12 +822,12 @@ squiffy.story.sections = {
 		},
 	},
 	'finishkarte': {
-		'text': "<p>&quot;Aha, wissen Sie auch wer es war?&quot;</p>\n<p>{if diebgefunden:<a class=\"squiffy-link link-section\" data-section=\"finishkellner\" role=\"link\" tabindex=\"0\">&quot;Die Aushilfe hat ein spezielles Gerät dafür.&quot;</a><br/>}\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Die Kellnerin sieht nervös aus. Sie war es!&quot;</a>\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Ich weiß es leider nicht...&quot;</a></p>",
+		'text': "<p>&quot;Aha, wissen Sie auch wer es war?&quot;</p>\n<p>{if diebgefunden:<a class=\"squiffy-link link-section\" data-section=\"finishkellner\" role=\"link\" tabindex=\"0\">&quot;Die Aushilfe hat ein spezielles Gerät dafür.&quot;</a><br/>}\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Die Kellnerin sieht nervös aus. Sie war es!&quot;</a><br/>\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Ich weiß es leider nicht...&quot;</a></p>",
 		'passages': {
 		},
 	},
 	'finishkellner': {
-		'text': "<p>&quot;Und wo ist die kopierte Karte?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Sie kann überall versteckt sein!&quot;</a>\n{if kartegefunden:<a class=\"squiffy-link link-section\" data-section=\"prefinish\" role=\"link\" tabindex=\"0\">&quot;Sie befindet sich in der Jackentasche eines Gastes.&quot;</a><br/>}\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Sie liegt unter dem Servierwagen&quot;</a></p>",
+		'text': "<p>&quot;Und wo ist die kopierte Karte?&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Sie kann überall versteckt sein!&quot;</a><br/>\n{if kartegefunden:<a class=\"squiffy-link link-section\" data-section=\"prefinish\" role=\"link\" tabindex=\"0\">&quot;Sie befindet sich in der Jackentasche eines Gastes.&quot;</a><br/>}\n<a class=\"squiffy-link link-section\" data-section=\"gameover\" role=\"link\" tabindex=\"0\">&quot;Sie liegt unter dem Servierwagen&quot;</a></p>",
 		'passages': {
 		},
 	},
