@@ -610,14 +610,14 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = 'aa6b75f666';
+squiffy.story.id = 'a6cc5e9df0';
 squiffy.story.sections = {
 	'': {
 		'text': "",
 		'attributes': ["turns+=1"],
 		'js': function() {
 			var turns = squiffy.get("turns")
-			if (turns == 30) {squiffy.set("canplay", "false")}
+			if (turns == 45) {squiffy.set("canplay", "false")}
 		},
 		'passages': {
 		},
