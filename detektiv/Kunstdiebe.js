@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = '5f5c3db0ba';
+squiffy.story.id = '6abcf65ccf';
 squiffy.story.sections = {
 	'': {
 		'text': "",
@@ -784,7 +784,7 @@ squiffy.story.sections = {
 	},
 	'aushilfebefragen': {
 		'clear': true,
-		'text': "<p>Du gehst in die K��che und siehst einen jungen Mann, der versucht drei große Teller auf einer Hand zu balancieren. Seine Hose hat ein paar rote Flecken vom Essen abbekommen.</p>\n<p>{if beweis:\n&quot;Hallo nochmal. Wie landete eigentlich diese rote Grütze auf diesem Kartenlesegerät?&quot;</p>\n<p>&quot;Oh, em keine Ahnung. Damit muss ich wohl abgerechnet haben.&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"fangdendieb\" role=\"link\" tabindex=\"0\">&quot;Als Aushilfe dürfen Sie doch nicht abrechnen.&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"allesok\" role=\"link\" tabindex=\"0\">&quot;Naja dann!&quot;</a>\n}{else:\n&quot;Hallo, arbeiten Sie schon lange hier?&quot;</p>\n<p>&quot;Nur heute.&quot;</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"warumgastro\" role=\"link\" tabindex=\"0\">&quot;Warum musste es ausgerechnet die Gastronomie sein?&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"warwaskomisch\" role=\"link\" tabindex=\"0\">&quot;Ist dir etwas Ungewöhnliches aufgefallen?&quot;</a>\n}</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Erneut überlegen was zu tun ist.</a></p>",
+		'text': "<p>Du gehst in die Küche und siehst einen jungen Mann, der versucht drei große Teller auf einer Hand zu balancieren. Seine Hose hat ein paar rote Flecken vom Essen abbekommen.</p>\n<p>{if beweis:\n&quot;Hallo nochmal. Wie landete eigentlich diese rote Grütze auf diesem Kartenlesegerät?&quot;</p>\n<p>&quot;Oh, em keine Ahnung. Damit muss ich wohl abgerechnet haben.&quot;</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"fangdendieb\" role=\"link\" tabindex=\"0\">&quot;Als Aushilfe dürfen Sie doch nicht abrechnen.&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"allesok\" role=\"link\" tabindex=\"0\">&quot;Naja dann!&quot;</a>\n}{else:\n&quot;Hallo, arbeiten Sie schon lange hier?&quot;</p>\n<p>&quot;Nur heute.&quot;</p>\n<p><a class=\"squiffy-link link-passage\" data-passage=\"warumgastro\" role=\"link\" tabindex=\"0\">&quot;Warum musste es ausgerechnet die Gastronomie sein?&quot;</a><br/>\n<a class=\"squiffy-link link-passage\" data-passage=\"warwaskomisch\" role=\"link\" tabindex=\"0\">&quot;Ist dir etwas Ungewöhnliches aufgefallen?&quot;</a>\n}</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"mainround\" role=\"link\" tabindex=\"0\">Erneut überlegen was zu tun ist.</a></p>",
 		'passages': {
 			'allesok': {
 				'text': "<p>&quot;Achso, schönen Tag noch.&quot;</p>",
