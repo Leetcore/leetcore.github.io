@@ -610,7 +610,7 @@ var set = squiffy.set;
 
 
 squiffy.story.start = 'start';
-squiffy.story.id = '1d80e7bb6a';
+squiffy.story.id = '1cc539e3c5';
 squiffy.story.sections = {
 	'': {
 		'text': "",
@@ -640,7 +640,7 @@ squiffy.story.sections = {
 	},
 	'go1': {
 		'clear': true,
-		'text': "<p>Plötzlich rutscht ein Mann von seinem Stuhl auf den Boden. Rumms!</p>\n<p>Die junge Kellnerin kommt ihm zur Hilfe. Vielleicht ein Schwächeanfall?</p>\n<p>&quot;Geht es Ihnen gut?&quot; fragt sie ihn.</p>\n<p>Er ist ansprechbar, sieht aber sehr müde aus. Verletzt sieht er nicht aus. Es hat sich eine kleine Menschentraube gebildet. Ein weiterer Kellner kam hinzu und ein paar andere Leute, die den Mann kennen. Langsam richtet er sich wieder auf. Die Kellnerin bleibt noch bei ihm, während sich die Stimmung wieder normalisiert.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"_continue1\" role=\"link\" tabindex=\"0\">Einige Minuten später</a></p>",
+		'text': "<p>Plötzlich rutscht ein Mann von seinem Stuhl auf den Boden. Rumms!</p>\n<p>Die junge Kellnerin kommt ihm zur Hilfe. Vielleicht ein Schwächeanfall?</p>\n<p>&quot;Geht es Ihnen gut?&quot; fragt sie ihn.</p>\n<p>Er ist ansprechbar, verletzt sieht er nicht aus, aber müde. Es hat sich eine kleine Menschentraube gebildet. Ein weiterer Kellner kam hinzu und ein paar andere Leute, die den Mann kennen. Langsam richtet er sich wieder auf. Die Kellnerin bleibt noch bei ihm, während sich die Stimmung wieder normalisiert.</p>\n<p><a class=\"squiffy-link link-section\" data-section=\"_continue1\" role=\"link\" tabindex=\"0\">Einige Minuten später</a></p>",
 		'js': function() {
 			playAudio("https://www.youtube.com/audiolibrary_download?vid=7bfd179eef1283d4")
 		},
