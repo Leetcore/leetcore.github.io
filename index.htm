@@ -15,7 +15,9 @@
     <script>
         function showVimeo() {
             document.getElementById("showVideo").innerHTML = '<iframe src="https://player.vimeo.com/video/51006660?byline=0&portrait=0" width="100%" height="500px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
-            return false;
+        }
+        function showYouTube(URL) {
+            document.getElementById("showVideo").innerHTML = '<iframe width="640" height="360" src="' + URL + '" frameborder="0" allowfullscreen></iframe>'
         }
     </script>
 </head>
@@ -47,7 +49,7 @@
                 <ul>
                     <!-- <li><a href="https://hackerb.it/" target="_blank">Hackerbit Techblog</a></li> -->
                     <li><a href="hacks.htm">Web Security Bughunting</a></li>
-                    <li><a href="https://youtu.be/7itK5v58xeo" target="_blank">Zum Scriptkiddie in 60 Minuten (Barcamp Session)</a></li>
+                    <li><a href="https://youtu.be/7itK5v58xeo" target="_blank" onclick="showYouTube('https://www.youtube.com/watch?v=7itK5v58xeo'); return false;">Zum Scriptkiddie in 60 Minuten (Barcamp Session)</a></li>
                     <li><a href="http://leetcore.github.io/pwdhash/PwdHash.htm" target="_blank">PWD Hash Generator</a></li>
                     <li><a href="http://leetcore.github.io/NSA-proof-password/crack-calculator.htm" target="_blank">NSA Proof Password Calculator</a></li>
                     <li><a href="https://leetcore.github.io/xss-encode/xss.htm">HTML Encoding and Base64-Konverter</a></li>
@@ -58,7 +60,7 @@
                 <h2>presse</h2>
                 <ul>
                     <li><a href="http://www.mobildiscounter.de/blog/das-mobile-zeitalter-hat-begonnen-die-sicherheitsluecken-bleiben-interview-mit-einem-hacker/" target="_blank">Das mobile Zeitalter hat begonnen – Die Sicherheitslücken bleiben</a></li>
-                    <li><a href="https://vimeo.com/51006660" target="_blank" onclick="showVimeo()">Trollitik - Eine ZDF-Kurzdoku über den miesen Ton im Netz (ZDF Info)</a></li>
+                    <li><a href="https://vimeo.com/51006660" target="_blank" onclick="showVimeo();return false;">Trollitik - Eine ZDF-Kurzdoku über den miesen Ton im Netz (ZDF Info)</a></li>
                     <li><a href="http://www.golem.de/news/netzkinder-gegen-offliner-wir-sind-die-zauberer-des-21-jahrhunderts-1204-91207.html" target="_blank">Netzkinder gegen Offliner bei Golem</a></li>
                     <li><a href="http://www.saarbruecker-zeitung.de/saarland/lokalimport/saarbruecken/saarbruecken-aktuell/Vom-Netzkind-zum-Netzexperten;art26717,4454658" target="_blank">Vom Netzkind zum Netzexperten</a></li>
                 </ul>
