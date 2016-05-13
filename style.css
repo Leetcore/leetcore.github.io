@@ -55,6 +55,7 @@ img {
 .row1-3, .row2-3, .row3-3 {
     width: 33%;
     float: left;
+    padding: 5px;
 }
 .row3-3:after {
     content: "";
