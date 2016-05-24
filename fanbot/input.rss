@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:ibmwcm="http://purl.org/net/ibmfeedsvc/wcm/1.0" >
+ <channel>
+  <title>Fanbot</title>
+  <link>http://www.1337core.de</link>
+  <description>Ein Beispiel für einen RSS-Feed</description>
+  <lastBuildDate>Tue, 31 Oct 2006 10:31:00 EST</lastBuildDate>
+
+  <item>
+   <title>Tweet #1</title>
+   <description>Dieser Text wird getwittert.</description>
+   <pubDate> Tue, 31 Oct 2006 10:31:00 EST</pubDate>
+  </item>
+ </channel>
+</rss>
