@@ -1,0 +1,134 @@
+<html>
+<head>
+  <title>Exklusiver Bibiphone Online-Shop</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    h1, h2 {font-size: 220%}
+    body {background-color: #E82581; font-family: sans-serif; color: #FFF; font-size: 120%}
+    a:link, a:visited { color: #FFF}
+    a:hover {color: #E82581; background-color: #FFF;}
+    b {color: #F82FF1; font-size: 150%;}
+    .center {margin: 0px auto; display: block;}
+    #main img { vertical-align: middle; width: 280px; height: 250px}
+    #main {font-size: 300%;}
+    @media (max-width: 600px) {
+      #main img { display: block;}
+    }
+  </style>
+</head>
+<body>
+  <script type="text/javascript">
+
+  /******************************************
+  * Snow Effect Script- By Altan d.o.o. (http://www.altan.hr/snow/index.html)
+  * Visit Dynamic Drive DHTML code library (http://www.dynamicdrive.com/) for full source code
+  * Last updated Nov 9th, 05' by DD. This notice must stay intact for use
+  ******************************************/
+
+    //Configure below to change URL path to the snow image
+    var snowsrc="money.gif"
+    // Configure below to change number of snow to render
+    var no = 3;
+    // Configure whether snow should disappear after x seconds (0=never):
+    var hidesnowtime = 0;
+    // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
+    var snowdistance = "windowheight";
+
+  ///////////Stop Config//////////////////////////////////
+
+    var ie4up = (document.all) ? 1 : 0;
+    var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+
+  	function iecompattest(){
+  	return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+  	}
+
+    var dx, xp, yp;    // coordinate and position variables
+    var am, stx, sty;  // amplitude and step variables
+    var i, doc_width = 800, doc_height = 600;
+
+    doc_width = self.innerWidth;
+    doc_height = self.innerHeight;
+
+
+    dx = new Array();
+    xp = new Array();
+    yp = new Array();
+    am = new Array();
+    stx = new Array();
+    sty = new Array();
+
+    for (i = 0; i < no; ++ i) {
+      dx[i] = 0;                        // set coordinate variables
+      xp[i] = Math.random()*(doc_width-50);  // set position variables
+      yp[i] = Math.random()*doc_height;
+      am[i] = Math.random()*20;         // set amplitude variables
+      stx[i] = 0.02 + Math.random()/10; // set step variables
+      sty[i] = 0.7 + Math.random();     // set step variables
+  		if (ie4up||ns6up) {
+        if (i == 0) {
+          document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"><\/div>");
+        } else {
+          document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"><\/div>");
+        }
+      }
+    }
+
+    function snowIE_NS6() {  // IE and NS6 main animation function
+      doc_width = ns6up?window.innerWidth-10 : iecompattest().clientWidth-10;
+  		doc_height=(window.innerHeight && snowdistance=="windowheight")? window.innerHeight : (ie4up && snowdistance=="windowheight")?  iecompattest().clientHeight : (ie4up && !window.opera && snowdistance=="pageheight")? iecompattest().scrollHeight : iecompattest().offsetHeight;
+  	if (snowdistance=="windowheight"){
+  		doc_height = window.innerHeight || iecompattest().clientHeight
+  	}
+  	else{
+  		doc_height = iecompattest().scrollHeight
+  	}
+      for (i = 0; i < no; ++ i) {  // iterate for every dot
+        yp[i] += sty[i];
+        if (yp[i] > doc_height-50) {
+          xp[i] = Math.random()*(doc_width-am[i]-30);
+          yp[i] = 0;
+          stx[i] = 0.02 + Math.random()/10;
+          sty[i] = 0.7 + Math.random();
+        }
+        dx[i] += stx[i];
+        document.getElementById("dot"+i).style.top=yp[i]+"px";
+        document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i])+"px";
+      }
+      snowtimer=setTimeout("snowIE_NS6()", 10);
+    }
+
+  	function hidesnow(){
+  		if (window.snowtimer) clearTimeout(snowtimer)
+  		for (i=0; i<no; i++) document.getElementById("dot"+i).style.visibility="hidden"
+  	}
+
+
+  if (ie4up||ns6up){
+      snowIE_NS6();
+  		if (hidesnowtime>0)
+  		setTimeout("hidesnow()", hidesnowtime*1000)
+  		}
+
+</script>
+  <div style="max-width: 1024px; margin: 0px auto;">
+    <h1>Das <b>EXKLUSIVE</b> #BibiPhone!</h1>
+    <p>Kommen Sie näher! Kaufen Sie das Bibi-Phone, weil... Geld. Es gibt nur ein eigenes Cover, aber trotzdem müsst ihr euch von eurem Taschengeld ein neues Smartphone kaufen. Wieso nicht zu Weihnachten schenken lassen? Damit spart ihr euren Eltern die Mühe ein sinnvolles Geschenk auszusuchen.</p>
+    <div id="main">
+      <img src="Bibi.jpg" alt="Bibi" /> + <img src="Smartphone.jpg" alt="Smartphone" /> = <img src="Geldmaschine.gif" alt="Geldmaschine" />
+    </div>
+    <h2>Schlechtes Smartphone!</h2>
+    <p>Das <a href="www.amazon.de/Sony-Smartphone-IPS-Display-5-GHz-Octa-Core-Prozessor-Megapixel-Kamera-Koralle/dp/B00WGM3Z98/">Sony Xperia M4 Aqua</a> hat keine guten Bewertungen auf Amazon. Es kommt gerade mal auf 3,0 von 5 Sternen, weil es z.B. Probleme mit dem Speicherplatz gibt. Das Gerät hat 8 GB, aber davon kann nur fast die Hälfte benutzt werden. Einige Nutzer berichtet, dass das Smartphone im Betrieb heiß wird und das auch noch ohne Bibi auf dem Plastik. Die Qualität scheint nicht so prickelnd zu sein.</p>
+    <h2>Ein Cover hätte gereicht!</h2>
+    <p>Hätte es nicht gereicht, wenn die gute Bibi auf ein Smartphone-Cover gedruckt wird oder ihr Selfie auf einen Sticker? Die Klingel- und Benachrichtigungstöne hätte man auch in eine App packen können und den ganzen Rest des "exklusiven" Materials auch. Nein, eben nicht. Das ist nicht das Gleiche, weil... Den Grund möchte ich euch gerne erklären: GELD! Ein 2 Euro Sticker ist kein 250 Tacken Smartphone (vielleicht noch mit Vertrag?)</p>
+    <h2>Kein Witz!</h2>
+    <p>Das Bibi-Phone hört sich fast zu dämlich an, aber genauso wurde es angekündigt. <a href="http://www.telekom.com/medien/produkte-fuer-privatkunden/290932">Offizielle Quelle: Telekom</a>. Es wird mit diesen Worten beworben: "Das Bibi-Phone ist gerade für Bibi Fans, sogenannte Bibinatoren, Dank der Ideen, die Bibi mit eingebracht hat, und der sehr guten Qualität des Sony Smartphones eine tolle Möglichkeit ihrem Idol nah zu sein und gleichzeitig ein schönes Weihnachtsgeschenk."</p>
+    <h2><b>YOUTUBE</b>, WERBUNG, KONSUMOPFER</h2>
+    <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/198933724&amp;color=c65858&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+    <!--
+      http://www.amazon.de/Sony-Xperia-Aqua-5-GHz-Octa-Core-Prozessor-Megapixel-Kamera-Wei%C3%9F/dp/B00U14THWC
+    -->
+  </div>
+</body>
+</html>
