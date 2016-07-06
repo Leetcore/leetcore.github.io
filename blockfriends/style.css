@@ -1,6 +1,16 @@
+body {
+    background-color: #333;   
+}
+
 #main {
-    width: 640px;
-    height: 480px;
-    border: 1px solid;
+    width: 100%;
+    min-height: 480px;
+    border-bottom: 5px solid #000;
     margin: 0 auto;
+    position: relative;
+}
+
+#player1 {
+    bottom: 0;
+    position: absolute;
 }

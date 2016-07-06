@@ -22,7 +22,8 @@ function init() {
     // autosave Player1 10 sek
 
     // OMG GRAFIK!
-    renderPlayer(Player1)
+    renderPlayer(1)
+    
 
     // multiplayer
 }
@@ -38,6 +39,14 @@ function loadPlayer1() {
     } catch(err) {
         console.log(err)
     }
+}
+
+// move X
+function jump() {               
+  if (!jumping) {
+    jumping = true;
+    setTimeout(land, 500);
+  }
 }
 
 function savePlayer1() {
@@ -60,13 +69,14 @@ function actionTimer() {
 
 }
 
-function renderPlayer(player) {
+function renderPlayer(id) {
     try {
-        // erschaffe leben
-        $("#main").append("<div id='"+ player.id + "'></div>")
-
         // render player
+        $("#main").append('<div id="player'+ id +'" style="left:30%">'+
+            '<svg width="100" height="100"><rect width="250" height="180" style="fill: #000"/></svf>'+
+        '</div>')
 
+        // 
     } catch(err) {
         console.log(err)
     }
@@ -79,6 +89,12 @@ function afkTimer() {
 
     
 }
+
+function redraw() {
+
+
+}
+
 // hunger
 
 // trinken
