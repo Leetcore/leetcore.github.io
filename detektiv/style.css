@@ -8,7 +8,7 @@ body {
   background: #DDD url("https://images.unsplash.com/photo-1422748733255-ee572fddeab0?crop=entropy&fit=crop&fm=jpg&h=950&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1700") no-repeat;
   background-position-y: top;
   background-position-x: center;
-  background-size: 120% auto;
+  /*background-size: 120% auto;*/
   background-attachment: fixed;
 }
 h1 {
