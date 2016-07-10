@@ -76,25 +76,22 @@ function movePlayer(id, richtung, schritte, dauer) {
     if (Player1.moving != true) {
         var cords = $("#player"+ id).offset()
         Player1.moving = true 
-        if (cords.left < window.innerWidth * 0.6) {
-            if (richtung == "links") {
-                $("#player"+ id).animate({
-                    left: "+=" + schritte,
-                    right: "-=" + schritte,
-                }, dauer, function() {
-                    Player1.moving = false
-                });
-            }
-        }
-        if (cords.left > window.innerWidth * 0.3) {
-            if (richtung == "rechts") {
-                $("#player"+ id).animate({
-                    left: "-=" + schritte,
-                    right: "+=" + schritte,
-                }, dauer, function() {
-                    Player1.moving = false
-                });
-            }
+        if (cords.left < window.innerWidth * 0.6 && richtung == "links") {
+            $("#player"+ id).animate({
+                left: "+=" + schritte,
+                right: "-=" + schritte,
+            }, dauer, function() {
+                Player1.moving = false
+            });
+        } else if (cords.left > window.innerWidth * 0.3 && richtung == "rechts") {
+            $("#player"+ id).animate({
+                left: "-=" + schritte,
+                right: "+=" + schritte,
+            }, dauer, function() {
+                Player1.moving = false
+            });
+        } else {
+            Player1.moving = false
         }
 
         if (richtung == "runter") {
@@ -104,6 +101,7 @@ function movePlayer(id, richtung, schritte, dauer) {
                 Player1.moving = false
             });
         }
+
         if (richtung == "hoch") {
             $("#player"+ id).animate({
                 bottom: "+=" + schritte
