@@ -1,10 +1,12 @@
+var moods = ["normal", "aufgeregt", "erschöpft"]
+
 var Player = class {
     constructor(playerName, id) {
         this.id = id
         this.moving = false
         this.name = playerName
         this.leben = 100
-        this.hunger = 100
+        this.hunger = 60
         this.liebe = 90
         this.mood = moods[0]
         this.wach = 100
@@ -21,8 +23,6 @@ var Player = class {
     }
 }
 
-var moods = ["normal", "aufgeregt", "erschöpft"]
-
 function init() {
     // singleplayer    
     // insert player 1
@@ -32,25 +32,25 @@ function init() {
     // load player 1 data
     loadPlayer1()
 
-    // autosave Player1 10 sek
+    // autosave Player1 5 sek
+    setInterval(savePlayer1, 5000)
 
     // OMG GRAFIK!
     
 
     // multiplayer
+    updateStats()
 }
 
 function loadPlayer1() {
-    try {
-        Player1.id = 1;
-        Player1.name = localStorage.getItem(Player1.name)
-        Player1.leben = localStorage.getItem(Player1.leben)
-        Player1.hunger = localStorage.getItem(Player1.hunger)
-        Player1.liebe = localStorage.getItem(Player1.liebe)
-        Player1.mood = localStorage.getItem(Player1.mood)
-    } catch(err) {
-        console.log(err)
-    }
+        if (parseInt(localStorage.getItem("Player1.id")) == 1) {
+            Player1.id = 1;
+            Player1.name = localStorage.getItem("Player1.name")
+            Player1.leben = parseInt(localStorage.getItem("Player1.leben"))
+            Player1.hunger = parseInt(localStorage.getItem("Player1.hunger"))
+            Player1.liebe = parseInt(localStorage.getItem("Player1.liebe"))
+            Player1.mood = localStorage.getItem("Player1.mood")
+        }
 }
 
 
@@ -91,11 +91,13 @@ function movePlayer(id, richtung, schritte, dauer) {
 
 function savePlayer1() {
     try {
-        localStorage.setItem(Player1.name, Player1.name)
-        localStorage.setItem(Player1.leben, Player1.leben)
-        localStorage.setItem(Player1.hunger, Player1.hunger)
-        localStorage.setItem(Player1.liebe, Player1.liebe)
-        localStorage.setItem(Player1.mood, Player1.mood)
+        localStorage.setItem("Player1.id", Player1.id)
+        localStorage.setItem("Player1.name", Player1.name)
+        localStorage.setItem("Player1.leben", Player1.leben)
+        localStorage.setItem("Player1.hunger", Player1.hunger)
+        localStorage.setItem("Player1.liebe", Player1.liebe)
+        localStorage.setItem("Player1.mood", Player1.mood)
+        console.log("...autosaved")
      } catch(err) {
         console.log(err)
     }    
@@ -104,8 +106,8 @@ function savePlayer1() {
  
 // random timer
 function actionTimer() {
-    var random = randomNumberGen(0,5)
-    var schritte = randomNumberGen(0,10)
+    var random = randomNumberGen(0,2)
+    var schritte = randomNumberGen(0,50)
     switch (random) {
         case 0:
             // nichts
@@ -119,6 +121,9 @@ function actionTimer() {
             movePlayer(1, "rechts", schritte)
             break
     }
+
+    // bedürfnisse steigen
+    updateStats()
 }
 
 function randomNumberGen(min, max) {
@@ -150,12 +155,20 @@ function afkTimer() {
     
 }
 
-function redraw() {
-
-
+function updateStats() {  
+    $("#p1hunger").text(Player1.hunger)
+    $("#p1leben").text(Player1.leben)
 }
 
 // hunger
+function futter(id) {
+    // futter animation
+    // set values
+    if (Player1.hunger <= 100) {
+        Player1.hunger = parseInt(Player1.hunger) + 20
+    }
+    updateStats()
+}
 
 // trinken
 

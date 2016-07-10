@@ -9,6 +9,17 @@ body {
     margin: 0 auto;
     position: relative;
 }
+#controller {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px;
+}
 
 #player1 {
     bottom: 0;
