@@ -1,12 +1,23 @@
 var Player = class {
-    constructor(playerName) {
-        this.moving = false;
-        this.name = playerName;
-        this.leben = 100;
-        this.hunger = 100;
-        this.liebe = 90;
-        this.mood = moods[0];
-        this.wach = 100;
+    constructor(playerName, id) {
+        this.id = id
+        this.moving = false
+        this.name = playerName
+        this.leben = 100
+        this.hunger = 100
+        this.liebe = 90
+        this.mood = moods[0]
+        this.wach = 100
+        this.blinzeln = function () {
+            $(".augenP1").css("fill", "black")
+        }
+        this.idle = function() {
+            this.autoMoving = setInterval(actionTimer, 1000)
+        }
+        this.stop = function() {
+            clearInterval(this.autoMoving)
+        }
+        this.renderMe = renderPlayer(this.id)
     }
 }
 
@@ -15,7 +26,8 @@ var moods = ["normal", "aufgeregt", "erschöpft"]
 function init() {
     // singleplayer    
     // insert player 1
-    Player1 = new Player("Alex");
+    Player1 = new Player("Alex", 1);
+    Player1.idle()
 
     // load player 1 data
     loadPlayer1()
@@ -23,13 +35,7 @@ function init() {
     // autosave Player1 10 sek
 
     // OMG GRAFIK!
-    renderPlayer(1)
     
-    // magic happenz here
-    autoMoving = setInterval(actionTimer, 1000)
-
-    // autoMoving.clear
-    // clearInterval(autoMoving)
 
     // multiplayer
 }
@@ -123,7 +129,11 @@ function renderPlayer(id) {
     try {
         // render player
         $("#main").append('<div id="player'+ id +'" style="left:30%">'+
-            '<svg width="100" height="100"><rect width="100" height="100" style="fill: #000;"/></svg>'+
+            '<svg width="100" height="100">'+
+                '<rect width="100" height="100" style="fill: #000;"/>'+
+                '<circle id="augeL" class="augenP1" cx="33" cy="30" r="5" stroke-width="3" fill="white" />'+
+                '<circle id="augeR" class="augenP1" cx="66" cy="30" r="5" stroke-width="3" fill="white" />'+
+            '</svg>'+
         '</div>')
 
         // 
