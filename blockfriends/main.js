@@ -1,5 +1,6 @@
 var Player = class {
     constructor(playerName) {
+        this.moving = false;
         this.name = playerName;
         this.leben = 100;
         this.hunger = 100;
@@ -12,7 +13,7 @@ var Player = class {
 var moods = ["normal", "aufgeregt", "erschöpft"]
 
 function init() {
-    // singleplayer
+    // singleplayer    
     // insert player 1
     Player1 = new Player("Alex");
 
@@ -24,6 +25,11 @@ function init() {
     // OMG GRAFIK!
     renderPlayer(1)
     
+    // magic happenz here
+    autoMoving = setInterval(actionTimer, 1000)
+
+    // autoMoving.clear
+    // clearInterval(autoMoving)
 
     // multiplayer
 }
@@ -41,12 +47,40 @@ function loadPlayer1() {
     }
 }
 
-// move X
-function jump() {               
-  if (!jumping) {
-    jumping = true;
-    setTimeout(land, 500);
-  }
+
+// bewegung tut gut!
+function movePlayer(id, richtung, schritte, dauer) {
+    if (dauer == "") {
+        dauer = 1000
+    }
+    if (richtung == "links") {
+        $("#player"+ id).animate({
+            left: "+=" + schritte
+        }, dauer, function() {
+            moving = false
+        });
+    }
+    if (richtung == "rechts") {
+        $("#player"+ id).animate({
+            left: "-=" + schritte
+        }, dauer, function() {
+            
+        });
+    }
+    if (richtung == "runter") {
+        $("#player"+ id).animate({
+            bottom: "-=" + schritte
+        }, dauer, function() {
+            
+        });
+    }
+    if (richtung == "hoch") {
+        $("#player"+ id).animate({
+            bottom: "+=" + schritte
+        }, dauer, function() {
+           movePlayer(id, "runter", schritte, 500)
+        });
+    }
 }
 
 function savePlayer1() {
@@ -64,16 +98,32 @@ function savePlayer1() {
  
 // random timer
 function actionTimer() {
-   
+    var random = randomNumberGen(0,5)
+    var schritte = randomNumberGen(0,10)
+    switch (random) {
+        case 0:
+            // nichts
+            break
+        case 1:
+            // zufällig gehen
+            movePlayer(1, "links", schritte)
+            break
+        case 2:
+            // zufällig gehen
+            movePlayer(1, "rechts", schritte)
+            break
+    }
+}
 
-
+function randomNumberGen(min, max) {
+    return Math.round(Math.random() * (max - min)) + min;
 }
 
 function renderPlayer(id) {
     try {
         // render player
         $("#main").append('<div id="player'+ id +'" style="left:30%">'+
-            '<svg width="100" height="100"><rect width="250" height="180" style="fill: #000"/></svf>'+
+            '<svg width="100" height="100"><rect width="100" height="100" style="fill: #000;"/></svg>'+
         '</div>')
 
         // 
