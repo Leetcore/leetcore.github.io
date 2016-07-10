@@ -14,7 +14,7 @@ var Player = class {
             $(".augenP1").css("fill", "black")
         }
         this.idle = function() {
-            this.autoMoving = setInterval(actionTimer, 1000)
+            this.autoMoving = setInterval(function() {setTimeout(actionTimer, randomNumberGen(1000,3000))}, 1000)
         }
         this.stopidle = function() {
             clearInterval(this.autoMoving)
@@ -67,23 +67,31 @@ function loadPlayer1() {
 // bewegung tut gut!
 function movePlayer(id, richtung, schritte, dauer) {
     // console.log("move")
+    if (!id || !richtung || !schritte) {
+        return;
+    }
     if (dauer == "") {
         dauer = 500
     }
     if (Player1.moving != true) {
-        var cords = $("#player"+ id).offset()        
-        if (cords.left < window.innerWidth - 100 && cords.left > 100) {
+        var cords = $("#player"+ id).offset()
+
+        if (cords.left < window.innerWidth * 0.6) {
             Player1.moving = true 
             if (richtung == "links") {
                 $("#player"+ id).animate({
-                    left: "+=" + schritte
+                    left: "+=" + schritte,
+                    right: "-=" + schritte,
                 }, dauer, function() {
                     Player1.moving = false
                 });
             }
+        }
+        if (cords.left > window.innerWidth * 0.3) {
             if (richtung == "rechts") {
                 $("#player"+ id).animate({
-                    left: "-=" + schritte
+                    left: "-=" + schritte,
+                    right: "+=" + schritte,
                 }, dauer, function() {
                     Player1.moving = false
                 });
@@ -140,8 +148,8 @@ function savePlayer1() {
  
 // random timer
 function actionTimer() {
-    var random = randomNumberGen(0,2)
-    var schritte = randomNumberGen(0,25)
+    var random = randomNumberGen(0,3)
+    var schritte = randomNumberGen(0,100)
     switch (random) {
         case 0:
             // nichts
@@ -155,8 +163,6 @@ function actionTimer() {
             movePlayer(1, "rechts", schritte)
             break
     }
-    // bedürfnisse steigen
-    
 }
 
 function randomNumberGen(min, max) {
@@ -183,8 +189,11 @@ function renderPlayer(id) {
 function afkTimer () {
     var now = new Date
     var diff = now.getTime() - parseInt(localStorage.getItem("lastplayed")) 
-    if (Player1.hunger - Math.round(diff / 10000) >= 0) {
-        Player1.hunger = Player1.hunger - Math.round(diff / 10000)
+    if (Player1.hunger - Math.round(diff / 100000) >= 0) {
+        console.log("hunger vorher " + Player1.hunger)
+        console.log("diff: " + diff)        
+        Player1.hunger = Player1.hunger - Math.round(diff / 100000)
+        console.log("hunger jetzt: " + Player1.hunger)
         updateStats()
     }
 }
