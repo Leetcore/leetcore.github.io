@@ -14,7 +14,7 @@ var Player = class {
             $(".augenP1").css("fill", "black")
         }
         this.idle = function() {
-            this.autoMoving = setInterval(function() {setTimeout(actionTimer, randomNumberGen(1000, 5000))}, 3000)
+            this.autoMoving = setInterval(function() {setTimeout(actionTimer, randomNumberGen(2000, 3000))}, 3000)
         }
         this.stopidle = function() {
             clearInterval(this.autoMoving)
@@ -148,19 +148,20 @@ function savePlayer1() {
  
 // random timer
 function actionTimer() {
-    var random = randomNumberGen(0,3)
-    var schritte = randomNumberGen(0,20)
+    var random = randomNumberGen(0, 3)
+    var schritte = randomNumberGen(0, 100)
+    var dauer = randomNumberGen(200, 500)
     switch (random) {
         case 0:
             // nichts
             break
         case 1:
             // zufällig gehen
-            movePlayer(1, "links", schritte)
+            movePlayer(1, "links", schritte, dauer)
             break
         case 2:
             // zufällig gehen
-            movePlayer(1, "rechts", schritte)
+            movePlayer(1, "rechts", schritte, dauer)
             break
     }
 }
