@@ -16,8 +16,15 @@ var Player = class {
         this.idle = function() {
             this.autoMoving = setInterval(actionTimer, 1000)
         }
-        this.stop = function() {
+        this.stopidle = function() {
             clearInterval(this.autoMoving)
+        }
+        this.init = function () {
+            this.idle()
+            $("#player" + id).on( "click", function () {
+                // console.log("click")
+                movePlayer(id, "hoch", 50, 500)
+            })
         }
         this.renderMe = renderPlayer(this.id)
     }
@@ -27,76 +34,103 @@ function init() {
     // singleplayer    
     // insert player 1
     Player1 = new Player("Alex", 1);
-    Player1.idle()
+    Player1.init()
 
     // load player 1 data
     loadPlayer1()
 
     // autosave Player1 5 sek
     setInterval(savePlayer1, 5000)
+    setInterval(reduziertWerte, 30000)
 
-    // OMG GRAFIK!
-    
+    // berechnet afk zeit
+    var now = new Date
+    afkTimer(now.getTime())
 
     // multiplayer
     updateStats()
 }
 
 function loadPlayer1() {
-        if (parseInt(localStorage.getItem("Player1.id")) == 1) {
-            Player1.id = 1;
-            Player1.name = localStorage.getItem("Player1.name")
-            Player1.leben = parseInt(localStorage.getItem("Player1.leben"))
-            Player1.hunger = parseInt(localStorage.getItem("Player1.hunger"))
-            Player1.liebe = parseInt(localStorage.getItem("Player1.liebe"))
-            Player1.mood = localStorage.getItem("Player1.mood")
-        }
+    if (parseInt(localStorage.getItem("Player1.id")) == 1) {
+        Player1.id = 1;
+        Player1.name = localStorage.getItem("Player1.name")
+        Player1.leben = parseInt(localStorage.getItem("Player1.leben"))
+        Player1.hunger = parseInt(localStorage.getItem("Player1.hunger"))
+        Player1.liebe = parseInt(localStorage.getItem("Player1.liebe"))
+        Player1.mood = localStorage.getItem("Player1.mood")
+        updateStats()
+    }
 }
 
 
 // bewegung tut gut!
 function movePlayer(id, richtung, schritte, dauer) {
+    // console.log("move")
     if (dauer == "") {
-        dauer = 1000
+        dauer = 500
     }
-    if (richtung == "links") {
-        $("#player"+ id).animate({
-            left: "+=" + schritte
-        }, dauer, function() {
-            moving = false
-        });
+    if (Player1.moving != true) {
+        var cords = $("#player"+ id).offset()        
+        if (cords.left < window.innerWidth - 100 && cords.left > 100) {
+            Player1.moving = true 
+            if (richtung == "links") {
+                $("#player"+ id).animate({
+                    left: "+=" + schritte
+                }, dauer, function() {
+                    Player1.moving = false
+                });
+            }
+            if (richtung == "rechts") {
+                $("#player"+ id).animate({
+                    left: "-=" + schritte
+                }, dauer, function() {
+                    Player1.moving = false
+                });
+            }
+        }
+
+        if (richtung == "runter") {
+            $("#player"+ id).animate({
+                bottom: "-=" + schritte
+            }, dauer, function() {
+                Player1.moving = false
+            });
+        }
+        if (richtung == "hoch") {
+            $("#player"+ id).animate({
+                bottom: "+=" + schritte
+            }, dauer, function() {     
+                Player1.moving = false           
+                movePlayer(id, "runter", schritte, 250)
+            });
+            playAudio("https://www.youtube.com/audiolibrary_download?vid=2d671c3f7880968e")
+        }
     }
-    if (richtung == "rechts") {
-        $("#player"+ id).animate({
-            left: "-=" + schritte
-        }, dauer, function() {
-            
-        });
-    }
-    if (richtung == "runter") {
-        $("#player"+ id).animate({
-            bottom: "-=" + schritte
-        }, dauer, function() {
-            
-        });
-    }
-    if (richtung == "hoch") {
-        $("#player"+ id).animate({
-            bottom: "+=" + schritte
-        }, dauer, function() {
-           movePlayer(id, "runter", schritte, 500)
-        });
+}
+
+// HUNGGGEERRR!!! Und so
+function reduziertWerte() {
+    if (randomNumberGen(0,1) == 0) {
+        if (Player1.hunger - 1 >= 0) {
+            Player1.hunger = Player1.hunger - 1
+            updateStats()
+        }
     }
 }
 
 function savePlayer1() {
     try {
+        var now = new Date
         localStorage.setItem("Player1.id", Player1.id)
         localStorage.setItem("Player1.name", Player1.name)
         localStorage.setItem("Player1.leben", Player1.leben)
         localStorage.setItem("Player1.hunger", Player1.hunger)
         localStorage.setItem("Player1.liebe", Player1.liebe)
         localStorage.setItem("Player1.mood", Player1.mood)
+
+        var lastplayed = new Date
+        localStorage.setItem("lastplayed", lastplayed.getTime())
         console.log("...autosaved")
      } catch(err) {
         console.log(err)
@@ -107,7 +141,7 @@ function savePlayer1() {
 // random timer
 function actionTimer() {
     var random = randomNumberGen(0,2)
-    var schritte = randomNumberGen(0,50)
+    var schritte = randomNumberGen(0,25)
     switch (random) {
         case 0:
             // nichts
@@ -121,9 +155,8 @@ function actionTimer() {
             movePlayer(1, "rechts", schritte)
             break
     }
-
     // bedürfnisse steigen
-    updateStats()
+    
 }
 
 function randomNumberGen(min, max) {
@@ -140,19 +173,20 @@ function renderPlayer(id) {
                 '<circle id="augeR" class="augenP1" cx="66" cy="30" r="5" stroke-width="3" fill="white" />'+
             '</svg>'+
         '</div>')
-
-        // 
     } catch(err) {
         console.log(err)
     }
     
 }
 
-// afk zeit berechnen
-function afkTimer() {
-    var lastplayed = localStorage.getItem(lastplayed)
-
-    
+// afkTimer
+function afkTimer () {
+    var now = new Date
+    var diff = now.getTime() - parseInt(localStorage.getItem("lastplayed")) 
+    if (Player1.hunger - Math.round(diff / 10000) >= 0) {
+        Player1.hunger = Player1.hunger - Math.round(diff / 10000)
+        updateStats()
+    }
 }
 
 function updateStats() {  
@@ -160,18 +194,22 @@ function updateStats() {
     $("#p1leben").text(Player1.leben)
 }
 
-// hunger
+// spielt soundeffekte ab
+function playAudio(file) {
+    var paudio = new Audio(file);
+    paudio.volume = 0.9;
+    paudio.play();
+}
+
+
+// füttern hunger++
 function futter(id) {
     // futter animation
     // set values
-    if (Player1.hunger <= 100) {
+    if (Player1.hunger < 100) {
         Player1.hunger = parseInt(Player1.hunger) + 20
     }
     updateStats()
 }
-
-// trinken
-
-// liebe
 
 init()
