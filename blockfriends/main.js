@@ -75,9 +75,8 @@ function movePlayer(id, richtung, schritte, dauer) {
     }
     if (Player1.moving != true) {
         var cords = $("#player"+ id).offset()
-
+        Player1.moving = true 
         if (cords.left < window.innerWidth * 0.6) {
-            Player1.moving = true 
             if (richtung == "links") {
                 $("#player"+ id).animate({
                     left: "+=" + schritte,
