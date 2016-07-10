@@ -14,7 +14,7 @@ var Player = class {
             $(".augenP1").css("fill", "black")
         }
         this.idle = function() {
-            this.autoMoving = setInterval(function() {setTimeout(actionTimer, randomNumberGen(1000,3000))}, 1000)
+            this.autoMoving = setInterval(function() {setTimeout(actionTimer, randomNumberGen(1000, 5000))}, 3000)
         }
         this.stopidle = function() {
             clearInterval(this.autoMoving)
@@ -149,7 +149,7 @@ function savePlayer1() {
 // random timer
 function actionTimer() {
     var random = randomNumberGen(0,3)
-    var schritte = randomNumberGen(0,100)
+    var schritte = randomNumberGen(0,20)
     switch (random) {
         case 0:
             // nichts
@@ -189,10 +189,10 @@ function renderPlayer(id) {
 function afkTimer () {
     var now = new Date
     var diff = now.getTime() - parseInt(localStorage.getItem("lastplayed")) 
-    if (Player1.hunger - Math.round(diff / 100000) >= 0) {
+    if (Player1.hunger - Math.round(diff / 1000000) >= 0) {
         console.log("hunger vorher " + Player1.hunger)
         console.log("diff: " + diff)        
-        Player1.hunger = Player1.hunger - Math.round(diff / 100000)
+        Player1.hunger = Player1.hunger - Math.round(diff / 1000000)
         console.log("hunger jetzt: " + Player1.hunger)
         updateStats()
     }
