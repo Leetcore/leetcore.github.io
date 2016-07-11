@@ -14,7 +14,7 @@ var Player = class {
             $(".augenP1").css("fill", "black")
         }
         this.idle = function() {
-            this.autoMoving = setInterval(function() {setTimeout(actionTimer, randomNumberGen(2000, 3000))}, 3000)
+            this.autoMoving = setInterval(function() {setTimeout(actionTimer, randomNumberGen(2000, 3000));  }, 3000)
         }
         this.stopidle = function() {
             clearInterval(this.autoMoving)
@@ -39,9 +39,10 @@ function init() {
     // load player 1 data
     loadPlayer1()
 
-    // autosave Player1 5 sek
-    setInterval(savePlayer1, 5000)
-    setInterval(reduziertWerte, 30000)
+
+    savePlayer1()
+
+    reduziertWerte()
 
     // berechnet afk zeit
     var now = new Date
@@ -122,6 +123,7 @@ function reduziertWerte() {
             updateStats()
         }
     }
+    setTimeout(reduziertWerte, 1000)
 }
 
 function savePlayer1() {
@@ -137,6 +139,8 @@ function savePlayer1() {
         var lastplayed = new Date
         localStorage.setItem("lastplayed", lastplayed.getTime())
         console.log("...autosaved")
+
+        setTimeout(savePlayer1, 5000)
      } catch(err) {
         console.log(err)
     }    
@@ -171,10 +175,13 @@ function renderPlayer(id) {
     try {
         // render player
         $("#main").append('<div id="player'+ id +'" style="left:30%">'+
-            '<svg width="100" height="100">'+
-                '<rect width="100" height="100" style="fill: #000;"/>'+
-                '<circle id="augeL" class="augenP1" cx="33" cy="30" r="5" stroke-width="3" fill="white" />'+
-                '<circle id="augeR" class="augenP1" cx="66" cy="30" r="5" stroke-width="3" fill="white" />'+
+            '<svg width="150" height="150" viewBox="0 0 150 150">'+
+                '<rect width="100" height="100" x="25" y="50" style="fill: #000;"/>'+
+                '<circle id="augeL" class="augenP1" cx="60" cy="90" r="5" stroke-width="3" fill="white" />'+
+                '<circle id="augeR" class="augenP1" cx="90" cy="90" r="5" stroke-width="3" fill="white" />'+
+                //'<ellipse cx="25" cy="75" rx="10" ry="20" class="ohren" style="fill: #000000;stroke-width:2;transform: rotate(-30deg);transform-origin: 50% 50%;"></ellipse>'+
+                //'<ellipse cx="125" cy="80" rx="10" ry="20" class="ohren" style="fill: #000000;stroke-width:2;transform-origin: 50% 50%;transform: rotate(30deg);"></ellipse>'+
+                '<path id="mund" d="M 60 125 q 25 30 30 0" stroke="white" stroke-width="5" fill="none"></path>'+
             '</svg>'+
         '</div>')
     } catch(err) {
@@ -208,10 +215,10 @@ function playAudio(file) {
     paudio.play();
 }
 
-
 // füttern hunger++
 function futter(id) {
-    // futter animation
+    // 
+
     // set values
     if (Player1.hunger < 100) {
         Player1.hunger = parseInt(Player1.hunger) + 20
