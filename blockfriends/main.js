@@ -14,10 +14,11 @@ var Player = class {
             $(".augenP1").css("fill", "black")
         }
         this.idle = function() {
-            this.autoMoving = setInterval(function() {setTimeout(actionTimer, randomNumberGen(2000, 3000));  }, 3000)
+            this.autoMoving = setTimeout(actionTimer, 1000)
         }
         this.stopidle = function() {
-            clearInterval(this.autoMoving)
+            clearTimeout(this.autoMoving)
+            clearTimeout(actionTimerTimeout)
         }
         this.init = function () {
             this.idle()
@@ -165,6 +166,7 @@ function actionTimer() {
             movePlayer(1, "rechts", schritte, dauer)
             break
     }
+    actionTimerTimeout = setTimeout(actionTimer, randomNumberGen(2000, 3000))
 }
 
 function randomNumberGen(min, max) {
@@ -205,7 +207,9 @@ function afkTimer () {
 
 function updateStats() {  
     $("#p1hunger").text(Player1.hunger)
+    $("#p1futterButton").css("background", "linear-gradient('to right, black "+ Player1.hunger +"%, white "+ Player1.hunger + 2 +"')")
     $("#p1leben").text(Player1.leben)
+    
 }
 
 // spielt soundeffekte ab
