@@ -33,3 +33,11 @@ button {
     border-radius: 50%;
     background-color: white;
 }
+#augeL {
+ top: 60px;   
+ left: 30px;
+}
+#augeR {
+    top: 60px;
+    left: 90px;
+}
