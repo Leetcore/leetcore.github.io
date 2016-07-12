@@ -32,7 +32,7 @@ button {
     height: 10px;
     border-radius: 50%;
     background-color: white;
-    box-shadow: 0px 0px 20px #de2b2b;
+    box-shadow: 0px 5px 20px #52ff5f;
 }
 #augeL {
     top: 80px;
