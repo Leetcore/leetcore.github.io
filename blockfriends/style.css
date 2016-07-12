@@ -32,12 +32,13 @@ button {
     height: 10px;
     border-radius: 50%;
     background-color: white;
+    box-shadow: 3px 3px 3px #00FF2F;
 }
 #augeL {
- top: 60px;   
- left: 30px;
+    top: 80px;
+    left: 50px;
 }
 #augeR {
-    top: 60px;
-    left: 90px;
+    top: 80px;
+    left: 85px;
 }
