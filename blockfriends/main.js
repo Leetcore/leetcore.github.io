@@ -184,6 +184,7 @@ function renderPlayer(id) {
                 //'<ellipse cx="25" cy="75" rx="10" ry="20" class="ohren" style="fill: #000000;stroke-width:2;transform: rotate(-30deg);transform-origin: 50% 50%;"></ellipse>'+
                 //'<ellipse cx="125" cy="80" rx="10" ry="20" class="ohren" style="fill: #000000;stroke-width:2;transform-origin: 50% 50%;transform: rotate(30deg);"></ellipse>'+
                 '<path id="mund" d="M 60 125 q 25 30 30 0" stroke="white" stroke-width="5" fill="none"></path>'+
+                '<path id="frisur" d="M 10 35 C 155 40, 120 50, 60 50 S 90 50, 100 70" stroke="white" stroke-width="5" fill="transparent"></path>'+
             '</svg>'+
             '<div id="augeL" class="augenP1"></div>'+
             '<div id="augeR" class="augenP1"></div>'+
