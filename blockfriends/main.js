@@ -179,12 +179,14 @@ function renderPlayer(id) {
         $("#main").append('<div id="player'+ id +'" style="left:30%">'+
             '<svg width="150" height="150" viewBox="0 0 150 150">'+
                 '<rect width="100" height="100" x="25" y="50" style="fill: #000;"/>'+
-                '<circle id="augeL" class="augenP1" cx="60" cy="90" r="5" stroke-width="3" fill="white" />'+
-                '<circle id="augeR" class="augenP1" cx="90" cy="90" r="5" stroke-width="3" fill="white" />'+
+                //'<circle id="augeL" class="augenP1" cx="60" cy="90" r="5" stroke-width="3" fill="white" />'+
+                //'<circle id="augeR" class="augenP1" cx="90" cy="90" r="5" stroke-width="3" fill="white" />'+
                 //'<ellipse cx="25" cy="75" rx="10" ry="20" class="ohren" style="fill: #000000;stroke-width:2;transform: rotate(-30deg);transform-origin: 50% 50%;"></ellipse>'+
                 //'<ellipse cx="125" cy="80" rx="10" ry="20" class="ohren" style="fill: #000000;stroke-width:2;transform-origin: 50% 50%;transform: rotate(30deg);"></ellipse>'+
                 '<path id="mund" d="M 60 125 q 25 30 30 0" stroke="white" stroke-width="5" fill="none"></path>'+
             '</svg>'+
+            '<div id="augeL" class="augenP1"></div>'+
+            '<div id="augeR" class="augenP1"></div>'+
         '</div>')
     } catch(err) {
         console.log(err)
