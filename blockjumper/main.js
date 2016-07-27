@@ -125,29 +125,30 @@ function actionTimer() {
         var cords = $("#player1").offset()
 
         //console.log("left: "+ cords.left)
-        
+
         switch (random) {
             case 0:
-                if (cords.left > 500) {
-                    if (gameSTARTED) {
-                        if (hardcore <= 250) {hardcore = hardcore + 5}
-                    }                    
+                if (cords.left > 500) {                                    
                     // zufällig gehen
                     movePlayer(1, "links", schritte, dauer)
                 } else {
                     movePlayer(1, "rechts", schritte, dauer)
                 }
+                if (gameSTARTED) {
+                    if (hardcore <= 250) {hardcore = hardcore + 5}
+                }    
                 break            
             case 1:
                 if (cords.left < window.innerWidth - 500) {
-                    if (gameSTARTED) {
-                        if (hardcore <= 250) {hardcore = hardcore + 5}
-                    }                    
+                    
                     // zufällig gehen
                     movePlayer(1, "rechts", schritte, dauer)
                 } else {
                     movePlayer(1, "links", schritte, dauer)
-                }               
+                }   
+                if (gameSTARTED) {
+                    if (hardcore <= 250) {hardcore = hardcore + 5}
+                }            
                 break
         }
         actionTimerTimeout = setTimeout(actionTimer, randomNumberGen(600 - hardcore, 1200 - hardcore))
