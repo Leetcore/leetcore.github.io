@@ -39,7 +39,7 @@ function clickable (id) {
                 $("#player" + id).off()
                 $("#player" + id).css("cursor", "progress");
                 $("#player" + id + " svg rect").css("fill", "#476b4b");
-                clickme = setTimeout(function() {clickable(id); $("#player" + id).css("cursor", "pointer")}, 250)
+                clickme = setTimeout(function() {clickable(id); $("#player" + id).css("cursor", "pointer")}, 150)
             }
             if (gameover) {
                 looser()
