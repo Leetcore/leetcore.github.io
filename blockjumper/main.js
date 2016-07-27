@@ -1,6 +1,7 @@
 var hardcore = 10
 var gameover = false
 var stayTimer
+var gameSTARTED = false
 
 var Player = class {
     constructor(playerName, id) {
@@ -32,6 +33,7 @@ function init() {
 function clickable (id) {
         $("#player" + id).on( "click", function () {        
             // console.log("click")
+            gameSTARTED = true
             if (!gameover) {
                 movePlayer(id, "hoch", 10, 300)
                 $("#player" + id).off()
@@ -142,7 +144,11 @@ function actionTimer() {
                 }               
                 break
         }
-        actionTimerTimeout = setTimeout(actionTimer, randomNumberGen(600 - hardcore, 1200 - hardcore))
+        if (gameSTARTED) {
+            actionTimerTimeout = setTimeout(actionTimer, randomNumberGen(600 - hardcore, 1200 - hardcore))
+        } else {
+            actionTimerTimeout = setTimeout(actionTimer, randomNumberGen(600, 1200))
+        }
     }
 }
 
