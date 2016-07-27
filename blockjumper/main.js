@@ -110,7 +110,7 @@ function looser() {
     stayTimer.clearTimeout
     Player1.stopidle()
 
-    playAudio("https://www.youtube.com/audiolibrary_download?vid=13321fdd50ae3ee6")
+    //playAudio("https://www.youtube.com/audiolibrary_download?vid=13321fdd50ae3ee6")
     $("#main").text("VERLOREN! VERLOREN! VERLOREN!")
     $("#main").css("background-color", "#cc2b2b")
     $("#player1").remove()
