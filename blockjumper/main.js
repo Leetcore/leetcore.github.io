@@ -37,7 +37,7 @@ function clickable (id) {
                 $("#player" + id).off()
                 $("#player" + id).css("cursor", "progress");
                 $("#player" + id + " svg rect").css("fill", "#476b4b");
-                clickme = setTimeout(function() {clickable(id); $("#player" + id).css("cursor", "pointer")}, 300)
+                clickme = setTimeout(function() {clickable(id); $("#player" + id).css("cursor", "pointer")}, 250)
             }
             if (gameover) {
                 looser()
@@ -93,7 +93,7 @@ function movePlayer(id, richtung, schritte, dauer) {
                     Player1.moving = false
                     stayTimer = setTimeout(function() {
                         movePlayer(id, "runter", schritte, 300)
-                    }, 500);                    
+                    }, 1000);                    
                 });            
             }
         }
@@ -124,7 +124,7 @@ function actionTimer() {
         console.log("left: "+ cords.left)
         switch (random) {
             case 0:
-                if (cords.left > 400) {
+                if (cords.left > 500) {
                     if (hardcore <= 250) {hardcore = hardcore + 5}
                     // zufällig gehen
                     movePlayer(1, "links", schritte, dauer)
@@ -133,7 +133,7 @@ function actionTimer() {
                 }
                 break            
             case 1:
-                if (cords.left < window.innerWidth - 400) {
+                if (cords.left < window.innerWidth - 500) {
                     if (hardcore <= 250) {hardcore = hardcore + 5}
                     // zufällig gehen
                     movePlayer(1, "rechts", schritte, dauer)
