@@ -3,6 +3,8 @@ var gameover = false
 var stayTimer
 var gameSTARTED = false
 
+// rip multiplayer tamagotchi idee und hallo blockjumper 
+
 var Player = class {
     constructor(playerName, id) {
         this.id = id
