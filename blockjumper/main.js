@@ -104,7 +104,7 @@ function looser() {
 function actionTimer() {
     if (!gameover) {
         var random = randomNumberGen(0, 1)
-        var schritte = randomNumberGen(10 + hardcore, 20 + hardcore)
+        var schritte = randomNumberGen(10 + randomNumberGen(100, hardcore), 20 + hardcore)
         var dauer = randomNumberGen(500 - hardcore, 800 - hardcore)
         var cords = $("#player1").offset()
 
