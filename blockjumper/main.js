@@ -74,17 +74,16 @@ function movePlayer(id, richtung, schritte, dauer) {
     }
 
     if (richtung == "hoch") {                        
-        if (!gameover) {
-            // playAudio("https://www.youtube.com/audiolibrary_download?vid=f5b3c23c023f2f44")
-            $("#player"+ id).animate({
-                queue: false,
-                bottom: "+=" + schritte
-            }, dauer, function() {
-                stayTimer = setTimeout(function() {
-                    movePlayer(id, "runter", schritte, 300)
-                }, 1000);
-            });            
-        }
+        playAudio("http://www.1337core.de/blockjumper/the-bizniss_laser.mp3")
+        $("#player"+ id).animate({
+            queue: false,
+            bottom: "+=" + schritte
+        }, dauer, function() {
+            stayTimer = setTimeout(function() {
+                movePlayer(id, "runter", schritte, 300)
+            }, 1000);
+        });            
+
     }
 }
 
