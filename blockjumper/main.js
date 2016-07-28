@@ -63,7 +63,7 @@ function movePlayer(id, richtung, schritte, dauer) {
         $("#player"+ id).animate({
             bottom: "-=" + schritte
         }, dauer, function() {
-            if ($("#player"+ id).offset().top >= 358) {
+            if ($("#player"+ id).offset().top >= 358 || "#player"+ id).offset().top <= 50) {
                 looser()
             } else {
                 $("#punkte").text(parseInt($("#punkte").text()) + 1)
