@@ -8,7 +8,7 @@ a, a:visited {
 
 #main {
     width: 100%;
-    min-height: 320px;
+    height: 320px;
     border-bottom: 5px solid #000;
     margin: 0 auto;
     position: relative;
