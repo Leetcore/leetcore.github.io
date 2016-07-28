@@ -112,7 +112,7 @@ function actionTimer() {
 
         switch (random) {
             case 0:
-                if (cords.left > 200) {
+                if (cords.left > 100) {
                     movePlayer(1, "links", schritte, dauer)
                 } else {
                     movePlayer(1, "rechts", schritte, dauer)
@@ -122,7 +122,7 @@ function actionTimer() {
                 }    
                 break            
             case 1:
-                if (cords.left < window.innerWidth - 200) {
+                if (cords.left < window.innerWidth - 100) {
                     movePlayer(1, "rechts", schritte, dauer)
                 } else {
                     movePlayer(1, "links", schritte, dauer)
