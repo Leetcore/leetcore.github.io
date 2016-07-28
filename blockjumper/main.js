@@ -6,7 +6,6 @@ var gameSTARTED = false
 var Player = class {
     constructor(playerName, id) {
         this.id = id
-        this.moving = false
         this.name = playerName
         this.idle = function() {
             this.autoMoving = setTimeout(actionTimer, 200)
@@ -34,86 +33,73 @@ function clickable (id) {
         $("#player" + id).on( "click", function () {        
             // console.log("click")
             gameSTARTED = true
-            if (!gameover) {
-                movePlayer(id, "hoch", 10, 300)
-                $("#player" + id).off()
-                $("#player" + id).css("cursor", "progress");
-                $("#player" + id + " svg rect").css("fill", "#476b4b");
-                clickme = setTimeout(function() {clickable(id); $("#player" + id).css("cursor", "pointer")}, 150)
-            }
-            if (gameover) {
-                looser()
-            }
+            movePlayer(id, "hoch", 10, 300)
+            $("#player" + id).off()
+            $("#player" + id).css("cursor", "progress");
+            $("#player" + id + " svg rect").css("fill", "#476b4b");
+            clickme = setTimeout(function() {clickable(id); $("#player" + id).css("cursor", "pointer")}, 150)
         })
 }
 
 
 // bewegung tut gut!
 function movePlayer(id, richtung, schritte, dauer) {
-    if (!gameover) {
-        var cords = $("#player"+ id).offset()
+    var cords = $("#player"+ id).offset()
 
-        Player1.moving = true
-
-        if (richtung == "links") {
-            $("#player"+ id).animate({
-                left: "-=" + schritte               
-            }, {queue: false}, dauer, function() {
-                Player1.moving = false
-            });
-        } else if (richtung == "rechts") {
-            $("#player"+ id).animate({                
-                left: "+=" + schritte
-            }, {queue: false}, dauer, function() {
-                Player1.moving = false
-            });
-        } else {
+    if (richtung == "links") {
+        $("#player"+ id).animate({
+            left: "-=" + schritte               
+        }, {queue: false}, dauer, function() {
             Player1.moving = false
-        }
-
-        if (richtung == "runter") {
-            $("#player"+ id).animate({
-                bottom: "-=" + schritte
-            }, dauer, function() {
-                Player1.moving = false
-                    if ($("#player"+ id).offset().top >= 175) {
-                        looser()
-                    } else {
-                        $("#punkte").text(parseInt($("#punkte").text()) + 1)
-                    }
-                }
-            )
-        }
-
-        if (richtung == "hoch") {                        
-            if (!gameover) {
-                // playAudio("https://www.youtube.com/audiolibrary_download?vid=f5b3c23c023f2f44")
-                $("#player"+ id).animate({
-                    queue: false,
-                    bottom: "+=" + schritte
-                }, dauer, function() {     
-                    Player1.moving = false
-                    stayTimer = setTimeout(function() {
-                        movePlayer(id, "runter", schritte, 300)
-                    }, 1000);                    
-                });            
+        });
+    } else if (richtung == "rechts") {
+        $("#player"+ id).animate({                
+            left: "+=" + schritte
+        }, {queue: false}, dauer, function() {
+            Player1.moving = false
+        });
+    }
+    
+    if (richtung == "runter") {
+        $("#player"+ id).animate({
+            bottom: "-=" + schritte
+        }, dauer, function() {
+            if ($("#player"+ id).offset().top >= 175) {
+                looser()
+            } else {
+                $("#punkte").text(parseInt($("#punkte").text()) + 1)
             }
+        }
+        )
+    }
+
+    if (richtung == "hoch") {                        
+        if (!gameover) {
+            // playAudio("https://www.youtube.com/audiolibrary_download?vid=f5b3c23c023f2f44")
+            $("#player"+ id).animate({
+                queue: false,
+                bottom: "+=" + schritte
+            }, dauer, function() {
+                stayTimer = setTimeout(function() {
+                    movePlayer(id, "runter", schritte, 300)
+                }, 1000);
+            });            
         }
     }
 }
 
 // VERLORREEEEN!
 function looser() {
+    $("#player1").remove()
     gameover = true
     clickme.clearTimeout
     actionTimerTimeout.clearTimeout
     stayTimer.clearTimeout
     Player1.stopidle()
 
-    //playAudio("https://www.youtube.com/audiolibrary_download?vid=13321fdd50ae3ee6")
+    playAudio("https://www.youtube.com/audiolibrary_download?vid=13321fdd50ae3ee6")
     $("#main").text("VERLOREN! VERLOREN! VERLOREN!")
     $("#main").css("background-color", "#cc2b2b")
-    $("#player1").remove()
 }
  
 // random timer
