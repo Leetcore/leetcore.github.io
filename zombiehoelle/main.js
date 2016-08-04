@@ -2,6 +2,12 @@ var welle = 1
 var verteidigung = 1
 var spieleranzahl = 1
 
+var inventar = {
+    "bretter": 0,
+    "steine": 0,
+    ""
+}
+
 function startTimer(duration) {
     var timer = 60 * 5, minutes, seconds
     var mytimer = setInterval(function () {
@@ -30,6 +36,7 @@ jQuery(function ($) {
 
 function ZombieAttack(welle) {
     var angriffstärke = randomNumberGen(5 + welle, (10 + welle) * spieleranzahl)
+    var verteidigung = calcVerteidigung()
     if (angriffstärke >= verteidigung) {
         ZombieKampf()
     } else {
@@ -58,4 +65,15 @@ function message(nachricht) {
     $("#messages").animate({
         scrollTop: $("#messages").offset().top
     }, 1000);
+}
+
+function renderInventar() {
+
+}
+
+function calcVerteidigung() {
+    for (var x = 0; x < verteidgung.length; x++) { 
+        verteidigung
+    }
+    return 
 }
