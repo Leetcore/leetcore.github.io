@@ -1,28 +1,31 @@
 body {
-    background-color: #666;
+    background-color: #b3b1b1;
     font-family: sans-serif;
 }
 
-a {
+a, .pick, .build {
     padding: 0 5px;
-    color: #FFF;
     text-decoration: none;
+    cursor: pointer;
 }
-a:hover {
+a:hover, .pick:hover, .build:hover {
     padding: 0 5px;
     background-color: #333;
-    
+    cursor: pointer;
+    color: #FFF;
 }
 #frame {
     width: 320px;
     margin: 0 auto;
-    color: #DDD;
     border: 5px black solid;
     padding: 5px;
 }
+.gameover {
+    background-color: #F00;
+}
 
 #timer {
-    color: #c00;
+    color: #d40707;
 }
 
 #timerwrapper {
@@ -30,16 +33,17 @@ a:hover {
     margin-bottom: 5px;
 }
 
-#controller {
+#stats {
     float: right;
-    width: 80px;
+    width: 120px;
     margin: 10 10;
-    padding: 0 20;
 }
 
-#actions {
+#actions, #builder {
     margin: 10 10;
-    padding: 0 20;
+}
+#builder {
+    float: left;
 }
 
 .clear {
@@ -49,21 +53,61 @@ a:hover {
 #map {
     margin: 0 auto;    
     width: 100%;
-    height: 200px;
-    background-color: #ccc;
+    height: 150px;
+    background-color: #333;
+    position: relative;
+    color: #FFF;
+}
+#actions, #goUP, #goRight, #goLeft, #goRight, #goDown, #cords {
+    position: absolute;
+}
+#goUP {
+    top: calc(50% - 40px);
+    left: calc(75%);
+}
+#goRight {
+    top: calc(50% - 20px);
+    left: calc(75% + 20px);
+}
+#goLeft {
+    top: calc(50% - 20px);
+    left: calc(75% - 20px);
+}
+#goDown {
+    top: calc(50%);
+    left: calc(75%);  
 }
 #actions {
-    float: left;    
+    float: left;
+}
+#currentPosition {
+  position: absolute;
+  top: 25%;
+  left: 1%;
+  font-size: 250%;
+}
+.direction {
+    cursor: pointer;
+    padding: 5px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;
 }
 #messages {
-    height: 100px;
+    height: 300px;
     overflow-x: hidden;
     width: 100%;
     overflow-y: scroll;
-    line-height: 50%;
+}
+#actions {
+    bottom: 10%;
+    left: 1%;
 }
 ul {
     list-style: none;
+    display: inline;
 }
 
 hr {

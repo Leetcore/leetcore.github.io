@@ -12,31 +12,24 @@
       <div id="timerwrapper">Nächster Zombieangriff in <span id="timer">-00:00</span> Minuten</div>
 
         <div id="map">
-          Mitte
+          <div id="cords"></div>
+          <div id="currentPosition"></div>
+          <div class="direction" id="goUp" onclick="move('top')">▲</div>
+          <div class="direction" id="goRight" onclick="move('right')">►</div>
+          <div class="direction" id="goDown" onclick="move('down')">▼</div>
+          <div class="direction" id="goLeft" onclick="move('left')">◄</div>
+          <div id="actions"></div>
         </div>
 
-        <div id="actions">
-          Inventar
-          <ul id="inventar">
-            <li>Brett</li>
-          <ul>
+        <div id="builder"></div>
+
+        <div id="stats">
+            <span id="welle"></span><br/>
+            <span id="wasser"></span><br/>
+            <span id="verteidigung"></span>
         </div>
 
-        <div id="controller">
-          Player
-          <ul id="playerlist">
-            <li>Du</li>
-          </ul>
-        </div>
-
-        <div id="messages">
-          <p><a href="javascript:alert(1)">Test 1</a></p>
-          <p>Test 2</p>
-          <p>Test 3</p>
-          <p>Test 1</p>
-          <p>Test 2</p>
-          <p>Test 3</p>
-        </div>
+        <div id="messages"></div>
         <div class="clear"></div>
 
     </div>
