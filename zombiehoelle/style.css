@@ -4,12 +4,10 @@ body {
 }
 
 a, .pick, .build {
-    padding: 0 5px;
     text-decoration: none;
     cursor: pointer;
 }
 a:hover, .pick:hover, .build:hover {
-    padding: 0 5px;
     background-color: #333;
     cursor: pointer;
     color: #FFF;
@@ -36,14 +34,12 @@ a:hover, .pick:hover, .build:hover {
 #stats {
     float: right;
     width: 120px;
-    margin: 10 10;
-}
-
-#actions, #builder {
-    margin: 10 10;
+    margin: 10px 5px;
 }
 #builder {
     float: left;
+    margin: 10px 0px;
+    width: 50%;
 }
 
 .clear {
@@ -86,6 +82,10 @@ a:hover, .pick:hover, .build:hover {
   left: 1%;
   font-size: 250%;
 }
+#cords {
+    left: 1%;
+    top: 1%;
+}
 .direction {
     cursor: pointer;
     padding: 5px;
@@ -102,7 +102,7 @@ a:hover, .pick:hover, .build:hover {
     overflow-y: scroll;
 }
 #actions {
-    bottom: 10%;
+    bottom: 30%;
     left: 1%;
 }
 ul {
