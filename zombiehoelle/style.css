@@ -13,7 +13,7 @@ a:hover, .pick:hover, .build:hover {
     color: #FFF;
 }
 #frame {
-    width: 320px;
+    max-width: 320px;
     margin: 0 auto;
     border: 5px black solid;
     padding: 5px;

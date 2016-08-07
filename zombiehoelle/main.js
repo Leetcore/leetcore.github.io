@@ -13,7 +13,7 @@ var inventar = [
     {name: "Seil", plural: "Seile", anzahl: 0},
     {name: "Metall", plural: "Metalle", anzahl: 0},
     {name: "Schaufel", plural: "Schaufeln", anzahl: 0},
-    {name: "Pistole", plural: "Pistolen", anzahl: 0},
+    {name: "Pistole", plural: "Pistolen", anzahl: 0, verteidigung: 15},
     {name: "Talisman", plural: "Talismane", anzahl: 0},
     {name: "Glas", plural: "Gläser", anzahl: 0},
     {name: "TNT", plural: "TNT", anzahl: 0}
@@ -26,7 +26,6 @@ var techtree = [
     {name: "Steinmauer", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 5}]},
     {name: "Talis Auge", permanent: false, verteidigung: 20, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
     {name: "Kreuz", permanent: false, verteidigung: 5, baukosten: [{name: "Brett", anzahl: 3}]},
-    {name: "Pistole", permanent: false, verteidigung: 15, baukosten: [{name: "Pistole", anzahl: 1}]},
     {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 3}]},
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 1}]},
     {name: "Steinschleuder", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
@@ -323,11 +322,15 @@ function take(item) {
             } else {
                 message(inventar[inv].anzahl +" "+ inventar[inv].name + " im Inventar.")
             }
+            if (inventar[inv].verteidigung !== undefined) {
+                verteidigung = verteidigung + inventar[inv].verteidigung
+            }
             $("#actions").empty()
             $("#currentPosition").empty()
             map[x][y] = 0
             checkbuilder()
             renderPosition()
+            renderVerteidigung()
         }
     }
 }
