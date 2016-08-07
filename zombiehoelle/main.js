@@ -30,7 +30,7 @@ var techtree = [
     {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 3}]},
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 1}]},
     {name: "Steinschleuder", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
-    {name: "Sprengfalle", permanent: false, verteidigung: 50, baukosten: [{name: "TNT", anzahl: 3}, {name: "Brett", anzahl: 5}]},
+    {name: "Sprengfalle", permanent: false, verteidigung: 50, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
     {name: "Brunnen", permanent: true, baukosten: [{name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
     {name: "Werkstatt", permanent: true, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]}
 ]
@@ -258,7 +258,7 @@ function renderPosition() {
         $("#currentPosition").text(map[x][y])
     }
     if (map[x][y] == "Brunnen") {
-        wasser = wasser + randomNumberGen(15 + Math.round(welle / 2), 25 + welle)
+        wasser = wasser + randomNumberGen(15 + Math.round(welle / 2), 20 + welle)
         message("Du hast dir Wasser aus dem Brunnen geholt.")
     }
     if (map[x][y] == "Werkstatt") {
