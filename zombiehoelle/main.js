@@ -45,7 +45,7 @@ for (var x = 0; x < 16; x++) {
 
 function startTimer(duration) {
   if (isGameover == false) {
-    var timer = 60 * 1.5, minutes, seconds
+    var timer = duration, minutes, seconds
     mytimer = setInterval(function () {
         minutes = parseInt(timer / 60, 10)
         seconds = parseInt(timer % 60, 10)
@@ -67,7 +67,7 @@ function startTimer(duration) {
 }
 
 jQuery(function ($) {
-    var fiveMinutes = 60 * 5, display = $('#timer')
+    var fiveMinutes = 60 * 1.5, display = $('#timer')
     startTimer(fiveMinutes)
 });
 
@@ -122,7 +122,10 @@ function message(nachricht) {
     $("#messages").append("<p>" + nachricht + "<p/>")
     $("#messages").animate({
         scrollTop: $("#messages p").last().offset().top
-    }, 500);
+    });
+    if ($("#messages p").length >= 30) {
+        $("#messages p:lt(10)").remove()
+    }
 }
 
 function checkbuilder() {
