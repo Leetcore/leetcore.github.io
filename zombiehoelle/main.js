@@ -366,10 +366,10 @@ function renderVerteidigung() {
 }
 
 function renderWater() {
+    $("#wasser").text(wasser + " Wasser")
     if (wasser < 10) {
         playAudio("https://www.youtube.com/audiolibrary_download?vid=07db49a10a4145d2")
         message("Achtung! Dein Wasser wird knapp. Der Brunnen ist bei X: "+ brunnenX +" Y: "+ brunnenY +".")
-        $("#wasser").text(wasser + " Wasser")
     }
     if (wasser <= 0) {
         gameover("verdurstet")
