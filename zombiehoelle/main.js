@@ -18,22 +18,22 @@ var inventar = [
     {name: "Glas", plural: "Gläser", anzahl: 0},
     {name: "TNT", plural: "TNT", anzahl: 0},
     {name: "Lupe", plural: "Lupen", anzahl: 0},
-    {name: "Wasserkanister", plural: "Wasserkanister", anzahl: 0, wasser: 50}
+    {name: "Wasserkanister", plural: "Wasserkanister", anzahl: 0, wasser: 10}
 ]
 
 var techtree = [
     {name: "Pflock", permanent: false, verteidigung: 1, baukosten: [{name: "Brett", anzahl: 1}]},
-    {name: "Hacke", permanent: false, verteidigung: 4, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}]},
+    {name: "Hacke", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}]},
     {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 3}]},
-    {name: "Steinmauer", permanent: false, verteidigung: 20, baukosten: [{name: "Stein", anzahl: 5}]},
+    {name: "Steinmauer", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 5}]},
     {name: "Talis Auge", permanent: false, verteidigung: 50, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
     {name: "Kreuz", permanent: false, verteidigung: 7, baukosten: [{name: "Brett", anzahl: 3}]},
     {name: "Fackel", permanent: false, verteidigung: 50, baukosten: [{name: "Brett", anzahl: 1}, {name: "Feuer", anzahl: 1}]},
-    {name: "Stacheldraht", permanent: false, verteidigung: 20, baukosten: [{name: "Metall", anzahl: 3}]},
+    {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 3}]},
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 1}]},
-    {name: "Steinschleuder", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}]},
-    {name: "Sprengfalle", permanent: false, verteidigung: 100, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
-    {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
+    {name: "Steinschleuder", permanent: false, verteidigung: 12, baukosten: [{name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}]},
+    {name: "Sprengfalle", permanent: false, verteidigung: 80, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
+    {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
     {name: "Werkstatt", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]}
 ]
 
@@ -97,7 +97,7 @@ function ZombieAttack() {
         message("Der Zombieangriff wurde abgewehrt, aber deine Verteidigung hat Schaden erlitten. Du hast noch " + verteidigung + " Punkte.")
     }
     randomItems()
-    wasser = wasser - 3
+    wasser = wasser - randomNumberGen(1, 3)
     renderWater()
     renderVerteidigung()
 }
@@ -260,8 +260,12 @@ function renderPosition() {
         $("#currentPosition").text(map[x][y])
     }
     if (map[x][y] == "Brunnen") {
-        wasser = wasser + randomNumberGen(15 + Math.round(welle / 2), 20 + welle)
-        message("Du hast dir Wasser aus dem Brunnen geholt.")
+        if (randomNumberGen(0,1) == 0) {
+            wasser = wasser + randomNumberGen(15 + Math.round(welle / 2), 20 + welle)
+            message("Du hast dir Wasser aus dem Brunnen geholt.")
+        } else {
+            message("Diesmal kam kein Wasser.")
+        }
     }
     if (map[x][y] == "Werkstatt") {
         if (randomNumberGen(0, 2) == 0) {
@@ -286,24 +290,24 @@ function startPosition() {
 
 function dropStuff() {
     if (map[x][y] == 0) {
-        var random = randomNumberGen(0, 5)
+        var random = randomNumberGen(0, 8)
         switch (random) {
-            case 0:
+            case 0: case 1:
                 message("Hier ist nichts was dir helfen könnte.")
                 break
-            case 1:
+            case 2: case 3:
                 map[x][y] = "Brett"
                 break
-            case 2:
+            case 4: case 5:
                 map[x][y] = "Stein"
                 break
-            case 3:
+            case 6:
                 map[x][y] = "Stock"
                 break
-            case 4: 
+            case 7: 
                 map[x][y] = "Metall"
                 break
-            case 5: 
+            case 8: 
                 map[x][y] = "Seil"
                 break
         }
@@ -376,7 +380,7 @@ function randomItems() {
     var checkX = randomNumberGen(0, 15)
     var checkY = randomNumberGen(0, 15)
     if (map[checkX][checkY] == 0) {
-        var random = randomNumberGen(0, 5)
+        var random = randomNumberGen(0, 4)
         switch (random) {
             case 0:
                 map[checkX][checkY] = "Glas"
@@ -392,9 +396,6 @@ function randomItems() {
                 break
             case 4:
                 map[checkX][checkY] = "TNT"
-                break
-            case 5:
-                map[checkX][checkY] = "Wasserkanister"
                 break
         }
     }
