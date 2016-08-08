@@ -69,7 +69,7 @@ function startTimer(duration) {
 }
 
 jQuery(function ($) {
-    var fiveMinutes = 60 * 1.5, display = $('#timer')
+    var fiveMinutes = 60 * 1, display = $('#timer')
     startTimer(fiveMinutes)
 });
 
@@ -90,7 +90,7 @@ function ZombieAttack() {
         welle = welle + 1
         renderWelle()
         $("#messages").empty()
-        verteidigung = verteidigung - Math.round(verteidigung * 0.30) - Math.round(angriffstärke * 0.20)
+        verteidigung = verteidigung - Math.round(verteidigung * 0.30) - Math.round(angriffstärke * 0.50)
         if (verteidigung < 1) {
             verteidigung = 10
         }
