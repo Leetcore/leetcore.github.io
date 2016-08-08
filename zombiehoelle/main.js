@@ -16,20 +16,21 @@ var inventar = [
     {name: "Pistole", plural: "Pistolen", anzahl: 0, verteidigung: 15},
     {name: "Talisman", plural: "Talismane", anzahl: 0},
     {name: "Glas", plural: "Gläser", anzahl: 0},
-    {name: "TNT", plural: "TNT", anzahl: 0}
+    {name: "TNT", plural: "TNT", anzahl: 0},
+    {name: "Wasserbecken", plural: "Wasserbecken", anzahl: 0, wasser: 50}
 ]
 
 var techtree = [
     {name: "Pflock", permanent: false, verteidigung: 1, baukosten: [{name: "Brett", anzahl: 1}]},
-    {name: "Hacke", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}]},
-    {name: "Graben", permanent: false, verteidigung: 18, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 5}]},
-    {name: "Steinmauer", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 5}]},
-    {name: "Talis Auge", permanent: false, verteidigung: 20, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
-    {name: "Kreuz", permanent: false, verteidigung: 5, baukosten: [{name: "Brett", anzahl: 3}]},
-    {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 3}]},
+    {name: "Hacke", permanent: false, verteidigung: 4, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}]},
+    {name: "Graben", permanent: false, verteidigung: 50, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 5}]},
+    {name: "Steinmauer", permanent: false, verteidigung: 20, baukosten: [{name: "Stein", anzahl: 5}]},
+    {name: "Talis Auge", permanent: false, verteidigung: 50, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
+    {name: "Kreuz", permanent: false, verteidigung: 7, baukosten: [{name: "Brett", anzahl: 3}]},
+    {name: "Stacheldraht", permanent: false, verteidigung: 20, baukosten: [{name: "Metall", anzahl: 3}]},
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 1}]},
-    {name: "Steinschleuder", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
-    {name: "Sprengfalle", permanent: false, verteidigung: 50, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
+    {name: "Steinschleuder", permanent: false, verteidigung: 100, baukosten: [{name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
+    {name: "Sprengfalle", permanent: false, verteidigung: 200, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
     {name: "Brunnen", permanent: true, baukosten: [{name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
     {name: "Werkstatt", permanent: true, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]}
 ]
@@ -72,7 +73,7 @@ jQuery(function ($) {
 
 function ZombieAttack() {
     playAudio("https://www.youtube.com/audiolibrary_download?vid=bfb60515d518694b")
-    angriffstärke = angriffstärke + randomNumberGen(10 + welle * 2, (30 + welle * 2) * spieleranzahl)
+    angriffstärke = angriffstärke + randomNumberGen(15 + welle * 2, (20 + welle * 2) * spieleranzahl)
     if (angriffstärke > verteidigung) {
         $("#messages").empty()
         message("Die Zombies greifen mit " + angriffstärke + " Stärke an und du hast nur " + verteidigung + " Verteidigung. Jetzt entscheidet der Nahkampf: Überlebender gegen Zombie!")
@@ -87,7 +88,7 @@ function ZombieAttack() {
         welle = welle + 1
         renderWelle()
         $("#messages").empty()
-        verteidigung = verteidigung - Math.round(verteidigung * 0.20) - Math.round(angriffstärke * 0.20)
+        verteidigung = verteidigung - Math.round(verteidigung * 0.10) - Math.round(angriffstärke * 0.20)
         if (verteidigung < 1) {
             verteidigung = 10
         }
@@ -325,6 +326,9 @@ function take(item) {
             if (inventar[inv].verteidigung !== undefined) {
                 verteidigung = verteidigung + inventar[inv].verteidigung
             }
+            if (inventar[inv].wasser !== undefined) {
+                wasser = wasser + inventar[inv].wasser
+            }
             $("#actions").empty()
             $("#currentPosition").empty()
             map[x][y] = 0
@@ -367,7 +371,7 @@ function randomItems() {
     var checkX = randomNumberGen(0, 15)
     var checkY = randomNumberGen(0, 15)
     if (map[checkX][checkY] == 0) {
-        var random = randomNumberGen(0, 4)
+        var random = randomNumberGen(0, 5)
         switch (random) {
             case 0:
                 map[checkX][checkY] = "Glas"
@@ -383,6 +387,9 @@ function randomItems() {
                 break
             case 4:
                 map[checkX][checkY] = "TNT"
+                break
+            case 5:
+                map[checkX][checkY] = "Wasserbecken"
                 break
         }
     }
