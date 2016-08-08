@@ -31,8 +31,8 @@ var techtree = [
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 1}]},
     {name: "Steinschleuder", permanent: false, verteidigung: 100, baukosten: [{name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
     {name: "Sprengfalle", permanent: false, verteidigung: 200, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
-    {name: "Brunnen", permanent: true, baukosten: [{name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
-    {name: "Werkstatt", permanent: true, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]}
+    {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
+    {name: "Werkstatt", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]}
 ]
 
 var map = []
@@ -142,7 +142,7 @@ function checkbuilder() {
                         canBuild = 0
                     }
                     if (canBuild == techtree[bb].baukosten.length) {
-                        $("#builder").append("<div class='build' onclick='build(\""+ techtree[bb].name + "\")'>" + techtree[bb].name + "</div>")    
+                        $("#builder").append("<div class='build' onclick='build(\""+ techtree[bb].name + "\")'>" + techtree[bb].name + " " + techtree[bb].verteidigung +"</div>")
                     }
                 }
             }
