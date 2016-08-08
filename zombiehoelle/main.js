@@ -142,7 +142,7 @@ function checkbuilder() {
                         canBuild = 0
                     }
                     if (canBuild == techtree[bb].baukosten.length) {
-                        $("#builder").append("<div class='build' onclick='build(\""+ techtree[bb].name + "\")'>" + techtree[bb].name + " " + techtree[bb].verteidigung +"</div>")
+                        $("#builder").append("<div class='build' onclick='build(\""+ techtree[bb].name + "\")'>" + techtree[bb].name + " +" + techtree[bb].verteidigung +"</div>")
                     }
                 }
             }
