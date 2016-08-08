@@ -7,8 +7,8 @@ isGameover = false
 
 var inventar = [
     {name: "Brett", plural: "Bretter", anzahl: 0},
-    {name: "Stock", plural: "Stöcke", anzahl: 0},
     {name: "Stein", plural: "Steine", anzahl: 0},
+    {name: "Stock", plural: "Stöcke", anzahl: 0},
     {name: "Sand", plural: "Sand", anzahl: 0},
     {name: "Seil", plural: "Seile", anzahl: 0},
     {name: "Metall", plural: "Metalle", anzahl: 0},
@@ -270,7 +270,7 @@ function renderPosition() {
     if (map[x][y] == "Werkstatt") {
         if (randomNumberGen(0, 2) == 0) {
             inventar[0].anzahl = inventar[0].anzahl + 1
-            inventar[2].anzahl = inventar[2].anzahl + 1
+            inventar[1].anzahl = inventar[1].anzahl + 1
             wasser = wasser - 2
             message("Du hast ein Brett und einen Stein produziert, aber es hat dich zusätzlich zwei Wasser gekostet.")
         }
