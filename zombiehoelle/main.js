@@ -1,7 +1,7 @@
 var welle = 1
 var verteidigung = 1
 var spieleranzahl = 1
-var wasser = 3
+var wasser = 15
 var angriffstärke = 2
 isGameover = false
 
