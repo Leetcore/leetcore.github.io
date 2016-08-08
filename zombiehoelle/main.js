@@ -31,8 +31,8 @@ var techtree = [
     {name: "Fackel", permanent: false, verteidigung: 50, baukosten: [{name: "Brett", anzahl: 1}, {name: "Feuer", anzahl: 1}]},
     {name: "Stacheldraht", permanent: false, verteidigung: 20, baukosten: [{name: "Metall", anzahl: 3}]},
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 1}]},
-    {name: "Steinschleuder", permanent: false, verteidigung: 100, baukosten: [{name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
-    {name: "Sprengfalle", permanent: false, verteidigung: 200, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
+    {name: "Steinschleuder", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}]},
+    {name: "Sprengfalle", permanent: false, verteidigung: 100, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
     {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
     {name: "Werkstatt", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]}
 ]
