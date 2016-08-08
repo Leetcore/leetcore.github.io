@@ -88,7 +88,7 @@ function ZombieAttack() {
         welle = welle + 1
         renderWelle()
         $("#messages").empty()
-        verteidigung = verteidigung - Math.round(verteidigung * 0.10) - Math.round(angriffstärke * 0.20)
+        verteidigung = verteidigung - Math.round(verteidigung * 0.20) - Math.round(angriffstärke * 0.20)
         if (verteidigung < 1) {
             verteidigung = 10
         }
