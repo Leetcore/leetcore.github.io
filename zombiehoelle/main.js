@@ -350,7 +350,7 @@ function playAudio(file) {
 }
 function playAudioBackground(file) {
     var baudio = new Audio(file);
-    baudio.volume = 0.5;
+    baudio.volume = 0.2;
     baudio.play();
     baudio.loop = true;
 }
