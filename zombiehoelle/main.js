@@ -17,16 +17,18 @@ var inventar = [
     {name: "Talisman", plural: "Talismane", anzahl: 0},
     {name: "Glas", plural: "Gläser", anzahl: 0},
     {name: "TNT", plural: "TNT", anzahl: 0},
-    {name: "Wasserbecken", plural: "Wasserbecken", anzahl: 0, wasser: 50}
+    {name: "Lupe", plural: "Lupen", anzahl: 0},
+    {name: "Wasserkanister", plural: "Wasserkanister", anzahl: 0, wasser: 50}
 ]
 
 var techtree = [
     {name: "Pflock", permanent: false, verteidigung: 1, baukosten: [{name: "Brett", anzahl: 1}]},
     {name: "Hacke", permanent: false, verteidigung: 4, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}]},
-    {name: "Graben", permanent: false, verteidigung: 50, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 5}]},
+    {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 3}]},
     {name: "Steinmauer", permanent: false, verteidigung: 20, baukosten: [{name: "Stein", anzahl: 5}]},
     {name: "Talis Auge", permanent: false, verteidigung: 50, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
     {name: "Kreuz", permanent: false, verteidigung: 7, baukosten: [{name: "Brett", anzahl: 3}]},
+    {name: "Fackel", permanent: false, verteidigung: 50, baukosten: [{name: "Brett", anzahl: 1}, {name: "Feuer", anzahl: 1}]},
     {name: "Stacheldraht", permanent: false, verteidigung: 20, baukosten: [{name: "Metall", anzahl: 3}]},
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 1}]},
     {name: "Steinschleuder", permanent: false, verteidigung: 100, baukosten: [{name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
@@ -88,14 +90,14 @@ function ZombieAttack() {
         welle = welle + 1
         renderWelle()
         $("#messages").empty()
-        verteidigung = verteidigung - Math.round(verteidigung * 0.20) - Math.round(angriffstärke * 0.20)
+        verteidigung = verteidigung - Math.round(verteidigung * 0.30) - Math.round(angriffstärke * 0.20)
         if (verteidigung < 1) {
             verteidigung = 10
         }
         message("Der Zombieangriff wurde abgewehrt, aber deine Verteidigung hat Schaden erlitten. Du hast noch " + verteidigung + " Punkte.")
     }
     randomItems()
-    wasser = wasser - 1
+    wasser = wasser - 3
     renderWater()
     renderVerteidigung()
 }
@@ -284,7 +286,7 @@ function startPosition() {
 
 function dropStuff() {
     if (map[x][y] == 0) {
-        var random = randomNumberGen(0, 4)
+        var random = randomNumberGen(0, 5)
         switch (random) {
             case 0:
                 message("Hier ist nichts was dir helfen könnte.")
@@ -300,6 +302,9 @@ function dropStuff() {
                 break
             case 4: 
                 map[x][y] = "Metall"
+                break
+            case 5: 
+                map[x][y] = "Seil"
                 break
         }
     }
@@ -383,13 +388,13 @@ function randomItems() {
                 map[checkX][checkY] = "Talisman"
                 break
             case 3:
-                map[checkX][checkY] = "Seil"
+                map[checkX][checkY] = "Lupe"
                 break
             case 4:
                 map[checkX][checkY] = "TNT"
                 break
             case 5:
-                map[checkX][checkY] = "Wasserbecken"
+                map[checkX][checkY] = "Wasserkanister"
                 break
         }
     }
