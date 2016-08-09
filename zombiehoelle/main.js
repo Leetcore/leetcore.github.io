@@ -14,27 +14,40 @@ var inventar = [
     {name: "Metall", plural: "Metalle", anzahl: 0},
     {name: "Schaufel", plural: "Schaufeln", anzahl: 0},
     {name: "Pistole", plural: "Pistolen", anzahl: 0, verteidigung: 15},
+    {name: "Schwert", plural: "Schwerter", anzahl: 0, verteidigung: 10},
     {name: "Talisman", plural: "Talismane", anzahl: 0},
     {name: "Glas", plural: "Gläser", anzahl: 0},
     {name: "TNT", plural: "TNT", anzahl: 0},
     {name: "Lupe", plural: "Lupen", anzahl: 0},
-    {name: "Wasserkanister", plural: "Wasserkanister", anzahl: 0, wasser: 10}
+    {name: "Wasserkanister", plural: "Wasserkanister", anzahl: 0, wasser: 10},
+    {name: "Benzin", plural: "Benzin", anzahl: 0},
+    {name: "Zaubertrank", plural: "Zaubertränke", anzahl: 0, verteidigung: 80},
+    {name: "Stroh", plural: "Stroh", anzahl: 0},
+    {name: "Kerze", plural: "Kerze", anzahl: 0},
+    {name: "Säge", plural: "Sägen", anzahl: 0}
 ]
 
 var techtree = [
     {name: "Pflock", permanent: false, verteidigung: 1, baukosten: [{name: "Brett", anzahl: 1}]},
-    {name: "Hacke", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}]},
-    {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 3}]},
+    {name: "Hammer", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
+    {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 3}]},
     {name: "Steinmauer", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 5}]},
     {name: "Talis Auge", permanent: false, verteidigung: 50, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
     {name: "Kreuz", permanent: false, verteidigung: 7, baukosten: [{name: "Brett", anzahl: 3}]},
-    {name: "Fackel", permanent: false, verteidigung: 50, baukosten: [{name: "Brett", anzahl: 1}, {name: "Feuer", anzahl: 1}]},
+    {name: "Kerze", permanent: false, verteidigung: 0, baukosten: [{name: "Stroh", anzahl: 1}, {name: "Lupe", anzahl: 1}]},
+    {name: "Fackel", permanent: false, verteidigung: 50, baukosten: [{name: "Brett", anzahl: 1}, {name: "Lupe", anzahl: 1}, {name: "Stroh", anzahl: 1}, {name: "Benzin", anzahl: 1}]},
     {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 3}]},
+    {name: "Säge", permanent: false, verteidigung: 0, baukosten: [{name: "Metall", anzahl: 5}]},
+    {name: "Speerfalle", permanent: false, verteidigung: 30, baukosten: [{name: "Metall", anzahl: 5}, {name: "Säge", anzahl: 1}]},
+    {name: "Stolperfalle", permanent: false, verteidigung: 14, baukosten: [{name: "Metall", anzahl: 1}, {name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 1}]},
+    {name: "Falle", permanent: false, verteidigung: 16, baukosten: [{name: "Brett", anzahl: 5}, {name: "Schaufel", anzahl: 1}]},
     {name: "Steinschleuder", permanent: false, verteidigung: 12, baukosten: [{name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}]},
     {name: "Sprengfalle", permanent: false, verteidigung: 80, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
     {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
-    {name: "Werkstatt", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]}
+    {name: "Werkstatt", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]},
+    {name: "Haus", permanent: true, verteidigung: 80, baukosten: [{name: "Brett", anzahl: 10}, {name: "Stein", anzahl: 10}]},
+    {name: "Hochsitz", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 10}, {name: "Stock", anzahl: 4}]}
 ]
 
 var map = []
@@ -59,10 +72,10 @@ function startTimer(duration) {
 
         if (--timer < 0) {
             clearInterval(mytimer)
-            myTimeout = setTimeout(function() {
-                ZombieAttack()
+            ZombieAttack()
+            myTimeout = setTimeout(function() {                
                 startTimer(60 * 1)
-            }, 1000)
+            }, 5000)
         }
     }, 1000);
   }
@@ -90,7 +103,7 @@ function ZombieAttack() {
         welle = welle + 1
         renderWelle()
         $("#messages").empty()
-        verteidigung = verteidigung - Math.round(verteidigung * 0.30) - Math.round(angriffstärke * 0.50)
+        verteidigung = verteidigung - Math.round(verteidigung * 0.20) - Math.round(angriffstärke * 0.80)
         if (verteidigung < 1) {
             verteidigung = 10
         }
@@ -181,6 +194,9 @@ function build(building) {
                           map[x][y] = techtree[t].name
                           tempName = techtree[t].name
                           bauKostenOK = true
+                          if (inventar[inv].verteidigung !== undefined) {
+                            verteidigung = verteidigung + inventar[inv].verteidigung
+                          }
                       }
                   }
               }
@@ -254,12 +270,13 @@ function move(direction) {
 }
 
 function renderPosition() {
+    $("#cords").text("X: " + x + " Y: " + y)
     if (map[x][y] == 0) {
         $("#currentPosition").text("Nichts")
     } else {
         $("#currentPosition").text(map[x][y])
     }
-    if (map[x][y] == "Brunnen") {
+    if (map[x][y] == "Brunnen" || map[x][y] == "Haus") {
         if (randomNumberGen(0,1) == 0) {
             wasser = wasser + randomNumberGen(15 + Math.round(welle / 2), 20 + welle)
             message("Du hast dir Wasser aus dem Brunnen geholt.")
@@ -267,7 +284,7 @@ function renderPosition() {
             message("Diesmal kam kein Wasser.")
         }
     }
-    if (map[x][y] == "Werkstatt") {
+    if (map[x][y] == "Werkstatt" || map[x][y] == "Haus") {
         if (randomNumberGen(0, 2) == 0) {
             inventar[0].anzahl = inventar[0].anzahl + 1
             inventar[1].anzahl = inventar[1].anzahl + 1
@@ -275,7 +292,16 @@ function renderPosition() {
             message("Du hast ein Brett und einen Stein produziert, aber es hat dich zusätzlich zwei Wasser gekostet.")
         }
     }
-    $("#cords").text("X: " + x + " Y: " + y)
+    if (map[x][y] == "Haus") {
+        if (randomNumberGen(0, 5) == 0) {
+            verteidigung = verteidigung + 1
+            message("Du hast das Haus verstärkt!")
+        }
+    }
+    if (map[x][y] == "Hochsitz") {
+        tempangriff = angriffstärke + randomNumberGen(15 + welle * 2, (20 + welle * 2) * spieleranzahl)
+        message("Du hast jetzt einen guten Überblick. Der Zombieangriff könnte die Stärke "+ tempangriff +" haben.")
+    }
 }
 
 function startPosition() {
@@ -290,12 +316,12 @@ function startPosition() {
 
 function dropStuff() {
     if (map[x][y] == 0) {
-        var random = randomNumberGen(0, 8)
+        var random = randomNumberGen(0, 10)
         switch (random) {
-            case 0: case 1:
+            case 0:
                 message("Hier ist nichts was dir helfen könnte.")
                 break
-            case 2: case 3:
+            case 1: case 2: case 3:
                 map[x][y] = "Brett"
                 break
             case 4: case 5:
@@ -309,6 +335,12 @@ function dropStuff() {
                 break
             case 8: 
                 map[x][y] = "Seil"
+                break
+            case 9: 
+                map[x][y] = "Wasserkanister"
+                break
+            case 10: 
+                map[x][y] = "Stroh"
                 break
         }
     }
@@ -334,9 +366,11 @@ function take(item) {
             }
             if (inventar[inv].verteidigung !== undefined) {
                 verteidigung = verteidigung + inventar[inv].verteidigung
-            }
+                inventar[inv].anzahl--
+            }            
             if (inventar[inv].wasser !== undefined) {
                 wasser = wasser + inventar[inv].wasser
+                inventar[inv].anzahl--
             }
             $("#actions").empty()
             $("#currentPosition").empty()
@@ -344,6 +378,7 @@ function take(item) {
             checkbuilder()
             renderPosition()
             renderVerteidigung()
+            renderWater()
         }
     }
 }
@@ -380,7 +415,7 @@ function randomItems() {
     var checkX = randomNumberGen(0, 15)
     var checkY = randomNumberGen(0, 15)
     if (map[checkX][checkY] == 0) {
-        var random = randomNumberGen(0, 4)
+        var random = randomNumberGen(0, 7)
         switch (random) {
             case 0:
                 map[checkX][checkY] = "Glas"
@@ -397,6 +432,15 @@ function randomItems() {
             case 4:
                 map[checkX][checkY] = "TNT"
                 break
+            case 5:
+                map[checkX][checkY] = "Schwert"
+                break
+            case 6:
+                map[checkX][checkY] = "Benzin"
+                break
+            case 7:
+                map[checkX][checkY] = "Zaubertrank"
+                break
         }
     }
 }
@@ -405,19 +449,29 @@ document.onkeydown = function(evt) {
     evt = evt || window.event;
     switch (evt.keyCode) {
         case 37:
-            move("left");
+            setTimeout(function() {
+                move("left");
+            }, 1000)
             break;
         case 39:
-            move("right");
+            setTimeout(function() {
+                move("right");
+            }, 1000)
             break;
         case 38:
-            move("top")
+            setTimeout(function() {
+                move("top")
+            }, 1000)
             break
         case 40:
-            move("down")
+            setTimeout(function() {
+                move("down")
+            }, 1000)
             break
         case 32:
-            $(".pick").click()
+            /*setTimeout(function() {
+                $(".pick").click()
+            }, 500)*/
             break
     }
 };

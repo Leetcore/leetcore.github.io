@@ -19,7 +19,7 @@ a:hover, .pick:hover, .build:hover {
     padding: 5px;
 }
 .gameover {
-    background-color: #F00;
+    background-color: #cc4646;
 }
 
 #timer {
@@ -78,9 +78,9 @@ a:hover, .pick:hover, .build:hover {
 }
 #currentPosition {
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 1%;
-  font-size: 250%;
+  font-size: 180%;
 }
 #cords {
     left: 1%;
@@ -95,8 +95,11 @@ a:hover, .pick:hover, .build:hover {
     -moz-user-select: none;      /* Firefox */
     -ms-user-select: none;
 }
+.direction:hover {
+    color: #e87979;
+}
 #messages {
-    height: 260px;
+    height: 250px;
     overflow-x: hidden;
     width: 100%;
     overflow-y: scroll;
