@@ -24,21 +24,22 @@ var inventar = [
     {name: "Zaubertrank", plural: "Zaubertränke", anzahl: 0, verteidigung: 80},
     {name: "Stroh", plural: "Stroh", anzahl: 0},
     {name: "Kerze", plural: "Kerze", anzahl: 0},
-    {name: "Säge", plural: "Sägen", anzahl: 0}
+    {name: "Säge", plural: "Sägen", anzahl: 0},
+    {name: "Hammer", plural: "Hämmer", anzahl: 0}
 ]
 
 var techtree = [
     {name: "Pflock", permanent: false, verteidigung: 1, baukosten: [{name: "Brett", anzahl: 3}]},
     {name: "Hammer", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
     {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 3}]},
-    {name: "Steinmauer", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 10}]},
+    {name: "Steinmauer", permanent: false, verteidigung: 20, baukosten: [{name: "Stein", anzahl: 8}, {name: "Hammer", anzahl: 1}]},
     {name: "Talis Auge", permanent: false, verteidigung: 50, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
-    {name: "Kreuz", permanent: false, verteidigung: 5, baukosten: [{name: "Brett", anzahl: 5}]},
+    {name: "Kreuz", permanent: false, verteidigung: 6, baukosten: [{name: "Brett", anzahl: 5}]},
     {name: "Kerze", permanent: false, verteidigung: 0, baukosten: [{name: "Stroh", anzahl: 1}, {name: "Lupe", anzahl: 1}]},
     {name: "Fackel", permanent: false, verteidigung: 50, baukosten: [{name: "Brett", anzahl: 1}, {name: "Lupe", anzahl: 1}, {name: "Stroh", anzahl: 1}, {name: "Benzin", anzahl: 1}]},
-    {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 5}]},
-    {name: "Säge", permanent: false, verteidigung: 0, baukosten: [{name: "Metall", anzahl: 6}]},
-    {name: "Speerfalle", permanent: false, verteidigung: 30, baukosten: [{name: "Metall", anzahl: 5}, {name: "Säge", anzahl: 1}]},
+    {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 5}, {name: "Hammer", anzahl: 1}]},
+    {name: "Säge", permanent: false, verteidigung: 0, baukosten: [{name: "Metall", anzahl: 3}]},
+    {name: "Speerfalle", permanent: false, verteidigung: 15, baukosten: [{name: "Metall", anzahl: 5}, {name: "Schaufel", anzahl: 1}]},
     {name: "Stolperfalle", permanent: false, verteidigung: 14, baukosten: [{name: "Metall", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}]},
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 2}]},
     {name: "Falle", permanent: false, verteidigung: 16, baukosten: [{name: "Brett", anzahl: 5}, {name: "Schaufel", anzahl: 1}]},
@@ -330,7 +331,7 @@ function dropStuff() {
             case 6:
                 map[x][y] = "Stock"
                 break
-            case 7: 
+            case 7:
                 map[x][y] = "Metall"
                 break
             case 8: 
@@ -449,24 +450,16 @@ document.onkeydown = function(evt) {
     evt = evt || window.event;
     switch (evt.keyCode) {
         case 37:
-            setTimeout(function() {
-                move("left");
-            }, 1000)
+            move("left");
             break;
         case 39:
-            setTimeout(function() {
-                move("right");
-            }, 1000)
+            move("right");
             break;
         case 38:
-            setTimeout(function() {
-                move("top")
-            }, 1000)
+            move("top")
             break
         case 40:
-            setTimeout(function() {
-                move("down")
-            }, 1000)
+            move("down")
             break
         case 32:
             /*setTimeout(function() {
