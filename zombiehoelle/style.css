@@ -1,6 +1,5 @@
 body {
     background-color: #e3f1ab;
-    transition: background 61s ease-in-out;
     font-family: sans-serif;
     animation: animatedBackground 65s linear infinite;
 }
