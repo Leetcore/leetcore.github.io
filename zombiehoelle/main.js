@@ -478,6 +478,7 @@ document.onkeydown = function(evt) {
 
 startPosition()
 renderPosition()
+checkbuilder()
 renderVerteidigung()
 renderWater()
 renderWelle()
