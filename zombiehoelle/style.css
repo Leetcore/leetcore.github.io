@@ -8,7 +8,7 @@ body {
 	0% { background-color: #dad797; }
 	95% { background-color: #757575; }
 	96% { background-color: #a56258; }
-	99% { background-color: #a56258; }
+	99,99% { background-color: #a56258; }
 	100% { background-color: #e3f1ab; }
 }
 
