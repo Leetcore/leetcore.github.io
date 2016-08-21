@@ -6,7 +6,7 @@ var angriffstärke = 2
 isGameover = false
 
 var inventar = [
-    {name: "Brett", plural: "Bretter", anzahl: 0},
+    {name: "Brett", plural: "Bretter", anzahl: 3},
     {name: "Stein", plural: "Steine", anzahl: 0},
     {name: "Stock", plural: "Stöcke", anzahl: 0},
     {name: "Sand", plural: "Sand", anzahl: 0},
@@ -28,23 +28,23 @@ var inventar = [
 ]
 
 var techtree = [
-    {name: "Pflock", permanent: false, verteidigung: 1, baukosten: [{name: "Brett", anzahl: 1}]},
+    {name: "Pflock", permanent: false, verteidigung: 1, baukosten: [{name: "Brett", anzahl: 3}]},
     {name: "Hammer", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
     {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 3}]},
-    {name: "Steinmauer", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 5}]},
+    {name: "Steinmauer", permanent: false, verteidigung: 10, baukosten: [{name: "Stein", anzahl: 10}]},
     {name: "Talis Auge", permanent: false, verteidigung: 50, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
-    {name: "Kreuz", permanent: false, verteidigung: 7, baukosten: [{name: "Brett", anzahl: 3}]},
+    {name: "Kreuz", permanent: false, verteidigung: 5, baukosten: [{name: "Brett", anzahl: 5}]},
     {name: "Kerze", permanent: false, verteidigung: 0, baukosten: [{name: "Stroh", anzahl: 1}, {name: "Lupe", anzahl: 1}]},
     {name: "Fackel", permanent: false, verteidigung: 50, baukosten: [{name: "Brett", anzahl: 1}, {name: "Lupe", anzahl: 1}, {name: "Stroh", anzahl: 1}, {name: "Benzin", anzahl: 1}]},
-    {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 3}]},
-    {name: "Säge", permanent: false, verteidigung: 0, baukosten: [{name: "Metall", anzahl: 5}]},
+    {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 5}]},
+    {name: "Säge", permanent: false, verteidigung: 0, baukosten: [{name: "Metall", anzahl: 6}]},
     {name: "Speerfalle", permanent: false, verteidigung: 30, baukosten: [{name: "Metall", anzahl: 5}, {name: "Säge", anzahl: 1}]},
-    {name: "Stolperfalle", permanent: false, verteidigung: 14, baukosten: [{name: "Metall", anzahl: 1}, {name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
-    {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 1}]},
+    {name: "Stolperfalle", permanent: false, verteidigung: 14, baukosten: [{name: "Metall", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}]},
+    {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 2}]},
     {name: "Falle", permanent: false, verteidigung: 16, baukosten: [{name: "Brett", anzahl: 5}, {name: "Schaufel", anzahl: 1}]},
-    {name: "Steinschleuder", permanent: false, verteidigung: 12, baukosten: [{name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}]},
+    {name: "Steinschleuder", permanent: false, verteidigung: 12, baukosten: [{name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 3}]},
     {name: "Sprengfalle", permanent: false, verteidigung: 80, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
-    {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
+    {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 7}, {name: "Stein", anzahl: 7}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
     {name: "Werkstatt", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]},
     {name: "Haus", permanent: true, verteidigung: 80, baukosten: [{name: "Brett", anzahl: 10}, {name: "Stein", anzahl: 10}]},
     {name: "Hochsitz", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 10}, {name: "Stock", anzahl: 4}]}
