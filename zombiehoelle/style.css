@@ -28,7 +28,8 @@ a:hover, .pick:hover, .build:hover {
     padding: 5px;
 }
 .gameover {
-    background-color: #cc4646;
+    background-color: #cc4646
+    animation: initial;
 }
 
 #timer {
