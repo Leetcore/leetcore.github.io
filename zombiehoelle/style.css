@@ -1,6 +1,13 @@
 body {
-    background-color: #b3b1b1;
+    background-color: #e3f1ab;
+    transition: background 61s ease-in-out;
     font-family: sans-serif;
+    animation: animatedBackground 65s linear infinite;
+}
+
+@keyframes animatedBackground {
+	from { background-color: #e3f1ab; }
+	to { background-color: #b3b1b1; }
 }
 
 a, .pick, .build {
