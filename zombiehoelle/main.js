@@ -75,7 +75,7 @@ function startTimer(duration) {
             ZombieAttack()
             myTimeout = setTimeout(function() {                
                 startTimer(60 * 1)
-            }, 5000)
+            }, 10000)
         }
     }, 1000);
   }
