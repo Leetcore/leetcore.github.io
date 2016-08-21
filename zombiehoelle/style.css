@@ -1,7 +1,7 @@
 body {
     background-color: #e3f1ab;
     font-family: sans-serif;
-    animation: animatedBackground 70s linear infinite;
+    animation: animatedBackground 71s linear infinite;
 }
 
 @keyframes animatedBackground {
