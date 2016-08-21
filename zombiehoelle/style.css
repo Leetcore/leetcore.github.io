@@ -6,8 +6,9 @@ body {
 }
 
 @keyframes animatedBackground {
-	from { background-color: #e3f1ab; }
-	to { background-color: #b3b1b1; }
+	0% { background-color: #e3f1ab; }
+	95% { background-color: #b3b1b1; }
+	100% { background-color: #e3f1ab; }
 }
 
 a, .pick, .build {
