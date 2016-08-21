@@ -19,7 +19,7 @@ var inventar = [
     {name: "Glas", plural: "Gläser", anzahl: 0},
     {name: "TNT", plural: "TNT", anzahl: 0},
     {name: "Lupe", plural: "Lupen", anzahl: 0},
-    {name: "Wasserkanister", plural: "Wasserkanister", anzahl: 0, wasser: 10},
+    {name: "Wasserkanister", plural: "Wasserkanister", anzahl: 0, wasser: 5},
     {name: "Benzin", plural: "Benzin", anzahl: 0},
     {name: "Zaubertrank", plural: "Zaubertränke", anzahl: 0, verteidigung: 80},
     {name: "Stroh", plural: "Stroh", anzahl: 0},
@@ -29,21 +29,21 @@ var inventar = [
 ]
 
 var techtree = [
-    {name: "Pflock", permanent: false, verteidigung: 1, baukosten: [{name: "Brett", anzahl: 3}]},
-    {name: "Hammer", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
-    {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 3}, {name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 3}]},
-    {name: "Steinmauer", permanent: false, verteidigung: 20, baukosten: [{name: "Stein", anzahl: 8}, {name: "Hammer", anzahl: 1}]},
-    {name: "Talis Auge", permanent: false, verteidigung: 50, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
-    {name: "Kreuz", permanent: false, verteidigung: 6, baukosten: [{name: "Brett", anzahl: 5}]},
+    {name: "Pflock", permanent: false, verteidigung: 5, baukosten: [{name: "Brett", anzahl: 3}]},
+    {name: "Hammer", permanent: false, verteidigung: 4, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
+    {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 1}, {name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 3}]},
+    {name: "Steinmauer", permanent: false, verteidigung: 25, baukosten: [{name: "Stein", anzahl: 5}, {name: "Hammer", anzahl: 1}]},
+    {name: "Talis Auge", permanent: false, verteidigung: 80, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
+    {name: "Kreuz", permanent: false, verteidigung: 15, baukosten: [{name: "Brett", anzahl: 5}]},
     {name: "Kerze", permanent: false, verteidigung: 0, baukosten: [{name: "Stroh", anzahl: 1}, {name: "Lupe", anzahl: 1}]},
-    {name: "Fackel", permanent: false, verteidigung: 50, baukosten: [{name: "Brett", anzahl: 1}, {name: "Lupe", anzahl: 1}, {name: "Stroh", anzahl: 1}, {name: "Benzin", anzahl: 1}]},
+    {name: "Fackel", permanent: false, verteidigung: 120, baukosten: [{name: "Brett", anzahl: 1}, {name: "Lupe", anzahl: 1}, {name: "Stroh", anzahl: 1}, {name: "Benzin", anzahl: 1}]},
     {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 5}, {name: "Hammer", anzahl: 1}]},
     {name: "Säge", permanent: false, verteidigung: 0, baukosten: [{name: "Metall", anzahl: 3}]},
-    {name: "Speerfalle", permanent: false, verteidigung: 15, baukosten: [{name: "Metall", anzahl: 5}, {name: "Schaufel", anzahl: 1}]},
-    {name: "Stolperfalle", permanent: false, verteidigung: 14, baukosten: [{name: "Metall", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}]},
+    {name: "Speerfalle", permanent: false, verteidigung: 25, baukosten: [{name: "Metall", anzahl: 3}, {name: "Schaufel", anzahl: 1}]},
+    {name: "Stolperfalle", permanent: false, verteidigung: 15, baukosten: [{name: "Metall", anzahl: 1}, {name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
     {name: "Schaufel", permanent: false, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 1}, {name: "Metall", anzahl: 2}]},
-    {name: "Falle", permanent: false, verteidigung: 16, baukosten: [{name: "Brett", anzahl: 5}, {name: "Schaufel", anzahl: 1}]},
-    {name: "Steinschleuder", permanent: false, verteidigung: 12, baukosten: [{name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 3}]},
+    {name: "Falle", permanent: false, verteidigung: 18, baukosten: [{name: "Brett", anzahl: 3}, {name: "Schaufel", anzahl: 1}]},
+    {name: "Steinschleuder", permanent: false, verteidigung: 15, baukosten: [{name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
     {name: "Sprengfalle", permanent: false, verteidigung: 80, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
     {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 7}, {name: "Stein", anzahl: 7}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
     {name: "Werkstatt", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]},
@@ -104,7 +104,7 @@ function ZombieAttack() {
         welle = welle + 1
         renderWelle()
         $("#messages").empty()
-        verteidigung = verteidigung - Math.round(verteidigung * 0.10) - Math.round(angriffstärke * 0.50)
+        verteidigung = verteidigung - Math.round(verteidigung * 0.10) - Math.round(angriffstärke * 0.30)
         if (verteidigung < 1) {
             verteidigung = 10
         }
@@ -287,10 +287,10 @@ function renderPosition() {
     }
     if (map[x][y] == "Werkstatt" || map[x][y] == "Haus") {
         if (randomNumberGen(0, 2) == 0) {
-            inventar[0].anzahl = inventar[0].anzahl + 1
-            inventar[1].anzahl = inventar[1].anzahl + 1
+            inventar[0].anzahl = inventar[0].anzahl + 3
+            inventar[1].anzahl = inventar[1].anzahl + 3
             wasser = wasser - 2
-            message("Du hast ein Brett und einen Stein produziert, aber es hat dich zusätzlich zwei Wasser gekostet.")
+            message("Du hast drei Bretter und drei Steine produziert, aber es hat dich zusätzlich zwei Wasser gekostet.")
         }
     }
     if (map[x][y] == "Haus") {
@@ -300,7 +300,7 @@ function renderPosition() {
         }
     }
     if (map[x][y] == "Hochsitz") {
-        tempangriff = angriffstärke + randomNumberGen(15 + welle * 2, (20 + welle * 2) * spieleranzahl)
+        tempangriff = angriffstärke + randomNumberGen(5 + welle * 2, (10 + welle * 2) * spieleranzahl)
         message("Du hast jetzt einen guten Überblick. Der Zombieangriff könnte die Stärke "+ tempangriff +" haben.")
     }
 }
@@ -317,9 +317,9 @@ function startPosition() {
 
 function dropStuff() {
     if (map[x][y] == 0) {
-        var random = randomNumberGen(0, 10)
+        var random = randomNumberGen(0, 12)
         switch (random) {
-            case 0:
+            case 0: case: 11 case 12:
                 message("Hier ist nichts was dir helfen könnte.")
                 break
             case 1: case 2: case 3:
@@ -368,7 +368,7 @@ function take(item) {
             if (inventar[inv].verteidigung !== undefined) {
                 verteidigung = verteidigung + inventar[inv].verteidigung
                 inventar[inv].anzahl--
-            }            
+            }
             if (inventar[inv].wasser !== undefined) {
                 wasser = wasser + inventar[inv].wasser
                 inventar[inv].anzahl--
