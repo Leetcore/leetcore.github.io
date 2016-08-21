@@ -30,7 +30,7 @@ var inventar = [
 
 var techtree = [
     {name: "Pflock", permanent: false, verteidigung: 5, baukosten: [{name: "Brett", anzahl: 3}]},
-    {name: "Hammer", permanent: false, verteidigung: 4, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
+    {name: "Hammer", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
     {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 1}, {name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 3}]},
     {name: "Steinmauer", permanent: false, verteidigung: 25, baukosten: [{name: "Stein", anzahl: 5}, {name: "Hammer", anzahl: 1}]},
     {name: "Talis Auge", permanent: false, verteidigung: 80, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
@@ -45,10 +45,10 @@ var techtree = [
     {name: "Falle", permanent: false, verteidigung: 18, baukosten: [{name: "Brett", anzahl: 3}, {name: "Schaufel", anzahl: 1}]},
     {name: "Steinschleuder", permanent: false, verteidigung: 15, baukosten: [{name: "Stein", anzahl: 3}, {name: "Seil", anzahl: 1}]},
     {name: "Sprengfalle", permanent: false, verteidigung: 80, baukosten: [{name: "TNT", anzahl: 1}, {name: "Brett", anzahl: 5}]},
-    {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 7}, {name: "Stein", anzahl: 7}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
-    {name: "Werkstatt", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}]},
-    {name: "Haus", permanent: true, verteidigung: 80, baukosten: [{name: "Brett", anzahl: 10}, {name: "Stein", anzahl: 10}]},
-    {name: "Hochsitz", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 10}, {name: "Stock", anzahl: 4}]}
+    {name: "Brunnen", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 5}, {name: "Seil", anzahl: 1}, {name: "Schaufel", anzahl: 1}]},
+    {name: "Werkstatt", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 7}, {name: "Schaufel", anzahl: 1}]},
+    {name: "Haus", permanent: true, verteidigung: 80, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stein", anzahl: 10}, {name: "Schaufel", anzahl: 1}]},
+    {name: "Hochsitz", permanent: true, verteidigung: 0, baukosten: [{name: "Brett", anzahl: 8}, {name: "Stock", anzahl: 4}, {name: "Schaufel", anzahl: 1}]}
 ]
 
 var map = []
@@ -317,9 +317,9 @@ function startPosition() {
 
 function dropStuff() {
     if (map[x][y] == 0) {
-        var random = randomNumberGen(0, 12)
+        var random = randomNumberGen(0, 13)
         switch (random) {
-            case 0: case: 11 case 12:
+            case 0: case 11: case 12: case 13:
                 message("Hier ist nichts was dir helfen könnte.")
                 break
             case 1: case 2: case 3:
