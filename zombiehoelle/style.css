@@ -6,8 +6,9 @@ body {
 }
 
 @keyframes animatedBackground {
-	0% { background-color: #e3f1ab; }
-	95% { background-color: #b3b1b1; }
+	0% { background-color: #dad797; }
+	95% { background-color: #757575; }
+	96% { background-color: #a56258; }
 	100% { background-color: #e3f1ab; }
 }
 
