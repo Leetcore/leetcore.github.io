@@ -89,7 +89,7 @@ jQuery(function ($) {
 
 function ZombieAttack() {
     playAudio("https://www.youtube.com/audiolibrary_download?vid=bfb60515d518694b")
-    angriffstärke = angriffstärke + randomNumberGen(15 + welle * 2, (20 + welle * 2) * spieleranzahl)
+    angriffstärke = angriffstärke + randomNumberGen(5 + welle * 2, (10 + welle * 2) * spieleranzahl)
     if (angriffstärke > verteidigung) {
         $("#messages").empty()
         message("Die Zombies greifen mit " + angriffstärke + " Stärke an und du hast nur " + verteidigung + " Verteidigung. Jetzt entscheidet der Nahkampf: Überlebender gegen Zombie!")
