@@ -6,7 +6,7 @@ var angriffstärke = 2
 isGameover = false
 
 var inventar = [
-    {name: "Brett", plural: "Bretter", anzahl: 3},
+    {name: "Brett", plural: "Bretter", anzahl: 5},
     {name: "Stein", plural: "Steine", anzahl: 0},
     {name: "Stock", plural: "Stöcke", anzahl: 0},
     {name: "Sand", plural: "Sand", anzahl: 0},
@@ -29,12 +29,12 @@ var inventar = [
 ]
 
 var techtree = [
-    {name: "Pflock", permanent: false, verteidigung: 5, baukosten: [{name: "Brett", anzahl: 3}]},
+    {name: "Pflock", permanent: false, verteidigung: 3, baukosten: [{name: "Brett", anzahl: 5}]},
     {name: "Hammer", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
     {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 1}, {name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 3}]},
     {name: "Steinmauer", permanent: false, verteidigung: 25, baukosten: [{name: "Stein", anzahl: 5}, {name: "Hammer", anzahl: 1}]},
     {name: "Talis Auge", permanent: false, verteidigung: 80, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
-    {name: "Kreuz", permanent: false, verteidigung: 15, baukosten: [{name: "Brett", anzahl: 5}]},
+    {name: "Kreuz", permanent: false, verteidigung: 15, baukosten: [{name: "Brett", anzahl: 5}, {name: "Stock", anzahl: 3}]},
     {name: "Kerze", permanent: false, verteidigung: 0, baukosten: [{name: "Stroh", anzahl: 1}, {name: "Lupe", anzahl: 1}]},
     {name: "Fackel", permanent: false, verteidigung: 120, baukosten: [{name: "Brett", anzahl: 1}, {name: "Lupe", anzahl: 1}, {name: "Stroh", anzahl: 1}, {name: "Benzin", anzahl: 1}]},
     {name: "Stacheldraht", permanent: false, verteidigung: 10, baukosten: [{name: "Metall", anzahl: 5}, {name: "Hammer", anzahl: 1}]},
