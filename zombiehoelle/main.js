@@ -279,8 +279,12 @@ function renderPosition() {
     }
     if (map[x][y] == "Brunnen" || map[x][y] == "Haus") {
         if (randomNumberGen(0,1) == 0) {
-            wasser = wasser + randomNumberGen(15 + Math.round(welle / 2), 20 + welle)
-            message("Du hast dir Wasser aus dem Brunnen geholt.")
+            if (wasser <= 80) {
+                wasser = wasser + randomNumberGen(15, 20)
+                message("Du hast dir Wasser aus dem Brunnen geholt.")
+            } else {
+                message("Du kannst nicht mehr Wasser tragen.")
+            }
         } else {
             message("Diesmal kam kein Wasser.")
         }
@@ -303,6 +307,9 @@ function renderPosition() {
         tempangriff = angriffstärke + randomNumberGen(5 + welle * 2, (10 + welle * 2) * spieleranzahl)
         message("Du hast jetzt einen guten Überblick. Der Zombieangriff könnte die Stärke "+ tempangriff +" haben.")
     }
+    checkbuilder()
+    renderVerteidigung()
+    renderWater()
 }
 
 function startPosition() {
