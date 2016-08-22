@@ -75,7 +75,7 @@ function startTimer(duration) {
             clearInterval(mytimer)
             ZombieAttack()
             myTimeout = setTimeout(function() {                
-                startTimer(60 * 1)
+                startTimer(59)
             }, 10000)
         }
     }, 1000);
@@ -83,7 +83,7 @@ function startTimer(duration) {
 }
 
 jQuery(function ($) {
-    var fiveMinutes = 60 * 1, display = $('#timer')
+    var fiveMinutes = 59, display = $('#timer')
     startTimer(fiveMinutes)
 });
 
