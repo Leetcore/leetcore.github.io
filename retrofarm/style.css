@@ -1,0 +1,60 @@
+body {
+    background-image: linear-gradient(to top, #90b78d 0%, #62a256 95%);
+    background-color: #90b78d;
+    font-family: sans-serif;
+    line-height: 150%;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #333;
+}
+
+a:hover {
+    cursor: pointer;
+    color: #FFF;
+}
+
+#frame {
+    max-width: 320px;
+    margin: 0 auto;
+    border: 3px #a26524 dashed;
+    padding: 20px;
+}
+
+.gameover {
+    background-color: #cc4646;
+}
+
+.feld {
+    color: #FFF;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal; 
+    width: 30px;
+    height: 30px;
+    border: 1px #effdee solid;
+    opacity: 0.4;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    transition: background 1s;
+}
+#menu {
+    position: absolute;
+    left: calc(50% + 200px);
+    font-size: 90%;
+}
+.waechst {
+    cursor: wait;
+    opacity: 0.50;
+}
+.reif {
+    opacity: 1;
+}
+.schlecht {
+    cursor: not-allowed;
+    opacity: 0.3;
+    background-color: #463624;
+}
