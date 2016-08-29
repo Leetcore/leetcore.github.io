@@ -3,6 +3,7 @@ body {
     background-color: #90b78d;
     font-family: sans-serif;
     line-height: 150%;
+    margin: auto 0px;
 }
 
 a {
@@ -18,8 +19,8 @@ a:hover {
 #frame {
     max-width: 320px;
     margin: 0 auto;
-    border: 3px #a26524 dashed;
-    padding: 15px;
+    border-top: 3px #a26524 dashed;
+    border-bottom: 3px #a26524 dashed;
 }
 
 .gameover {
