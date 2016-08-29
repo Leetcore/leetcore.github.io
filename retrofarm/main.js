@@ -94,10 +94,10 @@ $(document).ready(function() {
 });
 
 function startGerd() {
-    setTimeout(Gerd, randomNumberGen(5000,30000))
+    setTimeout(Gerd, randomNumberGen(5000,20000))
 }
 function Gerd() {
-    gerd = gerd + randomNumberGen(20,100)
+    gerd = gerd + randomNumberGen(20,500)
     stats()
     startGerd()
 }
@@ -145,6 +145,7 @@ function benutzeErnter() {
 
 function weitererVerkaufsstand() {
     geld = geld - 2000
+    stats()
     for (var x = 0; x < inventar.length; x++) {
         inventar[x].preis = Math.round(inventar[x].verkauf * 1.5)
     }
