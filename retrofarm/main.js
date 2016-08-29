@@ -40,7 +40,7 @@ function renderInventar() {
     }
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -450€</a><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -650€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie wieder bewirtschaften.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie neu bewirtschaften.</span><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verstaufsstand -2000€/min</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 50%.</span><br/>')
 }
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
                     $(this).text(inventar[x].name.substr(0,1))
                     geld = geld - inventar[x].kosten
                     setTimeout(function () {
-                        if (randomNumberGen(0,4) == 0) {
+                        if (randomNumberGen(0,3) == 0) {
                             $(savedElement).removeClass("waechst")
                             $(savedElement).addClass("schlecht")
                         } else {
