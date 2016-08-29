@@ -136,7 +136,7 @@ function benutzeErnter() {
             for (var x = 0; x < inventar.length; x++) {
                 if (inventar[x].name == $(".reif").eq(0).attr("data-name")) {
                     inventar[x].anzahl++
-                    geld = geld + inventar[x].verkauf
+                    geld = geld + parseFloat(inventar[x].verkauf)
                     $(".reif").eq(0).text("")
                     $(".reif").eq(0).css("background-color", "")
                     $(".reif").eq(0).removeAttr("data-name")
