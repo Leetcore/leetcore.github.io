@@ -5,11 +5,11 @@ var gerd = 7500
 var inventar = [
     {name: "Gurken", anzahl: 0, farbe: "#3dd632", zeit: 5000, kosten: 5, verkauf: 25},
     {name: "Weizen", anzahl: 0, farbe: "#cedc47", zeit: 10000, kosten: 10, verkauf: 50},
-    {name: "Bananen", anzahl: 0, farbe: "#f5d823", zeit: 30000, kosten: 20, verkauf: 85},
-    {name: "Ananas", anzahl: 0, farbe: "#fff971", zeit: 45000, kosten: 50, verkauf: 250},
-    {name: "Melonen", anzahl: 0, farbe: "#688e28", zeit: 50000, kosten: 100, verkauf: 500},
-    {name: "Apfelbaum", anzahl: 0, farbe: "#d63737", zeit: 120000, kosten: 200, verkauf: 690},
-    {name: "Wein", anzahl: 0, farbe: "#7a4884", zeit: 180000, kosten: 500, verkauf: 2000}
+    {name: "Bananen", anzahl: 0, farbe: "#f5d823", zeit: 30000, kosten: 20, verkauf: 75},
+    {name: "Ananas", anzahl: 0, farbe: "#fff971", zeit: 45000, kosten: 50, verkauf: 150},
+    {name: "Melonen", anzahl: 0, farbe: "#688e28", zeit: 50000, kosten: 100, verkauf: 250},
+    {name: "Apfelbaum", anzahl: 0, farbe: "#d63737", zeit: 120000, kosten: 200, verkauf: 600},
+    {name: "Wein", anzahl: 0, farbe: "#7a4884", zeit: 180000, kosten: 500, verkauf: 1500}
 ]
 
 function baueFeld (maxX, maxY) {
