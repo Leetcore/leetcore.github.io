@@ -159,7 +159,7 @@ function ernteMaschine() {
 }
 
 function baueBewaesserung() {
-    geld = geld - 6000
+    geld = geld - 5000
     for (var x = 0; x < inventar.length; x++) {
         if (inventar[x].zeit > 15000) {
             inventar[x].zeit = inventar[x].zeit - 2000
@@ -167,6 +167,7 @@ function baueBewaesserung() {
     }
     //$(".feld").css("border", "1px #2257f3 solid")
     $(".feld").addClass("blue")
+    stats()
 }
 
 startPacht()
