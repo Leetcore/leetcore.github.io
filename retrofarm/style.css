@@ -40,6 +40,9 @@ a:hover {
     line-height: 30px;
     transition: background 1s;
 }
+.blue {
+    border: 1px #2257f3 solid;
+}
 #menu {
     position: absolute;
     left: calc(50% + 200px);
