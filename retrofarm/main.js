@@ -56,7 +56,7 @@ $(document).ready(function() {
         if ($(this).hasClass("schlecht")) {
             $("#nachricht").text("Dieses Feld ist verdorrt. Du musst einen Pflug einsetzen, um verdorrte Felder neu bewirtschaften zu können.")
         } else if ($(this).hasClass("waechst")) {
-            // wächst noch!
+            $("#nachricht").text("Dieses Feld wächst noch.")
         } else if ($(this).hasClass("reif")) {                        
             for (var x = 0; x < inventar.length; x++) {
                 if (inventar[x].name == $(this).attr("data-name")) {
