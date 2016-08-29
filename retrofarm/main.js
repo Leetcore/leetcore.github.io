@@ -6,8 +6,8 @@ var inventar = [
     {name: "Gurken", anzahl: 0, farbe: "#3dd632", zeit: 5000, kosten: 5, verkauf: 25},
     {name: "Weizen", anzahl: 0, farbe: "#cedc47", zeit: 10000, kosten: 10, verkauf: 50},
     {name: "Bananen", anzahl: 0, farbe: "#f5d823", zeit: 15000, kosten: 20, verkauf: 100},
-    {name: "Ananas", anzahl: 0, farbe: "#9ba259", zeit: 25000, kosten: 50, verkauf: 160},
-    {name: "Melonen", anzahl: 0, farbe: "#688e28", zeit: 35000, kosten: 100, verkauf: 270},
+    {name: "Ananas", anzahl: 0, farbe: "#9ba259", zeit: 25000, kosten: 50, verkauf: 180},
+    {name: "Melonen", anzahl: 0, farbe: "#688e28", zeit: 35000, kosten: 100, verkauf: 300},
     {name: "Apfelbaum", anzahl: 0, farbe: "#d63737", zeit: 40000, kosten: 300, verkauf: 600},
     {name: "Wein", anzahl: 0, farbe: "#7a4884", zeit: 90000, kosten: 500, verkauf: 1200}
 ]
@@ -40,8 +40,8 @@ function renderInventar() {
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -250€</a><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -300€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie neu bewirtschaften.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verkaufsstand -2000€</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 10%.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="baueBewaesserung()">Bewässerungssystem -2500€</a><br/><span style="font-size:80%">Reduziert die Wachstumsphase bei einige Planzen um 2 Sekunden.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verkaufsstand -1500€</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 10%.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="baueBewaesserung()">Bewässerungssystem -2000€</a><br/><span style="font-size:80%">Reduziert die Wachstumsphase bei einige Planzen um 2 Sekunden.</span><br/>')
 }
 
 function randomNumberGen(min, max) {
@@ -145,7 +145,7 @@ function benutzeErnter() {
 }
 
 function weitererVerkaufsstand() {
-    geld = geld - 2000
+    geld = geld - 1500
     stats()
     for (var x = 0; x < inventar.length; x++) {
         inventar[x].preis = Math.round(inventar[x].verkauf * 1.1)
@@ -159,7 +159,7 @@ function ernteMaschine() {
 }
 
 function baueBewaesserung() {
-    geld = geld - 2500
+    geld = geld - 2000
     for (var x = 0; x < inventar.length; x++) {
         if (inventar[x].zeit > 15000) {
             inventar[x].zeit = inventar[x].zeit - 2000
