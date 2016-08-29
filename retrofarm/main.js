@@ -39,9 +39,9 @@ function renderInventar() {
         $("#menu").append('<a href="javascript:void(0)" onclick="auswahl = \''+ inventar[x].name +'\'">'+ inventar[x].name +' -'+ inventar[x].kosten +'€</a><br/>')
     }
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -450€</a><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -650€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie wieder bewirtschaften.</span><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verstaufsstand -2000€/min</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 50%.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -500€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie wieder bewirtschaften.</span>')
 }
 
 function randomNumberGen(min, max) {
@@ -94,10 +94,10 @@ $(document).ready(function() {
 });
 
 function startGerd() {
-    setTimeout(Gerd, randomNumberGen(3000,10000))
+    setTimeout(Gerd, randomNumberGen(5000,30000))
 }
 function Gerd() {
-    gerd = gerd + randomNumberGen(1,10)
+    gerd = gerd + randomNumberGen(20,100)
     stats()
     startGerd()
 }
@@ -110,7 +110,7 @@ function startPacht() {
 }
 
 function benutzePflug() {
-    geld = geld - 1000
+    geld = geld - 1500
     var felderanzahl = $(".schlecht").length
     $(".schlecht").removeClass("schlecht").removeClass("reif").removeClass("waechst")
     $(".schlecht").removeAttr("data-name")
@@ -153,7 +153,7 @@ function weitererVerkaufsstand() {
 
 function ernteMaschine() {
     benutzeErnter()
-    geld = geld - 300
+    geld = geld - 200
     setTimeout(ernteMaschine, 60000)
 }
 
