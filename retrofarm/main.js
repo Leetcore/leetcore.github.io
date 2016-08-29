@@ -26,11 +26,10 @@ function stats () {
     $("#geld").text(geld)
     $("#gerd").text(gerd)
     if (geld > gerd) {
-        $("#nachricht").text("Du hast Gerd überholt. Dieser alte Angeber!")
+        $("#stats").append("Du hast Gerd überholt. Dieser alte Angeber. Dem hast du es gezeigt!")
     }
     if (geld < -3500) {
         $("#nachricht").text("Du bist pleite!")
-
     }
 }
 
@@ -54,7 +53,7 @@ $(document).ready(function() {
         var y = $(this).attr("data-y")
 
         if ($(this).hasClass("schlecht")) {
-            $("#nachricht").text("Dieses Feld ist verdorrt. Du musst einen Pflug einsetzen, um verdorrte Felder wieder bewirtschaften zu können.")
+            $("#nachricht").text("Dieses Feld ist verdorrt. Du musst einen Pflug einsetzen, um verdorrte Felder neu bewirtschaften zu können.")
         } else if ($(this).hasClass("waechst")) {
             // wächst noch!
         } else if ($(this).hasClass("reif")) {                        
@@ -97,7 +96,7 @@ function startGerd() {
     setTimeout(Gerd, randomNumberGen(5000,20000))
 }
 function Gerd() {
-    gerd = gerd + randomNumberGen(20,500)
+    gerd = gerd + randomNumberGen(100,600)
     stats()
     startGerd()
 }
