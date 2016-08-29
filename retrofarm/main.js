@@ -41,7 +41,7 @@ function renderInventar() {
     $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -650€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie neu bewirtschaften.</span><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verkaufsstand -2000€</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 10%.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="baueBewaesserung()">Bewässerungssystem -3500€</a><br/><span style="font-size:80%">Reduziert die Wachstumsphase bei einige Planzen um 2 Sekunden.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="baueBewaesserung()">Bewässerungssystem -2500€</a><br/><span style="font-size:80%">Reduziert die Wachstumsphase bei einige Planzen um 2 Sekunden.</span><br/>')
 }
 
 function randomNumberGen(min, max) {
@@ -159,7 +159,7 @@ function ernteMaschine() {
 }
 
 function baueBewaesserung() {
-    geld = geld - 3500
+    geld = geld - 2500
     for (var x = 0; x < inventar.length; x++) {
         if (inventar[x].zeit > 15000) {
             inventar[x].zeit = inventar[x].zeit - 2000
