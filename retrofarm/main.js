@@ -111,10 +111,11 @@ function startPacht() {
 function benutzePflug() {
     geld = geld - 1500
     var felderanzahl = $(".schlecht").length
-    $(".schlecht").removeClass("schlecht").removeClass("reif").removeClass("waechst")
     $(".schlecht").removeAttr("data-name")
     $(".schlecht").css("background-color", "")
     $(".schlecht").text("")
+    $(".schlecht").removeClass("reif").removeClass("waechst")
+    $(".schlecht").removeClass("schlecht")
     $("#nachricht").text("Du hast "+ felderanzahl +" verdorrte Felder entfernt.")
     stats()
 }
