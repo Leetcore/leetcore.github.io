@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to top, #90b78d 0%, #62a256 95%);
+    background-image: repeating-linear-gradient(#62a256, #90b78d);
     background-color: #90b78d;
     font-family: sans-serif;
     line-height: 150%;
