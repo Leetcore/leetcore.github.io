@@ -105,7 +105,7 @@ function Gerd() {
 function startPacht() {
     geld = geld - 1500
     var ueberziehungszinsen = ""
-    if (geld > 0) {
+    if (geld < 0) {
         geld = geld - (geld * 0.15)
         var ueberziehungszinsen = "und "+ geld * 0.15 +"€ Überziehungszinsen "
     }
