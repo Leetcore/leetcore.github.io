@@ -21,6 +21,7 @@ a:hover {
     margin: 0 auto;
     border-top: 3px #a26524 dashed;
     border-bottom: 3px #a26524 dashed;
+    line-height: 180%;
 }
 
 .gameover {
