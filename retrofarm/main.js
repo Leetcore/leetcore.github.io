@@ -26,7 +26,7 @@ function stats () {
     $("#geld").text(geld)
     $("#gerd").text(gerd)
     if (geld > gerd) {
-        $("#gewinner").text("Du hast Gerd überholt. Dieser alte Angeber. Dem hast du es gezeigt!")
+        $("#gewinner").html('<span style="color: #f32222">Du hast Gerd überholt.</span> Dieser alte Angeber. Dem hast du es gezeigt!')
     }
     if (geld < -3500) {
         $("#nachricht").text("Du bist pleite!")
