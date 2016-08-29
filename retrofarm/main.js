@@ -1,4 +1,4 @@
-var auswahl = "Weizen"
+var auswahl = "Gurken"
 var geld = 4500
 var gerd = 7500
 
@@ -40,7 +40,7 @@ function renderInventar() {
     }
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1000€</a><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -150€</a><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verstaufsstand (Verkauf * 2) -200€/min</a><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verstaufsstand -200€/min</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 50%.</span><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -250€/min</a><br/>')
 }
 
@@ -78,7 +78,7 @@ $(document).ready(function() {
                     $(this).text(inventar[x].name.substr(0,1))
                     geld = geld - inventar[x].kosten
                     setTimeout(function () {
-                        if (randomNumberGen(0,3) == 0) {
+                        if (randomNumberGen(0,4) == 0) {
                             $(savedElement).removeClass("waechst")
                             $(savedElement).addClass("schlecht")
                         } else {
@@ -103,8 +103,8 @@ function Gerd() {
 }
 
 function startPacht() {
-    $("#nachricht").text("Du hast deine Pacht von -1500€ gezahlt!")
-    geld = geld - 1500
+    geld = geld - 1000
+    $("#nachricht").text("Du hast deine Pacht von -1000€ gezahlt!")
     setTimeout(startPacht, 60000)
     stats()
 }
