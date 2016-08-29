@@ -153,7 +153,7 @@ function weitererVerkaufsstand() {
     geld = geld - 1500
     stats()
     for (var x = 0; x < inventar.length; x++) {
-        inventar[x].preis = Math.round(inventar[x].verkauf * 1.1)
+        inventar[x].verkauf = inventar[x].verkauf + Math.round(inventar[x].verkauf * 1.1)
     }
 }
 
