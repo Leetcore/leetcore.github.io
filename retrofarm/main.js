@@ -1,12 +1,12 @@
 var auswahl = "Gurken"
 var geld = 4500
-var gerd = 7500
+var gerd = 5000
 
 var inventar = [
     {name: "Gurken", anzahl: 0, farbe: "#3dd632", zeit: 5000, kosten: 5, verkauf: 25},
     {name: "Weizen", anzahl: 0, farbe: "#cedc47", zeit: 10000, kosten: 10, verkauf: 50},
     {name: "Bananen", anzahl: 0, farbe: "#f5d823", zeit: 20000, kosten: 20, verkauf: 75},
-    {name: "Ananas", anzahl: 0, farbe: "#fff971", zeit: 35000, kosten: 50, verkauf: 150},
+    {name: "Ananas", anzahl: 0, farbe: "#9ba259", zeit: 35000, kosten: 50, verkauf: 150},
     {name: "Melonen", anzahl: 0, farbe: "#688e28", zeit: 45000, kosten: 100, verkauf: 250},
     {name: "Apfelbaum", anzahl: 0, farbe: "#d63737", zeit: 60000, kosten: 200, verkauf: 600},
     {name: "Wein", anzahl: 0, farbe: "#7a4884", zeit: 120000, kosten: 500, verkauf: 1200}
@@ -26,7 +26,7 @@ function stats () {
     $("#geld").text(geld)
     $("#gerd").text(gerd)
     if (geld > gerd) {
-        $("#stats").append("Du hast Gerd überholt. Dieser alte Angeber. Dem hast du es gezeigt!")
+        $("#gewinner").text("Du hast Gerd überholt. Dieser alte Angeber. Dem hast du es gezeigt!")
     }
     if (geld < -3500) {
         $("#nachricht").text("Du bist pleite!")
@@ -40,7 +40,7 @@ function renderInventar() {
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -450€</a><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -650€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie neu bewirtschaften.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verstaufsstand -2000€/min</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 50%.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verstaufsstand -2000€</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 10%.</span><br/>')
 }
 
 function randomNumberGen(min, max) {
@@ -93,10 +93,10 @@ $(document).ready(function() {
 });
 
 function startGerd() {
-    setTimeout(Gerd, randomNumberGen(5000,20000))
+    setTimeout(Gerd, randomNumberGen(10000,20000))
 }
 function Gerd() {
-    gerd = gerd + randomNumberGen(100,600)
+    gerd = gerd + randomNumberGen(10,300)
     stats()
     startGerd()
 }
@@ -147,9 +147,8 @@ function weitererVerkaufsstand() {
     geld = geld - 2000
     stats()
     for (var x = 0; x < inventar.length; x++) {
-        inventar[x].preis = Math.round(inventar[x].verkauf * 1.5)
+        inventar[x].preis = Math.round(inventar[x].verkauf * 1.1)
     }
-    setTimeout(function () {geld = geld - 2000}, 60000)
 }
 
 function ernteMaschine() {
