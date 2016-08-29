@@ -104,7 +104,12 @@ function Gerd() {
 
 function startPacht() {
     geld = geld - 1500
-    $("#nachricht").text("Du hast deine Pacht von -1500€ gezahlt!")
+    var ueberziehungszinsen = ""
+    if (geld > 0) {
+        geld = geld - (geld * 0.15)
+        var ueberziehungszinsen = "und "+ geld * 0.15 +"€ Überziehungszinsen "
+    }
+    $("#nachricht").text("Du hast deine Pacht von -1500€ "+ ueberziehungszinsen +"gezahlt!")
     setTimeout(startPacht, 60000)
     stats()
 }
