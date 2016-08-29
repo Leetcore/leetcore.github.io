@@ -38,10 +38,10 @@ function renderInventar() {
     for (var x = 0; x < inventar.length; x++) {
         $("#menu").append('<a href="javascript:void(0)" onclick="auswahl = \''+ inventar[x].name +'\'">'+ inventar[x].name +' -'+ inventar[x].kosten +'€</a><br/>')
     }
-    $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -150€</a><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verstaufsstand -200€/min</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 50%.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -250€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1000€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie wieder bewirtschaften.</span>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -450€</a><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verstaufsstand -2000€/min</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 50%.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -500€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie wieder bewirtschaften.</span>')
 }
 
 function randomNumberGen(min, max) {
@@ -103,8 +103,8 @@ function Gerd() {
 }
 
 function startPacht() {
-    geld = geld - 1000
-    $("#nachricht").text("Du hast deine Pacht von -1000€ gezahlt!")
+    geld = geld - 1500
+    $("#nachricht").text("Du hast deine Pacht von -1500€ gezahlt!")
     setTimeout(startPacht, 60000)
     stats()
 }
@@ -122,7 +122,7 @@ function benutzePflug() {
 
 function benutzeErnter() {
     if (geld > -3500) {
-        geld = geld - 150
+        geld = geld - 450
 
         var gespeicherteFelder = $(".reif").length
 
@@ -144,16 +144,16 @@ function benutzeErnter() {
 }
 
 function weitererVerkaufsstand() {
-    geld = geld - 200
+    geld = geld - 2000
     for (var x = 0; x < inventar.length; x++) {
         inventar[x].preis = Math.round(inventar[x].verkauf * 1.5)
     }
-    setTimeout(function () {geld = geld - 200}, 60000)
+    setTimeout(function () {geld = geld - 2000}, 60000)
 }
 
 function ernteMaschine() {
     benutzeErnter()
-    geld = geld - 50
+    geld = geld - 300
     setTimeout(ernteMaschine, 60000)
 }
 
