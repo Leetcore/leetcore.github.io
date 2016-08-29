@@ -47,7 +47,7 @@ a:hover {
     position: absolute;
     left: calc(50% + 200px);
     font-size: 90%;
-    min-width: 100px;
+    min-width: 200px;
 }
 .waechst {
     cursor: wait;
