@@ -94,7 +94,7 @@ $(document).ready(function() {
 });
 
 function startGerd() {
-    setTimeout(Gerd, randomNumberGen(10000,20000))
+    setTimeout(Gerd, randomNumberGen(5000,18000))
 }
 function Gerd() {
     gerd = gerd + randomNumberGen(100,500)
