@@ -38,10 +38,10 @@ function renderInventar() {
     for (var x = 0; x < inventar.length; x++) {
         $("#menu").append('<a href="javascript:void(0)" onclick="auswahl = \''+ inventar[x].name +'\'">'+ inventar[x].name +' -'+ inventar[x].kosten +'€</a><br/>')
     }
-    $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1000€</a><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -150€</a><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1000€</a><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verstaufsstand -200€/min</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise dauerhaft um 50%.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -250€/min</a><br/>')
+    $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -250€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span>')
 }
 
 function randomNumberGen(min, max) {
@@ -146,7 +146,7 @@ function benutzeErnter() {
 function weitererVerkaufsstand() {
     geld = geld - 200
     for (var x = 0; x < inventar.length; x++) {
-        inventar[x].preis = Math.round(inventar[x].verkauf * 2)
+        inventar[x].preis = Math.round(inventar[x].verkauf * 1.5)
     }
     setTimeout(function () {geld = geld - 200}, 60000)
 }
