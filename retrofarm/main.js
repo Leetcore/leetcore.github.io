@@ -2,8 +2,8 @@ var auswahl = "Gurken"
 var geld = 4500
 var gerd = 5000
 
-var verkaufsstand = 0
-var bewaesserung = 0
+var verkaufsstand = 1
+var bewaesserung = 1
 
 var inventar = [
     {name: "Gurken", anzahl: 0, farbe: "#3dd632", zeit: 5000, kosten: 5, verkauf: 25},
@@ -163,7 +163,7 @@ function weitererVerkaufsstand() {
     } else {
         $("#nachricht").text("Du hast nicht genügend Geld...")
     }
-    if (verkaufsstand > 10) {
+    if (verkaufsstand >= 5) {
         $("#verkaufsstand").remove()
     }    
 }
@@ -189,7 +189,7 @@ function baueBewaesserung() {
     } else {
         $("#nachricht").text("Du hast nicht genügend Geld...")
     }
-    if (bewaesserung > 20) {
+    if (bewaesserung >= 20) {
         $("#bewaesserung").remove()
     }
 }
