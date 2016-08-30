@@ -57,7 +57,7 @@ $(document).ready(function() {
         var y = $(this).attr("data-y")
 
         if ($(this).hasClass("schlecht")) {
-            $("#nachricht").text("Dieses Feld ist verdorrt. Du musst einen Pflug einsetzen, um verdorrte Felder neu bewirtschaften zu können.")
+            $("#nachricht").text("Dieses Feld ist verdorrt. Du musst sie entfernen lassen, um sie neu bewirtschaften zu können.")
         } else if ($(this).hasClass("waechst")) {
             $("#nachricht").text("Dieses Feld wächst noch.")
         } else if ($(this).hasClass("reif")) {                        
