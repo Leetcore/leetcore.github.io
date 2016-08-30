@@ -163,7 +163,7 @@ function weitererVerkaufsstand() {
     } else {
         $("#nachricht").text("Du hast nicht genügend Geld...")
     }
-    if (verkaufsstand >= 5) {
+    if (verkaufsstand >= 3) {
         $("#verkaufsstand").remove()
     }    
 }
