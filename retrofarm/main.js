@@ -2,6 +2,9 @@ var auswahl = "Gurken"
 var geld = 4500
 var gerd = 5000
 
+var verkaufsstand = 0
+var bewaesserung = 0
+
 var inventar = [
     {name: "Gurken", anzahl: 0, farbe: "#3dd632", zeit: 5000, kosten: 5, verkauf: 25},
     {name: "Weizen", anzahl: 0, farbe: "#cedc47", zeit: 10000, kosten: 10, verkauf: 50},
@@ -40,8 +43,8 @@ function renderInventar() {
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -250€</a><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -300€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie neu bewirtschaften.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verkaufsstand -2000€</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise um 5%.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" onclick="baueBewaesserung()">Bewässerungssystem -2200€</a><br/><span style="font-size:80%">Reduziert die Wachstumsphase bei vielen Planzen um 2 Sekunden.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" id="verkaufsstand" onclick="weitererVerkaufsstand()">Verkaufsstand -2000€</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise um 5%.</span><br/>')
+    $("#menu").append('<a href="javascript:void(0)" id="bewaesserung" onclick="baueBewaesserung()">Bewässerungssystem -2200€</a><br/><span style="font-size:80%">Reduziert die Wachstumsphase bei vielen Planzen um 2 Sekunden.</span><br/>')
 }
 
 function randomNumberGen(min, max) {
@@ -156,9 +159,13 @@ function weitererVerkaufsstand() {
         for (var x = 0; x < inventar.length; x++) {
             inventar[x].verkauf = Math.round(inventar[x].verkauf * 1.05)
         }
+        verkaufsstand = verkaufsstand + 1
     } else {
         $("#nachricht").text("Du hast nicht genügend Geld...")
     }
+    if (verkaufsstand > 10) {
+        $("#verkaufsstand").remove()
+    }    
 }
 
 function ernteMaschine() {
@@ -177,9 +184,13 @@ function baueBewaesserung() {
         }
         //$(".feld").css("border", "1px #2257f3 solid")
         $(".feld").addClass("blue")
+        bewaesserung = bewaesserung + 1
         stats()
     } else {
         $("#nachricht").text("Du hast nicht genügend Geld...")
+    }
+    if (bewaesserung > 10) {
+        $("#bewaesserung").remove()
     }
 }
 
