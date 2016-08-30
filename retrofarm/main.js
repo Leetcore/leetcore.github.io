@@ -150,10 +150,14 @@ function benutzeErnter() {
 }
 
 function weitererVerkaufsstand() {
-    geld = geld - 2000
-    stats()
-    for (var x = 0; x < inventar.length; x++) {
-        inventar[x].verkauf = Math.round(inventar[x].verkauf * 1.05)
+    if (geld > 2000) {
+        geld = geld - 2000
+        stats()
+        for (var x = 0; x < inventar.length; x++) {
+            inventar[x].verkauf = Math.round(inventar[x].verkauf * 1.05)
+        }
+    } else {
+        $("#nachricht").text("Du hast nicht genügend Geld...")
     }
 }
 
@@ -164,15 +168,19 @@ function ernteMaschine() {
 }
 
 function baueBewaesserung() {
-    geld = geld - 2200
-    for (var x = 0; x < inventar.length; x++) {
-        if (inventar[x].zeit > 15000) {
-            inventar[x].zeit = inventar[x].zeit - 2000
+    if (geld > 2200) {
+        geld = geld - 2200
+        for (var x = 0; x < inventar.length; x++) {
+            if (inventar[x].zeit > 15000) {
+                inventar[x].zeit = inventar[x].zeit - 2000
+            }
         }
+        //$(".feld").css("border", "1px #2257f3 solid")
+        $(".feld").addClass("blue")
+        stats()
+    } else {
+        $("#nachricht").text("Du hast nicht genügend Geld...")
     }
-    //$(".feld").css("border", "1px #2257f3 solid")
-    $(".feld").addClass("blue")
-    stats()
 }
 
 startPacht()
