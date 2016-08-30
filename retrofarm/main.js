@@ -28,8 +28,8 @@ function stats () {
     if (geld > gerd) {
         $("#gewinner").html('<span style="color: #b51212">Du hast Gerd überholt.</span> Dieser alte Angeber. Dem hast du es gezeigt!')
     }
-    if (geld < -3500) {
-        $("#nachricht").text("Du bist pleite!")
+    if (geld < -2500) {
+        $("#nachricht").text("Du bist pleite und die Bank gibt dir keinen Kredit mehr!")
     }
 }
 
@@ -70,7 +70,7 @@ $(document).ready(function() {
             }
         } else {
             for (var x = 0; x < inventar.length; x++) {
-                if (inventar[x].name == auswahl && geld > -3500) {
+                if (inventar[x].name == auswahl && geld > -2500) {
                     var savedElement = this
                     $(this).addClass("waechst")
                     $(this).attr("data-name", auswahl)
@@ -127,7 +127,7 @@ function benutzePflug() {
 }
 
 function benutzeErnter() {
-    if (geld > -3500) {
+    if (geld > -2500) {
         geld = geld - 250
 
         var gespeicherteFelder = $(".reif").length
