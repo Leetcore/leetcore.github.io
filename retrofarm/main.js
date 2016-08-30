@@ -43,8 +43,8 @@ function renderInventar() {
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzeErnter()">Alle Felder ernten -250€</a><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="ernteMaschine()">Erntemaschine -300€/min</a><br/><span style="font-size:80%">Erntet alle reifen Felder jede Minute.</span><br/>')
     $("#menu").append('<a href="javascript:void(0)" onclick="benutzePflug()">Verdorrte Felder entfernen -1500€</a><br/><span style="font-size:80%">Verdorrte Felder nehmen Platz weg. Damit kannst du sie neu bewirtschaften.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" id="verkaufsstand" onclick="weitererVerkaufsstand()">Verkaufsstand -2000€</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise um 5%.</span><br/>')
-    $("#menu").append('<a href="javascript:void(0)" id="bewaesserung" onclick="baueBewaesserung()">Bewässerungssystem -2200€</a><br/><span style="font-size:80%">Reduziert die Wachstumsphase bei vielen Planzen um 2 Sekunden.</span><br/>')
+    $("#menu").append('<span id="verkaufsstand"><a href="javascript:void(0)" onclick="weitererVerkaufsstand()">Verkaufsstand -2000€</a><br/><span style="font-size:80%">Erhöht die Verkaufspreise um 5%.</span><br/></span>')
+    $("#menu").append('<span id="bewaesserung"><a href="javascript:void(0)" onclick="baueBewaesserung()">Bewässerungssystem -2200€</a><br/><span style="font-size:80%">Reduziert die Wachstumsphase bei vielen Planzen um 2 Sekunden.</span><br/></span>')
 }
 
 function randomNumberGen(min, max) {
