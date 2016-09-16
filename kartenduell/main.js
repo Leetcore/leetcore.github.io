@@ -33,13 +33,15 @@ function renderKarte (kartenname) {
 
 function aufEmpfang () {
     peer = new Peer(myId, {key: '5f9a43l0izfr'});
+    
     peer.on('open', function(id) {
         message("Deine Verbindungsnummer ist " + id)
         // console.log('My peer ID is: ' + id);
     });
     
-    peer.on('error', function(err) { 
-        message("Verbindungsnummer vergeben...")
+    peer.on('error', function(err) {
+        peer.disconnect()
+        message("Verbindungsnummer vergeben..." +err)
         myId++
         aufEmpfang ()
     });
