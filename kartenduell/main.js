@@ -12,6 +12,7 @@ var deineKarten = [
     {name: "Gute Fee", leben: 15, angriff: 5, verteidigung: 13, instant: "Hexe"},
     {name: "Drache", leben: 18, angriff: 5, verteidigung: 12, instant: "Magier"}
 ]
+
 var gegnerKarten = []
 var Ichbindran = true
 var Runde = 0
@@ -27,11 +28,11 @@ function init() {
     sucheGegner()
 }
 
-function renderKarte (kartenname) {
+function renderKarte(kartenname) {
     $("")
 }
 
-function aufEmpfang () {
+function aufEmpfang() {
     peer = new Peer(myId, {key: '5f9a43l0izfr'});
     
     peer.on('open', function(id) {
@@ -41,13 +42,17 @@ function aufEmpfang () {
     
     peer.on('error', function(err) {
         peer.disconnect()
-        message("Verbindungsnummer vergeben..." +err)
-        myId++
-        aufEmpfang ()
+        message(err)
+        if (myId <= 20) {
+            myId++
+            aufEmpfang ()
+        } else {
+            message("Keine Verbindungsnummer ist frei. Versuche es später wieder...")
+        }
     });
 }
 
-function sucheGegner () {
+function sucheGegner() {
     conn = peer.connect(yourId);
     
     conn.on('connection', function(conn) {
@@ -60,11 +65,31 @@ function sucheGegner () {
     
     conn.on('error', function(err) { 
         message("Verbindung nicht möglich.")
-        yourId++
-        sucheGegner ()
+        if (yourId >= 20) {
+            yourId++
+            sucheGegner()
+        } else {
+            message ("Es wurde kein menschlicher Gegner gefunden. Bot-Modus startet.")
+            botMode()
+        }
     });
 }
 
+function botMode() {
+    
+}
+
+function duell() {
+    // karten, werte
+    // kampf
+    
+    runde ()
+}
+
+function runde () {
+    // spieler kann wieder ziehen oder wartet auf zug
+    // 20 sec timeout
+}
 function message (text) {
     $("div#message").append("<p>" + text + "</p>")
     if ($("div#message p").length > 20) {
