@@ -27,30 +27,44 @@ a:hover {
     background-color: #cc4646;
 }
 
-#hand .karte {
-    width: 27%;
-    float: left;
-    margin: 10px;
+#feld {
+    width: 100px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px #DDD solid;
 }
-#hand .karte #angriff, #hand .karte #verteidigung, #hand .karte #leben {
-    float: right;
-    margin-right: 10px;
+
+#hand {
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#hand .karte #angriff::before {
+#hand .karte {
+    width: 100px;
+    float: left;
+    padding: 10px;
+    border: 1px #DDD solid;
+}
+
+.karte #angriff, .karte #verteidigung, .karte #leben {
+    float: right;
+    margin-right: 5px;
+}
+
+.karte #angriff::before {
     content: '⚔';
 }
 
-#hand .karte #verteidigung::before {
+.karte #verteidigung::before {
     content: '⛨';
 }
 
-#hand .karte #leben::before {
+.karte #leben::before {
     content: '❤';
 }
 
-#hand .karte #name {
+.karte #name {
     clear: both
 }
 .karte .aktiv {

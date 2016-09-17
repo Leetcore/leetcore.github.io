@@ -13,8 +13,8 @@ var alleKarten = [
     {name: "Drache", leben: 18, angriff: 5, verteidigung: 12, instant: "Magier", benutzt: false}
 ]
 
-var gegnerKarten = []
-var deineKarten = alleKarten
+var gegnerKarten = alleKarten.slice(0)
+var deineKarten = alleKarten.slice(0)
 var Ichbindran = true
 var Runde = 0
 var myId = 1
@@ -23,8 +23,6 @@ var peer;
 var conn;
 
 function init() {
-    // kopiere array für gegnerKarten
-    gegnerKarten = deineKarten
     message("Willkommen")
     
     // karten austeilen
@@ -32,8 +30,7 @@ function init() {
     
     //aufEmpfang()
     botMode()
-    
-    
+    runde()
 }
 
 function renderKarte(divstring) {
@@ -125,7 +122,7 @@ function neueKarte(anzahl) {
             var zufallsKarte = deineKarten[zufallszahl].name
             $("#hand").append('<div class="karte" data-name="' + zufallsKarte + '" data-owner="spieler"></div>')
             renderKarte(".karte[data-name='"+ zufallsKarte +"']")
-            deineKarten.splice(zufallszahl, 1)
+            deineKarten.splice(zufallszahl,1)
         } else {
             message("Karten leer...")
         }
@@ -148,8 +145,11 @@ function duell(werfaengtan) {
 }
 
 function runde () {
-    // spieler kann wieder ziehen oder wartet auf zug
-    // 20 sec timeout
+    if (Ichbindran == true) {
+        Kartespielbar (true)
+    } else {
+        Kartespielbar (false)
+    }
 }
 
 function message (text) {
@@ -159,13 +159,18 @@ function message (text) {
     }
 }
 
-$("#frame").on('click', 'div.karte[data-owner=spieler]', function() {
-    // karte  
-    message($(this).attr("data-name"))
-    $("#feld").attr("data-name", $(this).attr("data-name"))
-    renderKarte("#feld")
-    $(this).remove()
-    neueKarte(1)
-})
-
+function Kartespielbar (bool) {
+    if (bool == true) {
+        $("#frame").on('click', 'div.karte[data-owner=spieler]', function() {
+            // karte  
+            message($(this).attr("data-name"))
+            $("#feld").attr("data-name", $(this).attr("data-name"))
+            renderKarte("#feld")
+            $(this).remove()
+            neueKarte(1)
+        })
+    } else {
+        $("#frame").off('click', 'div.karte[data-owner=spieler]')
+    }
+}
 init()
