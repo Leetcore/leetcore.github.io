@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to top, #90b78d 0%, #62a256 95%);
+    background-image: linear-gradient(to top, #d496a7 0%, #ce5b61 95%);
     background-color: #90b78d;
     font-family: sans-serif;
     line-height: 150%;
@@ -17,12 +17,46 @@ a:hover {
 }
 
 #frame {
-    max-width: 320px;
+    max-width: 420px;
     margin: 0 auto;
     border: 3px #a26524 dashed;
-    padding: 20px;
+    padding: 5px;
 }
 
 .gameover {
     background-color: #cc4646;
+}
+
+#hand .karte {
+    width: 27%;
+    float: left;
+    margin: 10px;
+    border: 1px #DDD solid;
+}
+#hand .karte #angriff, #hand .karte #verteidigung, #hand .karte #leben {
+    float: right;
+    margin-right: 10px;
+}
+
+#hand .karte #angriff::before {
+    content: '⚔';
+}
+
+#hand .karte #verteidigung::before {
+    content: '⛨';
+}
+
+#hand .karte #leben::before {
+    content: '❤';
+}
+
+#hand .karte #name {
+    clear: both
+}
+.karte .aktiv {
+    width: 100%;
+}
+
+#message {
+    clear: both
 }
