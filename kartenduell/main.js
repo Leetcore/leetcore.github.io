@@ -41,13 +41,13 @@ function renderKarte(divstring) {
     
     $(divstring).append('<div id="angriff"></div><div id="verteidigung"></div><div id="leben"></div><div id="name"></div>')
     
-    for (var index = 0; index < gegnerKarten.length; index++) {
-        if (kartename == gegnerKarten[index].name) {
+    for (var index = 0; index < alleKarten.length; index++) {
+        if (kartename == alleKarten[index].name) {
             $(divstring).css("background-image", "")
-            $(divstring).find("#angriff").text(gegnerKarten[index].angriff)
-            $(divstring).find("#verteidigung").text(gegnerKarten[index].verteidigung)
-            $(divstring).find("#leben").text(gegnerKarten[index].leben)
-            $(divstring).find("#name").text(gegnerKarten[index].name)
+            $(divstring).find("#angriff").text(alleKarten[index].angriff)
+            $(divstring).find("#verteidigung").text(alleKarten[index].verteidigung)
+            $(divstring).find("#leben").text(alleKarten[index].leben)
+            $(divstring).find("#name").text(alleKarten[index].name)
         }
     }
 }
@@ -120,19 +120,31 @@ function randomNumberGen(min, max) {
 
 function neueKarte(anzahl) {
     for (var x = 0; x < anzahl; x++) {
-        var zufallszahl = randomNumberGen(0, deineKarten.length - 1)
-        var zufallsKarte = deineKarten[zufallszahl].name
-        $("#hand").append('<div class="karte" data-name="' + zufallsKarte + '" data-owner="spieler"></div>')
-        renderKarte(".karte[data-name='"+ zufallsKarte +"']")
-        deineKarten.splice(zufallszahl, 1)
+        if (deineKarten.length > 0) {
+            var zufallszahl = randomNumberGen(0, deineKarten.length - 1)
+            var zufallsKarte = deineKarten[zufallszahl].name
+            $("#hand").append('<div class="karte" data-name="' + zufallsKarte + '" data-owner="spieler"></div>')
+            renderKarte(".karte[data-name='"+ zufallsKarte +"']")
+            deineKarten.splice(zufallszahl, 1)
+        } else {
+            message("Karten leer...")
+        }
     }
 }
 
-function duell() {
-    // karten, werte
-    // kampf
+function duell(werfaengtan) {
+    var karteGegner = $("#gegner").attr("data-name")
+    var karteSpieler = $("#feld").attr("data-name")
+
     
-    runde ()
+    if (karteGegner != "" && karteSpieler != "") {
+        if (werfaengtan == 0) {
+            $()
+        }
+        // kampf
+        // wiederholen
+        setTimeout(duell, 1000)
+    }
 }
 
 function runde () {
@@ -150,6 +162,10 @@ function message (text) {
 $("#frame").on('click', 'div.karte[data-owner=spieler]', function() {
     // karte  
     message($(this).attr("data-name"))
+    $("#feld").attr("data-name", $(this).attr("data-name"))
+    renderKarte("#feld")
+    $(this).remove()
+    neueKarte(1)
 })
 
 init()
