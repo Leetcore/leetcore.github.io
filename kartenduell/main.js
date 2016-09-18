@@ -123,21 +123,21 @@ function neueKarte(anzahl) {
     }
 }
 
-function duell() {     
-    if ($("#gegner #verteidigung").text() > 0 && Ichbindran == false) {
+function duell() {
+    if ($("#gegner #verteidigung").text() > 0 && tempRunde == false) {
         $("#gegner #verteidigung").text(parseInt($("#gegner #verteidigung").text()) - parseInt($("#feld #angriff").text()))
-    } else if ($("#gegner #verteidigung").text() > 0 && Ichbindran == true) {
+    } else if ($("#feld #verteidigung").text() > 0 && tempRunde == true) {
         $("#feld #verteidigung").text(parseInt($("#feld #verteidigung").text()) - parseInt($("#gegner #angriff").text()))
     }
-    if ($("#gegner #verteidigung").text() <= 0 && Ichbindran == false) {
+    if ($("#gegner #verteidigung").text() <= 0 && tempRunde == false) {
         $("#gegner #leben").text(parseInt($("#gegner #leben").text()) - parseInt($("#feld #angriff").text()))
-    } else if ($("#gegner #verteidigung").text() <= 0 && Ichbindran == true) {
+    } else if ($("#feld #verteidigung").text() <= 0 && tempRunde == true) {
         $("#feld #leben").text(parseInt($("#feld #leben").text()) - parseInt($("#gegner #angriff").text()))
     }
 
     if ($("#gegner #leben").text() <= 0) {
         $("#gegner").empty()
-        $("#gegner").attr("data-name", undefined)
+        $("#gegner").attr("data-name", "")
         if (Ichbindran == true) {
             Ichbindran = false
         } else {
@@ -148,7 +148,7 @@ function duell() {
 
     if ($("#feld #leben").text() <= 0) {
         $("#feld").empty()
-        $("#feld").attr("data-name", undefined)
+        $("#feld").attr("data-name", "")
         if (Ichbindran == true) {
             Ichbindran = false
         } else {
@@ -161,6 +161,11 @@ function duell() {
     $("#deinLeben").text(deinLeben)
 
     if ($("#feld #leben").text() > 0 && $("#gegner #leben").text() > 0) {
+        if (tempRunde == true) {
+            tempRunde == false
+        } else {
+            tempRunde == true
+        }
         setTimeout(duell, 1000)
     }
 }
@@ -170,6 +175,7 @@ function runde () {
     var karteSpieler = $("#feld").attr("data-name")
 
     if (karteGegner != undefined && karteSpieler != undefined) {
+        tempRunde = Ichbindran
         duell()
     } else if (karteSpieler == undefined) {
         Ichbindran = true
