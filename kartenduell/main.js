@@ -130,6 +130,11 @@ function warteaufZug() {
             $("#gegner").attr("data-name", gegnerAuswahl)
             renderKarte("#gegner")
             message("Gegner hat " + gegnerAuswahl + " gespielt.")
+            for (var index = 0; index < gegnerKarten.length; index++) {
+                if (gegnerKarten[index].name == computerKarte) {
+                    gegnerKarten.splice(index,1)
+                }
+            }
             gegnerAuswahl = ""
             Ichbindran = true
             runde()
@@ -147,13 +152,18 @@ function warteaufZug() {
             renderKarte("#gegner")
             message("Computer hat " + computerKarte + " gespielt.")
             Ichbindran = true
+            for (var index = 0; index < gegnerKarten.length; index++) {
+                if (gegnerKarten[index].name == computerKarte) {
+                    gegnerKarten.splice(index,1)
+                }
+            }
             runde()
         }, 3000)
     }
 }
 
 function zieheBotKarte() {
-    return gegnerKarten[randomNumberGen(0, gegnerKarten.length) - 1].name
+    return gegnerKarten[randomNumberGen(0, gegnerKarten.length - 1)].name
 }
 
 function randomNumberGen(min, max) {
@@ -175,14 +185,14 @@ function neueKarte(anzahl) {
 }
 
 function duell() {
-    if ($("#gegner #verteidigung").text() > 0 && tempRunde == true) {
+    if ($("#gegner #verteidigung").text() > 0 && parseInt($("#feld #angriff").text()) > 0 &&tempRunde == true) {
         $("#gegner #verteidigung").text(parseInt($("#gegner #verteidigung").text()) - parseInt($("#feld #angriff").text()))
-    } else if ($("#feld #verteidigung").text() > 0 && tempRunde == false) {
+    } else if ($("#feld #verteidigung").text() > 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
         $("#feld #verteidigung").text(parseInt($("#feld #verteidigung").text()) - parseInt($("#gegner #angriff").text()))
     }
-    if ($("#gegner #verteidigung").text() <= 0 && tempRunde == true) {
+    if ($("#gegner #verteidigung").text() <= 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
         $("#gegner #leben").text(parseInt($("#gegner #leben").text()) - parseInt($("#feld #angriff").text()))
-    } else if ($("#feld #verteidigung").text() <= 0 && tempRunde == false) {
+    } else if ($("#feld #verteidigung").text() <= 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
         $("#feld #leben").text(parseInt($("#feld #leben").text()) - parseInt($("#gegner #angriff").text()))
     }
 
@@ -230,21 +240,19 @@ function runde () {
         duell()
     } else if (karteSpieler == undefined) {
         Ichbindran = true
-    } else if (karteGegner == undefined) {
-        Ichbindran = false
-    }
-    
-    if (Ichbindran == true) {
-        SpielerZug()
-        message("Du bist an der Reihe!")
         if ($("#hand .karte").length <= 2) {
             neueKarte(1)
         }
-    }
-
-    if (Ichbindran == false) {
-        message("Dein Gegner ist an der Reihe!")
-        warteaufZug()  
+        if (Ichbindran == true) {
+           SpielerZug()
+            message("Du bist an der Reihe!")        
+        }
+    } else if (karteGegner == undefined) {
+        Ichbindran = false
+        if (Ichbindran == false) {
+            message("Dein Gegner ist an der Reihe!")
+            warteaufZug()  
+        }
     }
 
     $("#gegnerId").text(gegnerId)
