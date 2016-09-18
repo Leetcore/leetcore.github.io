@@ -48,6 +48,12 @@ a {
     margin-left: 8px;
     padding: 5px;
     border: 3px #333 solid;
+    transition: 1s all ease;
+}
+
+#hand .karte:hover {
+    transform: scale(1.25); 
+    transition: 1s all ease;
 }
 
 #name {
@@ -93,9 +99,6 @@ a {
 
 .karte #name {
     clear: both
-}
-.karte .aktiv {
-    width: 100%;
 }
 #message {
     padding-top: 5px;
