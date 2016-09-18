@@ -141,12 +141,14 @@ function warteaufZug() {
         }
     } else {
         // botmode
-        var computerKarte = zieheBotKarte()
-        $("#gegner").attr("data-name", computerKarte)
-        renderKarte("#gegner")
-        message("Computer hat " + computerKarte + " gespielt.")
-        Ichbindran = true
-        runde()
+        setTimeout(function () {
+            var computerKarte = zieheBotKarte()
+            $("#gegner").attr("data-name", computerKarte)
+            renderKarte("#gegner")
+            message("Computer hat " + computerKarte + " gespielt.")
+            Ichbindran = true
+            runde()
+        }, 3000)
     }
 }
 
@@ -187,14 +189,12 @@ function duell() {
     if ($("#gegner #leben").text() <= 0) {
         $("#gegner").empty()
         $("#gegner").removeAttr("data-name")
-        Ichbindran = false
         runde()
     }
 
     if ($("#feld #leben").text() <= 0) {
         $("#feld").empty()
         $("#feld").removeAttr("data-name")
-        Ichbindran = true
         runde()
     }
 
@@ -228,15 +228,21 @@ function runde () {
     if (karteGegner != undefined && karteSpieler != undefined) {
         tempRunde = Ichbindran
         duell()
+    } else if (karteSpieler == undefined) {
+        Ichbindran = true
+    } else if (karteGegner == undefined) {
+        Ichbindran = false
     }
-
-    if (Ichbindran == true && karteSpieler == undefined) {
+    
+    if (Ichbindran == true) {
         SpielerZug()
         message("Du bist an der Reihe!")
         if ($("#hand .karte").length <= 2) {
             neueKarte(1)
         }
-    } else if (Ichbindran == false && karteGegner == undefined) {
+    }
+
+    if (Ichbindran == false) {
         message("Dein Gegner ist an der Reihe!")
         warteaufZug()  
     }
