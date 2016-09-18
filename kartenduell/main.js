@@ -28,11 +28,11 @@ var timeout = 0
 var botMode = false
 
 
-var deinLeben = 100
-var gegnerLeben = 100
+var deinLeben = 5
+var gegnerLeben = 5
 
 function init() {
-    message("Willkommen")
+    message("Willkommen beim Kartenduell. Ein menschlicher Spieler wird automatisch gesucht, falls das nicht funktioniert, kannst du gegen den Computer spielen. Dieses Spiel ist ein Wochenendprojekt von mir.")
 
     $("#gegnerLeben").text(gegnerLeben)
     $("#deinLeben").text(deinLeben)
@@ -66,7 +66,6 @@ function aufEmpfang() {
     peer.on('open', function(id) {
         message("Deine Verbindungsnummer ist " + myId)
         sucheGegner()
-        // console.log('My peer ID is: ' + id);
     });
     
     peer.on('error', function(err) {
@@ -88,14 +87,13 @@ function aufEmpfang() {
             console.log (text)
             gegnerAuswahl = text.toString()
         })
-        
     });
 }
 
 function sucheGegner() {
     conn = peer.connect(gegnerId);
 
-    message("Suche Gegner...")
+    message("Suche Gegner... <a href='javascript:void(0)' onclick='clearTimeout(botModestartet); botMode = true; runde(); this.parentNode.removeChild(this);'>Suche überspringen</a>")
 
     conn.on('error', function(err) {
         clearTimeout(botModestartet)
@@ -115,10 +113,10 @@ function sucheGegner() {
         }
     })
 
-    var botModestartet = setTimeout(function () {
+    botModestartet = setTimeout(function () {
         botMode = true
         runde()
-    }, 10000)
+    }, 60000)
 }
 
 function warteaufZug() {
@@ -185,46 +183,57 @@ function neueKarte(anzahl) {
 }
 
 function duell() {
-    if ($("#gegner #verteidigung").text() > 0 && parseInt($("#feld #angriff").text()) > 0 &&tempRunde == true) {
-        $("#gegner #verteidigung").text(parseInt($("#gegner #verteidigung").text()) - parseInt($("#feld #angriff").text()))
-    } else if ($("#feld #verteidigung").text() > 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
-        $("#feld #verteidigung").text(parseInt($("#feld #verteidigung").text()) - parseInt($("#gegner #angriff").text()))
-    }
-    if ($("#gegner #verteidigung").text() <= 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
-        $("#gegner #leben").text(parseInt($("#gegner #leben").text()) - parseInt($("#feld #angriff").text()))
-    } else if ($("#feld #verteidigung").text() <= 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
-        $("#feld #leben").text(parseInt($("#feld #leben").text()) - parseInt($("#gegner #angriff").text()))
-    }
+    setTimeout( function() {
+        if ($("#gegner #verteidigung").text() > 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
+            $("#gegner #verteidigung").text(parseInt($("#gegner #verteidigung").text()) - parseInt($("#feld #angriff").text()))
+        } else if ($("#feld #verteidigung").text() > 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
+            $("#feld #verteidigung").text(parseInt($("#feld #verteidigung").text()) - parseInt($("#gegner #angriff").text()))
+        }
+        if ($("#gegner #verteidigung").text() <= 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
+            $("#gegner #leben").text(parseInt($("#gegner #leben").text()) - parseInt($("#feld #angriff").text()))
+        } else if ($("#feld #verteidigung").text() <= 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
+            $("#feld #leben").text(parseInt($("#feld #leben").text()) - parseInt($("#gegner #angriff").text()))
+        }
 
-    if ($("#gegner #leben").text() <= 0) {
-        $("#gegner").empty()
-        $("#gegner").removeAttr("data-name")
-        runde()
-    }
+        if ($("#gegner #leben").text() <= 0) {
+            $("#gegner").empty()
+            $("#gegner").css("background", "")
+            $("#gegner").removeAttr("data-name")
+            gegnerLeben--
+            runde()
+        }
 
-    if ($("#feld #leben").text() <= 0) {
-        $("#feld").empty()
-        $("#feld").css("background", "")    
-        $("#feld").removeAttr("data-name")
-        runde()
-    }
+        if ($("#feld #leben").text() <= 0) {
+            $("#feld").empty()
+            $("#feld").css("background", "")
+            $("#feld").removeAttr("data-name")
+            deinLeben--
+            runde()
+        }
 
-    $("#gegnerLeben").text(gegnerLeben)
-    $("#deinLeben").text(deinLeben)
+        $("#gegnerLeben").text(gegnerLeben)
+        $("#deinLeben").text(deinLeben)
 
-    if (tempRunde == true) {
-        tempRunde = false
-    } else {
-        tempRunde = true
-    }
-
-    if ($("#feld #leben").text() > 0 && $("#gegner #leben").text() > 0) {
-        setTimeout(duell, 3000)
-    }
+        if (tempRunde == true) {
+            tempRunde = false
+        } else {
+            tempRunde = true
+        }
+        if ($("#feld #leben").text() > 0 && $("#gegner #leben").text() > 0) {
+            setTimeout(duell, 1000)
+        }
+    }, 2000)
 }
 
 function runde () {
     Runde++
+
+    if (deinLeben <= 0) {
+        //verloren
+    }
+    if (gegnerLeben <= 0) {
+        //gewinnen  
+    }
     var karteGegner = $("#gegner").attr("data-name")
     var karteSpieler = $("#feld").attr("data-name")
 
@@ -244,20 +253,19 @@ function runde () {
         if ($("#hand .karte").length <= 2) {
             neueKarte(1)
         }
-        if (Ichbindran == true) {
-           SpielerZug()
-            message("Du bist an der Reihe!")        
-        }
+        SpielerZug()
+        message("Du bist an der Reihe!")
     } else if (karteGegner == undefined) {
         Ichbindran = false
-        if (Ichbindran == false) {
-            message("Dein Gegner ist an der Reihe!")
-            warteaufZug()  
-        }
+        message("Dein Gegner ist an der Reihe!")
+        warteaufZug()  
     }
 
     $("#gegnerId").text(gegnerId)
     $("#deineId").text(myId)
+
+    $("#gegnerLeben").text(gegnerLeben)
+    $("#deinLeben").text(deinLeben)
 }
 
 function message (text) {
