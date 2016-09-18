@@ -93,5 +93,7 @@ a:hover {
 
 #message {
     padding-top: 5px;
-    clear: both
+    font-size: 90%;
+    line-height: 90%;
+    clear: both;
 }
