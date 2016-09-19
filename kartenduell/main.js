@@ -20,7 +20,6 @@ var Ichbindran = true
 var tempRunde = true
 var Runde = 0
 var myId = 1
-var gegnerId = 2
 var gegnerAuswahl = ""
 var peer;
 var conn;
@@ -65,7 +64,9 @@ function aufEmpfang() {
     peer = new Peer(myId, {key: '5f9a43l0izfr', debug: 3});
     
     peer.on('open', function(id) {
-        message("Deine Verbindungsnummer ist " + myId)
+        message("Deine Verbindungsnummer ist " + id)
+        myId = id
+        gegnerId = myId + 1
         sucheGegner()
     });
     
@@ -94,30 +95,21 @@ function aufEmpfang() {
 function sucheGegner() {
     conn = peer.connect(gegnerId);
 
-    message("Suche Gegner... <a href='javascript:void(0)' onclick='clearTimeout(botModestartet); botMode = true; runde(); this.parentNode.removeChild(this);'>Suche überspringen</a>")
+    message("Warte 30 Sekunden auf Gegner... <a href='javascript:void(0)' onclick='clearTimeout(botModestartet); botMode = true; peer.destroy(); runde(); this.parentNode.removeChild(this);'>Suche überspringen</a>")
 
     conn.on('error', function(err) {
         clearTimeout(botModestartet)
         console.log(err)
         message(err)
-        if (timeout <= 10) {
-            timeout++
-            if (gegnerId < myId && gegnerAuswahl >= 1) {
-                gegnerId--
-            } else {
-                gegnerId++
-            }
-            setTimeout(sucheGegner, 5000)
-        } else {
-            message("Spiel gegen Computer started")
-            botMode = true
-        }
     })
 
     botModestartet = setTimeout(function () {
         botMode = true
         runde()
-    }, 60000)
+        if (!!peer && !peer.destroyed) {
+            peer.destroy();
+        }
+    }, 30000)
 }
 
 function warteaufZug() {
@@ -139,7 +131,7 @@ function warteaufZug() {
             runde()
         }
         if (gegnerAuswahl == "") {
-           message("Warte auf Zug des Gegners...")
+            message("Warte auf Zug des Gegners...")
             // prüfe weiteren zug
             var zugtimeout = setTimeout(warteaufZug, 1000)
         }
@@ -182,13 +174,29 @@ function neueKarte(anzahl) {
 function duell() {
     setTimeout( function() {
         if ($("#gegner #verteidigung").text() > 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
+            $("#gegner").css("border-color", "#c73030")
+            $("#gegner").css("box-shadow", "0px 0px 20px 10px hsla(0,52%,37%,0.80)");
+            $("#feld").css("border-color", "")
+            $("#feld").css("box-shadow", "")
             $("#gegner #verteidigung").text(parseInt($("#gegner #verteidigung").text()) - parseInt($("#feld #angriff").text()))
         } else if ($("#feld #verteidigung").text() > 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
-            $("#feld #verteidigung").text(parseInt($("#feld #verteidigung").text()) - parseInt($("#gegner #angriff").text()))
+            $("#feld").css("border-color", "#c73030")
+            $("#feld").css("box-shadow", "0px 0px 20px 10px hsla(0,52%,37%,0.80)");
+            $("#gegner").css("border-color", "")
+            $("#gegner").css("box-shadow", "")
+            $("#feld #verteidigung").text(parseInt($("#feld #verteidigung").text()) - parseInt($("#gegner #angriff").text()))            
         }
         if ($("#gegner #verteidigung").text() <= 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
+            $("#feld").css("border-color", "")
+            $("#feld").css("box-shadow", "")
+            $("#gegner").css("border-color", "#c73030")
+            $("#gegner").css("box-shadow", "0px 0px 20px 10px hsla(0,52%,37%,0.80)");
             $("#gegner #leben").text(parseInt($("#gegner #leben").text()) - parseInt($("#feld #angriff").text()))
         } else if ($("#feld #verteidigung").text() <= 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
+            $("#gegner").css("border-color", "")
+            $("#gegner").css("box-shadow", "")
+            $("#feld").css("box-shadow", "0px 0px 20px 10px hsla(0,52%,37%,0.80)");
+            $("#feld").css("border-color", "#c73030")
             $("#feld #leben").text(parseInt($("#feld #leben").text()) - parseInt($("#gegner #angriff").text()))
         }
 
@@ -267,7 +275,7 @@ function runde () {
 
 function message (text) {
     $("div#message").append("<p>" + text + "</p>")
-    if ($("div#message p").length > 10) {
+    if ($("div#message p").length > 5) {
         $("div#message p").eq(0).remove()
     }
 }
@@ -277,6 +285,11 @@ function SpielerZug () {
         $("#feld").attr("data-name", $(this).attr("data-name"))
         if (botMode == false) {
             conn.send($(this).attr("data-name"))
+        }
+        for (var index = 0; index < alleKarten.length; index++) {
+            if ($(this).attr("data-name") == alleKarten[index].name) {
+                playAudio(alleKarten[index].sound)
+            }
         }
         Ichbindran = false
         renderKarte("#feld")
@@ -290,21 +303,6 @@ function SpielerZug () {
 function randomNumberGen(min, max) {
     return Math.round(Math.random() * (max - min)) + min;
 }
-
-$("#frame").on('mouseenter', 'div.karte[data-owner=spieler]', function (e) {
-    mouseTimer = setTimeout(function () {    
-        if (typeof $(e).attr("data-name") !== "undefined") {
-            for (var index = 0; index < alleKarten.length; index++) {
-                if ($(e).attr("data-name") == alleKarten[index].name) {
-                    playAudio(alleKarten[index].sound)
-                }
-            }        
-        }
-    }, 1000)
-}, function () {
-    clearTimeout(mouseTimer)
-}
-)
 
 $("#frame").on('mouseleave', 'div.karte[data-owner=spieler]', function () {
     

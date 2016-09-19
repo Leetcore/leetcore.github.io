@@ -13,7 +13,6 @@ a {
 #frame {
     max-width: 420px;
     margin: 0 auto;
-    border: 3px #5f542b dashed;
     padding: 5px;
 }
 
@@ -34,6 +33,7 @@ a {
 }
 
 #hand {
+    clear: both;
     margin-left: auto;
     margin-right: auto;
 }
@@ -53,6 +53,7 @@ a {
 
 #hand .karte:hover {
     transform: scale(1.25); 
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.31);
     transition: 1s all ease;
 }
 
@@ -68,15 +69,16 @@ a {
 }
 
 .karte #angriff, .karte #verteidigung, .karte #leben {
-    float: right;
+    display: inline-block;
     margin-right: 5px;
     font-size: 95%;
+    text-align: right;
 }
 
 .karte #angriff {
     color: #FFF;
     min-width: 20px;
-    padding-left: 4px;
+    padding-right: 2px;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAoUlEQVR4AdXPuwkCQRCH8c8i3B5E7MLz2YGJBWgBWsX6ACtzI21AxEzuLhthQBkEx73wvn/6m2BoY3OeRP7Wp4tyagThiNuAO2fCm+siToGEcDVceOC2RLArGfqP1l+8wGmmPLJpxgG2enAh8LOp4R1OiC4RPL4zvGRB4kYvlxdA8Pje8Mp7dtKMo/yQz0EQ1oaPwE90q1wO8lnFmIwsb1svKAZycOceK+UAAAAASUVORK5CYII=');
     background-repeat: no-repeat;
 }
@@ -84,7 +86,7 @@ a {
 .karte #verteidigung {
     color: #FFF;
     min-width: 20px;
-    padding-left: 4px;
+    padding-right: 2px;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAUElEQVR4AWMY3CCQ4SXDfyzwFYM/VvVw5ZjwJXYN/3FD+mgY1TCq4SfDEgYzIFwCZBHU8JyhnkEcLiLB0AAUwanhJEM0AyuGKBtDNFBmMAMAVubkY2pMQw4AAAAASUVORK5CYII=');
     background-repeat: no-repeat;
 }
@@ -92,14 +94,22 @@ a {
 .karte #leben {
     color: #FFF;
     min-width: 20px;
-    padding-left: 4px;
+    padding-right: 2px;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAvklEQVR4Ac3RQaqCUBhH8bOFJj1wARkNooGOpQKhYdAygrZURgRB0F7agJMscdZ7jwxSk4grilevo/r9Z5fz5SC+WQ8Hn5gLa/oADNi8X1Z0i/mMO4nYgzkLIrKXkGnu17NcuhAdwSFR2BLBVzrwEGKlg6jpF84IO6WDLcJQ6cCCzKE235Pzg1eZn2hTYPIvzf8wKGFL/u8bYyQmhCW5TYURv7n8ikUNk0DkAQYKdNxX7tJBkcYxnUYDrXQf8gSMA/mxMcUl0QAAAABJRU5ErkJggg==');
     background-repeat: no-repeat;    
+}
+
+#gegnerLeben, #deinLeben {
+    color: #FFF;
+    min-width: 25px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAvklEQVR4Ac3RQaqCUBhH8bOFJj1wARkNooGOpQKhYdAygrZURgRB0F7agJMscdZ7jwxSk4grilevo/r9Z5fz5SC+WQ8Hn5gLa/oADNi8X1Z0i/mMO4nYgzkLIrKXkGnu17NcuhAdwSFR2BLBVzrwEGKlg6jpF84IO6WDLcJQ6cCCzKE235Pzg1eZn2hTYPIvzf8wKGFL/u8bYyQmhCW5TYURv7n8ikUNk0DkAQYKdNxX7tJBkcYxnUYDrXQf8gSMA/mxMcUl0QAAAABJRU5ErkJggg==');
+    background-repeat: no-repeat;  
 }
 
 .karte #name {
     clear: both
 }
+
 #message {
     padding-top: 5px;
     font-size: 90%;
