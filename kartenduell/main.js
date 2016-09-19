@@ -34,7 +34,7 @@ var deinLeben = 5
 var gegnerLeben = 5
 
 function init() {
-    message("Willkommen beim Kartenduell. Ein menschlicher Spieler wird automatisch gesucht, falls das nicht funktioniert, kannst du gegen den Computer spielen.")
+    message("Willkommen beim Kartenduell. Ein menschlicher Spieler wird automatisch gesucht. <a href='javascript:void(0)' onclick='botMode = true; peer.destroy(); runde(); this.parentNode.removeChild(this);'>Du kannst auch gegen den Computer spielen.</a>")
 
     $("#gegnerLeben").text(gegnerLeben)
     $("#deinLeben").text(deinLeben)
@@ -51,7 +51,7 @@ function aufEmpfang() {
     peer.on('open', function(id) {
         message("Deine Verbindungsnummer ist " + id)
         myId = id
-        message("Warte auf einen Gegner... <a href='javascript:void(0)' onclick='botMode = true; peer.destroy(); runde(); this.parentNode.removeChild(this);'>Suche überspringen</a>")
+        message("Warte auf einen Gegner...")
         sucheGegner(gegnerId)
     });
     
