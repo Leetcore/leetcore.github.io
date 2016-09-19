@@ -34,7 +34,7 @@ var deinLeben = 5
 var gegnerLeben = 5
 
 function init() {
-    message("Willkommen beim Kartenduell. Ein menschlicher Spieler wird automatisch gesucht, falls das nicht funktioniert, kannst du gegen den Computer spielen. Dieses Spiel ist ein Wochenendprojekt von mir.")
+    message("Willkommen beim Kartenduell. Ein menschlicher Spieler wird automatisch gesucht, falls das nicht funktioniert, kannst du gegen den Computer spielen.")
 
     $("#gegnerLeben").text(gegnerLeben)
     $("#deinLeben").text(deinLeben)
