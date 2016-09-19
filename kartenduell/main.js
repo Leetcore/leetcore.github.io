@@ -64,6 +64,13 @@ function aufEmpfang() {
             myId++
             aufEmpfang()
         }
+        if (err.toString().indexOf("not connect") != -1) {
+            setTimeout(function () {sucheGegner(gegnerId)}, 5000)
+        }
+        if (err.toString().indexOf("Lost connection") != -1) {
+            gegnerId = myId + 1
+            sucheGegner(gegnerId)
+        }
     });
 
     peer.on('connection', function (data) {
@@ -113,12 +120,8 @@ function sucheGegner(id) {
         conn.on('open', function (c) {
             conn.send("myid=" + myId)
         })
-        conn.on('close', function (c) {
-            setTimeout(function () {sucheGegner(gegnerId)}, 1000)
-        })
         conn.on('error', function(err) {
             console.log(err)
-            setTimeout(function () {sucheGegner(gegnerId)}, 1000)
         })
     }
 }
@@ -206,13 +209,38 @@ function neueKarte(anzahl) {
 
 function duell() {
     setTimeout( function() {
+        for (var x = 0; x < alleKarten.length; x++) {
+            if ($("#gegner").attr("data-name") == alleKarten[x].name) {
+                if ($("#feld").attr("data-name") == alleKarten[x].instant) {
+                    $("#feld #verteidigung").text(0)
+                }
+            }
+        }
+        for (var x = 0; x < alleKarten.length; x++) {
+            if ($("#feld").attr("data-name") == alleKarten[x].name) {
+                if ($("#gegner").attr("data-name") == alleKarten[x].instant) {
+                    $("#gegner #verteidigung").text(0)
+                }
+            }
+        }        
+
         if ($("#gegner #verteidigung").text() > 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
+            for (var index = 0; index < alleKarten.length; index++) {
+                if ($("#feld").attr("data-name") == alleKarten[index].name) {
+                    playAudio("Attack-" + alleKarten[index].sound)
+                }
+            }
             $("#gegner").css("border-color", "#c73030")
             $("#gegner").css("box-shadow", "0px 0px 20px 10px hsla(0,52%,37%,0.80)");
             $("#feld").css("border-color", "")
             $("#feld").css("box-shadow", "")
             $("#gegner #verteidigung").text(parseInt($("#gegner #verteidigung").text()) - parseInt($("#feld #angriff").text()))
         } else if ($("#feld #verteidigung").text() > 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
+            for (var index = 0; index < alleKarten.length; index++) {
+                if ($("#gegner").attr("data-name") == alleKarten[index].name) {
+                    playAudio("Attack-" + alleKarten[index].sound)
+                }
+            }
             $("#feld").css("border-color", "#c73030")
             $("#feld").css("box-shadow", "0px 0px 20px 10px hsla(0,52%,37%,0.80)");
             $("#gegner").css("border-color", "")
@@ -220,12 +248,22 @@ function duell() {
             $("#feld #verteidigung").text(parseInt($("#feld #verteidigung").text()) - parseInt($("#gegner #angriff").text()))            
         }
         if ($("#gegner #verteidigung").text() <= 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
+            for (var index = 0; index < alleKarten.length; index++) {
+                if ($("#feld").attr("data-name") == alleKarten[index].name) {
+                    playAudio("Attack-" + alleKarten[index].sound)
+                }
+            }
             $("#feld").css("border-color", "")
             $("#feld").css("box-shadow", "")
             $("#gegner").css("border-color", "#c73030")
             $("#gegner").css("box-shadow", "0px 0px 20px 10px hsla(0,52%,37%,0.80)");
             $("#gegner #leben").text(parseInt($("#gegner #leben").text()) - parseInt($("#feld #angriff").text()))
         } else if ($("#feld #verteidigung").text() <= 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
+            for (var index = 0; index < alleKarten.length; index++) {
+                if ($("#gegner").attr("data-name") == alleKarten[index].name) {
+                    playAudio("Attack-" + alleKarten[index].sound)
+                }
+            }
             $("#gegner").css("border-color", "")
             $("#gegner").css("box-shadow", "")
             $("#feld").css("box-shadow", "0px 0px 20px 10px hsla(0,52%,37%,0.80)");
@@ -260,9 +298,9 @@ function duell() {
             tempRunde = true
         }
         if ($("#feld #leben").text() > 0 && $("#gegner #leben").text() > 0) {
-            setTimeout(duell, 1000)
+            setTimeout(duell, 100)
         }
-    }, 2000)
+    }, 3000)
 }
 
 function runde () {
@@ -329,11 +367,11 @@ function SpielerZug () {
             }
         }
         if (ele.prev(".karte").prev(".karte").length == 1) {
-            ele.css("transform", "translate(-138px, -230px)")
+            ele.css("transform", "translate(-132px, -230px)")
         } else if (ele.prev(".karte").length == 1) {
             ele.css("transform", "translate(0px, -230px)")
         } else if (ele.prev(".karte").length == 0) {
-            ele.css("transform", "translate(138px, -230px)")
+            ele.css("transform", "translate(132px, -230px)")
         }
         
         setTimeout(function () {
@@ -341,9 +379,9 @@ function SpielerZug () {
             renderKarte("#feld")        
             Ichbindran = false
             runde()
-        }, 1000)
+        }, 1500)
         message("Du hast "+ $(this).attr("data-name") +" gespielt.")
-        $("#frame").off('click', 'div.karte[data-owner=spieler]')        
+        $("#frame").off('click', 'div.karte[data-owner=spieler]')
     })
 }
 
@@ -356,6 +394,7 @@ function playAudio(file) {
     paudio.volume = 0.9;
     paudio.play();
 }
+
 function playAudioBackground(file) {
     var baudio = new Audio(file);
     baudio.volume = 0.2;
