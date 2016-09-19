@@ -19,14 +19,16 @@ var deineKarten = alleKarten.slice(0)
 var Ichbindran = true
 var tempRunde = true
 var Runde = 0
+var Rundegestartet = false
+
 var myId = 1
+var gegnerId = 2
 var gegnerAuswahl = ""
 var peer;
 var conn;
 var timeout = 0
 var mouseTimer = 0
 var botMode = false
-
 
 var deinLeben = 5
 var gegnerLeben = 5
@@ -41,6 +43,81 @@ function init() {
     neueKarte(3)
     
     aufEmpfang()
+}
+
+function aufEmpfang() {
+    peer = new Peer(myId, {key: '5f9a43l0izfr', debug: 2});
+    
+    peer.on('open', function(id) {
+        message("Deine Verbindungsnummer ist " + id)
+        myId = id
+        message("Warte auf einen Gegner... <a href='javascript:void(0)' onclick='botMode = true; peer.destroy(); runde(); this.parentNode.removeChild(this);'>Suche überspringen</a>")
+        sucheGegner(gegnerId)
+    });
+    
+    peer.on('error', function(err) {
+        console.log(err)
+        // wenn id besetzt spiel gegen diese id        
+        if (err.toString().indexOf("is taken") !== -1) {
+            console.log("ID besetzt. Spiele gegen diese ID!")
+            gegnerId = myId
+            myId++
+            aufEmpfang()
+        }
+    });
+
+    peer.on('connection', function (data) {
+        peer.on('open', function() {
+            message ("Verbunden mit " + conn.peer)
+        })
+
+        peer.on('disconnected', function() {
+            message("Verbindung mit Gegner abgebrochen.")
+            botMode = true
+            runde()
+            if (!!peer && !peer.destroyed) {
+                peer.destroy();
+            }
+        })
+
+        data.on('data', function(text) {
+            console.log (text)
+            if (text.indexOf("myid=") != -1) {
+                var a_text = text.split("=")
+                if (conn.peer.toString() != a_text[1].toString() && Rundegestartet == false) {
+                    sucheGegner(a_text[1])
+                } else if (conn.open) {
+                    conn.send("startgame=true")
+                    if (Rundegestartet == false) {
+                        runde()
+                    }
+                }
+            } else if (text.indexOf("startgame=true") != - 1) {
+                console.log("Game soll starten...")
+                if (Rundegestartet == false) {
+                    runde()
+                }
+            } else {
+                message("Gegner hat " + text.toString() + " gewählt.")
+                gegnerAuswahl = text.toString()
+            }
+        })
+    });
+}
+
+function sucheGegner(id) {
+    conn = peer.connect(id);
+
+    conn.on('open', function (c) {
+        conn.send("myid=" + myId)
+    })
+    conn.on('close', function (c) {
+        setTimeout(function () {sucheGegner(gegnerId)}, 1000)
+    })
+    conn.on('error', function(err) {
+        console.log(err)
+        setTimeout(function () {sucheGegner(gegnerId)}, 1000)
+    })
 }
 
 function renderKarte(divstring) {
@@ -60,96 +137,33 @@ function renderKarte(divstring) {
     }
 }
 
-function aufEmpfang() {
-    peer = new Peer(myId, {key: '5f9a43l0izfr', debug: 2});
-    
-    peer.on('open', function(id) {
-        message("Deine Verbindungsnummer ist " + id)
-        myId = id
-        sucheGegner()
-    });
-    
-    peer.on('error', function(err) {
-        console.log(err)
-        // wenn id besetzt spiel gegen diese id        
-        if (err.toString().indexOf("is taken") !== -1) {
-            console.log("ID besetzt. Spiele gegen diese ID!")
-            gegnerId = parseInt(myId)
-            myId++
-            aufEmpfang()
-        }
-    });
-
-    peer.on('connection', function (data) {
-        clearTimeout(botModestartet)
-        message ("Verbunden mit " + conn.peer)
-        runde()
-        data.on('data', function(text) {
-            console.log (text)
-            message("Gegner hat " + text.toString() + " gewählt.")
-            gegnerAuswahl = text.toString()
-        })
-    });
-}
-
-function sucheGegner() {
-    conn = peer.connect(gegnerId);
-
-    message("Warte 30 Sekunden auf einen Gegner... <a href='javascript:void(0)' onclick='clearTimeout(botModestartet); botMode = true; peer.destroy(); runde(); this.parentNode.removeChild(this);'>Suche überspringen</a>")
-
-    setTimeout(function () {
-        if (!conn.open) {
-            conn = peer.connect(gegnerId + 1);
-        }
-    }, 9000)
-    setTimeout(function () {
-        if (!conn.open) {
-            conn = peer.connect(gegnerId + 1);
-        }
-    }, 19000)
-    setTimeout(function () {
-        if (!conn.open) {
-            conn = peer.connect(gegnerId + 1);
-        }
-    }, 29000)
-
-    conn.on('error', function(err) {
-        clearTimeout(botModestartet)
-        console.log(err)
-        message(err)
-    })
-
-    botModestartet = setTimeout(function () {
-        botMode = true
-        runde()
-        if (!!peer && !peer.destroyed) {
-            peer.destroy();
-        }
-    }, 31000)
-}
-
 function warteaufZug() {
     if (botMode == false) {
         // menschlicher gegner
         if (gegnerAuswahl != "") {
             // gegner hat seine wahl gesendet
             clearTimeout(zugtimeout)
-            $("#gegner").attr("data-name", gegnerAuswahl)
-            renderKarte("#gegner")
-            message("Gegner hat " + gegnerAuswahl + " gespielt.")
+            var Kartegefunden = false
             for (var index = 0; index < gegnerKarten.length; index++) {
-                if (gegnerKarten[index].name == computerKarte) {
+                if (gegnerKarten[index].name == gegnerAuswahl.toString()) {
+                    $("#gegner").attr("data-name", gegnerAuswahl.toString())
+                    Kartegefunden = true
+                    renderKarte("#gegner")
+                    message("Gegner hat " + gegnerAuswahl + " gespielt.")
                     gegnerKarten.splice(index,1)
                 }
             }
             gegnerAuswahl = ""
-            Ichbindran = true
-            runde()
-        }
-        if (gegnerAuswahl == "") {
+            if (Kartegefunden == false) {
+                message("Komische Nachricht erhalten...")
+            } else {
+                Ichbindran = true
+                runde()
+            }
+        } else {
             message("Warte auf Zug des Gegners...")
             // prüfe weiteren zug
-            var zugtimeout = setTimeout(warteaufZug, 1000)
+            zugtimeout = setTimeout(warteaufZug, 5000)
         }
     } else {
         // botmode
@@ -221,6 +235,7 @@ function duell() {
             $("#gegner").css("background", "")
             $("#gegner").removeAttr("data-name")
             gegnerLeben--
+            Ichbindran = false
             runde()
         }
 
@@ -229,6 +244,7 @@ function duell() {
             $("#feld").css("background", "")
             $("#feld").removeAttr("data-name")
             deinLeben--
+            Ichbindran = true
             runde()
         }
 
@@ -247,46 +263,47 @@ function duell() {
 }
 
 function runde () {
-    Runde++
+    Rundegestartet = true
 
     if (deinLeben <= 0) {
-        //verloren
-    }
-    if (gegnerLeben <= 0) {
-        //gewinnen  
-    }
-    var karteGegner = $("#gegner").attr("data-name")
-    var karteSpieler = $("#feld").attr("data-name")
+        $("#hand").remove()
+        message("Du hast verloren...")
+    } else if (gegnerLeben <= 0) {
+        $("#hand").remove()
+        message("Du hast gewonnen!")
+    } else {
+        var karteGegner = $("#gegner").attr("data-name")
+        var karteSpieler = $("#feld").attr("data-name")
 
-    if (Runde == 1) {
-        if (myId < gegnerId) {
-           Ichbindran = true
-        } else {
-            Ichbindran = false
+        if (Runde == 0) {
+            if (peer.id < conn.peer) {
+            Ichbindran = true
+            } else {
+                Ichbindran = false
+            }
         }
-    }
 
-    if (karteGegner != undefined && karteSpieler != undefined) {
-        tempRunde = Ichbindran
-        duell()
-    } else if (karteSpieler == undefined) {
-        Ichbindran = true
-        if ($("#hand .karte").length <= 2) {
-            neueKarte(1)
+        if (karteGegner != undefined && karteSpieler != undefined) {
+            tempRunde = Ichbindran
+            duell()
+        } else if (karteSpieler == undefined && Ichbindran == true) {
+            if ($("#hand .karte").length <= 2) {
+                neueKarte(1)
+            }
+            SpielerZug()
+            message("Du bist an der Reihe!")
+        } else if (karteGegner == undefined && Ichbindran == false) {
+            message("Dein Gegner ist an der Reihe!")
+            warteaufZug()  
         }
-        SpielerZug()
-        message("Du bist an der Reihe!")
-    } else if (karteGegner == undefined) {
-        Ichbindran = false
-        message("Dein Gegner ist an der Reihe!")
-        warteaufZug()  
+
+        $("#gegnerId").text(gegnerId)
+        $("#deineId").text(myId)
+
+        $("#gegnerLeben").text(gegnerLeben)
+        $("#deinLeben").text(deinLeben)
+        Runde++
     }
-
-    $("#gegnerId").text(gegnerId)
-    $("#deineId").text(myId)
-
-    $("#gegnerLeben").text(gegnerLeben)
-    $("#deinLeben").text(deinLeben)
 }
 
 function message (text) {
