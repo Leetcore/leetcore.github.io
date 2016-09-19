@@ -98,8 +98,10 @@ function aufEmpfang() {
                     runde()
                 }
             } else {
-                message("Gegner hat " + text.toString() + " gewählt.")
-                gegnerAuswahl = text.toString()
+                if (data.peer == conn.peer) {
+                    message("Gegner hat " + text.toString() + " gewählt.")
+                    gegnerAuswahl = text.toString()
+                }
             }
         })
     });
@@ -107,17 +109,18 @@ function aufEmpfang() {
 
 function sucheGegner(id) {
     conn = peer.connect(id);
-
-    conn.on('open', function (c) {
-        conn.send("myid=" + myId)
-    })
-    conn.on('close', function (c) {
-        setTimeout(function () {sucheGegner(gegnerId)}, 1000)
-    })
-    conn.on('error', function(err) {
-        console.log(err)
-        setTimeout(function () {sucheGegner(gegnerId)}, 1000)
-    })
+    if (typeof conn != "undefined") {
+        conn.on('open', function (c) {
+            conn.send("myid=" + myId)
+        })
+        conn.on('close', function (c) {
+            setTimeout(function () {sucheGegner(gegnerId)}, 1000)
+        })
+        conn.on('error', function(err) {
+            console.log(err)
+            setTimeout(function () {sucheGegner(gegnerId)}, 1000)
+        })
+    }
 }
 
 function renderKarte(divstring) {
