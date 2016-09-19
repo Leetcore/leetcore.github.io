@@ -61,12 +61,11 @@ function renderKarte(divstring) {
 }
 
 function aufEmpfang() {
-    peer = new Peer(myId, {key: '5f9a43l0izfr', debug: 3});
+    peer = new Peer(myId, {key: '5f9a43l0izfr', debug: 2});
     
     peer.on('open', function(id) {
         message("Deine Verbindungsnummer ist " + id)
         myId = id
-        gegnerId = myId + 1
         sucheGegner()
     });
     
@@ -75,7 +74,7 @@ function aufEmpfang() {
         // wenn id besetzt spiel gegen diese id        
         if (err.toString().indexOf("is taken") !== -1) {
             console.log("ID besetzt. Spiele gegen diese ID!")
-            gegnerId = myId
+            gegnerId = parseInt(myId)
             myId++
             aufEmpfang()
         }
@@ -83,10 +82,11 @@ function aufEmpfang() {
 
     peer.on('connection', function (data) {
         clearTimeout(botModestartet)
-        message ("Verbunden mit " + peer.id)
+        message ("Verbunden mit " + conn.peer)
         runde()
         data.on('data', function(text) {
             console.log (text)
+            message("Gegner hat " + text.toString() + " gewählt.")
             gegnerAuswahl = text.toString()
         })
     });
@@ -95,7 +95,23 @@ function aufEmpfang() {
 function sucheGegner() {
     conn = peer.connect(gegnerId);
 
-    message("Warte 30 Sekunden auf Gegner... <a href='javascript:void(0)' onclick='clearTimeout(botModestartet); botMode = true; peer.destroy(); runde(); this.parentNode.removeChild(this);'>Suche überspringen</a>")
+    message("Warte 30 Sekunden auf einen Gegner... <a href='javascript:void(0)' onclick='clearTimeout(botModestartet); botMode = true; peer.destroy(); runde(); this.parentNode.removeChild(this);'>Suche überspringen</a>")
+
+    setTimeout(function () {
+        if (!conn.open) {
+            conn = peer.connect(gegnerId + 1);
+        }
+    }, 9000)
+    setTimeout(function () {
+        if (!conn.open) {
+            conn = peer.connect(gegnerId + 1);
+        }
+    }, 19000)
+    setTimeout(function () {
+        if (!conn.open) {
+            conn = peer.connect(gegnerId + 1);
+        }
+    }, 29000)
 
     conn.on('error', function(err) {
         clearTimeout(botModestartet)
@@ -109,7 +125,7 @@ function sucheGegner() {
         if (!!peer && !peer.destroyed) {
             peer.destroy();
         }
-    }, 30000)
+    }, 31000)
 }
 
 function warteaufZug() {
@@ -283,6 +299,7 @@ function message (text) {
 function SpielerZug () {
     $("#frame").on('click', 'div.karte[data-owner=spieler]', function() {
         $("#feld").attr("data-name", $(this).attr("data-name"))
+        ele = $(this)
         if (botMode == false) {
             conn.send($(this).attr("data-name"))
         }
@@ -291,22 +308,28 @@ function SpielerZug () {
                 playAudio(alleKarten[index].sound)
             }
         }
-        Ichbindran = false
-        renderKarte("#feld")
-        $(this).remove()
+        if (ele.prev(".karte").prev(".karte").length == 1) {
+            ele.css("transform", "translate(-138px, -230px)")
+        } else if (ele.prev(".karte").length == 1) {
+            ele.css("transform", "translate(0px, -230px)")
+        } else if (ele.prev(".karte").length == 0) {
+            ele.css("transform", "translate(138px, -230px)")
+        }
+        
+        setTimeout(function () {
+            ele.remove();
+            renderKarte("#feld")        
+            Ichbindran = false
+            runde()
+        }, 1000)
         message("Du hast "+ $(this).attr("data-name") +" gespielt.")
-        $("#frame").off('click', 'div.karte[data-owner=spieler]')
-        runde()
+        $("#frame").off('click', 'div.karte[data-owner=spieler]')        
     })
 }
 
 function randomNumberGen(min, max) {
     return Math.round(Math.random() * (max - min)) + min;
 }
-
-$("#frame").on('mouseleave', 'div.karte[data-owner=spieler]', function () {
-    
-})
 
 function playAudio(file) {
     var paudio = new Audio(file);

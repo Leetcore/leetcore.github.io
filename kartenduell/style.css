@@ -25,7 +25,7 @@ a {
     width: 110px;
     height: 200px;
     padding: 5px;
-    margin-left: 5px;
+    margin-left: 8px;
     margin-right: 5px;
     margin-bottom: 10px;
     border: 3px #555 solid;
@@ -52,7 +52,7 @@ a {
 }
 
 #hand .karte:hover {
-    transform: scale(1.25); 
+    transform: scale(1.10); 
     box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.31);
     transition: 1s all ease;
 }
@@ -64,7 +64,8 @@ a {
 }
 
 #stats {
-    float: left;
+    display: inline-block;
+    width: 100%;
     margin-right: 5px;
 }
 
@@ -101,6 +102,8 @@ a {
 
 #gegnerLeben, #deinLeben {
     color: #FFF;
+    display: inline-block;
+    padding-left: 8px;
     min-width: 25px;
     background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAvklEQVR4Ac3RQaqCUBhH8bOFJj1wARkNooGOpQKhYdAygrZURgRB0F7agJMscdZ7jwxSk4grilevo/r9Z5fz5SC+WQ8Hn5gLa/oADNi8X1Z0i/mMO4nYgzkLIrKXkGnu17NcuhAdwSFR2BLBVzrwEGKlg6jpF84IO6WDLcJQ6cCCzKE235Pzg1eZn2hTYPIvzf8wKGFL/u8bYyQmhCW5TYURv7n8ikUNk0DkAQYKdNxX7tJBkcYxnUYDrXQf8gSMA/mxMcUl0QAAAABJRU5ErkJggg==');
     background-repeat: no-repeat;  
