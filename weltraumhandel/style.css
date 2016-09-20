@@ -1,7 +1,7 @@
 body {
     width: 100%;
     font-family: monospace;
-    background-color: #333;
+    background-color: #DDD;
     overflow: hidden;
 }
 
@@ -17,10 +17,18 @@ body {
     text-align: center; 
 }
 
+.planet[data-name=Bananen] {
+    background-color: #FF0;
+}
+
 #deinSchiff {
-    z-index: 999999;
     background-color: #FF0;
     position: absolute;
     width: 50px;
     height: 80px;
+}
+
+#stats {
+    z-index: 10;
+    position: fixed;
 }
