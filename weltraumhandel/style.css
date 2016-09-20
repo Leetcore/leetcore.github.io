@@ -1,0 +1,26 @@
+body {
+    width: 100%;
+    font-family: monospace;
+    background-color: #333;
+    overflow: hidden;
+}
+
+.planet {
+    position: absolute;
+    background-color: #444;
+    width: 100px;
+    height: 100px;
+}
+.planet p {
+    position: relative;
+    top: 30%;
+    text-align: center; 
+}
+
+#deinSchiff {
+    z-index: 999999;
+    background-color: #FF0;
+    position: absolute;
+    width: 50px;
+    height: 80px;
+}
