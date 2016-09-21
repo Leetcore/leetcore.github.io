@@ -29,8 +29,8 @@ var inventar = [
 ]
 
 var techtree = [
-    {name: "Pflock", permanent: false, verteidigung: 3, baukosten: [{name: "Brett", anzahl: 5}]},
-    {name: "Hammer", permanent: false, verteidigung: 3, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
+    {name: "Pflock", permanent: false, verteidigung: 3, baukosten: [{name: "Brett", anzahl: 1}]},
+    {name: "Hammer", permanent: false, verteidigung: 5, baukosten: [{name: "Stock", anzahl: 1}, {name: "Stein", anzahl: 1}, {name: "Seil", anzahl: 1}]},
     {name: "Graben", permanent: false, verteidigung: 30, baukosten: [{name: "Schaufel", anzahl: 1}, {name: "Brett", anzahl: 3}, {name: "Stein", anzahl: 3}]},
     {name: "Steinmauer", permanent: false, verteidigung: 25, baukosten: [{name: "Stein", anzahl: 5}, {name: "Hammer", anzahl: 1}]},
     {name: "Talis Auge", permanent: false, verteidigung: 80, baukosten: [{name: "Stock", anzahl: 1}, {name: "Talisman", anzahl: 1}]},
@@ -89,7 +89,7 @@ jQuery(function ($) {
 
 function ZombieAttack() {
     playAudio("https://www.youtube.com/audiolibrary_download?vid=bfb60515d518694b")
-    angriffstärke = angriffstärke + randomNumberGen(5 + welle * 2, (10 + welle * 2) * spieleranzahl)
+    angriffstärke = angriffstärke + randomNumberGen(3 + welle * 2, (10 + welle * 2) * spieleranzahl)
     if (angriffstärke > verteidigung) {
         $("#messages").empty()
         message("Die Zombies greifen mit " + angriffstärke + " Stärke an und du hast nur " + verteidigung + " Verteidigung. Jetzt entscheidet der Nahkampf: Überlebender gegen Zombie!")
