@@ -224,7 +224,7 @@ function duell() {
             }
         }        
 
-        if ($("#gegner #verteidigung").text() > 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
+        if ($("#gegner #verteidigung").text() >= 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
             for (var index = 0; index < alleKarten.length; index++) {
                 if ($("#feld").attr("data-name") == alleKarten[index].name) {
                     playAudio("Attack-" + alleKarten[index].sound)
@@ -235,7 +235,7 @@ function duell() {
             $("#feld").css("border-color", "")
             $("#feld").css("box-shadow", "")
             $("#gegner #verteidigung").text(parseInt($("#gegner #verteidigung").text()) - parseInt($("#feld #angriff").text()))
-        } else if ($("#feld #verteidigung").text() > 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
+        } else if ($("#feld #verteidigung").text() >= 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
             for (var index = 0; index < alleKarten.length; index++) {
                 if ($("#gegner").attr("data-name") == alleKarten[index].name) {
                     playAudio("Attack-" + alleKarten[index].sound)
@@ -247,7 +247,7 @@ function duell() {
             $("#gegner").css("box-shadow", "")
             $("#feld #verteidigung").text(parseInt($("#feld #verteidigung").text()) - parseInt($("#gegner #angriff").text()))            
         }
-        if ($("#gegner #verteidigung").text() <= 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
+        if ($("#gegner #verteidigung").text() < 0 && parseInt($("#feld #angriff").text()) > 0 && tempRunde == true) {
             for (var index = 0; index < alleKarten.length; index++) {
                 if ($("#feld").attr("data-name") == alleKarten[index].name) {
                     playAudio("Attack-" + alleKarten[index].sound)
@@ -258,7 +258,7 @@ function duell() {
             $("#gegner").css("border-color", "#c73030")
             $("#gegner").css("box-shadow", "0px 0px 20px 10px hsla(0,52%,37%,0.80)");
             $("#gegner #leben").text(parseInt($("#gegner #leben").text()) - parseInt($("#feld #angriff").text()))
-        } else if ($("#feld #verteidigung").text() <= 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
+        } else if ($("#feld #verteidigung").text() < 0 && parseInt($("#gegner #angriff").text()) > 0 && tempRunde == false) {
             for (var index = 0; index < alleKarten.length; index++) {
                 if ($("#gegner").attr("data-name") == alleKarten[index].name) {
                     playAudio("Attack-" + alleKarten[index].sound)
