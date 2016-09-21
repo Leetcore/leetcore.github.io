@@ -35,7 +35,7 @@ function clickable (id) {
         $("#player" + id).on( "click", function () {        
             // console.log("click")
             gameSTARTED = true
-            movePlayer(id, "hoch", 10, 300)
+            movePlayer(id, "hoch", 50, 400)
             $("#player" + id).off()
             $("#player" + id).css("cursor", "progress");
             $("#player" + id + " svg rect").css("fill", "#476b4b");
