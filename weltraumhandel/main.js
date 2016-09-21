@@ -12,9 +12,9 @@ var planeten = [
 ]
 
 var waren = [
-    {name: "Bananen", sound: "bananen.ogg", verkauf: 50, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAb0lEQVQ4T2NkoDJgpLJ5DPQ18Ppjof/YfKAp+w6nQ4hyITaDcRlKlIEgV6IbSrGBxBpKtAthYYnsUmyuHHgDkb1OFRcOfgOpGinEpEWSYpmQ60DhS7SBxLiOaAOJNYxoAwklFeQSiWgvE1sQU91AAG74PBXbslc7AAAAAElFTkSuQmCC"},
-    {name: "Kri-Eier", sound: "krieier.ogg", verkauf: 200, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAy0lEQVQ4T2NkoDJgpLJ5DKMGUh6ieMOw1rzk/9ff3xj6zk0jOqzxKozRCPsvxiXC8OrbG4YlN1YRZShORem6CWDDuFm5GK68uQEOC2IMxWlgkVHWf5DLQOD+x0cMMMMJGUqUgehRhc9QkgwERRAoCMgycKX3nP+b7+7CmY5ABs+8vADDQThdCIphRX45cPjBAIgNEtMR0cAZUUQlm5PPz4EjBeRlWOSA2NhinmDaArkUphkWfpMdO/6DLAGJr7+7BcUMggaSmhlHoIEA+fViFbCszpYAAAAASUVORK5CYII="},
-    {name: "Ponys", sound: "mehl.ogg", verkauf: 150, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAzElEQVQ4T2NkoDJgpLJ5DMPQQHmV9P+gYOLhUWH48uUOw8M7M1F8SbSX1XXq///48QIc5CwsPAx//nyBBz+yoRgGwlwA0gRyxYcPF4iKN5ihWA0UEbFhALkG5CViAVYDQa7j4JAAG0YqoNhAkAGw4AFZjmEgKNBB4YbsTZgiZI0wl6PLYRiobzIdHIsw76InB5BB2FyEHjTwSAEphqUtZC8gayDJQJBGbYPu/1cvlILDBpsLkV2JSx5nOqTYy6QmE1zqic56xFo4Ag0EAL9LcBWYfVS2AAAAAElFTkSuQmCC"}
+    {name: "Bananen", sound: "bananen.ogg", verkauf: 50, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAA4UlEQVRoQ+2V0Q2CQBBEoThpwvpsQovDkEhyXjDLTjIGlsfvMQvzHneMQ5FrLNJjoMjRTGIEIyYCfFomsPJYjMjoTEGMmMDKY69p5Pm6zz2y6fb4gtHe068t2T0zFC0pI3te4hRFVlJ9oZZ8VDZaV2wsmZSR9iEZ8tEntrWeLUSRyEi7sU9thCLZzfG5nz0S7ZFf62WO30MVKfNDvFyRf/w/1kNOPrXEU9IWo4gNrTgYIyI4WwwjNrTiYIyI4GwxjNjQioMxIoKzxTBiQysOxogIzhbDiA2tOBgjIjhbrIyRNyl9qDOEalLOAAAAAElFTkSuQmCC"},
+    {name: "Kri-Eier", sound: "krieier.ogg", verkauf: 200, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABj0lEQVRoQ+2WP0sDQRDFN4VNLGxSB7+ItY2NrbW1dRoR8ROIiJWFlYVYJIIWWgiHJIV/ICCksPEEFXJNmmssVmZljyVeLO7NBG+ZLe9u5va935vba5hIViMSHUaF/DeSSkSJCDmg0RIytnJbJVLZOqFCJSJkbOW2SqTMuoPVI9tqttytUTYyu8n23IxifVHthZyun1mikE5Sk3/lBazaETnf6DohtIZvw1+pm4cglmhFIeR47cRmeVZQCKPlL9aCSG/z0o4/x27PNCNlKxSys7LnYsgtDo5WNEJuOrc2uUsqncicVGAiV1vXdvA0qCSEc4ZUiHeTPr1lZ0eIyEfID/o0Po6IwUSiETLLZXL98ePemX/x0nWGhc+mk1fTXFh09w8f9mFD4QazhNAhOb1BepYE/PwdP5v+ex9+v48p3CgaIWFkKErtpeVilv+KDBnAMeRsRKADhLEYjhbjXqBWKgSyT6BYiQiYCrVUIpB9AsVKRMBUqKUSgewTKFYiAqZCLZUIZJ9AsRIRMBVqGQ2Rb3AOsjOtlXVSAAAAAElFTkSuQmCC"},
+    {name: "Pony", sound: "mehl.ogg", verkauf: 150, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACAUlEQVRoQ2NkGCaAcZj4g2HUI4MtJkdjZMTHSLNt6X9QINQe7qZqaqCqYcTE0rDwCMgTerLaYP9eenyVqrFC9xhZOG8yOGmBwKP5j8C0CJcQPDIzd1aS5SayNBGThHCpGdIegeULDREVhm++v+B+/LbyC5j95ts7uBi5hQBdYmRQewTmOHxFaa9THTw/gNR9+/2dYKqkS4zAHM/FyslgbGYCdtT181fhmTV0fTojsgdBSQkEbry5QzMPwAwmKWkNG49Md2+HJxXkDEowuLEoIDcJ4bKLqBiBeQA5jROT3uX4pSH1xcenYJrajkf21MjyyO68NeAkdenKJXAg4IoNUCGAL6ZAcu0nphAVeKQmV6IMRS6JSLUAWT0oX008O5coO0m1hyhDR4RHkDMwIQ9fe3OHYfn19UQFHk1jBFbk4kse+cbJ4PwEyi8gjAxArVxyW7eEPEZU6MBCeth45CG0PphzaRnBAADFDHI/AxSioHolfksBQb2EQh+bPFGGwmJk2HgEVkcQUxdUWuT8H7R5BFTqgACxJQ8s4yMnMVo1U0hKWsPGI7BMRmyowmIEpo9WtTrIfKJihJxShN56Rj1C7xAnZN9ojBAKIXrLj8YIvUOckH2jMUIohOgtPxoj9A5xQvaNxgihEKK3/GiM0DvECdk3GiOEQoje8qMxQu8QJ2QfAOV++zMS6CWiAAAAAElFTkSuQmCC"}
 ]
 
 var geld = 30
@@ -79,7 +79,7 @@ function randomEvents() {
         } else if ($(".planet").eq(zufall).attr("data-name") == "Werkstatt") {
             $(".planet").eq(zufall).find(".waren").remove() 
             $(".planet").eq(zufall).attr("data-waren", "Booster")
-            $(".planet").eq(zufall).append("<div class=\"waren\" style=\"background-image: url()\"></div>")    
+            $(".planet").eq(zufall).append("<div class=\"waren\" style=\"background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABJ0lEQVRYR2NkGOSAcZC7j2HUgZTG0GgIjoYgpSFAqf7RNDgagpSGAKX6R9PggIbgtXDj/7++fwe74fPvvwySymoMz+/egrsJxP/y6C4Dp7AYw/e3r+DqbLffJDrmiFaIHBL3y6P+P7l0luzAGXXgoA9BWNwe9lT/f/PjDzBXnZ8DI8rPvPnKIMXFyvD59z+4HEgdzaMYW+IDORYmjs0BMHlSHAcyj6xMMmQcCCpmYI59++kL3N3CfDxgNqwIAhUzf799BouB1JESihSF4KB14MOm9P+Pjh8YvOXgoHcgcjHz7NsvMFeKiw1Mg4odUNECq/5g4sjq6JYGyY5jEjRSlElIsIdspaMOJDvooBpHQ3A0BCkNAUr1j6bB0RCkNAQo1T+aBikNQQCsiIYpMF2WVQAAAABJRU5ErkJggg==\")\"></div>")    
             // nachricht("Eine Werkstatt hat einen Booster im Angebot")
             setTimeout(function () {
                 $(".planet").eq(zufall).attr("data-waren", "")
@@ -103,8 +103,8 @@ function erstelleSchiff () {
 
 function scrolleBild (element) {
     $('html, body').animate({
-        scrollTop: ($(element).position().top - $(window).height() / 2),
-        scrollLeft: ($(element).position().left - $(window).width() / 2)
+        scrollTop: ($(element).position().top - $(window).height() / 2 + 100),
+        scrollLeft: ($(element).position().left - $(window).width() / 2 + 100)
     }, {
         queue: false,
         duration: 1500
@@ -146,7 +146,7 @@ $("html").on('mousedown', function (myclick) {
         }, {
             queue: false,
             duration: raumschiff.geschwindigkeit,
-            complete: function () {
+            progress: function () {
                 scrolleBild($("#deinSchiff"))
             },
         })
@@ -163,10 +163,10 @@ $("html").on('click', 'div.planet', function (myplanet) {
         if ($("#deinSchiff").position().left >= myplanet.pageX - 100 && $("#deinSchiff").position().left <= myplanet.pageX + 100) {
             if ($(myplanet.currentTarget).attr("data-name") == "Tanke") {
                 // spruch
-                if (geld - 10 >= 0) {
-                    geld = geld - 10
-                    raumschiff.reichweite = raumschiff.reichweite + 15
-                    nachricht("Du hast getankt.")
+                if (geld - 15 >= 0) {
+                    geld = geld - 15
+                    raumschiff.reichweite = raumschiff.reichweite + 20
+                    nachricht("Du hast für 15T getankt.")
                 }
             } else if ($(myplanet.currentTarget).attr("data-name") == "Händler") {
                 // verkauf an händler
@@ -174,7 +174,7 @@ $("html").on('click', 'div.planet', function (myplanet) {
                     if ($("#deinSchiff").attr("data-ladung") == waren[x].name) {
                         geld = geld + waren[x].verkauf
                         $("#deinSchiff").attr("data-ladung", "")
-                        nachricht("Du hast " + waren[x].name + " für " + waren[x].verkauf + " verkauft.")
+                        nachricht("Du hast " + waren[x].name + " für " + waren[x].verkauf + "T verkauft.")
                     }
                 }
             } else {
