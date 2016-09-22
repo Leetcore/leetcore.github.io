@@ -14,14 +14,15 @@ var planeten = [
 var waren = [
     {name: "Bananen", sound: "bananen.ogg", verkauf: 50, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAA4UlEQVRoQ+2V0Q2CQBBEoThpwvpsQovDkEhyXjDLTjIGlsfvMQvzHneMQ5FrLNJjoMjRTGIEIyYCfFomsPJYjMjoTEGMmMDKY69p5Pm6zz2y6fb4gtHe068t2T0zFC0pI3te4hRFVlJ9oZZ8VDZaV2wsmZSR9iEZ8tEntrWeLUSRyEi7sU9thCLZzfG5nz0S7ZFf62WO30MVKfNDvFyRf/w/1kNOPrXEU9IWo4gNrTgYIyI4WwwjNrTiYIyI4GwxjNjQioMxIoKzxTBiQysOxogIzhbDiA2tOBgjIjhbrIyRNyl9qDOEalLOAAAAAElFTkSuQmCC"},
     {name: "Kri-Eier", sound: "krieier.ogg", verkauf: 200, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABj0lEQVRoQ+2WP0sDQRDFN4VNLGxSB7+ItY2NrbW1dRoR8ROIiJWFlYVYJIIWWgiHJIV/ICCksPEEFXJNmmssVmZljyVeLO7NBG+ZLe9u5va935vba5hIViMSHUaF/DeSSkSJCDmg0RIytnJbJVLZOqFCJSJkbOW2SqTMuoPVI9tqttytUTYyu8n23IxifVHthZyun1mikE5Sk3/lBazaETnf6DohtIZvw1+pm4cglmhFIeR47cRmeVZQCKPlL9aCSG/z0o4/x27PNCNlKxSys7LnYsgtDo5WNEJuOrc2uUsqncicVGAiV1vXdvA0qCSEc4ZUiHeTPr1lZ0eIyEfID/o0Po6IwUSiETLLZXL98ePemX/x0nWGhc+mk1fTXFh09w8f9mFD4QazhNAhOb1BepYE/PwdP5v+ex9+v48p3CgaIWFkKErtpeVilv+KDBnAMeRsRKADhLEYjhbjXqBWKgSyT6BYiQiYCrVUIpB9AsVKRMBUqKUSgewTKFYiAqZCLZUIZJ9AsRIRMBVqGQ2Rb3AOsjOtlXVSAAAAAElFTkSuQmCC"},
-    {name: "Pony", sound: "mehl.ogg", verkauf: 150, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACAUlEQVRoQ2NkGCaAcZj4g2HUI4MtJkdjZMTHSLNt6X9QINQe7qZqaqCqYcTE0rDwCMgTerLaYP9eenyVqrFC9xhZOG8yOGmBwKP5j8C0CJcQPDIzd1aS5SayNBGThHCpGdIegeULDREVhm++v+B+/LbyC5j95ts7uBi5hQBdYmRQewTmOHxFaa9THTw/gNR9+/2dYKqkS4zAHM/FyslgbGYCdtT181fhmTV0fTojsgdBSQkEbry5QzMPwAwmKWkNG49Md2+HJxXkDEowuLEoIDcJ4bKLqBiBeQA5jROT3uX4pSH1xcenYJrajkf21MjyyO68NeAkdenKJXAg4IoNUCGAL6ZAcu0nphAVeKQmV6IMRS6JSLUAWT0oX008O5coO0m1hyhDR4RHkDMwIQ9fe3OHYfn19UQFHk1jBFbk4kse+cbJ4PwEyi8gjAxArVxyW7eEPEZU6MBCeth45CG0PphzaRnBAADFDHI/AxSioHolfksBQb2EQh+bPFGGwmJk2HgEVkcQUxdUWuT8H7R5BFTqgACxJQ8s4yMnMVo1U0hKWsPGI7BMRmyowmIEpo9WtTrIfKJihJxShN56Rj1C7xAnZN9ojBAKIXrLj8YIvUOckH2jMUIohOgtPxoj9A5xQvaNxgihEKK3/GiM0DvECdk3GiOEQoje8qMxQu8QJ2QfAOV++zMS6CWiAAAAAElFTkSuQmCC"}
+    {name: "Pony", sound: "mehl.ogg", verkauf: 150, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACBklEQVRoQ2NkGCaAcZj4g2HUI4MtJkdjZDRGaBQCo0mLRgFLtrGjMUJ20NFI42iM0ChgyTZ20MRIs23pf5Avag93k+UmsjSRHWw4NII8oSerDZa99PgqmCbVQ6MeoXasLJw3GZy0YODR/EcMIlxCcH7mzkq8gT6gMQLLFxoiKgzffH+hhM23lV8Y3nx7BxcjlNRGPYIracFCmVCG7XWqgyelb7+/E0ypdIkRmOO5WDkZjM1MwI66fv4qPI2Hrk8HxzyyJ0HJ6cabOwQ9QChAYAZQJWkNG49Md2+HJxPkDEpUcKMpIpSEcJlJcYyAPIGcxolJ7yDHyPFLMzz6+JSsyg+bZ0Y9AguV3Xlr/l+6cgnMxRUboEIAnzxIX/uJKRQFKkWaQY4bNh5BLlLJydwgPaACYuLZuRQFKkWa0esGZI8glz6EPHvtzR2G5dfXU+QWijQPO4/A6g5CySPfOPk/LOPDaFBggFq5hFq3hJItVWLkIbQ+mHNpGUHzQJ6BOR7mOFCdEr+lgKBefJ6hSDMsaQ0bj8DqD2LqgkqLHHCMDMqkBSp1QICUkgeUxJB7gOS2sajW+gUVrcPGI7BQISVUYZkepJdQaUeoxALJUyWzDwuPEBNa9FBDcYzQw5HE2DHqEWJCiZ5qRmOEnqFNjF2jMUJMKNFTzWiM0DO0ibFrNEaICSV6qgEACF0IQk2DWOAAAAAASUVORK5CYII="},
+    {name: "Bionic-Arm", sound: "bionicarm.ogg", verkauf: 250, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACIElEQVRoQ+1Wv0tCURS+DoJBghCkq2s/QChobq2mtkalIfsHzDYbMh0SazAbFBtyUxReTlGjRoMOb7EiiwbtBwhlOGXcE/ciYgr3eCFe1+We947nu+f7vvsux0QM8jMZhAdRRP6ak8oR5YgkBdTRkiSsMKxyRFg6SYXKEUnCCsMqR47j8Q6Tz2KxcCVrtRrE5s9X/s4fOpQumPAGhiHC5D5JpTrtdhsemRs0tn59cEf0mzuI52amSf3lGeLbhycyPzsF8SgcE3bkIBqFo+VyuUixWORNN5tNHi+/ZSDWJlZh9Vh1knifhpgex3K5DHEmmxXug20mDGAYIv3uyW2/n18ANO9wOOBvS61zWK+da6RarfJSdiSpM2eFgrCoFBBV3I8Me0dJrU8+wuOVYwXWxfEGuWz9kKtUKsTuLEFcurCT03Qa1Quq+F8QGUSS5rqPIT1i+5EISlRU8bBmh+WPYjH4pja8XnQfaIBhzQ7KG4bIls8HjuyFQmhB0QAYRwxBhM5qmqaBDrl8Hi0oGkDUEXpr6bquiPQKOHJHdgIB+IDpUMgGyN1gkO+z6fXyvNlshn5C4TC6DzRArzJsmOyM5UjjfgHSNpsN1nq9zkf9UUy83XsrIr995Gz0oOozJ9j44XG7O4lkcuTi0V6kgIreZJg6RQSjnoxa5YgMVTGYyhGMejJqlSMyVMVgKkcw6smoVY7IUBWDqRzBqCej1jCOfANuY9kzxF/egwAAAABJRU5ErkJggg=="}
 ]
 
 var geld = 30
 var verbrauchswert = 0
 
 var raumschiff = {
-    name: "Fregatte",
+    name: "Transporter",
     geschwindigkeit: 10000,
     reichweite: 50
 }
@@ -31,12 +32,13 @@ function init() {
     $("body").append("<div id='stats'></div>")
     $("body").append("<div id='nachricht'></div>")
     $("#stats").append("Raumschiff: <span id='raumschiffname'></span><br/>")
-    $("#stats").append("Geld: <span id='geld'></span><br/>")
+    $("#stats").append("Geld: <span id='geld'></span>T<br/>")
     $("#stats").append("Reichweite: <span id='reichweite'></span>")
-    generierePlanet(randomNumberGen(100, 200))
+    generierePlanet(Math.round($(window).width() / 15) + Math.round($(window).height() / 15))
     renderStuff()
     randomEvents()
     verbrauch()
+    setTimeout(polizei, 2000)
 }
 
 function generierePlanet (anzahl) {
@@ -44,7 +46,7 @@ function generierePlanet (anzahl) {
         setTimeout (function () {
             var zufall = randomNumberGen(0, planeten.length - 1);
             $("body").append("<div class='planet' style='top: "+ randomNumberGen(100, $(window).height() * 5) +"; left: "+ randomNumberGen(100, $(window).width() * 5) +"; background-image: url("+ planeten[zufall].bild +");' data-name='"+ planeten[zufall].name +"'></div")},
-            randomNumberGen(50, 500))
+            randomNumberGen(200, 500))
     }
 }
 
@@ -79,35 +81,45 @@ function randomEvents() {
         } else if ($(".planet").eq(zufall).attr("data-name") == "Werkstatt") {
             $(".planet").eq(zufall).find(".waren").remove() 
             $(".planet").eq(zufall).attr("data-waren", "Booster")
-            $(".planet").eq(zufall).append("<div class=\"waren\" style=\"background-image: url(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABJ0lEQVRYR2NkGOSAcZC7j2HUgZTG0GgIjoYgpSFAqf7RNDgagpSGAKX6R9PggIbgtXDj/7++fwe74fPvvwySymoMz+/egrsJxP/y6C4Dp7AYw/e3r+DqbLffJDrmiFaIHBL3y6P+P7l0luzAGXXgoA9BWNwe9lT/f/PjDzBXnZ8DI8rPvPnKIMXFyvD59z+4HEgdzaMYW+IDORYmjs0BMHlSHAcyj6xMMmQcCCpmYI59++kL3N3CfDxgNqwIAhUzf799BouB1JESihSF4KB14MOm9P+Pjh8YvOXgoHcgcjHz7NsvMFeKiw1Mg4odUNECq/5g4sjq6JYGyY5jEjRSlElIsIdspaMOJDvooBpHQ3A0BCkNAUr1j6bB0RCkNAQo1T+aBikNQQCsiIYpMF2WVQAAAABJRU5ErkJggg==\")\"></div>")    
+            $(".planet").eq(zufall).append("<div class=\"waren\" style=\"background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABJ0lEQVRYR2NkGOSAcZC7j2HUgZTG0GgIjoYgpSFAqf7RNDgagpSGAKX6R9PggIbgtXDj/7++fwe74fPvvwySymoMz+/egrsJxP/y6C4Dp7AYw/e3r+DqbLffJDrmiFaIHBL3y6P+P7l0luzAGXXgoA9BWNwe9lT/f/PjDzBXnZ8DI8rPvPnKIMXFyvD59z+4HEgdzaMYW+IDORYmjs0BMHlSHAcyj6xMMmQcCCpmYI59++kL3N3CfDxgNqwIAhUzf799BouB1JESihSF4KB14MOm9P+Pjh8YvOXgoHcgcjHz7NsvMFeKiw1Mg4odUNECq/5g4sjq6JYGyY5jEjRSlElIsIdspaMOJDvooBpHQ3A0BCkNAUr1j6bB0RCkNAQo1T+aBikNQQCsiIYpMF2WVQAAAABJRU5ErkJggg==')\"></div>")    
             // nachricht("Eine Werkstatt hat einen Booster im Angebot")
             setTimeout(function () {
                 $(".planet").eq(zufall).attr("data-waren", "")
                 $(".planet").eq(zufall).find(".waren").remove()
             }, randomNumberGen(20000, 30000))
         }
+        if ($(".planet").length > 0) {
+        var zufall2 = randomNumberGen(0, $(".planet").length - 1)
+            $(".planet").eq(zufall2).velocity({
+                left: $(".planet").eq(zufall2).position().left + randomNumberGen(-200, 200),
+                top: $(".planet").eq(zufall2).position().top + randomNumberGen(-200, 200),
+            }, {
+                duration: 20000
+            }) 
+        }
     }
-    setTimeout(randomEvents, 10000)
+    setTimeout(randomEvents, 8000)
 }
 
 function erstelleSchiff () {
     $("body").append("<div id='deinSchiff' data-name='"+ raumschiff.name +"'></div>")
-    $("#deinSchiff").animate({        
+    $("#deinSchiff").velocity({        
         left: 100,
         top: 100,
     }, {
         duration: raumschiff.geschwindigkeit - 10000
     })
     scrolleBild($("#deinSchiff"))
+    SchiffinMitte()
 }
 
 function scrolleBild (element) {
     $('html, body').animate({
-        scrollTop: ($(element).position().top - $(window).height() / 2 + 100),
-        scrollLeft: ($(element).position().left - $(window).width() / 2 + 100)
+        scrollTop: ($(element).position().top - $(window).height() / 2 + 10),
+        scrollLeft: ($(element).position().left - $(window).width() / 2 + 10)
     }, {
         queue: false,
-        duration: 1500
+        duration: 2000
     });
 }
 
@@ -118,12 +130,130 @@ function nachricht (text) {
     }
 }
 
+function SchiffinMitte() {
+    scrolleBild($("#deinSchiff"))
+    setTimeout(SchiffinMitte, 2000)
+}
+
 function verbrauch () {
     raumschiff.reichweite = raumschiff.reichweite - 1 - Math.round(verbrauchswert * 0.2)
     verbrauchswert = 0
     setTimeout(verbrauch, 30000)
 }
 
+function polizei() {
+    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
+    
+    patrouilliere()
+    gefasst()
+}
+function patrouilliere() {
+    var randomPolizei = randomNumberGen(0, $(".polizei").length - 1 )
+    switch (randomNumberGen(0, 3)) {
+        case 0:
+            var zufallx = randomNumberGen(-200, 200)
+            var zufally = randomNumberGen(-200, 200)
+            
+            var offset = $(".polizei").eq(randomPolizei).offset();
+            var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
+            var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
+
+            var radians = Math.atan2(zufallx - center_x, zufally - center_y);
+            var degree = (radians * (180 / Math.PI) * -1) + 90; 
+            $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
+
+            $(".polizei").eq(randomPolizei).velocity({
+                left: zufallx,
+                top: zufally,
+            }, {
+                duration: 10000
+            })
+        break
+        case 1:
+            var randomPlanet = randomNumberGen(0, $(".planet").length - 1)
+            var zufallx = $(".planet").eq(randomPlanet).position().top
+            var zufally = $(".planet").eq(randomPlanet).position().left
+            
+            var offset = $(".polizei").eq(randomPolizei).offset();
+            var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
+            var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
+
+            var radians = Math.atan2(zufallx - center_x, zufally - center_y);
+            var degree = (radians * (180 / Math.PI) * -1) + 90; 
+            $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
+
+            $(".polizei").eq(randomPolizei).velocity({
+                left: zufallx,
+                top: zufally,
+            }, {
+                duration: 20000
+            })
+        break;
+        case 2:
+            var randomPlanet = randomNumberGen(0, $(".planet[data-name='Händler']").length - 1)
+            var zufallx = $(".planet[data-name='Händler']").eq(randomPlanet).position().top
+            var zufally = $(".planet[data-name='Händler']").eq(randomPlanet).position().left
+            
+            var offset = $(".polizei").eq(randomPolizei).offset();
+            var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
+            var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
+
+            var radians = Math.atan2(zufallx - center_x, zufally - center_y);
+            var degree = (radians * (180 / Math.PI) * -1) + 90; 
+            $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
+
+            $(".polizei").eq(randomPolizei).velocity({
+                left: zufallx,
+                top: zufally,
+            }, {
+                duration: 30000
+            })
+        break;
+        case 3:
+            var zufallx = $("#deinSchiff").position().left + randomNumberGen(-300, 300)
+            var zufally = $("#deinSchiff").position().top + randomNumberGen(-300, 300)
+            
+            var offset = $(".polizei").eq(randomPolizei).offset();
+            var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
+            var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
+
+            var radians = Math.atan2(zufallx - center_x, zufally - center_y);
+            var degree = (radians * (180 / Math.PI) * -1) + 90; 
+            $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
+
+            $(".polizei").eq(randomPolizei).velocity({
+                left: $(".polizei").eq(randomPolizei).position().left + zufallx,
+                top: $(".polizei").eq(randomPolizei).position().top + zufally,
+            }, {
+                duration: 30000
+            })
+        break;
+    }
+
+    setTimeout(patrouilliere, 3000)
+}
+
+function gefasst() {
+    for (var x = 0; x < $(".polizei").length - 1; x++) {
+    if ($("#deinSchiff").position().top >= $(".polizei").eq(x).position().top - 100 && $("#deinSchiff").position().top <= $(".polizei").eq(x).position().top + 100) {
+        if ($("#deinSchiff").position().left >= $(".polizei").eq(x).position().left - 100 && $("#deinSchiff").position().left <= $(".polizei").eq(x).position().left + 100) {
+            if ($("#deinSchiff").attr("data-ladung") != "" && $("#deinSchiff").attr("data-ladung") != undefined) {
+                $("#deinSchiff").attr("data-ladung", "")
+                geld = geld - 200
+                nachricht("Du wurdest von einer Kontrolle erwischt und musstest 200T Strafe zahlen.")
+            }
+        }
+    }
+    }
+    setTimeout(gefasst, 1000)
+}
 
 // events
 
@@ -146,9 +276,9 @@ $("html").on('mousedown', function (myclick) {
         }, {
             queue: false,
             duration: raumschiff.geschwindigkeit,
-            progress: function () {
-                scrolleBild($("#deinSchiff"))
-            },
+            complete: function () {
+                //scrolleBild($("#deinSchiff"))
+            }
         })
     } else if (geld >= 20) {
         // play spruch adac
@@ -182,9 +312,10 @@ $("html").on('click', 'div.planet', function (myplanet) {
                 if ($(myplanet.currentTarget).attr("data-waren") != "" && ($("#deinSchiff").attr("data-ladung") == "" || $("#deinSchiff").attr("data-ladung") == undefined)) {
                     if ($(myplanet.currentTarget).attr("data-waren") == "Booster") {
                         if (geld > 200) {
-                            if (raumschiff.geschwindigkeit > 5000) {
+                            if (raumschiff.geschwindigkeit > 3000) {
                             raumschiff.geschwindigkeit = raumschiff.geschwindigkeit - 1000
                             geld = geld - 200
+                            $(myplanet.currentTarget).attr("data-waren", "")
                             } else {
                                 nachricht("Du kannst dein Raumschiff leider nicht mehr verbessern...")
                             }
