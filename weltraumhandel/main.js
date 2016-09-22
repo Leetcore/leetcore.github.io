@@ -45,7 +45,7 @@ function generierePlanet (anzahl) {
     for (var x = 0; x < anzahl; x++) {        
         setTimeout (function () {
             var zufall = randomNumberGen(0, planeten.length - 1);
-            $("body").append("<div class='planet' style='top: "+ randomNumberGen(100, $(window).height() * 5) +"; left: "+ randomNumberGen(100, $(window).width() * 5) +"; background-image: url("+ planeten[zufall].bild +");' data-name='"+ planeten[zufall].name +"'></div")},
+            $("body").append("<div class='planet' style='top: "+ randomNumberGen(100, $(window).height() * 4) +"; left: "+ randomNumberGen(100, $(window).width() * 4) +"; background-image: url("+ planeten[zufall].bild +");' data-name='"+ planeten[zufall].name +"'></div")},
             randomNumberGen(200, 500))
     }
 }
@@ -142,14 +142,14 @@ function verbrauch () {
 }
 
 function polizei() {
-    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: "+ randomNumberGen(500, $(document).height() - 500) +"; left: "+ randomNumberGen(500, $(document).width() - 500) +"'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
     
     patrouilliere()
     gefasst()
@@ -173,7 +173,7 @@ function patrouilliere() {
                 left: zufallx,
                 top: zufally,
             }, {
-                duration: 10000
+                duration: randomNumberGen(5000, 10000)
             })
         break
         case 1:
@@ -193,7 +193,7 @@ function patrouilliere() {
                 left: zufallx,
                 top: zufally,
             }, {
-                duration: 30000
+                duration: 20000
             })
         break;
         case 2:
@@ -217,7 +217,7 @@ function patrouilliere() {
         break;
     }
 
-    setTimeout(patrouilliere, 10000)
+    setTimeout(patrouilliere, 5000)
 }
 
 function gefasst() {
