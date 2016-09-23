@@ -14,7 +14,7 @@ var planeten = [
 var waren = [
     {name: "Bananen", sound: "bananen.ogg", verkauf: 50, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAA4UlEQVRoQ+2V0Q2CQBBEoThpwvpsQovDkEhyXjDLTjIGlsfvMQvzHneMQ5FrLNJjoMjRTGIEIyYCfFomsPJYjMjoTEGMmMDKY69p5Pm6zz2y6fb4gtHe068t2T0zFC0pI3te4hRFVlJ9oZZ8VDZaV2wsmZSR9iEZ8tEntrWeLUSRyEi7sU9thCLZzfG5nz0S7ZFf62WO30MVKfNDvFyRf/w/1kNOPrXEU9IWo4gNrTgYIyI4WwwjNrTiYIyI4GwxjNjQioMxIoKzxTBiQysOxogIzhbDiA2tOBgjIjhbrIyRNyl9qDOEalLOAAAAAElFTkSuQmCC"},
     {name: "Alien-Eier", sound: "krieier.ogg", verkauf: 60, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABj0lEQVRoQ+2WP0sDQRDFN4VNLGxSB7+ItY2NrbW1dRoR8ROIiJWFlYVYJIIWWgiHJIV/ICCksPEEFXJNmmssVmZljyVeLO7NBG+ZLe9u5va935vba5hIViMSHUaF/DeSSkSJCDmg0RIytnJbJVLZOqFCJSJkbOW2SqTMuoPVI9tqttytUTYyu8n23IxifVHthZyun1mikE5Sk3/lBazaETnf6DohtIZvw1+pm4cglmhFIeR47cRmeVZQCKPlL9aCSG/z0o4/x27PNCNlKxSys7LnYsgtDo5WNEJuOrc2uUsqncicVGAiV1vXdvA0qCSEc4ZUiHeTPr1lZ0eIyEfID/o0Po6IwUSiETLLZXL98ePemX/x0nWGhc+mk1fTXFh09w8f9mFD4QazhNAhOb1BepYE/PwdP5v+ex9+v48p3CgaIWFkKErtpeVilv+KDBnAMeRsRKADhLEYjhbjXqBWKgSyT6BYiQiYCrVUIpB9AsVKRMBUqKUSgewTKFYiAqZCLZUIZJ9AsRIRMBVqGQ2Rb3AOsjOtlXVSAAAAAElFTkSuQmCC"},
-    {name: "Pony", sound: "mehl.ogg", verkauf: 110, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACBklEQVRoQ2NkGCaAcZj4g2HUI4MtJkdjZDRGaBQCo0mLRgFLtrGjMUJ20NFI42iM0ChgyTZ20MRIs23pf5Avag93k+UmsjSRHWw4NII8oSerDZa99PgqmCbVQ6MeoXasLJw3GZy0YODR/EcMIlxCcH7mzkq8gT6gMQLLFxoiKgzffH+hhM23lV8Y3nx7BxcjlNRGPYIracFCmVCG7XWqgyelb7+/E0ypdIkRmOO5WDkZjM1MwI66fv4qPI2Hrk8HxzyyJ0HJ6cabOwQ9QChAYAZQJWkNG49Md2+HJxPkDEpUcKMpIpSEcJlJcYyAPIGcxolJ7yDHyPFLMzz6+JSsyg+bZ0Y9AguV3Xlr/l+6cgnMxRUboEIAnzxIX/uJKRQFKkWaQY4bNh5BLlLJydwgPaACYuLZuRQFKkWa0esGZI8glz6EPHvtzR2G5dfXU+QWijQPO4/A6g5CySPfOPk/LOPDaFBggFq5hFq3hJItVWLkIbQ+mHNpGUHzQJ6BOR7mOFCdEr+lgKBefJ6hSDMsaQ0bj8DqD2LqgkqLHHCMDMqkBSp1QICUkgeUxJB7gOS2sajW+gUVrcPGI7BQISVUYZkepJdQaUeoxALJUyWzDwuPEBNa9FBDcYzQw5HE2DHqEWJCiZ5qRmOEnqFNjF2jMUJMKNFTzWiM0DO0ibFrNEaICSV6qgEACF0IQk2DWOAAAAAASUVORK5CYII="},
+    {name: "Pony", sound: "pony.ogg", verkauf: 110, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACBklEQVRoQ2NkGCaAcZj4g2HUI4MtJkdjZDRGaBQCo0mLRgFLtrGjMUJ20NFI42iM0ChgyTZ20MRIs23pf5Avag93k+UmsjSRHWw4NII8oSerDZa99PgqmCbVQ6MeoXasLJw3GZy0YODR/EcMIlxCcH7mzkq8gT6gMQLLFxoiKgzffH+hhM23lV8Y3nx7BxcjlNRGPYIracFCmVCG7XWqgyelb7+/E0ypdIkRmOO5WDkZjM1MwI66fv4qPI2Hrk8HxzyyJ0HJ6cabOwQ9QChAYAZQJWkNG49Md2+HJxPkDEpUcKMpIpSEcJlJcYyAPIGcxolJ7yDHyPFLMzz6+JSsyg+bZ0Y9AguV3Xlr/l+6cgnMxRUboEIAnzxIX/uJKRQFKkWaQY4bNh5BLlLJydwgPaACYuLZuRQFKkWa0esGZI8glz6EPHvtzR2G5dfXU+QWijQPO4/A6g5CySPfOPk/LOPDaFBggFq5hFq3hJItVWLkIbQ+mHNpGUHzQJ6BOR7mOFCdEr+lgKBefJ6hSDMsaQ0bj8DqD2LqgkqLHHCMDMqkBSp1QICUkgeUxJB7gOS2sajW+gUVrcPGI7BQISVUYZkepJdQaUeoxALJUyWzDwuPEBNa9FBDcYzQw5HE2DHqEWJCiZ5qRmOEnqFNjF2jMUJMKNFTzWiM0DO0ibFrNEaICSV6qgEACF0IQk2DWOAAAAAASUVORK5CYII="},
     {name: "Bionic-Arm", sound: "bionicarm.ogg", verkauf: 150, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACIElEQVRoQ+1Wv0tCURS+DoJBghCkq2s/QChobq2mtkalIfsHzDYbMh0SazAbFBtyUxReTlGjRoMOb7EiiwbtBwhlOGXcE/ciYgr3eCFe1+We947nu+f7vvsux0QM8jMZhAdRRP6ak8oR5YgkBdTRkiSsMKxyRFg6SYXKEUnCCsMqR47j8Q6Tz2KxcCVrtRrE5s9X/s4fOpQumPAGhiHC5D5JpTrtdhsemRs0tn59cEf0mzuI52amSf3lGeLbhycyPzsF8SgcE3bkIBqFo+VyuUixWORNN5tNHi+/ZSDWJlZh9Vh1knifhpgex3K5DHEmmxXug20mDGAYIv3uyW2/n18ANO9wOOBvS61zWK+da6RarfJSdiSpM2eFgrCoFBBV3I8Me0dJrU8+wuOVYwXWxfEGuWz9kKtUKsTuLEFcurCT03Qa1Quq+F8QGUSS5rqPIT1i+5EISlRU8bBmh+WPYjH4pja8XnQfaIBhzQ7KG4bIls8HjuyFQmhB0QAYRwxBhM5qmqaBDrl8Hi0oGkDUEXpr6bquiPQKOHJHdgIB+IDpUMgGyN1gkO+z6fXyvNlshn5C4TC6DzRArzJsmOyM5UjjfgHSNpsN1nq9zkf9UUy83XsrIr995Gz0oOozJ9j44XG7O4lkcuTi0V6kgIreZJg6RQSjnoxa5YgMVTGYyhGMejJqlSMyVMVgKkcw6smoVY7IUBWDqRzBqCej1jCOfANuY9kzxF/egwAAAABJRU5ErkJggg=="}
 ]
 
@@ -34,7 +34,7 @@ function init() {
     $("#stats").append("Raumschiff: <span id='raumschiffname'></span><br/>")
     $("#stats").append("Geld: <span id='geld'></span>T<br/>")
     $("#stats").append("Reichweite: <span id='reichweite'></span>")
-    generierePlanet(Math.round($(window).width() / 15) + Math.round($(window).height() / 15))
+    generierePlanet(Math.round($(window).width() / 10) + Math.round($(window).height() / 10))
     renderStuff()
     randomEvents()
     verbrauch()
@@ -62,9 +62,6 @@ function renderStuff() {
     $("#raumschiffname").text(raumschiff.name + " " + ladung)
     $("#geld").text(geld)
     $("#reichweite").text(raumschiff.reichweite)
-    if (geld <= 0) {
-        nachricht("Du bist pleite.")
-    }
     if (raumschiff.reichweite <= 0) {
         $("html").off('mousedown')
         nachricht("Mh, du hast vergessen zu tanken.")
@@ -84,7 +81,7 @@ function randomEvents() {
             setTimeout(function () {
                 $(".planet").eq(zufall).attr("data-waren", "")
                 $(".planet").eq(zufall).find(".waren").remove()
-            }, randomNumberGen(30000, 90000))
+            }, randomNumberGen(30000, 60000))
         } else if ($(".planet").eq(zufall).attr("data-name") == "Werkstatt") {
             $(".planet").eq(zufall).find(".waren").remove() 
             $(".planet").eq(zufall).attr("data-waren", "Booster")
@@ -96,7 +93,7 @@ function randomEvents() {
             }, randomNumberGen(20000, 30000))
         }
         if ($(".planet").length > 0) {
-        var zufall2 = randomNumberGen(0, $(".planet").length - 1)
+            var zufall2 = randomNumberGen(0, $(".planet").length - 1)
             $(".planet").eq(zufall2).velocity({
                 left: "+=" + randomNumberGen(-200, 200),
                 top: "+=" + randomNumberGen(-200, 200),
@@ -105,7 +102,7 @@ function randomEvents() {
             }) 
         }
     }
-    setTimeout(randomEvents, 8000)
+    setTimeout(randomEvents, 5000)  
 }
 
 function erstelleSchiff () {
@@ -152,15 +149,18 @@ function verbrauch () {
 }
 
 function polizei() {
-    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
-    $("body").append("<div class='polizei' data-name='polizei' style='top: 1000; left: 100'></div>")
-    
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+    $("body").append("<div class='polizei' data-name='polizei' style='top: 500; left: 100'></div>")
+
     patrouilliere()
     gefasst()
 }
@@ -239,6 +239,9 @@ function gefasst() {
                 $("#deinSchiff").attr("data-ladung", "")
                 geld = geld - 200
                 nachricht("Du wurdest von einer Kontrolle erwischt und musstest 200T Strafe zahlen.")
+                if (geld <= 0) {
+                    nachricht("Du bist pleite.")
+                }
             }
         }
     }
@@ -246,9 +249,15 @@ function gefasst() {
     setTimeout(gefasst, 1000)
 }
 
+function playAudio(file) {
+    var paudio = new Audio(file);
+    paudio.volume = 0.9;
+    paudio.play();
+}
+
 // events
 
-$("html").on('mousedown', function (myclick) {
+$("html").on('click', function (myclick) {
     verbrauchswert = verbrauchswert + 1
 
     var center_x = parseInt($("#deinSchiff").css("left")) + ($("#deinSchiff").width()/2);
@@ -257,7 +266,6 @@ $("html").on('mousedown', function (myclick) {
     var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
     var degree = (radians * (180 / Math.PI) * -1) + 90; 
     $("#deinSchiff").css('transform', 'rotate('+ degree +'deg)');
-
 
     if (raumschiff.reichweite > 0) {
         $("#deinSchiff").animate({
@@ -270,6 +278,14 @@ $("html").on('mousedown', function (myclick) {
                 //scrolleBild($("#deinSchiff"))
             }
         })
+    
+    if (randomNumberGen(0,1) == 0){        
+        setTimeout( function () {
+            playAudio("flug"+ randomNumberGen(1,3) +".ogg")
+            }, 5000
+        )
+    }
+    
     } else if (geld >= 20) {
         // play spruch adac
         geld = geld - 18
@@ -324,7 +340,11 @@ $("html").on('click', 'div.planet', function (myplanet) {
                             $(myplanet.currentTarget).attr("data-waren", "")
                             $(myplanet.currentTarget).find(".waren").remove()
                             nachricht("Du hast " + $("#deinSchiff").attr("data-ladung") + " eingeladen.")
-                            // play spruch random 1-4
+                            for (var x = 0; x < waren.length; x++) {
+                                if ($("#deinSchiff").attr("data-ladung") == waren[x].name) {
+                                    playAudio(waren[x].sound)
+                                }
+                            }
                         } else {
                             nachricht("Du hast kein Geld, um Waren zu kaufen.")
                         }
