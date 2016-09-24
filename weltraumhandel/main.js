@@ -99,7 +99,7 @@ function randomEvents() {
             }) 
         }
     }
-    setTimeout(randomEvents, 10000)  
+    setTimeout(randomEvents, 5000)  
 }
 
 function erstelleSchiff () {
