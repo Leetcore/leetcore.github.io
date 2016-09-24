@@ -187,8 +187,8 @@ function patrouilliere() {
             break
             case 1:
                 var randomPlanet = randomNumberGen(0, $(".planet[data-name='Händler']").length - 1)
-                var zufallx = $(".planet[data-name='Händler']").eq(randomPlanet).position().top
-                var zufally = $(".planet[data-name='Händler']").eq(randomPlanet).position().left
+                var zufallx = parseInt($(".planet[data-name='Händler']").eq(randomPlanet).css("top"))
+                var zufally = parseInt($(".planet[data-name='Händler']").eq(randomPlanet).css("left"))
                 
                 var offset = $(".polizei").eq(randomPolizei).offset();
                 var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
@@ -206,8 +206,8 @@ function patrouilliere() {
                 })
             break;
             case 2:
-                var zufallx = $("#deinSchiff").position().left + randomNumberGen(-300, 300)
-                var zufally = $("#deinSchiff").position().top + randomNumberGen(-300, 300)
+                var zufallx = parseInt($("#deinSchiff").css("left")) + randomNumberGen(-300, 300)
+                var zufally = parseInt($("#deinSchiff").css("top")) + randomNumberGen(-300, 300)
                 
                 var offset = $(".polizei").eq(randomPolizei).offset();
                 var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
