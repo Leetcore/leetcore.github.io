@@ -34,7 +34,7 @@ function init() {
     $("#stats").append("Raumschiff: <span id='raumschiffname'></span><br/>")
     $("#stats").append("Geld: <span id='geld'></span>T<br/>")
     $("#stats").append("Reichweite: <span id='reichweite'></span>")
-    generierePlanet(Math.round($(window).width() / 10) + Math.round($(window).height() / 10))
+    generierePlanet(Math.round($(window).width() / 12) + Math.round($(window).height() / 12))
     renderStuff()
     randomEvents()
     verbrauch()
@@ -63,10 +63,6 @@ function renderStuff() {
     $("#raumschiffname").text(raumschiff.name + " " + ladung)
     $("#geld").text(geld)
     $("#reichweite").text(raumschiff.reichweite)
-    if (raumschiff.reichweite <= 0) {
-        $("html").off('mousedown')
-        nachricht("Mh, du hast vergessen zu tanken.")
-    }
     setTimeout(renderStuff, 1000)
 }
 
@@ -74,7 +70,7 @@ function randomEvents() {
     // angebot erscheint
     for (var x = 0; x < 3; x++) {
         var zufall = randomNumberGen(0, $(".planet").length - 1)
-        if ($(".planet").eq(zufall).attr("data-waren") == "" || $(".planet").eq(zufall).attr("data-waren") == undefined && ($(".planet").eq(zufall).attr("data-name") != "Händler" && $(".planet").eq(zufall).attr("data-name") != "Tanke" && $(".planet").eq(zufall).attr("data-name") != "Werkstatt")) {
+        if (($(".planet").eq(zufall).attr("data-waren") == "" || $(".planet").eq(zufall).attr("data-waren") == undefined) && $(".planet").eq(zufall).attr("data-name") !== "Händler" && $(".planet").eq(zufall).attr("data-name") !== "Tanke" && $(".planet").eq(zufall).attr("data-name") != "Werkstatt") {
             var warenzufall = randomNumberGen(0, waren.length - 1)
             $(".planet").eq(zufall).attr("data-waren", waren[warenzufall].name)
             $(".planet").eq(zufall).append("<div class=\"waren\" style=\"background-image: url("+ waren[warenzufall].bild +")\"></div>")    
@@ -287,6 +283,9 @@ $("html").on('click', function (myclick) {
         )
     }
     
+    } else if (raumschiff.reichweite <= 0) {
+        $("html").off('click')
+        nachricht("Mh, vergessen zu tanken?")
     } else if (geld >= 20) {
         // play spruch adac
         geld = geld - 18
