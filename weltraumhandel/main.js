@@ -24,7 +24,7 @@ var verbrauchswert = 0
 var raumschiff = {
     name: "Transporter",
     geschwindigkeit: 10000,
-    reichweite: 50
+    reichweite: 80
 }
 
 function init() {
