@@ -70,7 +70,7 @@ function randomEvents() {
     // angebot erscheint
     for (var x = 0; x < 3; x++) {
         var zufall = randomNumberGen(0, $(".planet").length - 1)
-        if (($(".planet").eq(zufall).attr("data-waren") == "" || $(".planet").eq(zufall).attr("data-waren") == undefined) && $(".planet").eq(zufall).attr("data-name") !== "Händler" && $(".planet").eq(zufall).attr("data-name") !== "Tanke" && $(".planet").eq(zufall).attr("data-name") != "Werkstatt") {
+        if (($(".planet").eq(zufall).attr("data-waren") == "" || $(".planet").eq(zufall).attr("data-waren") == undefined) && $(".planet").eq(zufall).attr("data-name") !== "Händler" && $(".planet").eq(zufall).attr("data-name") !== "Tanke" && $(".planet").eq(zufall).attr("data-name") !== "Werkstatt") {
             var warenzufall = randomNumberGen(0, waren.length - 1)
             $(".planet").eq(zufall).attr("data-waren", waren[warenzufall].name)
             $(".planet").eq(zufall).append("<div class=\"waren\" style=\"background-image: url("+ waren[warenzufall].bild +")\"></div>")    
