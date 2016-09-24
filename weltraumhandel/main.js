@@ -18,13 +18,13 @@ var waren = [
     {name: "Bionic-Arm", sound: "bionicarm.ogg", verkauf: 150, bild: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACIElEQVRoQ+1Wv0tCURS+DoJBghCkq2s/QChobq2mtkalIfsHzDYbMh0SazAbFBtyUxReTlGjRoMOb7EiiwbtBwhlOGXcE/ciYgr3eCFe1+We947nu+f7vvsux0QM8jMZhAdRRP6ak8oR5YgkBdTRkiSsMKxyRFg6SYXKEUnCCsMqR47j8Q6Tz2KxcCVrtRrE5s9X/s4fOpQumPAGhiHC5D5JpTrtdhsemRs0tn59cEf0mzuI52amSf3lGeLbhycyPzsF8SgcE3bkIBqFo+VyuUixWORNN5tNHi+/ZSDWJlZh9Vh1knifhpgex3K5DHEmmxXug20mDGAYIv3uyW2/n18ANO9wOOBvS61zWK+da6RarfJSdiSpM2eFgrCoFBBV3I8Me0dJrU8+wuOVYwXWxfEGuWz9kKtUKsTuLEFcurCT03Qa1Quq+F8QGUSS5rqPIT1i+5EISlRU8bBmh+WPYjH4pja8XnQfaIBhzQ7KG4bIls8HjuyFQmhB0QAYRwxBhM5qmqaBDrl8Hi0oGkDUEXpr6bquiPQKOHJHdgIB+IDpUMgGyN1gkO+z6fXyvNlshn5C4TC6DzRArzJsmOyM5UjjfgHSNpsN1nq9zkf9UUy83XsrIr995Gz0oOozJ9j44XG7O4lkcuTi0V6kgIreZJg6RQSjnoxa5YgMVTGYyhGMejJqlSMyVMVgKkcw6smoVY7IUBWDqRzBqCej1jCOfANuY9kzxF/egwAAAABJRU5ErkJggg=="}
 ]
 
-var geld = 50
+var geld = 80
 var verbrauchswert = 0
 
 var raumschiff = {
     name: "Transporter",
     geschwindigkeit: 10000,
-    reichweite: 80
+    reichweite: 50
 }
 
 function init() {
@@ -99,7 +99,7 @@ function randomEvents() {
             }) 
         }
     }
-    setTimeout(randomEvents, 5000)  
+    setTimeout(randomEvents, 10000)  
 }
 
 function erstelleSchiff () {
