@@ -163,68 +163,69 @@ function polizei() {
 }
 
 function patrouilliere() {
-    var randomPolizei = randomNumberGen(0, $(".polizei").length - 1 )
-    switch (randomNumberGen(0, 2)) {
-        case 0:
-            var zufallx = randomNumberGen(-200, 200)
-            var zufally = randomNumberGen(-200, 200)
-            
-            var offset = $(".polizei").eq(randomPolizei).offset();
-            var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
-            var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
-
-            var radians = Math.atan2(zufallx - center_x, zufally - center_y);
-            var degree = (radians * (180 / Math.PI) * -1) + 90; 
-            $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
-
-            $(".polizei").eq(randomPolizei).velocity({
-                left: "+=" + zufallx,
-                top: "+=" + zufally,
-            }, {
-                duration: randomNumberGen(5000, 10000)
-            })
-        break
-        case 1:
-            var randomPlanet = randomNumberGen(0, $(".planet[data-name='Händler']").length - 1)
-            var zufallx = $(".planet[data-name='Händler']").eq(randomPlanet).position().top
-            var zufally = $(".planet[data-name='Händler']").eq(randomPlanet).position().left
-            
-            var offset = $(".polizei").eq(randomPolizei).offset();
-            var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
-            var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
-
-            var radians = Math.atan2(zufallx - center_x, zufally - center_y);
-            var degree = (radians * (180 / Math.PI) * -1) + 90; 
-            $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
-
-            $(".polizei").eq(randomPolizei).velocity({
-                left: zufallx,
-                top: zufally,
-            }, {
-                duration: 20000
-            })
-        break;
-        case 2:
-            var zufallx = $("#deinSchiff").position().left + randomNumberGen(-300, 300)
-            var zufally = $("#deinSchiff").position().top + randomNumberGen(-300, 300)
-            
-            var offset = $(".polizei").eq(randomPolizei).offset();
-            var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
-            var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
-
-            var radians = Math.atan2(zufallx - center_x, zufally - center_y);
-            var degree = (radians * (180 / Math.PI) * -1) + 90; 
-            $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
-
-            $(".polizei").eq(randomPolizei).velocity({
-                left: zufallx,
-                top: zufally,
-            }, {
-                duration: 30000
-            })
-        break;
+    for (var x = 0; x < 3; x++) {
+        var randomPolizei = randomNumberGen(0, $(".polizei").length - 1 )
+        switch (randomNumberGen(0, 2)) {
+            case 0:
+                var zufallx = randomNumberGen(-200, 200)
+                var zufally = randomNumberGen(-200, 200)
+                
+                var offset = $(".polizei").eq(randomPolizei).offset();
+                var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
+                var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
+    
+                var radians = Math.atan2(zufallx - center_x, zufally - center_y);
+                var degree = (radians * (180 / Math.PI) * -1) + 90; 
+                $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
+    
+                $(".polizei").eq(randomPolizei).velocity({
+                    left: "+=" + zufallx,
+                    top: "+=" + zufally,
+                }, {
+                    duration: randomNumberGen(5000, 10000)
+                })
+            break
+            case 1:
+                var randomPlanet = randomNumberGen(0, $(".planet[data-name='Händler']").length - 1)
+                var zufallx = $(".planet[data-name='Händler']").eq(randomPlanet).position().top
+                var zufally = $(".planet[data-name='Händler']").eq(randomPlanet).position().left
+                
+                var offset = $(".polizei").eq(randomPolizei).offset();
+                var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
+                var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
+    
+                var radians = Math.atan2(zufallx - center_x, zufally - center_y);
+                var degree = (radians * (180 / Math.PI) * -1) + 90; 
+                $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
+    
+                $(".polizei").eq(randomPolizei).velocity({
+                    left: zufallx,
+                    top: zufally,
+                }, {
+                    duration: 20000
+                })
+            break;
+            case 2:
+                var zufallx = $("#deinSchiff").position().left + randomNumberGen(-300, 300)
+                var zufally = $("#deinSchiff").position().top + randomNumberGen(-300, 300)
+                
+                var offset = $(".polizei").eq(randomPolizei).offset();
+                var center_x = (offset.left) + 	($(".polizei").eq(randomPolizei).width()/2);
+                var center_y = (offset.top) + ($(".polizei").eq(randomPolizei).height()/2);
+    
+                var radians = Math.atan2(zufallx - center_x, zufally - center_y);
+                var degree = (radians * (180 / Math.PI) * -1) + 90; 
+                $(".polizei").eq(randomPolizei).css('transform', 'rotate('+ degree +'deg)');
+    
+                $(".polizei").eq(randomPolizei).velocity({
+                    left: zufallx,
+                    top: zufally,
+                }, {
+                    duration: 30000
+                })
+            break;
+        }
     }
-
     setTimeout(patrouilliere, 3000)
 }
 
