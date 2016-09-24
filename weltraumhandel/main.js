@@ -99,7 +99,7 @@ function randomEvents() {
             }) 
         }
     }
-    setTimeout(randomEvents, 3000)  
+    setTimeout(randomEvents, 10000)  
 }
 
 function erstelleSchiff () {
@@ -225,7 +225,7 @@ function patrouilliere() {
         break;
     }
 
-    setTimeout(patrouilliere, 5000)
+    setTimeout(patrouilliere, 3000)
 }
 
 function gefasst() {
