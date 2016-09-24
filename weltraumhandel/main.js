@@ -99,7 +99,7 @@ function randomEvents() {
             }) 
         }
     }
-    setTimeout(randomEvents, 5000)  
+    setTimeout(randomEvents, 3000)  
 }
 
 function erstelleSchiff () {
@@ -276,7 +276,7 @@ $("html").on('click', function (myclick) {
             }
         })
     
-    if (randomNumberGen(0,1) == 0){        
+    if (randomNumberGen(0,5) == 0){        
         setTimeout( function () {
             playAudio("flug"+ randomNumberGen(1,3) +".ogg")
             }, 5000
