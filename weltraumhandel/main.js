@@ -39,7 +39,7 @@ function init() {
     randomEvents()
     verbrauch()
     setTimeout(polizei, 2000)
-    nachricht("Du bist ein Schmuggler und willst dir eine goldene Nase verdienen. Pass dabei auf die Kontrolldrohnen auf!")
+    nachricht("Du bist ein Schmuggler und willst dir eine goldene Nase verdienen. Pass dabei auf die Kontrolldrohnen auf, wenn du eine Ladung hast!")
 }
 
 function generierePlanet (anzahl) {
