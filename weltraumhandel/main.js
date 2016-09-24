@@ -234,8 +234,8 @@ function gefasst() {
         if (parseInt($("#deinSchiff").css("left")) >= parseInt($(".polizei").eq(x).css("left")) - 100 && parseInt($("#deinSchiff").css("left")) <= parseInt($(".polizei").eq(x).css("left")) + 100) {
             if ($("#deinSchiff").attr("data-ladung") != "" && $("#deinSchiff").attr("data-ladung") != undefined) {
                 $("#deinSchiff").attr("data-ladung", "")
-                geld = geld - 200
-                nachricht("Du wurdest von einer Kontrolle erwischt und musstest 200T Strafe zahlen.")
+                geld = geld - 100
+                nachricht("Du wurdest von einer Kontrolle erwischt und musstest 100T Strafe zahlen.")
                 if (geld <= 0) {
                     nachricht("Du bist pleite.")
                 }
