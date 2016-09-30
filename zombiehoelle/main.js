@@ -319,7 +319,7 @@ function startPosition() {
     brunnenX = x
     brunnenY = y
     map[x][y] = "Brunnen"
-    message("Du bist an einem Brunnen. In einer Minuten greifen die Zombies an. Du musst Material suchen, um dich zu verteidigen! Baue Verteidigungskonstruktionen und durchsuche die Karte nach besonderen Gegenständen.")
+    message("Du bist an einem Brunnen. In einer Minuten greifen die Zombies an. Du musst Material suchen, um dich zu verteidigen! Baue Verteidigungskonstruktionen z.B. den Pflock, aber verdurste dabei nicht.")
 }
 
 function dropStuff() {
