@@ -28,6 +28,10 @@ a:hover {
     background-color: #cc4646;
 }
 
+div#feld {
+    width: 210px;
+    margin: 0 auto;
+}
 .feld {
     color: #FFF;
     display: inline-block;
@@ -38,6 +42,7 @@ a:hover {
     border: 1px #effdee solid;
     opacity: 0.4;
     box-shadow: 0px 0px 20px 5px #5c5c5c;
+    margin: 5px;
     cursor: pointer;
     text-align: center;
     line-height: 30px;
