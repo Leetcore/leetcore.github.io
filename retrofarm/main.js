@@ -81,7 +81,7 @@ $(document).ready(function() {
                     $(this).text(inventar[x].name.substr(0,1))
                     geld = geld - inventar[x].kosten
                     setTimeout(function () {
-                        if (randomNumberGen(0,3) == 0) {
+                        if (randomNumberGen(0,5) == 0) {
                             $(savedElement).removeClass("waechst")
                             $(savedElement).addClass("schlecht")
                         } else {
@@ -195,7 +195,7 @@ function baueBewaesserung() {
 }
 
 startPacht()
-baueFeld(10,10)
+baueFeld(5,5)
 renderInventar()
 stats()
 startGerd()
