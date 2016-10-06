@@ -37,6 +37,7 @@ a:hover {
     height: 30px;
     border: 1px #effdee solid;
     opacity: 0.4;
+    box-shadow: 0px 0px 20px 5px #5c5c5c;
     cursor: pointer;
     text-align: center;
     line-height: 30px;
