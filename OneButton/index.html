@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <style>
+            button {
+                padding: 50px;
+                color: #FFF;
+                margin: 0 auto;
+                border: none;
+            }
+            #main {
+                width: 200px;
+                margin: 0 auto;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            Hit: <span id="winColor"></span><br/>
+            Points: <span id="points">0</span>
+            <br/>
+            <button>Click</button>
+            <p style="font-size: 90%">Es hat 40 Minuten gedauert dieses Spiel zu machen. :D</p>
+        </div>
+        <script>
+            var points = 0;
+            var colors = [
+                {
+                    name: "Red",
+                    color: "#FF0000"
+                },
+                {
+                    name: "Yellow",
+                    color: "#ffeb3b"
+                },
+                {
+                    name: "Black",
+                    color: "#000000"
+                },
+                {
+                    name: "Blue",
+                    color: "#2196f3"
+                },
+                {
+                    name: "Green",
+                    color: "#4caf50"
+                },
+                {
+                    name: "Orange",
+                    color: "#ff5722"
+                }
+            ]
+
+            function startRound() {
+                chooseWinColor();
+                changeButtonColor();
+            }
+
+            function chooseWinColor() {
+                document.querySelector("button").removeEventListener("click", clickFunction)
+                document.getElementById("winColor").textContent = colors[getRandomArbitrary(0, colors.length - 1)].name
+                document.querySelector("button").addEventListener("click", clickFunction)
+                setTimeout(chooseWinColor, getRandomArbitrary(3000, 5000))
+            }
+
+            function clickFunction() {
+                if (document.querySelector("button").getAttribute("data-color") == document.getElementById("winColor").textContent) {
+                    points = points + 1
+                    document.querySelector("button").removeEventListener("click", clickFunction)
+                } else {
+                    points--
+                }
+                document.getElementById("points").textContent = points
+            }
+
+            function changeButtonColor() {
+                var color = colors[getRandomArbitrary(0, colors.length)]
+                var colorStyle = color.color
+                var colorName = color.name
+                document.querySelector("button").style.backgroundColor = colorStyle
+                document.querySelector("button").setAttribute("data-color", colorName)
+                setTimeout(changeButtonColor, getRandomArbitrary(1000, 3000))
+            }
+            
+
+            function getRandomArbitrary(min, max) {
+                return Math.floor(Math.random() * (max - min) + min)
+            }
+
+            startRound()
+        </script>
+    </body>
+</html>
