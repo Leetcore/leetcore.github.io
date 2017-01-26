@@ -60,7 +60,7 @@
                 document.querySelector("button").removeEventListener("click", clickFunction)
                 document.getElementById("winColor").textContent = colors[getRandomArbitrary(0, colors.length - 1)].name
                 document.querySelector("button").addEventListener("click", clickFunction)
-                setTimeout(chooseWinColor, getRandomArbitrary(3000, 5000))
+                setTimeout(chooseWinColor, getRandomArbitrary(2000, 5000))
             }
 
             function clickFunction() {
@@ -79,7 +79,7 @@
                 var colorName = color.name
                 document.querySelector("button").style.backgroundColor = colorStyle
                 document.querySelector("button").setAttribute("data-color", colorName)
-                setTimeout(changeButtonColor, getRandomArbitrary(1000, 3000))
+                setTimeout(changeButtonColor, getRandomArbitrary(500, 2000))
             }
             
 
