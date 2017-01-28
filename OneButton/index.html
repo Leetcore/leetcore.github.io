@@ -1,4 +1,3 @@
-
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +9,13 @@
                 font-family: sans-serif;
             }
             button {
-                padding: 50px;
+                padding: 100px;
                 color: #FFF;
                 margin: 0 auto;
                 border: none;
             }
             #main {
-                width: 200px;
+                width: 300px;
                 margin: 0 auto;
                 display: block;
             }
@@ -83,7 +82,7 @@
                 var colorName = color.name
                 document.querySelector("button").style.backgroundColor = colorStyle
                 document.querySelector("button").setAttribute("data-color", colorName)
-                setTimeout(changeButtonColor, getRandomArbitrary(500, 2000))
+                setTimeout(changeButtonColor, getRandomArbitrary(1000, 2000))
             }
             
 
