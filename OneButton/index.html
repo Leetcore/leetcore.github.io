@@ -17,8 +17,8 @@
     </head>
     <body>
         <div id="main">
-            Hit: <span id="winColor"></span><br/>
-            Points: <span id="points">0</span>
+            Treffe <span id="winColor"></span><br/>
+            Punkte: <span id="points">0</span>
             <br/>
             <button>Click</button>
             <p style="font-size: 90%">Es hat 40 Minuten gedauert dieses Spiel zu machen. :D</p>
@@ -45,10 +45,6 @@
                 {
                     name: "Green",
                     color: "#4caf50"
-                },
-                {
-                    name: "Orange",
-                    color: "#ff5722"
                 }
             ]
 
@@ -61,7 +57,7 @@
                 document.querySelector("button").removeEventListener("click", clickFunction)
                 document.getElementById("winColor").textContent = colors[getRandomArbitrary(0, colors.length - 1)].name
                 document.querySelector("button").addEventListener("click", clickFunction)
-                setTimeout(chooseWinColor, getRandomArbitrary(3000, 5000))
+                setTimeout(chooseWinColor, getRandomArbitrary(1000, 2500))
             }
 
             function clickFunction() {
@@ -80,7 +76,7 @@
                 var colorName = color.name
                 document.querySelector("button").style.backgroundColor = colorStyle
                 document.querySelector("button").setAttribute("data-color", colorName)
-                setTimeout(changeButtonColor, getRandomArbitrary(1000, 3000))
+                setTimeout(changeButtonColor, getRandomArbitrary(500, 2000))
             }
             
 
