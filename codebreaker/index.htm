@@ -1,5 +1,7 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Codebreaker</title>
         <style>
             body {
                 background-color: #DDD;
@@ -87,7 +89,10 @@
                 for (var index = 0; index < pins.length; index++) {
                     if (pins[index].getAttribute("data-number") != null && pins[index].getAttribute("data-number") == Wincode[index].toString()) {
                         document.getElementById("message").textContent = "*TICK*"
-                        if (pins[index].getAttribute("data-number") == pins.length - 1) {                            
+                        if (pins[index].getAttribute("data-number") == pins.length - 1) {
+                            for (var index = 0; index < pins.length; index++) {
+                                pins[index].removeEventListener('click', clickHandler)
+                            }                            
                             document.getElementById("message").textContent = "Du hast diesen Code geknackt!"
                             setTimeout(newLevel, 5000)
                         }
