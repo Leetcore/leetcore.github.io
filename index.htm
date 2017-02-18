@@ -28,7 +28,7 @@
         }
         function showYouTube(URL) {
             var newURL = URL.replace('/watch?v=', '/embed/') + '?rel=0'
-            document.getElementById("showVideo").innerHTML = '<iframe width="100%" height="500px" src="' + URL + '" frameborder="0" allowfullscreen></iframe>'
+            document.getElementById("showVideo").innerHTML = '<iframe width="100%" height="500px" src="' + newURL + '" frameborder="0" allowfullscreen></iframe>'
             jump("showVideo")
         }
     </script>
@@ -48,7 +48,7 @@
                 <h2>projekte</h2>
                 <ul>
                     <li><a href="hacks.htm">Übersicht Web Security Bughunting</a></li>
-                    <li><a href="https://youtu.be/7itK5v58xeo" target="_blank" onclick="showYouTube(this.href); return false;">Zum Scriptkiddie in 60 Minuten (Barcamp Session)</a></li>
+                    <li><a href="https://www.youtube.com/watch?v7itK5v58xeo" target="_blank" onclick="showYouTube(this.href); return false;">Zum Scriptkiddie in 60 Minuten (Barcamp Session)</a></li>
                     <li><a href="https://www.youtube.com/watch?v=ILx4f2kU82M" target="_blank" onclick="showYouTube(this.href); return false;">Alex erzählt was über Sicherheit (Barcamp Session)</a></li>
                     <li><a href="https://www.youtube.com/watch?v=-pxvm-q5ZK0" onclick="showYouTube(this.href); return false;">Whitehouse.gov Petitionsystem Hack (XSS) 2011</a></li>
                     <li><a href="https://www.youtube.com/watch?v=oE1z577NO_0" onclick="showYouTube(this.href); return false;">NATO Research and Technology Hack (LFI) 2011</a></li>
