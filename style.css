@@ -98,7 +98,7 @@ hr {
     50% {
         filter: hue-rotate(90deg)
     }
-    55% {}
+    51% {}
     100% {}
 }
 @keyframes glowme {
