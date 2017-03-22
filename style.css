@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
     animation-name: flick;
-    animation-duration: 0.5s;
+    animation-duration: 250ms;
     animation-timing-function: ease-in;
     animation-delay: 10s;
 }
