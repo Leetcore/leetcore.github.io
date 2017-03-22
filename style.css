@@ -42,7 +42,7 @@ img {
     max-width: 100%;
 }
 #main {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0px auto;
 }
 .row1 {
@@ -67,6 +67,11 @@ hr {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+.tile {
+    padding: 20px;
+    margin: 50px;
+    background-color: #415044;
 }
 @media (max-width: 800px) {
     .row1, .row2 {
