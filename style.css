@@ -1,8 +1,8 @@
 * {
     box-sizing: border-box;
     animation-name: flick;
-    animation-duration: 10s;
-    animation-delay: 1s;
+    animation-duration: 1s;
+    animation-delay: 10s;
 }
 body {
     background-color: #333;
