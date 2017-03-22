@@ -94,7 +94,7 @@ hr {
 }
 @keyframes flick {
     0%   {}
-    45% {}   
+    49% {}   
     50% {
         filter: hue-rotate(90deg)
     }
