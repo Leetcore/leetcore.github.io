@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    animation-name: flick;
+    animation-duration: 10s;
 }
 body {
     background-color: #333;
@@ -84,6 +86,13 @@ hr {
     }
     .row2-3, .row3-3 {
         display: none;
+    }
+}
+@keyframes flick {
+    0%   {}
+    99%%  {}
+    100% {
+        filter: hue-rotate(90deg)
     }
 }
 @keyframes glowme {
