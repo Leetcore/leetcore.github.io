@@ -47,10 +47,10 @@ img {
 }
 .row1 {
     float: left;
-    width: 60%;
+    width: 50%;
 }
 .row2 {
-    width: 40%;
+    width: 50%;
     float: right;
 }
 .row1-3, .row2-3, .row3-3 {
