@@ -94,9 +94,10 @@ hr {
 }
 @keyframes flick {
     0%   {}
-    100% {
+    50% {
         filter: hue-rotate(90deg)
     }
+    100% {}
 }
 @keyframes glowme {
   0% { text-shadow: 0px 0px 0px #00FF2F; }
