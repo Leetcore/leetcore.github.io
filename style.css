@@ -50,6 +50,9 @@ img {
     max-width: 1200px;
     margin: 0px auto;
 }
+#main > #about, #main > #background, #main > #showVideo {
+    padding: 20px;
+}
 .row1 {
     float: left;
     width: 50%;
