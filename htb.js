@@ -11,6 +11,7 @@ function checkLeet() {
     setTimeout(checkLeet, 30000)
   } catch (e) {
     console.log(e.message)
+  }
 }
 var loaded = false
 checkLeet()
