@@ -51,7 +51,7 @@ img {
     margin: 0px auto;
 }
 #main > #about, #main > #background, #main > #showVideo {
-    padding: 20px;
+    padding: 0px 20px;
 }
 .row1 {
     float: left;
