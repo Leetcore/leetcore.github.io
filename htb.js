@@ -3,9 +3,9 @@ function checkLeet() {
     var now =  new Date()
     if (now.getHours() == 13 && now.getMinutes() == 37 || debug == true) {
       loaded = true
-      document.querySelector('body').insertAdjacentHTML('beforeend', '<div id="hacktheplanet"><img src="htb.gif"><br/><p>13:37 Uhr!</p></div>')
+      document.getElementById('hacktheplanet').insertAdjacentHTML('beforeend', '<img src="htb.gif"><br/><p>13:37 Uhr!</p>')
     } else if (loaded == true) {
-      document.querySelector('hacktheplanet').parentNode.removeChild(this)
+      document.getElementById('hacktheplanet').innerHTML = ""
     }
 
     setTimeout(checkLeet, 30000)
