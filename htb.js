@@ -3,7 +3,7 @@ function checkLeet() {
     var now =  new Date()
     if (now.getHours() == 13 && now.getMinutes() == 37) {
       loaded = true
-      document.getElementById('hacktheplanet').insertAdjacentHTML('beforeend', '<img src="htb.gif"><br/><p>13:37 Uhr!</p>')
+      document.getElementById('hacktheplanet').insertAdjacentHTML('beforeend', '<span style="text-align: center; font-size: 150%"><img src="htb.gif" style="width:50%"><br/><p>13:37 Uhr!</p></span>')
       document.getElementById('hacktheplanet').style.display = "block"
     } else if (loaded == true) {
       loaded = false
