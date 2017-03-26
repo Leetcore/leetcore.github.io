@@ -1,7 +1,7 @@
 function checkLeet() {
   try {
     var now =  new Date()
-    if (now.getHours() == 13 && now.getMinutes() == 37 && loaded = false) {
+    if (now.getHours() == 13 && now.getMinutes() == 37 && loaded == false) {
       loaded = true
       document.getElementById('hacktheplanet').insertAdjacentHTML('beforeend', '<span style="text-align: center; font-size: 500%"><img src="htb.gif" style="width: 50%; margin: 0 auto; display: block;"><br/><p>13:37 Uhr!</p></span>')
       document.getElementById('hacktheplanet').style.display = "block"
