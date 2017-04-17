@@ -28,7 +28,7 @@ var peer;
 var conn;
 var timeout = 0
 var mouseTimer = 0
-var botMode = false
+var botMode = true
 
 var deinLeben = 5
 var gegnerLeben = 5
@@ -36,14 +36,15 @@ var gegnerLeben = 5
 function init() {
     // message("Willkommen beim Kartenduell. Ein menschlicher Spieler wird automatisch gesucht. <a href='javascript:void(0)' onclick='botMode = true; peer.destroy(); runde(); this.parentNode.removeChild(this);'>Du kannst auch gegen den Computer spielen.</a>")
     message("Willkommen beim Kartenduell. Du spielst gegen den Computer.")
-    botMode = true; peer.destroy(); runde(); this.parentNode.removeChild(this);
+
     $("#gegnerLeben").text(gegnerLeben)
     $("#deinLeben").text(deinLeben)
     
     // karten austeilen
     neueKarte(3)
     
-    aufEmpfang()
+    // aufEmpfang()
+    runde()
 }
 
 function aufEmpfang() {
