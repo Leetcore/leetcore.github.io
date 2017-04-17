@@ -319,8 +319,8 @@ function runde () {
         var karteSpieler = $("#feld").attr("data-name")
 
         if (Runde == 0) {
-            if (peer.id < conn.peer) {
-            Ichbindran = true
+            if (peer == undefined || peer.id < conn.peer) {
+                Ichbindran = true
             } else {
                 Ichbindran = false
             }
