@@ -55,9 +55,8 @@
             }
             function newRound() {
                 number = 0
-                for (var index = 0; index < level; index++) {
-                    document.getElementById("brett").insertAdjacentHTML('beforeend', '<div class="pin"></div>')
-                }
+                document.getElementById("brett").insertAdjacentHTML('beforeend', '<div class="pin"></div>')
+
                 var pins = document.querySelectorAll(".pin")
                 for (var index = 0; index < pins.length; index++) {
                     pins[index].addEventListener("click", clickHandler)
