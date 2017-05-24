@@ -8,9 +8,9 @@
 body {
     background-color: #333;
     color: #00FF2F;
-    font-family: monospace;
+    font-family: sans-serif;
     line-height: 170%;
-    font-size: 105%;
+    font-size: 102%;
 }
 h1, h2 {
     margin: 0px 0px;
