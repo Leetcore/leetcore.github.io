@@ -18,7 +18,7 @@ h1, h2 {
     animation-duration: 5s;
     animation-name: glowme;
     animation-iteration-count: infinite;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease-in-out;
 }
 h2::after {
     content: "_";
