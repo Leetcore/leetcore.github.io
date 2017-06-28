@@ -9,6 +9,7 @@ body {
     background-color: #333;
     color: #00FF2F;
     font-family: "Verdana", sans-serif;
+    line-height: 180%;
 }
 h1, h2 {
     margin: 0px 0px;
