@@ -36,9 +36,6 @@ a:hover {
     color: #111;
     cursor: pointer;
 }
-a[href^="http://"]::before, a[href^="https://"]::before {
-    content: "🌐 "
-}
 abbr {
     border-bottom: 1px dashed #00FF5F;
     cursor: help;
