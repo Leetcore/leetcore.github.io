@@ -1,3 +1,0 @@
-### Funzt das?
-
-Ja, bestimmt!
