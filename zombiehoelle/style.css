@@ -1,6 +1,7 @@
 body {
     background-color: #e3f1ab;
     font-family: sans-serif;
+	font-size: 95%;
     animation: animatedBackground 71s linear infinite;
 }
 
@@ -24,7 +25,6 @@ a:hover, .pick:hover, .build:hover {
 #frame {
     max-width: 320px;
     margin: 0 auto;
-    border: 5px black solid;
     padding: 5px;
 }
 .gameover {
@@ -114,7 +114,7 @@ a:hover, .pick:hover, .build:hover {
     height: 250px;
     overflow-x: hidden;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 #actions {
     bottom: 30%;
@@ -123,8 +123,4 @@ a:hover, .pick:hover, .build:hover {
 ul {
     list-style: none;
     display: inline;
-}
-
-hr {
-    border: 2px solid #000;
 }
