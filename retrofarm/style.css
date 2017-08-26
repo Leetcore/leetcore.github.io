@@ -39,9 +39,8 @@ div#feld {
     line-height: normal; 
     width: 30px;
     height: 30px;
-    border: 1px #effdee solid;
     opacity: 0.4;
-    box-shadow: 0px 0px 20px 5px #5c5c5c;
+    box-shadow: 0px 0px 1px 5px #5c5c5c;
     margin: 5px;
     cursor: pointer;
     text-align: center;
