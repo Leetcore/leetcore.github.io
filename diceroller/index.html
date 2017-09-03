@@ -1,5 +1,6 @@
 <html>
     <head>
+        <title>Pen & Paper Würfel</title>
         <style>
             body {
                 font-size: 500%;
@@ -23,6 +24,7 @@
             }
             input[type="button"] {
                 background-color: #FFF;
+                font-size: 60%;
             }
             #result {
                 font-size: 50%;
@@ -31,11 +33,11 @@
     </head>
     <body>
         <div id="main">  
-            <input type="number" value="1" min="1" max="50" id="dicecount"/>
+            <input type="number" value="1" min="1" max="50" id="dicecount" title="Anzahl der Würfel"/>
             <br/>
-            <input type="number" value="20" min="2" max="999" id="dicevalue"/>
+            <input type="number" value="20" min="2" max="999" id="dicevalue" title"Augenanzahl"/>
             <br/>
-            <input type="button" onclick="roll()" value="roll!"/>
+            <input type="button" onclick="roll()" value="würfeln"/>
             <div id="result"></div>
         </div>
         <script>
@@ -73,6 +75,9 @@
                     }
                 }
             }
+            if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('./serviceworker.js').then(function(registration) { console.log('ServiceWorker registration successful with scope: ', registration.scope); });
+			}
         </script>
     </body>
 </html>
