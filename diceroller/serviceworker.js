@@ -1,6 +1,5 @@
 var cacheName = 'WPA10';
 var filesToCache = [
-	'/',
 	'/index.html'
 ];
 
