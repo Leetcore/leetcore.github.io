@@ -34,7 +34,7 @@ function init() {
     $("#stats").append("Raumschiff: <span id='raumschiffname'></span><br/>")
     $("#stats").append("Geld: <span id='geld'></span>T<br/>")
     $("#stats").append("Reichweite: <span id='reichweite'></span>")
-    generierePlanet(Math.round($(window).width() / 12) + Math.round($(window).height() / 12))
+    generierePlanet(Math.round(window.innerWidth / 12) + Math.round(window.innerHeight / 12))
     renderStuff()
     randomEvents()
     verbrauch()
@@ -117,7 +117,7 @@ function erstelleSchiff () {
 function scrolleBild (element) {
     $("body").animate({
         scrollTop: parseInt($(element).css("top")) - window.innerHeight / 2 + 25,
-        scrollLeft: parseInt($(element).css("left")) - wondow.innerWidth / 2 + 25
+        scrollLeft: parseInt($(element).css("left")) - window.innerWidth / 2 + 25
     }, {
         queue: false,
         duration: 2000
