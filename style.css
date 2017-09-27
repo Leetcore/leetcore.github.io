@@ -56,6 +56,14 @@ img {
 #main > #about, #main > #background, #main > #showVideo {
     padding: 0px 20px;
 }
+.slider {
+    overflow: hidden;
+    height: 500px;
+    text-align: center;
+}
+img.slide {
+    height: 500px;
+}
 .viernullvier, .viernullvier h1 {
     font-size: 250%;
     line-height: 150%;
