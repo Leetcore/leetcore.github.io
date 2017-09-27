@@ -116,8 +116,8 @@ function erstelleSchiff () {
 
 function scrolleBild (element) {
     $("body").animate({
-        scrollTop: parseInt($(element).css("top")) - $(window).height() / 2 + 25,
-        scrollLeft: parseInt($(element).css("left")) - $(window).width() / 2 + 25
+        scrollTop: parseInt($(element).css("top")) - window.innerHeight / 2 + 25,
+        scrollLeft: parseInt($(element).css("left")) - wondow.innerWidth / 2 + 25
     }, {
         queue: false,
         duration: 2000
