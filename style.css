@@ -6,8 +6,8 @@
     animation-delay: 10s;
 }
 body {
-    background-color: #333;
-    color: #00FF2F;
+    background-color: #DDD;
+    color: #22672e;
     font-family: "Verdana", sans-serif;
     line-height: 180%;
 }
@@ -25,14 +25,14 @@ h2::after {
     content: "_";
 }
 a, a:link, a:visited {
-    color: #00FF5D;
+    color: #22672e;
     text-decoration: none;
-    border-bottom: 1px solid #00FF2F;
+    border-bottom: 1px solid #4db760;
     padding: 0px 3px;
-    text-shadow: 0px 0px 0px #00FF2F;
+    /*text-shadow: 0px 0px 0px #00FF2F;*/
 }
 a:hover {
-    background-color: #00FF2F;
+    background-color: #38a24b;
     color: #111;
     cursor: pointer;
 }
@@ -87,7 +87,7 @@ hr {
 .tile {
     padding: 20px;
     margin: 50px 25px;
-    background-color: #415044;
+    background-color: #afb7b1;
 }
 @media (max-width: 800px) {
     .row1, .row2 {
@@ -107,7 +107,7 @@ hr {
     100% { filter: hue-rotate(90deg); }
 }
 @keyframes glowme {
-  0% { text-shadow: 0px 0px 0px #00FF2F; }
+  0% { text-shadow: 0px 0px 0px rgba(255, 255, 255, 0); }
   50% { text-shadow: 0px 0px 20px #00FF2F; }
-  100% { text-shadow: 0px 0px 0px #00FF2F; }
+  100% { text-shadow: 0px 0px 0px rgba(255, 255, 255, 0); }
 }
