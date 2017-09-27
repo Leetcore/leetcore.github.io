@@ -46,7 +46,7 @@ function generierePlanet (anzahl) {
     for (var x = 0; x < anzahl; x++) {        
         setTimeout (function () {
             var zufall = randomNumberGen(0, planeten.length - 1);
-            $("body").append("<div class='planet' style='top: "+ randomNumberGen(100, $(window).height() * 4) +"; left: "+ randomNumberGen(100, $(window).width() * 4) +"; background-image: url("+ planeten[zufall].bild +");' data-name='"+ planeten[zufall].name +"'></div")},
+            $("body").append("<div class='planet' style='top: "+ randomNumberGen(100, window.innerHeight * 4) +"; left: "+ randomNumberGen(100, window.innerWidth * 4) +"; background-image: url("+ planeten[zufall].bild +");' data-name='"+ planeten[zufall].name +"'></div")},
             randomNumberGen(200, 500))
     }
 }
