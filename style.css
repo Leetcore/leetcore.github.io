@@ -11,6 +11,7 @@ body {
     color: #22672e;
     font-family: "Ubuntu Condensed", sans-serif;
     line-height: 180%;
+    font-size: 150%;
 }
 h1, h2 {
     margin: 0px 0px;
@@ -109,6 +110,6 @@ hr {
 }
 @keyframes glowme {
   0% { text-shadow: 0px 0px 0px rgba(255, 255, 255, 0); }
-  50% { text-shadow: 0px 0px 20px #00FF2F; }
+  50% { text-shadow: 0px 0px 20px #22672e; }
   100% { text-shadow: 0px 0px 0px rgba(255, 255, 255, 0); }
 }
