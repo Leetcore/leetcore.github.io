@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
 * {
     box-sizing: border-box;
     animation-name: flick;
@@ -8,7 +9,7 @@
 body {
     background-color: #DDD;
     color: #22672e;
-    font-family: "Verdana", sans-serif;
+    font-family: "Ubuntu Condensed", sans-serif;
     line-height: 180%;
 }
 h1, h2 {
