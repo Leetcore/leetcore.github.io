@@ -56,9 +56,6 @@ img {
     max-width: 640px;
     margin: 0px auto;
 }
-#main > #about, #main > #background, #main > #showVideo {
-    padding: 0px 20px;
-}
 .slider {
     overflow: hidden;
     height: 500px;
@@ -96,7 +93,7 @@ hr {
 }
 .tile {
     padding: 20px;
-    margin: 50px 25px;
+    margin: 10px 5px;
     background-color: #afb7b1;
 }
 @media (max-width: 800px) {
