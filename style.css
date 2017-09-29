@@ -61,8 +61,11 @@ img {
     height: 500px;
     text-align: center;
 }
-img.slide {
-    height: 500px;
+.container img {
+    max-width: 75%;
+}
+.container {
+    text-align: center;
 }
 .viernullvier, .viernullvier h1 {
     font-size: 250%;
