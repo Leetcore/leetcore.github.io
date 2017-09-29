@@ -45,6 +45,9 @@ abbr {
 img {
     max-width: 100%;
 }
+.container img {
+    max-width: 33%;
+}
 #main {
     max-width: 1200px;
     margin: 0px auto;
@@ -59,12 +62,6 @@ img {
 .slider {
     overflow: hidden;
     height: 500px;
-    text-align: center;
-}
-.container img {
-    max-width: 75%;
-}
-.container {
     text-align: center;
 }
 .viernullvier, .viernullvier h1 {
