@@ -22,6 +22,7 @@ h1, h2 {
     animation-name: glowme;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+    margin-bottom: 10px;
 }
 h2::after {
     content: "_";
