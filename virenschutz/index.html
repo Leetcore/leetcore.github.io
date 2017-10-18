@@ -87,8 +87,10 @@
     <script>
         var loader = document.querySelector('.loader')
         var text = document.querySelector('#text')
+        var textloader = document.querySelector('#loadingtext')
         setTimeout( function () {
             loader.remove()
+            textloader.remove()
             text.style.display = 'block'
         }, 7000)
     </script>
