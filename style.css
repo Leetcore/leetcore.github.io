@@ -97,6 +97,9 @@ hr {
     margin: 10px 5px;
     background-color: #afb7b1;
 }
+.title li {
+    font-size: 90%;
+}
 @media (max-width: 800px) {
     .row1, .row2 {
         float: none;
