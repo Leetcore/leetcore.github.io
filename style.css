@@ -28,14 +28,14 @@ h2::after {
     content: "_";
 }
 a, a:link, a:visited {
-    color: #22672e;
+    color: #906b2f;
     text-decoration: none;
     border-bottom: 1px solid #524a3d;
     padding: 0px 3px;
     /*text-shadow: 0px 0px 0px #00FF2F;*/
 }
 a:hover {
-    background-color: #ad9d83;
+    background-color: #906b2f;
     color: #111;
     cursor: pointer;
 }
