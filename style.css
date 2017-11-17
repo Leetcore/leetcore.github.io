@@ -8,7 +8,7 @@
 }
 body {
     background-color: #DDD;
-    color: #22672e;
+    color: #524a3d;
     font-family: "Ubuntu Condensed", sans-serif;
     line-height: 150%;
     font-size: 125%;
@@ -30,12 +30,12 @@ h2::after {
 a, a:link, a:visited {
     color: #22672e;
     text-decoration: none;
-    border-bottom: 1px solid #4db760;
+    border-bottom: 1px solid #524a3d;
     padding: 0px 3px;
     /*text-shadow: 0px 0px 0px #00FF2F;*/
 }
 a:hover {
-    background-color: #38a24b;
+    background-color: #ad9d83;
     color: #111;
     cursor: pointer;
 }
@@ -119,6 +119,6 @@ hr {
 }
 @keyframes glowme {
   0% { text-shadow: 0px 0px 0px rgba(255, 255, 255, 0); }
-  50% { text-shadow: 0px 0px 20px #22672e; }
+  50% { text-shadow: 0px 0px 20px #524a3d; }
   100% { text-shadow: 0px 0px 0px rgba(255, 255, 255, 0); }
 }
