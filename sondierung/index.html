@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Sondierungsgespräche</title>
+        <title>Sondierungssimulator</title>
         <style>
             body {
                 font-family: Verdana, Tahoma, sans-serif;
@@ -115,14 +115,6 @@
 
             function get (id) {
                 return document.getElementById("checkbox" + id).checked;
-            }
-
-            function set (id, value) {
-                if (value) {
-                    document.getElementById("checkbox" + id).checked = true
-                } else {
-                    document.getElementById("checkbox" + id).checked = false
-                }
             }
 
             function status (status, id) {
