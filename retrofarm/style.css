@@ -48,7 +48,8 @@ div#feld {
     transition: background 1s;
 }
 .blue {
-    border: 1px #2257f3 solid;
+    box-shadow: 0px 0px 1px 5px #2257f3;
+    /*border: 1px #2257f3 solid;*/
 }
 #menu {
     position: absolute;
