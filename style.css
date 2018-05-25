@@ -18,15 +18,13 @@ h1, h2 {
     line-height: 100%;
     text-transform: uppercase;
     animation-duration: 5s;
-    animation-name: glowme;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     margin-bottom: 10px;
     background-color: #333;
     padding: 5px;
     color: #906b2f;
-    text-shadow: 3px solid #FFF;
-    box-shadow: 3px -3px #906b2f;
+    box-shadow: 5px -5px #906b2f;
 }
 h2::after {
     content: "_";
@@ -118,10 +116,6 @@ hr {
 }
 @keyframes flick {
     0%   {}
-    100% { filter: hue-rotate(90deg); }
-}
-@keyframes glowme {
-  0% { text-shadow: 0px 0px 0px rgba(255, 255, 255, 0); }
-  50% { text-shadow: 0px 0px 20px #524a3d; }
-  100% { text-shadow: 0px 0px 0px rgba(255, 255, 255, 0); }
+    50% { filter: hue-rotate(90deg); }
+    100%   {}
 }
