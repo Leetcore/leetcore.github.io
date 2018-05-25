@@ -42,6 +42,9 @@ abbr {
     border-bottom: 1px dashed #00FF5F;
     cursor: help;
 }
+ul {
+    list-style-type: square;
+}
 img {
     max-width: 100%;
 }
