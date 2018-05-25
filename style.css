@@ -2,9 +2,9 @@
 * {
     box-sizing: border-box;
     animation-name: flick;
-    animation-duration: 500ms;
+    animation-duration: 5s;
     animation-timing-function: ease-in;
-    animation-delay: 10s;
+    animation-delay: 5s;
 }
 body {
     background-color: #DDD;
