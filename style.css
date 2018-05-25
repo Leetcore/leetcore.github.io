@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
-* {
+h1, h2, body {
     box-sizing: border-box;
     animation-name: flick;
     animation-duration: 320s;
