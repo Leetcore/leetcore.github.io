@@ -11,7 +11,7 @@ body {
     color: #524a3d;
     font-family: "Ubuntu Condensed", sans-serif;
     line-height: 150%;
-    font-size: 125%;
+    font-size: 130%;
 }
 h1, h2 {
     margin: 0px 0px;
@@ -51,7 +51,7 @@ img {
 #main {
     max-width: 640px;
     margin: 0px auto;
-    background-color: #424242;
+    background-color: #C6C6C6;
     padding: 5px;
     box-shadow: -5px 5px #906b2f;
 }
