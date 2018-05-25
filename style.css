@@ -38,6 +38,7 @@ a:hover {
     background-color: #906b2f;
     color: #111;
     cursor: pointer;
+    box-shadow: 5px 5px #333;
 }
 abbr {
     border-bottom: 1px dashed #00FF5F;
