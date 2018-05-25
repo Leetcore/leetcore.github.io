@@ -10,8 +10,9 @@ body {
     background-color: #C6C6C6;
     color: #524a3d;
     font-family: "Ubuntu Condensed", sans-serif;
-    line-height: 150%;
+    font-weight: bold;
     font-size: 130%;
+    line-height: 150%;
 }
 h1, h2 {
     margin: 0px 0px;
