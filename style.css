@@ -118,6 +118,6 @@ img {
 }
 @keyframes flick {
     0%   {}
-    50% { filter: hue-rotate(90deg); }
+    50% { filter: hue-rotate(45deg); }
     100%   {}
 }
