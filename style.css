@@ -63,6 +63,9 @@ img {
     max-width: 640px;
     margin: 0px auto;
 }
+#background {
+    margin-top: 20px;
+}
 .slider {
     overflow: hidden;
     height: 500px;
