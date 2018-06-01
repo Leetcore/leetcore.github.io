@@ -49,14 +49,6 @@ ul {
 img {
     max-width: 100%;
 }
-.center {
-    display: block;
-    margin: 10px auto;
-}
-.small {
-    max-width: 75%;
-    font-size: 80%;
-}
 .container img {
     max-width: 32%;
 }
