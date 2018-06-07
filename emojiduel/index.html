@@ -124,7 +124,7 @@
         }
         function startFight () {
             if (player.health < 0) {
-                document.getElementById('infotext').innerHTML = 'You tried hard!<br/>'+ wins +' wins!<br/><a href="javascript:document.reload()">Try again</a>';
+                document.getElementById('infotext').innerHTML = 'You tried hard!<br/>'+ wins +' wins!<br/><a href="javascript:location.reload();">Try again</a>';
                 return;
             }
             if (player.weapon == "💉") {
