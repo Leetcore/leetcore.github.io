@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Emoji duel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html {
+            background-color: #c3dcec;
+        }
+        #main {
+            font-size: 8vmin;
+            font-family: Trattatello, fantasy;
+            margin: 0 auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        #enemyhealth {
+            display: none;
+            background-color: rgb(121, 41, 41);
+            height: 10px;
+            max-width: 100%;
+            margin: 0 auto;
+            transition: all 1s linear;
+        }
+        #main span {
+            display: inline-block;
+            cursor: pointer;
+            padding: 5px;
+        }
+        #main span:hover {
+            transform: scale(1.5);
+            transition: all 500ms linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="stats"></div>
+        <div id="infotext"></div>
+        <div id="emojis"></div>
+        <div id="enemy"></div>
+        <div id="enemyhealth"></div>
+    </div>
+    <script>
+        var wins = 0;
+        var enemys = [
+            {emoji: "🐒", name: "Crazy monkey", health: 100, mindamage: 3, maxdamage: 10},
+            {emoji: "🦍", name: "King Kong", health: 200, mindamage: 10, maxdamage: 30},
+            {emoji: "🐺", name: "Big bad wolf", health: 150, mindamage: 5, maxdamage: 15},
+            {emoji: "🦁", name: "Lion King", health: 120, mindamage: 8, maxdamage: 20},
+            {emoji: "🐅", name: "Evil tigger", health: 80, mindamage: 5, maxdamage: 10},
+            {emoji: "🐓", name: "Angry rooster", health: 25, mindamage: 1, maxdamage: 3}
+        ]
+        var weapons = [
+            {emoji: "🏹", name: "bow and arrow", mindamage: 20, maxdamage: 50},
+            {emoji: "🏒", name: "bloody hockey stick", mindamage: 75, maxdamage: 100},
+            {emoji: "💉", name: "medicine for yourself and kick it!", mindamage: 1, maxdamage: 20},
+            {emoji: "💣", name: "bombs", mindamage: 80, maxdamage: 150},
+            {emoji: "🔍", name: "magnifying glass burning", mindamage: 10, maxdamage: 25},
+            {emoji: "📌", name: "pushpins on the floor", mindamage: 5, maxdamage: 30},
+            {emoji: "💌", name: "talking about love", mindamage: 100, maxdamage: 999}
+        ]
+        var player = {
+            emoji: null,
+            health: 100
+        }
+        var enemy = {
+            emoji: null,
+            health: 100
+        }
+        function main() {
+            choosePlayer();
+            updateStats();
+        }
+        main()
+        function choosePlayer() {
+            if (player.started) {
+                chooseEnemy();
+            } else {
+                document.getElementById('infotext').innerHTML = 'Choose your player!';
+                document.getElementById('emojis').innerHTML = listbuilder('emoji', ['😁', '😋', '😎', '🤗'], 'chooseme');
+            }
+        }
+        function chooseEnemy () {
+            var number = random(0, enemys.length - 1)
+            enemy.emoji = enemys[number].emoji;
+            enemy.health = enemys[number].health || 100;
+            enemy.mindamage = enemys[number].mindamage || 3;
+            enemy.maxdamage = enemys[number].maxdamage || 10;
+            document.getElementById('enemy').innerHTML = 'YOUR ENEMY '+ enemy.emoji;
+            document.getElementById('enemyhealth').style.width = enemy.health + 'px';
+            document.getElementById('enemyhealth').style.display = 'block';
+            document.getElementById('emojis').innerHTML = '';
+            showMessage(enemys[number].name + ' attacks!', chooseWeapon);
+        }
+        function listbuilder (css, array_emojis, functionname) {
+            var html = '';
+            array_emojis.forEach(emoji => {
+                html += '<span class="'+ css +'" onclick="'+ functionname +'(this);">'+ emoji +'</span>';
+            });
+            return html;
+        }
+        function chooseWeapon () {
+            var tempweapons = [];
+            for (var index = 0; index < 3; index++) {
+                tempweapons.push(weapons[random(0, weapons.length - 1)].emoji);
+            }
+            document.getElementById('infotext').innerHTML = 'Choose your weapon!';
+            document.getElementById('emojis').innerHTML = listbuilder('weapon', tempweapons, 'choosethisweapon');
+        }
+        function choosethisweapon (element) {
+            weapons.forEach((w) => {
+                if (w.emoji == element.textContent) {
+                    player.weapon = w.emoji;
+                    player.weaponname = w.name;
+                    player.mindamage = w.mindamage;
+                    player.maxdamage = w.maxdamage;
+                }
+            });
+            updateStats();
+            showMessage('Lets do this with '+ player.weaponname +'!', startFight);
+        }
+        function startFight () {
+            if (player.health < 0) {
+                document.getElementById('infotext').innerHTML = 'You tried hard!<br/>'+ wins +' wins!<br/><a href="javascript:document.reload()">Try again</a>';
+                return;
+            }
+            if (player.weapon == "💉") {
+                setTimeout(function () {
+                    var addhealth = random(5, 15);
+                    player.health += addhealth;
+                    updateStats(addhealth);
+                }, 2000)
+            }
+            if (enemy.health > 0) {
+                // fight
+                var playerdamage = random(player.mindamage, player.maxdamage);
+                enemy.health -= playerdamage;
+                // visual feedback
+                var enemydamage = random(enemy.mindamage, enemy.maxdamage)
+                player.health -= enemydamage;
+                var wintext = [
+                    ''
+                ];
+                showMessage('You attack with '+ playerdamage + ' damage!', function () {
+                    showMessage('Enemy makes '+ enemydamage +' damage!', startFight)
+                });
+            } else {
+                // win message
+                updateStats();
+                wins++;
+                document.getElementById('enemyhealth').style.display = 'none';
+                document.getElementById('enemy').innerHTML = '';
+                showMessage('YOU WIN! GZ.', main);
+            }
+        }
+        function chooseme (element) {
+            player.emoji = element.textContent;
+            player.started = true;
+            updateStats();
+            showMessage('Good choice!', chooseEnemy);       
+        }
+        function updateStats (addhealth) {
+            var health = player.health;
+            if (addhealth) {
+                health = '+'+ addhealth;
+            }
+            document.getElementById('stats').innerHTML = (player.emoji || '') + (player.weapon || '') +' '+ health +' HP '+ wins +' WINS';
+            if (enemy.health > 0) {
+                document.getElementById('enemyhealth').style.width = enemy.health +'px';
+            } else {
+                document.getElementById('enemyhealth').style.width = '1px';
+            }
+        }
+        function showMessage (text, callback) {
+            document.getElementById('emojis').innerHTML = '';
+            document.getElementById('infotext').innerHTML = text;
+            updateStats();
+            setTimeout(function () {
+                callback();
+            }, 5000);
+        }
+        function random (min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+        }
+    </script>
+</body>
+</html>
