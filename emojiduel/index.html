@@ -129,7 +129,7 @@
             }
             if (player.weapon == "💉") {
                 setTimeout(function () {
-                    var addhealth = random(5, 15);
+                    var addhealth = random(5, 10);
                     player.health += addhealth;
                     updateStats(addhealth);
                 }, 2000)
@@ -145,6 +145,7 @@
                     ''
                 ];
                 showMessage('You attack with '+ playerdamage + ' damage!', function () {
+                    updateStats();
                     showMessage('Enemy makes '+ enemydamage +' damage!', startFight)
                 });
             } else {
@@ -154,6 +155,8 @@
                 document.getElementById('enemyhealth').style.display = 'none';
                 document.getElementById('enemy').innerHTML = '';
                 showMessage('YOU WIN! GZ.', main);
+                player.health += 20;
+                updateStats(20);
             }
         }
         function chooseme (element) {
@@ -177,7 +180,6 @@
         function showMessage (text, callback) {
             document.getElementById('emojis').innerHTML = '';
             document.getElementById('infotext').innerHTML = text;
-            updateStats();
             setTimeout(function () {
                 callback();
             }, 5000);
