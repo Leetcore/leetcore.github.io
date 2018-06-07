@@ -55,12 +55,12 @@
             {emoji: "🐓", name: "Angry rooster", health: 25, mindamage: 1, maxdamage: 10}
         ]
         var weapons = [
-            {emoji: "🏹", name: "bow and arrow", mindamage: 20, maxdamage: 50},
+            {emoji: "🏹", name: "bow and arrow", mindamage: 30, maxdamage: 80},
             {emoji: "🏒", name: "bloody hockey stick", mindamage: 40, maxdamage: 80},
-            {emoji: "💉", name: "medicine for yourself and kick it!", mindamage: 1, maxdamage: 20},
+            {emoji: "💉", name: "medicine for yourself and kick it!", mindamage: 5, maxdamage: 20},
             {emoji: "💣", name: "bombs", mindamage: 60, maxdamage: 120},
-            {emoji: "🔍", name: "magnifying glass burning", mindamage: 10, maxdamage: 25},
-            {emoji: "📌", name: "pushpins on the floor", mindamage: 5, maxdamage: 30},
+            {emoji: "🔍", name: "magnifying glass burning", mindamage: 10, maxdamage: 50},
+            {emoji: "📌", name: "pushpins on the floor", mindamage: 10, maxdamage: 40},
             {emoji: "💌", name: "talking about love", mindamage: 50, maxdamage: 200}
         ]
         var player = {
@@ -130,7 +130,7 @@
             }
             if (player.weapon == "💉") {
                 setTimeout(function () {
-                    var addhealth = random(5, 10);
+                    var addhealth = random(5, 20);
                     player.health += addhealth;
                     updateStats(addhealth);
                 }, 2000)
