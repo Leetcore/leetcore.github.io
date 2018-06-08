@@ -60,14 +60,14 @@
         var weapons = [
             {emoji: "🏹", name: "bow and arrow like Robin Hood", mindamage: 35, maxdamage: 30},
             {emoji: "🏒", name: "bloody hockey stick from a horror movie", mindamage: 15, maxdamage: 40},
-            {emoji: "💉", name: "medicine for yourself and kick this thing", mindamage: 10, maxdamage: 30},
+            {emoji: "💉", name: "medicine for yourself and kick this thing", mindamage: 10, maxdamage: 25},
             {emoji: "💣", name: "a crazy overreaction. Bombs", mindamage: 25, maxdamage: 80},
             {emoji: "🔍", name: "magnifying glass burning like ants.", mindamage: 15, maxdamage: 30},
             {emoji: "📌", name: "pushpins on the floor. So mean", mindamage: 15, maxdamage: 25},
             {emoji: "💌", name: "talking a lot about love", mindamage: 30, maxdamage: 100},
-            {emoji: "🏆", name: "bragging about your strength", mindamage: 15, maxdamage: 30},
+            {emoji: "🏆", name: "bragging about your strength", mindamage: 15, maxdamage: 20},
             {emoji: "🤖", name: "your own build fighting roboter", mindamage: 25, maxdamage: 75},
-            {emoji: "💍", name: "magic ring of power from Sauron", mindamage: 15, maxdamage: 40}
+            {emoji: "💍", name: "magic ring of power from Sauron", mindamage: 15, maxdamage: 25}
         ]
         var player = {
             emoji: null,
@@ -134,9 +134,9 @@
                 document.getElementById('infotext').innerHTML = 'You tried hard!<br/>'+ wins +' wins!<br/><a href="javascript:location.reload();">Try again</a>';
                 return;
             }
-            if (player.weapon == "💉" || player.weapon == "💍" || player.weapon == "🏆" || player.weapon == "💌") {
+            if (player.weapon == "💉" || player.weapon == "💍" || player.weapon == "🏆") {
                 setTimeout(function () {
-                    var addhealth = random(5, 15);
+                    var addhealth = random(5, 10);
                     player.health += addhealth;
                     updateStats(addhealth);
                 }, 2000)
