@@ -134,7 +134,7 @@
                 document.getElementById('infotext').innerHTML = 'You tried hard!<br/>'+ wins +' wins!<br/><a href="javascript:location.reload();">Try again</a>';
                 return;
             }
-            if (player.weapon == "💉" || player.weapon == "💍" || player.weapon == "🏆") {
+            if (player.weapon == "💉" || player.weapon == "💍" || player.weapon == "🏆" || player.weapon == "💌") {
                 setTimeout(function () {
                     var addhealth = random(5, 15);
                     player.health += addhealth;
