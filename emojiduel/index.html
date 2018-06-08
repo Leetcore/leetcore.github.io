@@ -48,7 +48,7 @@
         var wins = 0;
         var enemys = [
             {emoji: "🐒", name: "Crazy monkey", health: 50, mindamage: 3, maxdamage: 15},
-            {emoji: "🦍", name: "King Kong", health: 250, mindamage: 30, maxdamage: 100},
+            {emoji: "🦍", name: "King Kong", health: 250, mindamage: 30, maxdamage: 50},
             {emoji: "🐺", name: "Big bad wolf", health: 150, mindamage: 5, maxdamage: 25},
             {emoji: "🦁", name: "Lion King", health: 120, mindamage: 8, maxdamage: 30},
             {emoji: "🐅", name: "Evil tigger", health: 80, mindamage: 15, maxdamage: 30},
@@ -58,12 +58,12 @@
             {emoji: "👻", name: "Haunting ghost", healt: 70, mindamage: 10, maxdamage: 25}
         ]
         var weapons = [
-            {emoji: "🏹", name: "bow and arrow like Robin Hood", mindamage: 30, maxdamage: 80},
+            {emoji: "🏹", name: "bow and arrow like Robin Hood", mindamage: 35, maxdamage: 50},
             {emoji: "🏒", name: "bloody hockey stick from a horror movie", mindamage: 40, maxdamage: 80},
-            {emoji: "💉", name: "medicine for yourself and kick this thing", mindamage: 5, maxdamage: 20},
-            {emoji: "💣", name: "a crazy overreaction. Bombs", mindamage: 60, maxdamage: 120},
-            {emoji: "🔍", name: "magnifying glass burning like ants.", mindamage: 10, maxdamage: 50},
-            {emoji: "📌", name: "pushpins on the floor. So mean", mindamage: 10, maxdamage: 40},
+            {emoji: "💉", name: "medicine for yourself and kick this thing", mindamage: 10, maxdamage: 30},
+            {emoji: "💣", name: "a crazy overreaction. Bombs", mindamage: 50, maxdamage: 100},
+            {emoji: "🔍", name: "magnifying glass burning like ants.", mindamage: 15, maxdamage: 50},
+            {emoji: "📌", name: "pushpins on the floor. So mean", mindamage: 15, maxdamage: 40},
             {emoji: "💌", name: "talking a lot about love", mindamage: 50, maxdamage: 200},
             {emoji: "🏆", name: "bragging about your strength", mindamage: 30, maxdamage: 100},
             {emoji: "🤖", name: "your own build fighting roboter", mindamage: 40, maxdamage: 120},
@@ -162,8 +162,8 @@
                 document.getElementById('enemyhealth').style.display = 'none';
                 document.getElementById('enemy').innerHTML = '';
                 showMessage('YOU WIN! GZ.', main);
-                player.health += 20;
-                updateStats(20);
+                player.health += 50;
+                updateStats(50);
             }
         }
         function chooseme (element) {
