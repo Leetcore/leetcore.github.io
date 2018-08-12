@@ -190,7 +190,7 @@
         }
         function showOnSunday() {
             var today = new Date();
-            if (today.getDay() == 7) {
+            if (today.getDay() == 0) {
                 document.getElementById("showVideo").innerHTML = '<iframe src="https://player.twitch.tv/?channel=leetcore" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>';
             }
         }
