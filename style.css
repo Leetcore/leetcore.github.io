@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 h1, h2, body, p, img {
     box-sizing: border-box;
     animation-name: flick;
@@ -9,7 +9,7 @@ h1, h2, body, p, img {
 body {
     background-color: #C6C6C6;
     color: #524a3d;
-    font-family: "Ubuntu Condensed", sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: bold;
     font-size: 110%;
     line-height: 150%;
