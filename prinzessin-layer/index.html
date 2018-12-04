@@ -18,8 +18,8 @@
             position: absolute;
             left: calc(50% - 200px);
             top: 100px;
-            height: 50%;
-            max-width: 50%;
+            max-height: 80%;
+            width: 50%;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             -khtml-user-select: none;
@@ -35,10 +35,12 @@
     <img id="drag" src="leia.jpg" draggable="false"/>
     <script>
         var boxElement = document.getElementById('drag');
-        document.body.addEventListener('mousemove', function (event) {
+        document.body.addEventListener('mousemove', move);
+        document.body.addEventListener('touchmove', move);
+        function move(event) {
             boxElement.style.left = (event.pageX - 180) + 'px';
             boxElement.style.top = (event.pageY - 120) + 'px';
-        });
+        };
     </script>
 </body>
 </html>
