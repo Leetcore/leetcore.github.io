@@ -38,8 +38,8 @@
         document.body.addEventListener('mousemove', move);
         document.body.addEventListener('touchmove', move);
         function move(event) {
-            boxElement.style.left = (event.pageX - 180) + 'px';
-            boxElement.style.top = (event.pageY - 120) + 'px';
+            boxElement.style.left = (event.pageX - (document.body.clientWidth / 4)) + 'px';
+            boxElement.style.top = (event.pageY - (document.body.clientHeight / 2) - 50) + 'px';
         };
     </script>
 </body>
