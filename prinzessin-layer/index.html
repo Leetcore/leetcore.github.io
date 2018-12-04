@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Prinzessin Layer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            text-align: center;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            background-color: rgb(138, 206, 233);
+            text-shadow: 3px 3px 3px #DDD;
+        }
+        #drag {
+            width: 75%;
+            box-shadow: 5px 5px 10px #333;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        #drag {
+            cursor: move;
+            position: absolute;
+            left: calc(50% - 200px);
+            top: 100px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prinzessin Layer</h1>
+    <img id="drag" src="leia.jpg" draggable="false"/>
+    <script>
+        var boxElement = document.getElementById('drag');
+        document.body.addEventListener('mousemove', function (event) {
+            boxElement.style.left = (event.pageX - 180) + 'px';
+            boxElement.style.top = (event.pageY - 120) + 'px';
+        });
+    </script>
+</body>
+</html>
