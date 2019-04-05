@@ -49,6 +49,9 @@ img {
     max-width: 100%;
     max-height: 250px;
 }
+iframe {
+    width: 100%;
+}
 .center {
     text-align: center;
     margin: 10px auto;
