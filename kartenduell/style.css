@@ -52,6 +52,7 @@ a {
 
 .karte {
     width: 25%;
+    background-color: #777;
 }
 
 #hand .karte:hover {
