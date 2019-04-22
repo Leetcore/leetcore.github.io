@@ -75,7 +75,6 @@ function movePlayer(id, richtung, schritte, dauer) {
     }
 
     if (richtung == "hoch") {                        
-        playAudio("http://www.1337core.de/blockjumper/the-bizniss_laser.mp3")
         $("#player"+ id).animate({
             queue: false,
             bottom: "+=" + schritte
@@ -97,7 +96,6 @@ function looser() {
     stayTimer.clearTimeout
     Player1.stopidle()
 
-    playAudio("https://www.youtube.com/audiolibrary_download?vid=13321fdd50ae3ee6")
     $("#main").text("VERLOREN! VERLOREN! VERLOREN!")
     $("#main").css("background-color", "#cc2b2b")
 }
