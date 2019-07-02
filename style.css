@@ -49,6 +49,9 @@ img {
     max-width: 100%;
     max-height: 250px;
 }
+.comics img {
+    max-height: 100%;
+}
 iframe {
     width: 100%;
     min-height: 400px;
