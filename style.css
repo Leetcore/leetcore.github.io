@@ -18,10 +18,10 @@ h1, h2 {
     line-height: 100%;
     text-transform: uppercase;
     margin-bottom: 10px;
-    background-color: #333;
+    background-color: #5c6053;
     padding: 5px;
-    color: #906b2f;
-    box-shadow: 5px -5px #906b2f;
+    color: #cebb9e;
+    box-shadow: 5px -5px #b1a798;
 }
 h2::after {
     content: "_";
