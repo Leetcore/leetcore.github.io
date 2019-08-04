@@ -127,7 +127,7 @@ iframe {
         color: #e6e0d8;
     }
     #main {
-       background-color: #2D2D2D;
+       background-color: #000;
     }
 }
 @keyframes flick {
