@@ -120,6 +120,16 @@ iframe {
         display: none;
     }
 }
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+        color: #e6e0d8;
+    }
+    #main {
+       background-color: #2D2D2D;
+    }
+}
 @keyframes flick {
     0%   {}
     50% { filter: hue-rotate(45deg); }
