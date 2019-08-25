@@ -1,12 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
+    <title>Einfach PGP Mails empfangen und versenden</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <!--
+
+
+        Aus großer Macht folgt große Verantwortung! 
+
+
+    -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-    
+    <div id="main">
+        <h1>Einfach PGP Mails empfangen und versenden</h1>
+        <p>Um mir sichere Mails zu senden und auch meine Antwort zu empfangen, gibt es ein einfaches Browser-Addon, dass mit verschiedenen Webmailern funktioniert.</p>
+        <ol>
+            <li><a href="https://www.mailvelope.com/de">Mailvelope installieren in Firefox</a></li>
+            <li>Eigenen Schlüssel erstellen</li>
+            <li>Schlüssel synchronisieren, also auf den Keyserver hochladen (damit können andere bequem per Mailadresse den öffentlichen Schlüssel finden)</li>
+            <li>Der Private Key muss privat bleiben!</li>
+            <li>Mailvelope Icon wird im Webmailer angezeigt</li>
+            <li>Mails im Webmailer lassen sich nun ver- und entschlüsseln</li>
+        </ol>
+        <h2>Mein öffentlicher Schlüssel</h2>
+        <pre>
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: Mailvelope v4.1.0
+Comment: https://www.mailvelope.com
+
+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
+P0E=
+=ljtJ
+-----END PGP PUBLIC KEY BLOCK-----                
+        </pre>
+    </div>
 </body>
 </html>
