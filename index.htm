@@ -1,218 +1,269 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="me" href="https://twitter.com/1337core">
-    <title>1337core - H4CK TH3 PL4N3T</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--
+	<meta charset="UTF-8">
+	<link rel="me" href="https://twitter.com/1337core">
+	<title>1337core - H4CK TH3 PL4N3T</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--
 
 
         Aus großer Macht folgt große Verantwortung! 
 
 
     -->
-    <link rel="stylesheet" type="text/css" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+
 <body>
-    <div id="main">
-        <div id="about">
-            <h1>1337core</h1>
-            <img src="img/alex.jpg" alt="Foto von mir" width="190px" height="190px" style="float: right; padding: 5px"/>
-            <p>Hey, ich bin Alex und wohne in Saarbrücken. Ich mag Computer, Hacking, das WWW und Pizza! 🌏🏄🍕</p>
-            <p>Im Netz bin ich erreichbar auf <a href="https://twitter.com/1337core">Twitter</a> 🐦,
-                über <a href="https://t.me/leetcore">Telegram</a> 📱 und <a href="pgp-mail.html">PGP-Mail</a> 💌.</p>
-            <p>Ich schreibe derzeit an einem Buch 📝 über Hacker.</p>
-        </div>
-        
-        <div style="clear:both"></div>
-        
-        <div id="hacktheplanet" style="display: none;"></div>
-        
-        <iframe src="https://www.youtube.com/embed/7itK5v58xeo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <br/><br/>
-        
-        <iframe src="https://www.youtube.com/embed/bF5RMl-jO6c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <a href="https://textdungeon.glitch.me">Twitter Textadventure</a>
-        <br/><br/>
-        
-        <iframe src="https://www.youtube.com/embed/vMNO0bq_CQo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <a href="https://fishies.glitch.me">Fische im Browser</a><br/>
-        
-        <div class="row1">
-            <div class="tile">
-                <a href="/welcome.html"><img src="img/BestWWW.JPG" alt="90er HTML Website"/></a><br/>
-                Hey, 90er WWW Style!
-            </div>
-        </div>
-        <div class="row2">
-            <div class="tile">
-                <a href="https://codepen.io/leetcore/full/QqYRbp/"><img src="img/FlappyBird.png" alt="Reverse Flappy Bird"/></a><br/>
-                Du steuerst nicht den Vogel...
-            </div>
-        </div>
-        <div style="clear:both"></div>
-        
-        <div class="row1">
-            <div class="tile">
-                <a href="/zombiehoelle/"><img src="img/zombie-prototype.png" alt="Zombie Mingame"/></a><br/>
-                Material sammeln und Verteidigung bauen.
-            </div>
-        </div>
+	<div id="main">
+		<div id="about">
+			<h1>1337core</h1>
+			<img src="img/alex.jpg" alt="Foto von mir" width="190px" height="190px" style="float: right; padding: 5px" />
+			<p>Hey, ich bin Alex und wohne in Saarbrücken. Ich mag Computer, Hacking, das WWW und Pizza! 🌏🏄🍕</p>
+			<p>Im Netz bin ich erreichbar auf <a href="https://twitter.com/1337core">Twitter</a> 🐦,
+				über <a href="https://t.me/leetcore">Telegram</a> 📱 und <a href="pgp-mail.html">PGP-Mail</a> 💌.</p>
+			<p>Ich schreibe derzeit an einem Buch 📝 über Hacker.</p>
+		</div>
 
-        <div class="row2">
-            <div class="tile">
-                <a href="/weltraumhandel/"><img src="img/weltraum-spiel.png" alt="Space Collector"/></a><br/>
-                Handel treiben und Raumschiff verbessern.
-            </div>
-        </div>
-        <div style="clear:both"></div>
-        
-        <article>
-            <p>Irgendwann FRÜHER™ gab es hier meinen berühmten Blog, den ich aus Zeitgründen leider in den Papierkorb verschoben musste. Im Jahre 2012 habe ich ein Buch geschrieben wie toll das Internet ist. 😎</p>
-        </article>
-        
-        <div id="showVideo"></div>
-        
-        <div class="row1">
-            <div class="tile">
-                <h2>security</h2>
-                <ul>
-                    <li><a href="hacks.htm">Web Security Bughunting</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=7itK5v58xeo" target="_blank" onclick="showYouTube(this.href); return false;">Zum Scriptkiddie in 60 Minuten (Barcamp Session)</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=ILx4f2kU82M" target="_blank" onclick="showYouTube(this.href); return false;">Alex erzählt was über Sicherheit (Barcamp Session)</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=-pxvm-q5ZK0" target="_blank" onclick="showYouTube(this.href); return false;">Whitehouse.gov Petitionsystem Hack (XSS) 2011</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=3aoccJlgiZo" target="_blank" onclick="showYouTube(this.href); return false;">NATO Research and Technology Hack (LFI) 2011</a></li>
-                </ul>
-            </div>
-            
-            <div class="tile">
-                <h2>tools</h2>
-                <ul>
-                    <li><a href="/Charakterbogen.pdf">Simpler Pen & Paper Charakterbogen</a></li>
-                    <li><a href="/pen-and-paper.html">Pen & Paper - Einfaches Regelwerk</a></li>
-                    <li><a href="https://telegram-dicerollerbot.glitch.me">Telegram Würfel-Chatbot</a></li>
-                    <li><a href="/diceroller/">Pen & Paper Würfel</a></li>
-                    <li><a href="/pwdhash/PwdHash.htm">PWD Hash Generator</a></li>
-                    <li><a href="/NSA-proof-password/crack-calculator.htm">NSA Proof Password Calculator</a></li>
-                    <li><a href="/xss-encode/xss.htm">HTML Encoding and Base64-Konverter</a></li>
-                    <li><a href="/html-entities.html">HTML-Entities</a></li>
-                </ul>
-            </div>
-            
-            <div class="tile">
-                <h2>backlinks</h2>
-                <ul>
-                    <li><a href="https://medium.com/glitch/its-world-emoji-day-e34bd61246e">It’s World Emoji Day!</a></li>
-                    <li><a href="http://www.mobildiscounter.de/blog/das-mobile-zeitalter-hat-begonnen-die-sicherheitsluecken-bleiben-interview-mit-einem-hacker/">Das mobile Zeitalter hat begonnen – Die Sicherheitslücken bleiben (Mobildiscounter)</a></li>
-                    <li><a href="http://thehackernews.com/2011/11/persistent-xss-vulnerability-in-white.html">Persistent XSS Vulnerability in White House Website (The Hacker News)</a></li>
-                    <li><a href="https://vimeo.com/51006660" target="_blank" onclick="showVimeo(); return false;">Trollitik - Eine ZDF-Kurzdoku über den miesen Ton im Netz (ZDF Info)</a></li>
-                    <li><a href="http://www.golem.de/news/netzkinder-gegen-offliner-wir-sind-die-zauberer-des-21-jahrhunderts-1204-91207.html">Buch "Netzkinder" (Golem) 2012</a></li>
-                    <li><a href="http://www.saarbruecker-zeitung.de/saarland/lokalimport/saarbruecken/saarbruecken-aktuell/Vom-Netzkind-zum-Netzexperten;art26717,4454658">Vom Netzkind zum Netzexperten (SZ) 2012</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="row2">
-            <div class="tile">
-                <h2>mini spiele</h2>
-                <ul>
-                    <li><a href="https://whac-emoji.glitch.me">Whac-emoji</a></li>
-                    <li><a href="/emojiduel/">Emoji duel</a></li>
-                    <li><a href="https://textdungeon.glitch.me/">Twitter RPG Textadventure</a></li>
-                    <li><a href="https://alexcoins.glitch.me/">AlexCoins - better than bitcoin</a></li>
-                    <li><a href="https://robots-vs-scientists.glitch.me/">Robots vs Scientists</a> (<a href="https://github.com/Leetcore/basic-map-engine">Github</a>, <a href="https://www.youtube.com/watch?v=SN2VRn0jcus" onclick="showYouTube(this.href); return false;">Video</a>)</li>
-                    <li><a href="https://tamoji.glitch.me/">Virtuelles Haustier</a> <a href="https://www.youtube.com/watch?v=FBZZhbd1Kvo" onclick="showYouTube(this.href); return false;">(Video)</a></li>
-                    <li><a href="https://codepen.io/leetcore/full/QqYRbp/">Reverse Flappy Bird</a> <a href="https://www.youtube.com/watch?v=I2bJOx9Bz9c" onclick="showYouTube(this.href); return false;">(Stream)</a></li>
-                    <li><a href="/codebreaker/" title="Programmiert innerhalb 50 Minuten">Codebreaker</a> (<a href="https://www.youtube.com/watch?v=Lt05ifntu-A" onclick="showYouTube(this.href); return false;">Erklärung</a>, <a href="https://www.youtube.com/watch?v=McvUlrjgR_g" onclick="showYouTube(this.href); return false;">MakingOf</a>)</li>
-                    <li><a href="/OneButton/" title="Programmiert innerhalb 40 Minuten">One Button Game</a> <a href="https://www.youtube.com/watch?v=SC79ovSxlw4" onclick="showYouTube(this.href); return false;">(Video)</a></li>
-                    <li><a href="/weltraumhandel/" title="Kleines Browsergame innerhalb 3 Tagen programmiert.">Weltraumhandel</a> <a href="https://www.youtube.com/watch?v=OkksUxtWAQo" onclick="showYouTube(this.href); return false;">(Video)</a></li>
-                    <li><a href="/kartenduell/" title="Kleines Browsergame innerhalb 3 Tagen programmiert.">Kartenduell (PvP)</a></li>
-                    <li><a href="/retrofarm/" title="Kleines Browsergame innerhalb 3 Tagen programmiert.">Retro Farm</a></li>
-                    <li><a href="/zombiehoelle/" title="Kleines Browsergame innerhalb 3 Tagen programmiert.">Zombie Hölle</a></li>
-                    <li><a href="/blockjumper/" title="Dies hätte mal ein Tamagotchi werden sollen...">Blockjumper</a></li>
-                    <li><a href="/wald/" title="Kleines Textadventure">Der verfluchte Wald</a></li>
-                    <li><a href="/detektiv/" title="Textadventure">Detektiv X</a></li>
-                </ul>
-            </div>
-            
-            <div class="tile">
-                <h2>fun fun fun</h2>
-                <ul>
-                    <li><a href="https://fishies.glitch.me">Aquarium + Emojis</a></li>
-                    <li><a href="/arianawave/">Ariana Wave</a></li>
-                    <li><a href="https://giphy-tv.glitch.me/">Giphy TV</a></li>
-                    <li><a href="/hackername/">What is your hacker name?</a></li>
-                    <li><a href="https://twitter.com/1337core/status/1007941991739555840">Twitter Pen and Paper</a></li>
-                    <li><a href="https://hackerspruch-generator.glitch.me/">Hackerspruch Generator</a></li>
-                    <li><a href="https://codepen.io/leetcore/full/xYbpqr/">Collatz conjecture</a></li>
-                    <li><a href="https://codepen.io/leetcore/full/ZarWPO/">Bundesregierungswürfel 2017</a></li>
-                    <li><a href="/sondierung/">Sondierungssimulator</a></li>
-                    <li><a href="/virenschutz/">Homöopathischer Viren-und Trojanerschutz</a></li>
-                    <li><a href="https://codepen.io/leetcore/full/EwPgWB/">Bildschirmschoner</a></li>
-                    <li><a href="https://chrome.google.com/webstore/detail/vong-konverter/knmcojmloapdipjadeeoililhhlpclga?hl=de">Deutsch - Vong Übersetzer für Chrome</a></li>
-                    <li><a href="https://github.com/Leetcore/Hasskommentar-Konverter">Facebook Hasskommentar-Übersetzer für Chrome</a></li>
-                    <li><a href="https://github.com/Leetcore/Facebook-Emp-rungsbeschleuniger/">Facebook Empörungsbeschleuniger für Chrome</a></li>
-                    <li><a href="/bibiphone">Das exklusive Bibiphone</a></li>
-                    <li><a href="/datenschutz/">Datenschutz made in Germany</a></li>
-                    <li><a href="/leetifikator/Leetifikator.htm">Leetspeak Konverter</a></li>
-                </ul>
-            </div>
-        </div>
-        <div style="clear:both"></div>
+		<div style="clear:both"></div>
 
-        <div id="tweets">
-            <div class="row1-3">
-                <p>Bitte denkt doch mal daran Webseiten wieder hoch zu scrollen, wenn ihr fertig seid. Das nervt jeden, der sie danach anschauen will. Mann!</p>&mdash; Al3x (@1337core) <a href="https://twitter.com/1337core/status/725698628573089793">28. April 2016</a></p>
-            </div>
-            <div class="row2-3">                
-                <p>&quot;Das waren die russischen Hacker&quot;, hört sich besser an als &quot;ich klicke auf jeden E-Mail Anhang und folge den Anweisungen!&quot;.</p>&mdash; Al3x (@1337core) <a href="https://twitter.com/1337core/status/816688605162827776">4. Januar 2017</a></p>
-            </div>
-            <div class="row3-3">
-                <p>&quot;Alter Table!&quot;<br><br>Ghettokind fällt Vokabel für Tisch wieder ein oder SQL Administrator ändert Tabelle?</p>&mdash; Al3x (@1337core) <a href="https://twitter.com/1337core/status/834033729437835265">21. Februar 2017</a></p>
-            </div>
-        </div>
-        
-        <div style="clear:both"></div>
-        
-        <div id="background">
-            <h2>Was ist Leetspeak?</h2>
-                <p>Leetspeak (kurz: 1337 für Elite) kann schwer zu lesen sein und ist dadurch als eine Art Geheimcode bestimmter Gruppen der Computerszene zu betrachten. <i>Ursprünglich durchaus ernst gemeint, wird sie heute jedoch fast nur noch in selbstironischer Form genutzt</i>.</p>
-                <p>Selbstironie ist eine Ironie, deren unmittelbare Zielscheibe die eigene Rolle oder Meinung ist und die daher eine spielerische, relativierende oder sogar kritische Haltung sich selbst gegenüber einnimmt.</p>
-                <p>Damit verbindet der Sprecher dennoch die Erwartung, dass der wahre Sinn seiner Äußerung verstanden werde, wenn auch vielleicht nicht von jeder Person respektive nicht von jeder Person in vollem Umfang.</p>
-                <p style="text-align: right">Quelle: Internet</p>
-        </div>
-        <p style="text-align:center"><b>H4CK TH3 PL4N3T &lt;3</b></p>
-    </div>
-    <script>
-        function jump(anker){
-            var top = document.getElementById(anker).offsetTop - 50;
-            window.scrollTo(0, top);
-        }
-        function showVimeo() {
-            document.getElementById("showVideo").innerHTML = '<iframe src="https://player.vimeo.com/video/51006660?byline=0&portrait=0" width="100%" height="500px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
-            jump("showVideo")
-        }
-        function showYouTube(URL) {
-            var newURL = URL.replace('/watch?v=', '/embed/') + '?rel=0'
-            document.getElementById("showVideo").innerHTML = '<iframe width="100%" height="500px" src="' + newURL + '" frameborder="0" allowfullscreen></iframe>'
-            jump("showVideo")
-        }
-        function changeStream (type) {
-            if (type == "twitch") {
-                document.getElementById("livestream").setAttribute("src", "https://player.twitch.tv/?channel=leetcore")
-            } else if(type == "youtube") {
-               document.getElementById("livestream").setAttribute("src", "https://www.youtube.com/embed/live_stream?channel=UCgnSbni4Pz53INF_Cs8S4oQ")
-            }
-        }
-        function showOnSunday() {
-            var today = new Date();
-            if (today.getDay() == 0) {
-                document.getElementById("showVideo").innerHTML = '<iframe src="https://player.twitch.tv/?channel=leetcore" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>';
-            }
-        }
+		<div id="hacktheplanet" style="display: none;"></div>
+
+		<iframe src="https://www.youtube.com/embed/7itK5v58xeo" frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<br /><br />
+
+		<iframe src="https://www.youtube.com/embed/bF5RMl-jO6c" frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<a href="https://textdungeon.glitch.me">Twitter Textadventure</a>
+		<br /><br />
+
+		<iframe src="https://www.youtube.com/embed/vMNO0bq_CQo" frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<a href="https://fishies.glitch.me">Fische im Browser</a><br />
+
+		<div class="row1">
+			<div class="tile">
+				<a href="/welcome.html"><img src="img/BestWWW.JPG" alt="90er HTML Website" /></a><br />
+				Hey, 90er WWW Style!
+			</div>
+		</div>
+		<div class="row2">
+			<div class="tile">
+				<a href="https://codepen.io/leetcore/full/QqYRbp/"><img src="img/FlappyBird.png"
+						alt="Reverse Flappy Bird" /></a><br />
+				Du steuerst nicht den Vogel...
+			</div>
+		</div>
+		<div style="clear:both"></div>
+
+		<div class="row1">
+			<div class="tile">
+				<a href="/zombiehoelle/"><img src="img/zombie-prototype.png" alt="Zombie Mingame" /></a><br />
+				Material sammeln und Verteidigung bauen.
+			</div>
+		</div>
+
+		<div class="row2">
+			<div class="tile">
+				<a href="/weltraumhandel/"><img src="img/weltraum-spiel.png" alt="Space Collector" /></a><br />
+				Handel treiben und Raumschiff verbessern.
+			</div>
+		</div>
+		<div style="clear:both"></div>
+
+		<article>
+			<p>Irgendwann FRÜHER™ gab es hier meinen berühmten Blog, den ich aus Zeitgründen leider in den Papierkorb
+				verschoben musste. Im Jahre 2012 habe ich ein Buch geschrieben wie toll das Internet ist. 😎</p>
+		</article>
+
+		<div id="showVideo"></div>
+
+		<div class="row1">
+			<div class="tile">
+				<h2>security</h2>
+				<ul>
+					<li><a href="hacks.htm">Web Security Bughunting</a></li>
+					<li><a href="https://www.youtube.com/watch?v=7itK5v58xeo" target="_blank"
+							onclick="showYouTube(this.href); return false;">Zum Scriptkiddie in 60 Minuten (Barcamp Session)</a></li>
+					<li><a href="https://www.youtube.com/watch?v=ILx4f2kU82M" target="_blank"
+							onclick="showYouTube(this.href); return false;">Alex erzählt was über Sicherheit (Barcamp Session)</a>
+					</li>
+					<li><a href="https://www.youtube.com/watch?v=-pxvm-q5ZK0" target="_blank"
+							onclick="showYouTube(this.href); return false;">Whitehouse.gov Petitionsystem Hack (XSS) 2011</a></li>
+					<li><a href="https://www.youtube.com/watch?v=3aoccJlgiZo" target="_blank"
+							onclick="showYouTube(this.href); return false;">NATO Research and Technology Hack (LFI) 2011</a></li>
+				</ul>
+			</div>
+
+			<div class="tile">
+				<h2>tools</h2>
+				<ul>
+					<li><a href="/Charakterbogen.pdf">Simpler Pen & Paper Charakterbogen</a></li>
+					<li><a href="/pen-and-paper.html">Pen & Paper - Einfaches Regelwerk</a></li>
+					<li><a href="https://telegram-dicerollerbot.glitch.me">Telegram Würfel-Chatbot</a></li>
+					<li><a href="/diceroller/">Pen & Paper Würfel</a></li>
+					<li><a href="/pwdhash/PwdHash.htm">PWD Hash Generator</a></li>
+					<li><a href="/NSA-proof-password/crack-calculator.htm">NSA Proof Password Calculator</a></li>
+					<li><a href="/xss-encode/xss.htm">HTML Encoding and Base64-Konverter</a></li>
+					<li><a href="/html-entities.html">HTML-Entities</a></li>
+				</ul>
+			</div>
+
+			<div class="tile">
+				<h2>backlinks</h2>
+				<ul>
+					<li><a href="https://medium.com/glitch/its-world-emoji-day-e34bd61246e">It’s World Emoji Day!</a></li>
+					<li><a
+							href="http://www.mobildiscounter.de/blog/das-mobile-zeitalter-hat-begonnen-die-sicherheitsluecken-bleiben-interview-mit-einem-hacker/">Das
+							mobile Zeitalter hat begonnen – Die Sicherheitslücken bleiben (Mobildiscounter)</a></li>
+					<li><a href="http://thehackernews.com/2011/11/persistent-xss-vulnerability-in-white.html">Persistent XSS
+							Vulnerability in White House Website (The Hacker News)</a></li>
+					<li><a href="https://vimeo.com/51006660" target="_blank" onclick="showVimeo(); return false;">Trollitik - Eine
+							ZDF-Kurzdoku über den miesen Ton im Netz (ZDF Info)</a></li>
+					<li><a
+							href="http://www.golem.de/news/netzkinder-gegen-offliner-wir-sind-die-zauberer-des-21-jahrhunderts-1204-91207.html">Buch
+							"Netzkinder" (Golem) 2012</a></li>
+					<li><a
+							href="http://www.saarbruecker-zeitung.de/saarland/lokalimport/saarbruecken/saarbruecken-aktuell/Vom-Netzkind-zum-Netzexperten;art26717,4454658">Vom
+							Netzkind zum Netzexperten (SZ) 2012</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="row2">
+			<div class="tile">
+				<h2>mini spiele</h2>
+				<ul>
+					<li><a href="https://whac-emoji.glitch.me">Whac-emoji</a></li>
+					<li><a href="/emojiduel/">Emoji duel</a></li>
+					<li><a href="https://textdungeon.glitch.me/">Twitter RPG Textadventure</a></li>
+					<li><a href="https://alexcoins.glitch.me/">AlexCoins - better than bitcoin</a></li>
+					<li><a href="https://robots-vs-scientists.glitch.me/">Robots vs Scientists</a> (<a
+							href="https://github.com/Leetcore/basic-map-engine">Github</a>, <a
+							href="https://www.youtube.com/watch?v=SN2VRn0jcus"
+							onclick="showYouTube(this.href); return false;">Video</a>)</li>
+					<li><a href="https://tamoji.glitch.me/">Virtuelles Haustier</a> <a
+							href="https://www.youtube.com/watch?v=FBZZhbd1Kvo"
+							onclick="showYouTube(this.href); return false;">(Video)</a></li>
+					<li><a href="https://codepen.io/leetcore/full/QqYRbp/">Reverse Flappy Bird</a> <a
+							href="https://www.youtube.com/watch?v=I2bJOx9Bz9c"
+							onclick="showYouTube(this.href); return false;">(Stream)</a></li>
+					<li><a href="/codebreaker/" title="Programmiert innerhalb 50 Minuten">Codebreaker</a> (<a
+							href="https://www.youtube.com/watch?v=Lt05ifntu-A"
+							onclick="showYouTube(this.href); return false;">Erklärung</a>, <a
+							href="https://www.youtube.com/watch?v=McvUlrjgR_g"
+							onclick="showYouTube(this.href); return false;">MakingOf</a>)</li>
+					<li><a href="/OneButton/" title="Programmiert innerhalb 40 Minuten">One Button Game</a> <a
+							href="https://www.youtube.com/watch?v=SC79ovSxlw4"
+							onclick="showYouTube(this.href); return false;">(Video)</a></li>
+					<li><a href="/weltraumhandel/" title="Kleines Browsergame innerhalb 3 Tagen programmiert.">Weltraumhandel</a>
+						<a href="https://www.youtube.com/watch?v=OkksUxtWAQo"
+							onclick="showYouTube(this.href); return false;">(Video)</a></li>
+					<li><a href="/kartenduell/" title="Kleines Browsergame innerhalb 3 Tagen programmiert.">Kartenduell (PvP)</a>
+					</li>
+					<li><a href="/retrofarm/" title="Kleines Browsergame innerhalb 3 Tagen programmiert.">Retro Farm</a></li>
+					<li><a href="/zombiehoelle/" title="Kleines Browsergame innerhalb 3 Tagen programmiert.">Zombie Hölle</a></li>
+					<li><a href="/blockjumper/" title="Dies hätte mal ein Tamagotchi werden sollen...">Blockjumper</a></li>
+					<li><a href="/wald/" title="Kleines Textadventure">Der verfluchte Wald</a></li>
+					<li><a href="/detektiv/" title="Textadventure">Detektiv X</a></li>
+				</ul>
+			</div>
+
+			<div class="tile">
+				<h2>fun fun fun</h2>
+				<ul>
+					<li><a href="https://fishies.glitch.me">Aquarium + Emojis</a></li>
+					<li><a href="/arianawave/">Ariana Wave</a></li>
+					<li><a href="https://giphy-tv.glitch.me/">Giphy TV</a></li>
+					<li><a href="/hackername/">What is your hacker name?</a></li>
+					<li><a href="https://twitter.com/1337core/status/1007941991739555840">Twitter Pen and Paper</a></li>
+					<li><a href="https://hackerspruch-generator.glitch.me/">Hackerspruch Generator</a></li>
+					<li><a href="https://codepen.io/leetcore/full/xYbpqr/">Collatz conjecture</a></li>
+					<li><a href="https://codepen.io/leetcore/full/ZarWPO/">Bundesregierungswürfel 2017</a></li>
+					<li><a href="/sondierung/">Sondierungssimulator</a></li>
+					<li><a href="/virenschutz/">Homöopathischer Viren-und Trojanerschutz</a></li>
+					<li><a href="https://codepen.io/leetcore/full/EwPgWB/">Bildschirmschoner</a></li>
+					<li><a
+							href="https://chrome.google.com/webstore/detail/vong-konverter/knmcojmloapdipjadeeoililhhlpclga?hl=de">Deutsch
+							- Vong Übersetzer für Chrome</a></li>
+					<li><a href="https://github.com/Leetcore/Hasskommentar-Konverter">Facebook Hasskommentar-Übersetzer für
+							Chrome</a></li>
+					<li><a href="https://github.com/Leetcore/Facebook-Emp-rungsbeschleuniger/">Facebook Empörungsbeschleuniger für
+							Chrome</a></li>
+					<li><a href="/bibiphone">Das exklusive Bibiphone</a></li>
+					<li><a href="/datenschutz/">Datenschutz made in Germany</a></li>
+					<li><a href="/leetifikator/Leetifikator.htm">Leetspeak Konverter</a></li>
+				</ul>
+			</div>
+		</div>
+		<div style="clear:both"></div>
+
+		<div id="tweets">
+			<div class="row1-3">
+				<p>Bitte denkt doch mal daran Webseiten wieder hoch zu scrollen, wenn ihr fertig seid. Das nervt jeden, der sie
+					danach anschauen will. Mann!</p>&mdash; Al3x (@1337core) <a
+					href="https://twitter.com/1337core/status/725698628573089793">28. April 2016</a></p>
+			</div>
+			<div class="row2-3">
+				<p>&quot;Das waren die russischen Hacker&quot;, hört sich besser an als &quot;ich klicke auf jeden E-Mail Anhang
+					und folge den Anweisungen!&quot;.</p>&mdash; Al3x (@1337core) <a
+					href="https://twitter.com/1337core/status/816688605162827776">4. Januar 2017</a></p>
+			</div>
+			<div class="row3-3">
+				<p>&quot;Alter Table!&quot;<br><br>Ghettokind fällt Vokabel für Tisch wieder ein oder SQL Administrator ändert
+					Tabelle?</p>&mdash; Al3x (@1337core) <a href="https://twitter.com/1337core/status/834033729437835265">21.
+					Februar 2017</a></p>
+			</div>
+		</div>
+
+		<div style="clear:both"></div>
+
+		<div id="background">
+			<h2>Was ist Leetspeak?</h2>
+			<p>Leetspeak (kurz: 1337 für Elite) kann schwer zu lesen sein und ist dadurch als eine Art Geheimcode bestimmter
+				Gruppen der Computerszene zu betrachten. <i>Ursprünglich durchaus ernst gemeint, wird sie heute jedoch fast nur
+					noch in selbstironischer Form genutzt</i>.</p>
+			<p>Selbstironie ist eine Ironie, deren unmittelbare Zielscheibe die eigene Rolle oder Meinung ist und die daher
+				eine spielerische, relativierende oder sogar kritische Haltung sich selbst gegenüber einnimmt.</p>
+			<p>Damit verbindet der Sprecher dennoch die Erwartung, dass der wahre Sinn seiner Äußerung verstanden werde, wenn
+				auch vielleicht nicht von jeder Person respektive nicht von jeder Person in vollem Umfang.</p>
+			<p style="text-align: right">Quelle: Internet</p>
+		</div>
+		<p style="text-align:center"><b>H4CK TH3 PL4N3T &lt;3</b></p>
+	</div>
+	<script>
+		function jump(anker) {
+			var top = document.getElementById(anker).offsetTop - 50;
+			window.scrollTo(0, top);
+		}
+		function showVimeo() {
+			document.getElementById("showVideo").innerHTML = '<iframe src="https://player.vimeo.com/video/51006660?byline=0&portrait=0" width="100%" height="500px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+			jump("showVideo")
+		}
+		function showYouTube(URL) {
+			var newURL = URL.replace('/watch?v=', '/embed/') + '?rel=0'
+			document.getElementById("showVideo").innerHTML = '<iframe width="100%" height="500px" src="' + newURL + '" frameborder="0" allowfullscreen></iframe>'
+			jump("showVideo")
+		}
+		function changeStream(type) {
+			if (type == "twitch") {
+				document.getElementById("livestream").setAttribute("src", "https://player.twitch.tv/?channel=leetcore")
+			} else if (type == "youtube") {
+				document.getElementById("livestream").setAttribute("src", "https://www.youtube.com/embed/live_stream?channel=UCgnSbni4Pz53INF_Cs8S4oQ")
+			}
+		}
+		function showOnSunday() {
+			var today = new Date();
+			if (today.getDay() == 0) {
+				document.getElementById("showVideo").innerHTML = '<iframe src="https://player.twitch.tv/?channel=leetcore" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>';
+			}
+		}
         // showOnSunday();
-    </script>
-    <script src="htb.js" async="async"></script>
+	</script>
+	<script src="htb.js" async="async"></script>
 </body>
+
 </html>
