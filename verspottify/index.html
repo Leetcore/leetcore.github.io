@@ -23,6 +23,10 @@
 		input {
 			min-width: 250px;
 		}
+		
+		img {
+			max-width: 120px;
+		}
 
 		.color {
 			color: #1ed760;
@@ -31,13 +35,10 @@
 </head>
 
 <body>
-	<img src="logo.png" alt="Logo">
-	<h1 class="color">Verspottify</h1>
+	<h1 class="color"><img src="logo.png" alt="Logo"> Verspottify</h1>
 	<p>Spiele deine Lieblingssongs kostenlos mit Verspottify ab!</p>
 	<input placeholder="Nach Künstler oder Song suchen." type="text" /><button onclick="play()">Abspielen</button>
 	<p class="color" id="player"></p>
-
-	<p style="text-align: right">www.1337core.de</p>
 	
 	<script>
 		var tracks = [
