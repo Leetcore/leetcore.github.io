@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Verspottify - Kostenlose Musik abspielen!</title>
+	<style>
+		body {
+			background-color: #333;
+			text-align: center;
+			font-size: 200%;
+			color: white;
+			font-family: sans-serif;
+		}
+
+		input,
+		button {
+			padding: 10px 20px
+		}
+
+		input {
+			min-width: 250px;
+		}
+
+		.color {
+			color: #1ed760;
+		}
+	</style>
+</head>
+
+<body>
+	<img src="logo.png" alt="Logo">
+	<h1 class="color">Verspottify</h1>
+	<p>Spiele deine Lieblingssongs kostenlos mit Verspottify ab!</p>
+	<input placeholder="Nach Künstler oder Song suchen." type="text" /><button onclick="play()">Abspielen</button>
+	<p class="color" id="player"></p>
+
+	<p style="text-align: right">www.1337core.de</p>
+	
+	<script>
+		var tracks = [
+			"Als würde ich so einen Mist abspielen!",
+			"Such dir mal Musikgeschmack, dann kannste wieder her kommen!",
+			"Lächerliche Musik, das spiele ich nicht ab!",
+			"Wer das hört, ist doch nicht mehr richtig!",
+			"Das ist keine Musik. Das ist nur Krach!",
+			"Meine Oma hört aktuellere Musik. Ich will das nicht abspielen!",
+			"Nein, das spiele ich nicht ab. Versuch es doch mal mit Justin Bieber",
+			"Hahaha! Dein Ernst? Das hört doch niemand außer dir.",
+			"Versuch es doch mal mit einem Genre, was nicht bescheuert ist."
+		]
+
+		function play() {
+			document.getElementById('player').innerText = tracks[getRandomIntInclusive(0, tracks.length - 1)];
+		}
+
+		function getRandomIntInclusive(min, max) {
+			min = Math.ceil(min);
+			max = Math.floor(max);
+			return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+		}
+	</script>
+</body>
+
+</html>
