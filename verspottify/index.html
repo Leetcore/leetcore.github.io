@@ -23,7 +23,7 @@
 		input {
 			min-width: 250px;
 		}
-		
+
 		img {
 			max-width: 120px;
 		}
@@ -34,12 +34,13 @@
 	</style>
 </head>
 
-<body onsubmit="play()">
+<body>
 	<h1 class="color"><img src="verspottify.png" alt="Logo"> Verspottify</h1>
 	<p>Spiele deine Lieblingssongs kostenlos mit Verspottify ab!</p>
-	<input placeholder="Nach Künstler oder Song suchen." type="text" /><input type="submit" onclick="play()" value="Abspielen"/>
+	<input placeholder="Nach Künstler oder Song suchen." type="text" /><input type="submit" onclick="play()"
+		value="Abspielen" />
 	<p class="color" id="player"></p>
-	
+
 	<script>
 		var tracks = [
 			"Als würde ich so einen Mist abspielen!",
@@ -53,8 +54,9 @@
 			"Versuch es doch mal mit einem Genre, was nicht bescheuert ist."
 		]
 
+		var input = document.querySelector('input').value.toLowerCase()
+
 		function play() {
-			var input = document.querySelector('input').value.toLowerCase()
 			if (input == "justin bieber") {
 				document.location.href = "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s"
 			} else {
@@ -67,6 +69,16 @@
 			max = Math.floor(max);
 			return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
 		}
+
+		input.addEventListener("keyup", function (event) {
+			// Number 13 is the "Enter" key on the keyboard
+			if (event.keyCode === 13) {
+				// Cancel the default action, if needed
+				event.preventDefault();
+				// Trigger the button element with a click
+				play();
+			}
+		}); 
 	</script>
 </body>
 
