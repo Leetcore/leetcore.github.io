@@ -54,10 +54,10 @@
 			"Versuch es doch mal mit einem Genre, was nicht bescheuert ist."
 		]
 
-		var input = document.querySelector('input').value.toLowerCase()
+		var input = document.querySelector('input');
 
 		function play() {
-			if (input == "justin bieber") {
+			if (input.value.toLowerCase() == "justin bieber") {
 				document.location.href = "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s"
 			} else {
 				document.getElementById('player').innerText = tracks[getRandomIntInclusive(0, tracks.length - 1)];
@@ -72,7 +72,7 @@
 
 		input.addEventListener("keyup", function (event) {
 			// Number 13 is the "Enter" key on the keyboard
-			if (input.value.length > 0 && event.keyCode === 13) {
+			if (event.keyCode === 13) {
 				// Cancel the default action, if needed
 				event.preventDefault();
 				// Trigger the button element with a click
