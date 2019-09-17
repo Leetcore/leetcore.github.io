@@ -107,6 +107,9 @@ iframe {
 .title li {
     font-size: 90%;
 }
+pre, code {
+    line-height: 100%;
+}
 @media (max-width: 800px) {
     .row1, .row2 {
         float: none;
