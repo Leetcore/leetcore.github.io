@@ -1,7 +1,7 @@
 h1, h2, body, p, img {
     box-sizing: border-box;
     animation-name: flick;
-    animation-duration: 320s;
+    animation-duration: 1337s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
