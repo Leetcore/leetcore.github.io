@@ -65,7 +65,6 @@ iframe {
 #main {
     max-width: 640px;
     margin: 0px auto;
-    background-color: #C6C6C6;
     padding: 5px;
 }
 #post {
@@ -126,11 +125,8 @@ pre, code {
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #000;
+        background-color: #282a36;
         color: #e6e0d8;
-    }
-    #main {
-       background-color: #000;
     }
 }
 @keyframes flick {
