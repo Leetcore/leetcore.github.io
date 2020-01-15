@@ -51,6 +51,7 @@
         Ein Browser mit Web Speech Api macht diese Webseite 200% lustiger.
       </small>
     </p>
+    <p id="info"></p>
     
     <script>
       var texts = [
@@ -158,6 +159,10 @@
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      
+      if (!window.speechSynthesis) {
+        document.getElementById('info').innerText = "Dein Browser kann nicht sprechen, deshalb hörst du auch die Boomer-Sprüche nicht."
       }
     </script>
   </body>
