@@ -81,13 +81,8 @@ iframe {
 .twitter-tweet {
     font-size: 90%;
 }
-.row1 {
-    float: left;
-    width: 50%;
-}
-.row2 {
-    width: 50%;
-    float: right;
+.column {
+    column-count: 2;
 }
 .row1-3, .row2-3, .row3-3 {
     width: 30%;
@@ -110,16 +105,8 @@ pre, code {
     line-height: 100%;
 }
 @media (max-width: 800px) {
-    .row1, .row2 {
-        float: none;
-        width: auto;
-    }
-    .row1-3 {
-        float: none;
-        width: auto;
-    }
-    .row2-3, .row3-3 {
-        display: none;
+    .column {
+        column-count: 1;
     }
 }
 /* Dark mode */
