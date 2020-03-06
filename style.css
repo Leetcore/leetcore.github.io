@@ -30,7 +30,6 @@ a, a:link, a:visited {
     text-decoration: none;
     border-bottom: 5px solid #524a3d;
     padding: 0px 3px;
-    /*text-shadow: 0px 0px 0px #00FF2F;*/
 }
 a:hover {
     background-color: #b1a798;
@@ -117,7 +116,9 @@ pre, code {
     }
 }
 @keyframes flick {
-    0%   {}
-    50% { filter: hue-rotate(45deg); }
-    100%   {}
+    0% {}
+    50% {
+        filter: hue-rotate(45deg);
+    }
+    100% {}
 }
