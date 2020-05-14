@@ -51,6 +51,7 @@ hr {
     background-color: #777;
     border: none;
     height: 2px;
+    margin: 5px 2px;
 }   
 .comics img {
     max-height: 100%;
