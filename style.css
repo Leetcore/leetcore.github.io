@@ -10,7 +10,7 @@ body {
     color: #524a3d;
     font-family: 'blockzone', Arial, Helvetica, sans-serif;
     font-size: 105%;
-    line-height: 180%;
+    line-height: 120%;
 }
 h1, h2 {
     margin: 0px 0px;
@@ -27,9 +27,6 @@ h2::after {
 }
 a, a:link, a:visited {
     color: #906b2f;
-    text-decoration: none;
-    border-bottom: 5px solid #524a3d;
-    padding: 0px 3px;
 }
 a:hover {
     background-color: #b1a798;
