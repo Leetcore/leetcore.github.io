@@ -55,7 +55,7 @@ hr {
 }
 iframe {
     width: 100%;
-    min-height: 400px;
+    min-height: 500px;
 }
 .center {
     text-align: center;
@@ -86,16 +86,6 @@ iframe {
 .column {
     column-count: 2;
 }
-.row1-3, .row2-3, .row3-3 {
-    width: 30%;
-    float: left;
-    padding: 5px;
-}
-.row3-3:after {
-    content: "";
-    clear: both;
-    display: block;
-}
 .tile {
     padding: 20px;
     margin: 10px 5px;
@@ -104,7 +94,7 @@ iframe {
     font-size: 90%;
 }
 pre, code {
-    line-height: 100%;
+    line-height: 120%;
     white-space: pre-wrap;
     font-size: 95%;
 }
