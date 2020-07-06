@@ -53,6 +53,13 @@ hr {
 .comics img {
     max-height: 100%;
 }
+table {
+     border-collapse: collapse;
+}
+td {
+    border: 1px solid #333;
+    padding: 3px;
+}
 iframe {
     width: 100%;
     min-height: 500px;
