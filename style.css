@@ -8,7 +8,7 @@ h1, h2, body, p, img {
 body {
     background-color: #C6C6C6;
     color: #524a3d;
-    font-family: 'blockzone', Arial, Helvetica, sans-serif;
+    font-family: 'blockzone', Monospace, Arial, sans-serif;
     font-size: 105%;
     line-height: 120%;
 }
