@@ -14,6 +14,7 @@ body {
     background-color: #0C1C0E;
     color: #55A559;
     font-family: 'blockzone', Monospace, Arial, sans-serif;
+    line-height: 130%;
 }
 h1, h2 {
     margin-bottom: 10px;
