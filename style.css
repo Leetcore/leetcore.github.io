@@ -113,8 +113,8 @@ pre, code {
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #282a36;
-        color: #e6e0d8;
+        background-color: #0C1C0E;
+        color: #55A559;
     }
 }
 @keyframes flick {
