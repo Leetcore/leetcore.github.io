@@ -9,7 +9,7 @@ body {
     font-family: 'blockzone', Monospace, Arial, sans-serif;
     line-height: 130%;
 }
-h1, h2, body, p, img {
+h1, h2, h3, body, p, img {
     box-sizing: border-box;
     animation-name: flick;
     animation-duration: 1337s;
