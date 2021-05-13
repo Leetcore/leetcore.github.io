@@ -77,25 +77,11 @@ iframe {
     margin: 0px auto;
     padding: 10px;
 }
-#post {
-    max-width: 640px;
-    margin: 0px auto;
-}
-#background {
-    margin-top: 20px;
-}
-.viernullvier, .viernullvier h1 {
-    font-size: 250%;
-    line-height: 150%;
-}
-.twitter-tweet {
+#tweets {
     font-size: 90%;
 }
 .column {
     column-count: 2;
-}
-.tile {
-    padding: 20px 0px;
 }
 .title li {
     font-size: 90%;
