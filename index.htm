@@ -71,7 +71,7 @@
 		</p>
 
 		<div id="twitchStream"></div>
-		<iframe width="100%" height="360" src="https://www.youtube.com/embed/-8f8rz3eNlo" title="YouTube video player" frameborder="0" 
+		<iframe width="100%" height="360px" src="https://www.youtube.com/embed/-8f8rz3eNlo" title="YouTube video player" frameborder="0" 
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 		<h2>Buch: Wie werde ich Hacker</h2>
@@ -86,10 +86,8 @@
 			<p>
 				Darin geht es um Netzkultur, Hacker-Ethik, IT-Grundlagen, Programmieren lernen mit Hilfe des Internets,
 				Webseiten Hacking, Excel-Trojaner, Internet scannen und sich wundern, welche ungeschützten Daten
-				erreichbar
-				sind. Ungefähr die Hälfte des Buches sind Hacking- oder Spaßprojekte: RPG Chatbots, IMSI-Catcher,
-				Lockpicking
-				und Bad-USB.
+				erreichbar sind. Ungefähr die Hälfte des Buches sind Hacking- oder Spaßprojekte: RPG Chatbots, IMSI-Catcher,
+				Lockpicking und Bad-USB.
 				272 Seiten mit kleinen Einblicken in verschiedenste Themen und wie du dich darin einarbeitest.<br />
 				Version: 0.6 (Public Beta):<br />
 				ISBN: 978-3-753129-91-4<br />
@@ -110,7 +108,7 @@
 		<hr>
 		<h2>barcamp</h2>
 		<p>Mein alter Barcamp Vortrag über Scriptkiddies. Da war ich 26 Jahre jung.</p>
-		<iframe width="100%" height="500px" src="https://www.youtube.com/embed/7itK5v58xeo" frameborder="0"
+		<iframe width="100%" height="360px" src="https://www.youtube.com/embed/7itK5v58xeo" frameborder="0"
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 		<div id="showVideo"></div>
@@ -302,12 +300,12 @@
 			window.scrollTo(0, top);
 		}
 		function showVimeo() {
-			document.getElementById("showVideo").innerHTML = '<iframe width="100%" height="500px" src="https://player.vimeo.com/video/51006660?byline=0&portrait=0" width="100%" height="500px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+			document.getElementById("showVideo").innerHTML = '<iframe width="100%" height="360px" src="https://player.vimeo.com/video/51006660?byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 			jump("showVideo");
 		}
 		function showYouTube(URL) {
 			var newURL = URL.replace('/watch?v=', '/embed/') + '?rel=0';
-			document.getElementById("showVideo").innerHTML = '<iframe width="100%" height="500px" src="' + newURL + '" frameborder="0" allowfullscreen></iframe>';
+			document.getElementById("showVideo").innerHTML = '<iframe width="100%" height="360px" src="' + newURL + '" frameborder="0" allowfullscreen></iframe>';
 			jump("showVideo");
 		}
 		// display twitch stream but only at night
@@ -315,7 +313,7 @@
 		if (now.getHours() >= 22 || now.getHours() < 6) {
 			document.querySelector("#twitchStream").insertAdjacentHTML("beforeend", `<iframe
 				src="https://player.twitch.tv/?channel=leetcore&parent=www.1337core.de&parent=1337core.de&parent=leetcore.github.io"
-				height="360" width="100%" allowfullscreen="allowfullscreen">
+				height="360px" width="100%" allowfullscreen="allowfullscreen">
 			</iframe>`);
 		}
 	</script>
