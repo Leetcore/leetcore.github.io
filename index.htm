@@ -72,7 +72,7 @@
 
 		<div id="twitchStream"></div>
 		
-		<iframe height="360" src="https://youtu.be/ZlBl0wRo7N4" title="YouTube video player" frameborder="0" 
+		<iframe height="360" src="https://www.youtube.com/embed/ZlBl0wRo7N4?start=342" title="YouTube video player" frameborder="0" 
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 		<h2>Buch: Wie werde ich Hacker</h2>
@@ -109,7 +109,7 @@
 		<hr>
 		<h2>barcamp</h2>
 		<p>Mein alter Barcamp Vortrag über Scriptkiddies. Da war ich 26 Jahre jung.</p>
-		<iframe height="360" src="https://www.youtube.com/embed/7itK5v58xeo"
+		<iframe height="360" src="https://www.youtube.com/embed/7itK5v58xeo" frameborder="0" 
 			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 		<div id="showVideo"></div>
@@ -303,7 +303,7 @@
 		}
 		function showYouTube(URL) {
 			var newURL = URL.replace('/watch?v=', '/embed/') + '?rel=0';
-			document.getElementById("showVideo").innerHTML = '<iframe height="360" src="' + newURL + '" allowfullscreen></iframe>';
+			document.getElementById("showVideo").innerHTML = '<iframe height="360" src="' + newURL + '" frameborder="0" allowfullscreen></iframe>';
 			jump("showVideo");
 		}
 		// display twitch stream but only at night
