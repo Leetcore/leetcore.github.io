@@ -64,6 +64,7 @@ td {
 }
 iframe {
     width: 100%;
+    box-shadow: 5px 5px 0px #333;
 }
 .center {
     text-align: center;
