@@ -3,12 +3,10 @@ function checkLeet () {
     const now = new Date()
     if (now.getHours() === 13 && now.getMinutes() === 37 && loaded === false) {
       loaded = true
-      document.getElementById('hacktheplanet').insertAdjacentHTML('beforeend', '<span style="text-align: center; font-size: 200%"><img src="htp.gif" style="width: 80%; margin: 0 auto; display: block;"><p>13:37 Uhr!</p></span>')
-      document.getElementById('hacktheplanet').style.display = 'block'
+      document.querySelector('#hacktheplanet').innerHTML = '<span style="text-align: center; font-size: 200%"><img src="htp.gif" style="width: 80%; margin: 0 auto; display: block;"><p>13:37 Uhr!</p></span>'
     } else if (loaded === true) {
       loaded = false
-      document.getElementById('hacktheplanet').innerHTML = ''
-      document.getElementById('hacktheplanet').style.display = 'none'
+      document.querySelector('#hacktheplanet').innerHTML = ''
     }
 
     setTimeout(checkLeet, 30000)
