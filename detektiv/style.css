@@ -1,0 +1,79 @@
+/* Page Style */
+body {
+  font-family: sans-serif;
+  font-size: 120%;
+  text-shadow: 3px 3px 10px #000;
+  line-height: 140%;
+  color: #FFF;
+  background: #DDD url("https://images.unsplash.com/photo-1422748733255-ee572fddeab0?crop=entropy&fit=crop&fm=jpg&h=950&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1700") no-repeat;
+  background-position-y: top;
+  background-position-x: center;
+  background-size: 200% auto;
+  background-attachment: fixed;
+}
+h1 {
+    line-height: 120%;
+}
+#squiffy {
+    transition: visibility 0s, opacity 0.5s linear;
+    margin-top: 10%;
+}
+a.squiffy-link, a
+{
+  text-decoration: underline;
+  color: #4BE4F5;
+  cursor: pointer;
+}
+a.squiffy-link.disabled
+{
+  text-decoration: inherit;
+  color: #777;
+  cursor: inherit;
+}
+a.link-section {
+  /*color: #2BFF7F;*/
+}
+a.squiffy-header-link
+{
+  font-size: 90%;
+  text-decoration: underline;
+  cursor: pointer;
+}
+div#squiffy-container
+{
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div#squiffy-container p {
+    text-align: justify;    
+}
+div#squiffy-header
+{
+  font-size: 14px;
+  text-align: right;
+}
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 16px; margin-bottom: 16px;
+  width: 110%;
+  margin-left: -5%;
+  background-color: #ddd;
+}
+#footer {
+  position: fixed;
+  right: 0px;
+  bottom: 0px;
+  display: inline-block;
+  padding: 2px 5px;
+  background-color: #000;
+}
+
+@media (max-width: 1000px) { 
+    body {
+          background-size:250% auto;
+    }
+ }

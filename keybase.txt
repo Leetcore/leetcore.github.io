@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/1337core
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.1337core.de
+  * I am 1337core (https://keybase.io/1337core) on keybase.
+  * I have a public key ASAdGtLdPIHXbC3V56pXqTet7WypG776V5Y80jf6euhoMgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01201d1ad2dd3c81d76c2dd5e7aa57a937aded6ca91bbefa57963cd237fa7ae868320a",
+      "host": "keybase.io",
+      "kid": "01201d1ad2dd3c81d76c2dd5e7aa57a937aded6ca91bbefa57963cd237fa7ae868320a",
+      "uid": "8e6dbd29e137ef3f2f69089fb10a2219",
+      "username": "1337core"
+    },
+    "merkle_root": {
+      "ctime": 1615726989,
+      "hash": "060cedf00ab4547ae25f79f9bba7c8e2006b36aaa8f67e9c2f317e0570e3b7097986fb8c0cb21a85dfb2134b604bcd8277151074581078fd709cc13b4e4df23d",
+      "hash_meta": "b9f9f77a903583908e327af26a8ae5b91ff1a2cf2425c1cd3d1940f862884a4f",
+      "seqno": 19370423
+    },
+    "service": {
+      "entropy": "3PO7u5osYKiwc4JDozRQUebf",
+      "hostname": "www.1337core.de",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.6.2"
+  },
+  "ctime": 1615727003,
+  "expire_in": 504576000,
+  "prev": "8d7c6362a7e28ae92e3fe8ce18b953db433dcd53c43a7f8ced7d605d7473a64e",
+  "seqno": 11,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgHRrS3TyB12wt1eeqV6k3re1sqRu++leWPNI3+nroaDIKp3BheWxvYWTESpcCC8QgjXxjYqfiiukuP+jOGLlT20M9zVPEOn+M7X1gXXRzpk7EIInJOO6CqsTVPaoqFn5ps8rRJtDu9Xlqw5ysSuRE7knKAgHCo3NpZ8RABoRQDe5GNjPb3/V9pjrrUSyb2dAxTvJLNKY8JpCMhE/kNawpfKAeme0QiN3Tg5lpQtSFGROdF4+oAJ1Tt/dEBKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKw+fSVRRFuo4HZcmjP/1kyfdEAKriuoPo8DLLkhx2wno3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/1337core
+
+==================================================================

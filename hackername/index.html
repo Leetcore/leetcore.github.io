@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>What is your hackername?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            line-height: 250%;
+            text-align: center;
+            font-size: 200%;
+            font-family: Monospace;
+            background-color: #3e6556;
+            color: #5effb6;
+            text-shadow: #333 5px 5px;
+        }
+        #hackername {
+            font-size: 200%;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">This is your hackername:</div>
+    <div id="hackername"></div>
+    <script>
+            var part1 = [
+                'BIGINT', '1337', 'Buffer', 'Crash', 'Drive', 'Zero', 'Sick', 'Panic', 'Trash', 'Main', 'Void', 'Thread', 'Async', 'Retro', 'Byte', 'Network', 'Fire', 'Trace'
+            ]
+            var part2 = [
+                'Mega', 'Cool', 'Duper', 'Crazy', 'Monster', 'Chill', 'Money', 'Fleek', 'Nice', 'Alpha', 'Peta', 'Source'
+            ]
+            var part3 = [
+                'Killer', 'Overflow', 'Override', 'Master', 'Ninja', 'Rock', 'Scripter', 'Punk', 'Cracker', 'Skiller', 'Skipper', 'Carder', 'Miner', 'Flooder', 'Monkey', 'Pinger', 'Router', 'Coder'
+            ]
+            function newHackerName () {
+                var html = part1[getRandomIntInclusive(0, part1.length - 1)] +' '+
+                    (getRandomIntInclusive(0,1) == 0 ? part2[getRandomIntInclusive(0, part2.length - 1)] :'') +' '+
+                    part3[getRandomIntInclusive(0, part3.length - 1)];
+                document.getElementById('hackername').textContent = html;
+            }
+            function getRandomIntInclusive(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min +1)) + min; 
+            }
+            newHackerName();
+        </script>
+</body>
+</html>

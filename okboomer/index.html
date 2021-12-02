@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <title>OK Boomer!</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <style>
+      html {
+        background-color: #677684;
+      }
+      h1 {
+        color: #330033;
+      }
+      body {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 150%;
+      }
+      button {
+        border: 1px #CCC;
+        background-color: #330066;
+        padding: 10px 20px;
+        color: #66CCFF;
+      }
+    </style>
+  </head>
+  <body onload="speaker('start')">
+    <h1>OK Boomer!</h1>
+
+    <p>
+      Weisheit direkt aus dem Leben von Menschen, die es einfach besser wissen.
+      Die dich besser kennen als du dich selbst, die prägnante Lösungen für große
+      Probleme auf den Lippen haben und jede Situation mit einem Minimum an
+      Informationen deutlich besser einschätzen können.
+    </p>
+
+    <p>
+      Hast du genug davon?
+    </p>
+    
+    <button onclick="OKBOOMER()">
+      OK Boomer!
+    </button>
+    
+    <p>
+      <small>
+        Ein Browser mit Web Speech Api macht diese Webseite 200% lustiger. Funktioniert in Desktop Browsern häufiger!
+      </small>
+    </p>
+    <p id="info"></p>
+    
+    <script>
+      var texts = [
+        "Ich lese die Nachrichten nur noch auf Facebook.",
+        "Sie müssen bisschen mehr Platz machen, wenn ich mit meinem Esjuwi vorbei fahren will.",
+        "Man darf über gar nichts mehr Witze machen.",
+        "Das wird man doch wohl noch sagen dürfen.",
+        "Du musst Fleisch essen, damit du groß und stark wirst.",
+        "Das Flugzeug startet in einer Stunde, lasst uns schon mal eine Schlange bilden.",
+        "Können Sie endlich eine zweite Kasse öffnen?",
+        "Wir akzeptieren Kartenzahlung erst ab 10 Euro.",
+        "Ich lasse im Winter mein Auto 15 Minuten warm laufen, statt die Scheibe zu kratzen.",
+        "Die jüngere Generation macht nur Party und will überhaupt nicht erwachsen werden.",
+        "Mit deinen Tattoos bekommst du sowieso keinen Job.",
+        "Deine Hosen sind ganz kaputt oder soll das modern sein?",
+        "Wer bauchfrei in der Öffentlichkeit herum läuft, braucht sich auch nicht zu wundern.",
+        "Heute guckt jeder nur noch auf sein Smartphone und unterhält sich nicht mehr.",
+        "Wir sind damals auch ohne Internet klar gekommen.",
+        "Ist das die Jacke von deinem Freund? Die ist doch für Männer.",
+        "Du willst doch nicht das Shampoo für Frauen kaufen, oder?",
+        "Wenn du nicht auf mich hören willst, merkst du bald was du davon hast!",
+        "Kann man davon eigentlich leben?",
+        "Warum ist dein Pullover lila? Bist du schwul?",
+        "Solange du damit Geld verdienst, habe ich nichts dagegen?",
+        "Wie viel verdienst du damit später?",
+        "Du machst das Studium fertig, egal ob es dir gefällt.",
+        "Ich habe im Internet gelesen, dass es den Klimawandel überhaupt nicht gibt und die nur an unser Geld wollen.",
+        "Hättest du mehr Geld würdest du auch ein größeres Auto fahren.",
+        "Natürlich darfst du zu schnell fahren, du musst es dir nur leisten können.",
+        "Man muss auch mal was essen, was einem nicht so schmeckt.",
+        "Ich bin gesetzlich nicht verpflichtet korrekt zu parken.",
+        "Dann musst du dich einfach mehr anstrengen.",
+        "Wer im Haushalt das Geld verdient, hat auch das Sagen.",
+        "Das haben wir schon immer so gemacht!",
+        "Die sollen erstmal in die Schule gehen bevor die sich um Klimaschutz kümmern.",
+        "Ich trinke heute eine Flasche Wein und setze mich gemütlich vor den Kamin.",
+        "Eine Frechheit dass der Diesel teurer werden soll.",
+        "Die Frau nimmt doch immer den Nachnamen des Mannes an.",
+        "Ich fühle mich besser, wenn ich mein Kind direkt vor der Schultür raus lasse.",
+        "Ich fahre immer besonders vorsichtig mit meinem Esjuwi über den Bordstein.",
+        "Hättest du damals in der Schule besser aufgepasst.",
+        "Hol doch mal deine Kopfhörer aus den Ohren!",
+        "Wir sind früher ins Wasser geschupst worden und haben so schwimmen gelernt.",
+        "OK Boomer ist Altersdiskriminierung!",
+        "Ich habe einfach mehr Lebenserfahrung als du.",
+        "Du kannst doch niemanden im Internet kennen lernen.",
+        "Triff dich doch mal mit echten Freunden und nicht am Smartphone.",
+        "Du darfst nicht so empfindlich sein.",
+        "Ein Indianer kennt keinen Schmerz.",
+        "Du bist doch überhaupt nicht alt genug um mit reden zu können.",
+        "Wenn du so alt bist wie ich, dann verstehst du das.",
+        "Diese Greta wird doch bestimmt von einer Lobby bezahlt.",
+        "Wir hatten früher noch eine Uhr am Arm und mussten nicht immer auf das Handy schauen.",
+        "Bist du nicht langsam zu alt dafür?",
+        "Ist ja kein Wunder, dass bei dir nichts funktioniert.",
+        "Warum protestieren die Umweltschützer nicht gegen Vulkane?",
+        "Wir brauchten früher überhaupt kein Internet.",
+        "Das Internet ist nicht langsam. Ich konnte eben eine E-Mail verschicken.",
+        "Klar wirkt Homöopathie. Ich bin doch schnell wieder gesund geworden.",
+        "Auf Facebook habe ich gelesen, dass es in Deutschland immer gefährlicher wird!",
+        "Wir brauchen die Kohlekraftwerke sonst sitzen wir im Dunkeln.",
+        "Du bist doch nur am jammern und nichts tun.",
+        "Börnaut gab es damals noch gar nicht.",
+        "Früher war das alles besser.",
+        "Darf ich dir mal einen Tipp geben? Stell dich nicht so an!",
+        "Dieses Verhalten werde ich anzeigen!",
+        "Sie haben mich ins Gesicht gefilmt. Das ist eine Straftat!",
+        "Halt stop! Hier bleibt alles so wie es ist."
+      ];
+
+      var globalInterval;
+      function speaker(action) {
+        if (action == "start") {
+          speakRandom();
+          globalInterval = setInterval(speakRandom, 5000);
+          running = true;
+        } else {
+          clearInterval(globalInterval);
+          running = false;
+        }
+      }
+
+      function speakRandom() {
+        var speak = new SpeechSynthesisUtterance(
+          texts[random(0, texts.length - 1)]
+        );
+        speak.lang = "de-DE";
+        speechSynthesis.speak(speak);
+      }
+
+      function OKBOOMER() {
+        window.speechSynthesis.cancel();
+        speaker("stop");
+        var speak = new SpeechSynthesisUtterance("OK BOOMER");
+        speak.lang = "de-DE";
+        speak.pitch = 0;
+        speak.rate = 1.2;
+        speechSynthesis.speak(speak);
+        setTimeout(() => {
+          speaker('start');
+        }, 10 * 1000);
+      }
+
+      function random(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      
+      if (!window.speechSynthesis) {
+        document.getElementById('info').innerText = "Dein Browser kann nicht sprechen, deshalb hörst du auch die Boomer-Sprüche nicht."
+      }
+    </script>
+  </body>
+</html>

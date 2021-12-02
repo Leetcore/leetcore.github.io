@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sondierungssimulator</title>
+        <style>
+            body {
+                font-family: Verdana, Tahoma, sans-serif;
+                text-align: center;
+            }
+            #partei {
+                font-size: 150%;
+                font-weight: bold;
+            }
+            h1 {
+                font-size: 130%;
+            }
+            label {
+                width: 50px;
+                height: 25px;
+                cursor: pointer;
+                display: block;
+                right: -5px;
+                top: 0px;
+                position: absolute;
+                background: rgb(189, 189, 189);
+                border-radius: 15px;
+                
+                transition: all 0.4s;
+            }
+            label:after {
+                left: 0;
+                width: 15px;
+                height: 15px;
+                margin: 5px;
+                content: '';
+                position: absolute;
+                background: #FFF;
+                border-radius: 15px;
+            }
+            input:checked + label {
+             background: rgb(39, 173, 95);
+            }
+            input:checked + label:after {
+                left: auto;
+                right: 0;
+            }
+            input {
+                display: none;
+            }
+            p.button {
+                max-width: 500px;
+                margin: 20px auto;
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Sondierungssimulator</h1>
+        <div id="partei">
+            <span id="cdu_icon"></span><span id="cdu">CDU/CSU</span>
+            <span id="gruene_icon"></span><span id="gruene">GRÜNE</span>
+            <span id="fdp_icon"></span><span id="fdp">FDP</span>
+        </div>
+        <p class="button">Zwei-Klassen-Krankenversicherungen beibehalten <input type="checkbox" id="checkbox1" /><label for="checkbox1"></label></p>
+        <p class="button">Cannabis legalisieren <input type="checkbox" id="checkbox2" /><label for="checkbox2"></label></p>
+        <p class="button">Kohlekraftwerke abschalten <input type="checkbox" id="checkbox3" /><label for="checkbox3"></label></p>
+        <p class="button">Vermögensteuer für Superreiche <input type="checkbox" id="checkbox4" /><label for="checkbox4"></label></p>
+        <p class="button">Zuwanderung und Familiennachzug<input type="checkbox" id="checkbox5" /><label for="checkbox5"></label></p>
+        <p class="button">EU-Beitritt der Türkei <input type="checkbox" id="checkbox6" /><label for="checkbox6"></label></p>
+
+        Quelle: <a href="http://www.zeit.de/politik/deutschland/2017-10/sondierungsgespraeche-cdu-csu-fdp-die-gruenen-jamaika-koalition">Zeit.de</a>
+
+        <script>
+            // checkboxen durchgehen
+            var checkboxes = document.querySelectorAll('label')
+            for (var index = 0; index < checkboxes.length; index++) {
+                checkboxes[index].addEventListener('click', function () {
+                    setTimeout(checkPositions, 0)
+                })
+            }
+
+            function checkPositions() {
+                var cdu = true
+                var gruene = true
+                var fdp = true
+                
+                // bedingungen überprüfen
+                if (!get(1)) {
+                    cdu = false
+                    fdp = false
+                }
+                if (get(2)) {
+                    cdu = false
+                }
+                if (get(3)) {
+                    cdu = false
+                    fdp = false
+                } else {
+                    gruene = false
+                }
+                if (get(4)) {
+                    cdu = false
+                    fdp = false
+                }
+                if (get(5)) {
+                    cdu = false
+                    fdp = false
+                }
+                if (get(6)) {
+                    cdu = false
+                }
+                
+      
+                // status setzen
+                status(cdu, 'cdu')
+                status(gruene, 'gruene')
+                status(fdp, 'fdp')
+            }
+
+            function get (id) {
+                return document.getElementById("checkbox" + id).checked;
+            }
+
+            function status (status, id) {
+                if (status) {
+                    document.getElementById(id + "_icon").innerText = "✅"
+                    document.getElementById(id).style.color = "#59bd53"
+                } else {
+                    document.getElementById(id + "_icon").innerText = "❌"
+                    document.getElementById(id).style.color = "#ab2319"
+                }
+            }
+
+            checkPositions()
+        </script>
+    </body>
+</html>

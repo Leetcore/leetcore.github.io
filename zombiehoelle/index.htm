@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>Zombie Hölle (Strategie-Defender Minigame)</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Zombie Hölle (Strategie-Defender Minigame)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://www.1337core.de/zombiehoelle" />
+  <meta property="og:image" content="http://www.1337core.de/zombiehoelle/thumbnail.png" />
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+  <script src="jquery.js" defer="defer"></script>
+  <script src="main.js" defer="defer"></script>
+</head>
+<body>
+    <div id="frame">
+      <div id="timerwrapper">Zombieangriff in <span id="timer">-00:00</span> Minuten</div>
+
+        <div id="map">
+          <div id="cords"></div>
+          <div id="currentPosition"></div>
+          <div class="direction" id="goUp" onclick="move('top')">▲</div>
+          <div class="direction" id="goRight" onclick="move('right')">►</div>
+          <div class="direction" id="goDown" onclick="move('down')">▼</div>
+          <div class="direction" id="goLeft" onclick="move('left')">◄</div>
+          <div id="actions"></div>
+        </div>
+
+        <div id="builder"></div>
+
+        <div id="stats">
+            <span id="welle"></span><br/>
+            <span id="wasser"></span><br/>
+            <span id="verteidigung"></span>
+        </div>
+        <div class="clear"></div>
+        <div id="messages"></div>
+    </div>
+</body>
+</html>

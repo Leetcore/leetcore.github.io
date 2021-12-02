@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>OSCommerce v3.0.2 - Persistent Cross Site Vulnerability</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--
+
+
+        Aus großer Macht folgt große Verantwortung! 
+
+
+    -->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div id="main">
+		<h1><a href="/">1337core</a></h1>
+    <pre>
+Document Title:
+===============
+OSCommerce v3.0.2 - Persistent Cross Site Vulnerability
+
+
+References (Source):
+====================
+http://www.cnnvd.org.cn/vulnerability/show/cv_id/2012020057
+ID: CNNVD-201202-057
+
+
+Release Date:
+=============
+2012-02-01
+
+
+Vulnerability Laboratory ID (VL-ID):
+====================================
+407
+
+
+Product & Service Introduction:
+===============================
+osCommerce is the leading Open Source online shop e-commerce solution that is available for free under the 
+GNU General Public License. It features a rich set of out-of-the-box online shopping cart functionality that 
+allows store owners to setup, run, and maintain their online stores with minimum effort and with no costs, 
+license fees, or limitations involved.
+The goal of the osCommerce project is to continually evolve by attracting a community that supports the ongoing 
+development of the project at its core level and extensively through contributions to provide additional 
+functionality to the already existing rich feature set.
+Everything you need to get started in selling physical and digital goods over the internet, from the Catalog frontend 
+that is presented to your customers, to the Administration Tool backend that completely handles your products, 
+customers, orders, and online store data. 
+
+(Copy of the Vendor Homepage: http://www.opensourcecms.com/scripts/details.php?scriptid=94&name=osCommerce)
+
+
+Abstract Advisory Information:
+==============================
+Vulnerability-Lab Team (F0x) discovered a persistent Cross Site Scripting Vulnerability on the OSCommerce Shop Software.
+
+
+Vulnerability Disclosure Timeline:
+==================================
+2012-02-02:	Public or Non-Public Disclosure
+
+
+Discovery Status:
+=================
+Published
+
+
+Affected Product(s):
+====================
+
+Exploitation Technique:
+=======================
+Remote
+
+
+Severity Level:
+===============
+Medium
+
+
+Technical Details & Description:
+================================
+Multiple persistant cross site vulnerabilities are detected on the OSCommerce v3.0.2. 
+The bug allows remote attacker to implement malicious script code on the application-side.
+Successful exploitation of the vulnerability allows an attacker to manipulate specific modules & can 
+lead to session hijacking (user/mod/admin).
+
+Vulnerable Module(s):
+                                                            [+]index.php?Cart
+
+
+Proof of Concept (PoC):
+=======================
+The vulnerability can be exploited by local low privileged user account with required medium user inter action. For demonstration or reproduce ...
+
+PoC:
+ "'><img src=vul onerror=alert('vulnerabilitylab')> in the "front" field of the shirt module.
+
+Output: 
+Size: Medium<br/>- Front: "'><img src=vul onerror=alert('vulnerabilitylab')>
+
+
+Security Risk:
+==============
+The security risk of the persistent vulnerability is estimated as medium.
+
+
+Credits & Authors:
+==================
+Vulnerability Research Laboratory - Alexander Fuchs (F0x23)
+
+
+Disclaimer & Information:
+=========================
+The information provided in this advisory is provided as it is without any warranty. Vulnerability-Lab disclaims all warranties, 
+either expressed or implied, including the warranties of merchantability and capability for a particular purpose. Vulnerability-
+Lab or its suppliers are not liable in any case of damage, including direct, indirect, incidental, consequential loss of business 
+profits or special damages, even if Vulnerability-Lab or its suppliers have been advised of the possibility of such damages. Some 
+states do not allow the exclusion or limitation of liability for consequential or incidental damages so the foregoing limitation 
+may not apply. We do not approve or encourage anybody to break any vendor licenses, policies, deface websites, hack into databases 
+or trade with fraud/stolen material.
+
+Domains:    www.vulnerability-lab.com   	- www.vuln-lab.com			       - www.vulnerability-lab.com/register
+Contact:    admin@vulnerability-lab.com 	- support@vulnerability-lab.com 	       - research@vulnerability-lab.com
+Section:    video.vulnerability-lab.com 	- forum.vulnerability-lab.com 		       - news.vulnerability-lab.com
+Social:	    twitter.com/#!/vuln_lab 		- facebook.com/VulnerabilityLab 	       - youtube.com/user/vulnerability0lab
+Feeds:	    vulnerability-lab.com/rss/rss.php	- vulnerability-lab.com/rss/rss_upcoming.php   - vulnerability-lab.com/rss/rss_news.php
+
+Any modified copy or reproduction, including partially usages, of this file requires authorization from Vulnerability Laboratory. 
+Permission to electronically redistribute this alert in its unmodified form is granted. All other rights, including the use of other 
+media, are reserved by Vulnerability-Lab Research Team or its suppliers. All pictures, texts, advisories, sourcecode, videos and 
+other information on this website is trademark of vulnerability-lab team & the specific authors or managers. To record, list (feed), 
+modify, use or edit our material contact (admin@vulnerability-lab.com or support@vulnerability-lab.com) to get a permission.
+
+    				   	Copyright © 2012 | Vulnerability Laboratory
+    </pre>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Pen & Paper Würfel</title>
+        <style>
+            body {
+                font-size: 500%;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                background-color: #EEE;
+            }
+            #main {
+                text-align: center;
+                max-width: 500px;
+                margin: 0 auto;   
+            }
+            input {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+                font-size: 100%;
+                background-color: #EEE;
+                max-width: 180px;
+                margin: 20px auto;
+                padding: 5px;
+                box-shadow: 5px 5px 0 #CCC;
+                border: none;
+            }
+            input[type="button"] {
+                background-color: #FFF;
+                font-size: 60%;
+            }
+            #result {
+                font-size: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">  
+            <input type="number" value="1" min="1" max="50" id="dicecount" title="Anzahl der Würfel"/>
+            <br/>
+            <input type="number" value="20" min="2" max="999" id="dicevalue" title"Augenanzahl"/>
+            <br/>
+            <input type="button" onclick="roll()" value="würfeln"/>
+            <div id="result"></div>
+        </div>
+        <script>
+            function roll() {
+                clearResult()
+                var dicecount = document.getElementById('dicecount').value
+                var dicevalue = document.getElementById('dicevalue').value
+                var dicecount_int = parseInt(dicecount)
+                var dicevalue_int = parseInt(dicevalue)
+
+                if (!isNaN(dicecount_int) && !isNaN(dicevalue_int)) {
+                    var sum = 0
+                    var sumString = ""
+                    for (var counter = 0; counter < dicecount_int; counter++) {
+                        var randomNumberSave = randomNumber(1, dicevalue_int)
+                        if (counter == 0) {
+                            sumString = "("+ randomNumberSave +")"
+                        } else {
+                            sumString = sumString +" + ("+ randomNumberSave +")"
+                        }
+                        sum = sum + randomNumberSave
+                    }
+                    sumString = "<p>"+ sumString +" = "+ sum + "<p/>"
+                    document.getElementById('result').insertAdjacentHTML("afterbegin", sumString)
+                }
+            }
+            function randomNumber(min, max) {
+                return Math.floor((Math.random() * max) + min);
+            }
+            function clearResult() {
+                var results = document.getElementById('result').querySelectorAll('p')
+                for (var counter = 0; counter < results.length; counter++) {
+                    if (counter > 3) {
+                        results[counter].remove()
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Web Security Hacks</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--
+
+
+        Aus großer Macht folgt große Verantwortung! 
+
+
+    -->
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+	<div id="main">
+		<h1><a href="/">1337core</a></h1>
+		<p>
+			Ich suche und melde gefundene Sicherheitslücken als Hobby. Die Betreiber wurden von mir über mögliche Sicherheitsprobleme informiert.<br/>
+			Es wird nur ein Proof of Concept ("Machbarkeitsnachweis") getestet - mehr nicht. Um nicht allen Betreibern hinterherlaufen zu müssen, <br/>
+			sende ich meine Hinweise auch an das BSI (Bundesamt für Sicherheit in der Informationstechnik).
+		</p>
+		<h2>neu</h2>
+		<ul>
+			<li>
+				Warnungen vor Proxyshell-Lücke (CVE-2021-34473).
+				22 Mailserver in der öffentlichen Verwaltung von Städten, Gemeinden oder Landkreisen.
+				Mein <a href="http://proxyshell.glitch.me/">Proxyshell-Tool</a> für den Selbsttest.
+			</li>
+			<li>
+				Citykey Website (Bürgerservice App der Telekom zur digitalen Verwaltung), versehentlich öffentliche GIT-Config mit CI-Token.<br/>
+				Server: osca-wbench.workbench.telekom.de/gitlab/smart_city_sol/citykey-website.git<br/>
+				<img src="img/CityKey-git-config.jpg" alt="Screenshot der Git-Config"/>
+			</li>
+			<li>
+				<span style="color: #ff0000;"></span>European Coordinate Reference Systems (Bundesamt für Kartographie)</span>, blind timebased SQL-Injection<br/>
+				web application technology: Apache, hostname: 'lsv310-ssn', current user: 'crswww@localhost', current database: 'crs2'
+			</li>
+			<li>
+				<span style="color: #ff0000;">NATO (Munitions Safety Information Analysis Center)</span>, Proxyshell Lücke im Mailserver.<br/>
+				Version: 15.2.85.2, User: NT Authority\System, Mailbox: msiac-mx01.msiac.nato.int.<br/>
+				<img src="img/NATO-Proxyshell.jpg" alt="NATO Proxyshell"/>
+			<li>
+				<a href="https://de.uefa.com/">UEFA.com</a> (Fußballverband) - Offen API auf Subdomain mit persönlichen Daten.<br/>
+				15K Vornamen und E-Mail-Adressen in JSON-Format. <a href="https://www.heise.de/news/UEFA-Webseite-leakte-E-Mail-Adressen-von-Nutzerprofilen-6121771.html">Mein erster c't Artikel</a>.<br/>
+				<img src="img/UEFA-API.jpg" alt="UEFA User Leak" />
+			</li>
+			<li>
+				<span style="color: #ff0000;"></span>KVB (Krankenversorgung der Bundesbahnbeamten)</span>, veralteter Windows Server 2008.<br/>
+				Außerdem ein Entity Explorer mit SHA-256 Hashes aller User.<br/>
+				<img src="img/KVB.jpg" alt="Entity Explorer mit Admin Hash" />
+			</li>
+			<li>
+				Zend Search Lucene - DoS. Ein langer Query String in "search?q=" 8000 x A führt dazu, dass die Webseite nicht mehr erreichbar ist.<br/>
+				Gefunden auf der <a href="https://cispa.de/">CISPA Webseite</a> (Helmholtz-Zentrum für Informationssicherheit) im Beta-Zustand.
+			</li>
+		</ul>
+		<h2>älter</h2>
+		<ul>
+			<li>
+				ZTEdevice.com – Open Redirect, Risiko: Gering.
+				<a href="http://www.ztedevice.com/redirect.html?u=http://www.1337core.de">http://www.ztedevice.com/redirect.html?u=http://www.1337core.de</a>
+			</li>
+			<li>
+				<span style="color: #ff0000;">Postbank.de</span> – Redirect Filter Bypass (z.B. Weiterleitung auf Phishing),
+				Risiko: Mittel. https://www.postbank.de/dienste/redirect/servlet.html?url=http://www.postbank.de.www.1337core.de
+			</li>
+			<li>Freenet.de – rXSS, Open Redirect, Risiko: Niedrig.<br />
+				<img src="img/freenet-xss.png" />
+			</li>
+			<li>
+				Conrad.de – <strong>Persistent Cross Site&nbsp;Scripting</strong>
+				(https://www.conrad.de/ce/de/ShoppingList.html),
+				Risiko: Niedrig/Mittel (Phishing, embedded Malware).<br />
+				<img src="img/conrad-iframe-injection-ricky.png" />
+			</li>
+			<li>Transfermarkt.de – <strong>Persistent Cross Site Scripting</strong> in User-Wall
+				(http://www.transfermarkt.de/alexandion/wall/meintm?user_id=610654),
+				Risiko: Mittel (z.B. Wurm, Cookie Stealing, Redirecting, Phishing)<br />
+				<img src="img/transfermarkt-profil-image.png" /><br />
+				<img src="img/transfermarkt-iframe.png" />
+			</li>
+			<li>Arcor.de – rXSS (https://www.arcor.de/login/sso_err_no_webbill.jsp?errortext=XSS) Risiko: Niedrig (z.B. Cookie
+				Stealing)<br />
+				<img src="img/arcor-11.png" />
+			</li>
+			<li>Chip.de – Open Redirect (http://x.chip.de/intern/dl/?url=http%3A%2F%2Fwww.1337core.de/) Risiko: Niedrig (z.B.
+				Phishing)</li>
+			<li>Ferrero – Open Redirect (http://www.ferrero.de/redirect.aspx?url=http%3a%2f%2fwww.1337core.de). Riskio:
+				Niedrig
+				(z.B. Phishing)</li>
+			<li>
+				T3N Magazin – <strong>Persistent Cross Site Scripting</strong>, Risiko: Mittel (Cookie Stealing)<br />
+				<img src="img/T3N-XSS-Alert.jpg" />
+			</li>
+			<li>Zeit Online Leserartikel – <strong>Persistent Cross Site Scripting</strong>, Risiko: Mittel (Cookie Stealing)
+			</li>
+			<li>
+				<span style="color: #ff0000;">National Center EDU Research</span> – <strong>SQL Injection,</strong> Risiko:
+				Hoch, <a href="https://web.archive.org/web/20150926090250/http://www.vulnerability-lab.com/get_content.php?id=415">Advisory</a>. (Datenbank, Server)
+			</li>
+			<li>Firewall Analyzer, <strong>Persistent Cross Site Scripting</strong>, Risiko: Mittel, Livehacking.</li>
+			<li>Samsung.com, Weiterleitung ohne Prüfung, Risiko: Niedrig, Livehacking. (Phishing)</li>
+			<li>Nokia.de, <strong>Persistent Cross Site Scripting</strong>, Risiko: Mittel, Livehacking. (Cookie Stealing)
+			</li>
+			<li><span style="color: #ff0000;">Super Bowl Webseite</span>, <strong>mehrere SQL Injection</strong>, Risiko:
+				Hoch.
+				Ein andere Hacker entdeckte einen der Fehler, veröffentlichte die Datenbank und hatte Zugriff auf den Server.
+				<a href="https://web.archive.org/web/20150325091204/http://vulnerability-lab.com/get_content.php?id=418">Advisory</a>.</li>
+			<li>
+				<span style="color: #ff0000;">OSCommerce 3.0.2</span> (Shopsoftware), <strong>Persistant XSS</strong>, Risiko:
+				Mittel. <a href="https://web.archive.org/web/20120529115051/http://www.vulnerability-lab.com/get_content.php?id=407">Advisory</a>.<br />
+				<img src="img/oscommerce.jpg" />
+			</li>
+			<li>
+				DasDing (Radio-Community. Gruppe und Profil), <strong>Persistant XSS</strong>, Risiko: Mittel.<br/>
+				<img src="img/DasDing-Community-XSS.jpg" />
+			</li>
+			<li>meinsol.de (Persistant Cross Sitescripting) <a
+					href="http://www.meinsol.de/gruppen/gruppe.phtml?id=272">Demo</a></li>
+			<li><span style="color: #ff0000;">UN-Sekretariat</span>(Akiva Webboard 8.x) <strong>SQL Injection + Plaintext
+					Password</strong>, Risiko: Hoch. <a href="http://www.exploit-db.com/exploits/18293/">Exploit-DB</a>, <a
+					href="http://www.securityfocus.com/bid/51210/info">Security Focus</a>.</li>
+			<li>
+				Bundesregierung Webseite, (Reflexive XSS), Risiko: Niedrig.<br/>
+				<img src="img/bundesregierung.png" />
+			</li>
+			<li>
+				Bundeskanzlerin Webseite, (Reflexive XSS), Risiko: Niedrig.<br />
+				<img src="img/bundeskanzlerin.png" />
+			</li>
+			<li>Europäische Kommission, (<strong>Persistant XSS</strong> – Cross Site Script), Risiko: Mittel.<br />
+				<img src="img/europa-XSS.png" />
+			</li>
+			<li>
+				<a name="WH"></a>
+				<span style="color: #ff0000;">Whitehouse Government Petition System</span>,
+				(<strong>Persistant Cross Site Scripting</strong>),
+				Risiko: Mittel, <a href="https://www.youtube.com/watch?v=-pxvm-q5ZK0">Demo-Video</a>.<br />
+				<img src="img/WH-works.png" />
+			</li>
+			<li>
+				<a name="NATO"></a>
+				<span style="color: #ff0000;">NATO Research and Technology</span>, (<strong>Local File Inclusion</strong>),
+				Risiko: Hoch, <a href="https://www.youtube.com/watch?v=3aoccJlgiZo">Demo-Video</a>, <a
+					href="https://web.archive.org/web/20111126165200/http://news.hitb.org/content/critical-bug-nato-research-technologie-rtootan-0">Interview</a>.<br />
+				<img src="img/NATO.png" />
+			</li>
+			<li>
+				Prosieben Community, (<strong>Persistant Cross Site Scripting</strong>), Risiko: Mittel.<br />
+				<img src="img/Prosieben_XSS_1.jpg" />
+			</li>
+			<li>Apple.com Errormessage, (Reflexives XSS – Cross Site Script), Risiko: Mittel.
+				<a
+					href="http://news.softpedia.com/news/Apple-com-Suffering-from-a-Scripting-Vulnerability-Says-Advisory-226701.shtml">Presse</a>,
+				<a href="https://support.apple.com/de-de/HT207626">Hall of Fame</a>.<br />
+				<img src="img/Apple-XSS.jpg" />
+			</li>
+			<li><span style="color: #ff0000;">Laposte.fr Post</span>, (<strong>Local File Inclusion + SQL Injection</strong>),
+				Risiko: Hoch, <a href="https://web.archive.org/web/20111112232803/http://www.vulnerability-lab.com:80/get_content.php?id=266">Advisory</a>.<br />
+				<img src="img/laposte.png" /><br />
+				<img src="img/Lapost-FR-LFI.png" />
+			</li>
+			<li>notebooksbilliger Forum, (<strong>Persistant XSS</strong> – Cross Site Script), Risiko: Mittel,
+				Danke für den Gutschein. :-)
+			</li>
+			<a name="RTL"></a>
+			<li>RTL Community, (<strong>Persistant XSS</strong> – Cross Site Script), Risiko: Mittel,
+				Presse:
+				<a href="http://www.spiegel.de/netzwelt/web/0,1518,782546,00.html">Spiegel</a>,
+				<a
+					href="http://www.sueddeutsche.de/digital/nach-gamescom-bericht-bei-explosiv-erboste-gamer-kapern-rtl-website-1.1135021">Süddeutsche</a>.<br/>
+				<img src="img/rtl-xss.png" />
+			</li>
+			<li>bundestag.de, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+			<li>Microsoft Academic Search, (Reflexives Cross Site Script), Risiko: Mittel.
+				<a
+					href="https://portal.msrc.microsoft.com/en-us/security-guidance/researcher-acknowledgments-online-services-archive">Hall
+					of Fame</a>.<br />
+				<img src="img/microsoft-xss.png" />
+			</li>
+			<li>
+				<span style="color: #ff0000;">TV Total Community</span>, (<strong>SQL Injection</strong> + Reflexives Cross Site
+				Script), Risiko: Hoch. Danke für die Freikarten. :-)<br />
+				<img src="img/tvtotal.png" />
+			</li>
+			<li>europa-union.de, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+			<li>gema.de, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+			<li>btg-bestellservice.de, (Reflexives Cross Site Script + <strong>SQL Injection</strong>), Risiko: Hoch.</li>
+			<li><span style="color: #ff0000;">Bild.de</span>, (Reflexives Cross Site Script + <strong>SQL Injection</strong>)
+				Risiko: Hoch.</li>
+			<li>dp-dhl.com, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+			<li>t-mobile.de, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+			<li>nato-pa.int, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+			<li>deutschebahn.com, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+			<li>regionalverband-saarbruecken.de, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+			<li>europarl.de, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+			<li>europarl.europa.eu auf der Präsidenten-Seite, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
+		</ul>
+	</div>
+</body>
+
+</html>

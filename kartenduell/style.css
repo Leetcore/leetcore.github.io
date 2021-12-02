@@ -1,0 +1,124 @@
+body {
+    /* background-image: linear-gradient(to top, #d496a7 0%, #ce5b61 95%); */
+    background-color: #bbc;
+    font-family: sans-serif;
+    line-height: 150%;
+}
+
+a {
+    cursor: pointer;
+    color: #333;
+}
+
+#frame {
+    max-width: 420px;
+    min-width: 360px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.gameover {
+    background-color: #cc4646;
+}
+
+#feld, #gegner {
+    float: left;
+    height: 200px;
+    padding: 5px;
+    margin-left: 8px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 3px #555 solid;
+    /*background-color: #333;*/
+}
+
+#hand {
+    clear: both;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#hand .karte {
+    height: 200px;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    margin-left: 8px;
+    padding: 5px;
+    border: 3px #333 solid;
+    transition: 1s all ease;
+}
+
+.karte {
+    width: 25%;
+    background-color: #777;
+}
+
+#hand .karte:hover {
+    transform: scale(1.10); 
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.31);
+    transition: 1s all ease;
+}
+
+#name {
+    position: relative;
+    top: 70%;
+    color: #FFF;
+}
+
+#stats {
+    display: inline-block;
+    width: 100%;
+    margin-right: 5px;
+}
+
+.karte #angriff, .karte #verteidigung, .karte #leben {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 95%;
+    text-align: right;
+}
+
+.karte #angriff {
+    color: #FFF;
+    min-width: 20px;
+    padding-right: 2px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAoUlEQVR4AdXPuwkCQRCH8c8i3B5E7MLz2YGJBWgBWsX6ACtzI21AxEzuLhthQBkEx73wvn/6m2BoY3OeRP7Wp4tyagThiNuAO2fCm+siToGEcDVceOC2RLArGfqP1l+8wGmmPLJpxgG2enAh8LOp4R1OiC4RPL4zvGRB4kYvlxdA8Pje8Mp7dtKMo/yQz0EQ1oaPwE90q1wO8lnFmIwsb1svKAZycOceK+UAAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+}
+
+.karte #verteidigung {
+    color: #FFF;
+    min-width: 20px;
+    padding-right: 2px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAUElEQVR4AWMY3CCQ4SXDfyzwFYM/VvVw5ZjwJXYN/3FD+mgY1TCq4SfDEgYzIFwCZBHU8JyhnkEcLiLB0AAUwanhJEM0AyuGKBtDNFBmMAMAVubkY2pMQw4AAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+}
+
+.karte #leben {
+    color: #FFF;
+    min-width: 20px;
+    padding-right: 2px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAvklEQVR4Ac3RQaqCUBhH8bOFJj1wARkNooGOpQKhYdAygrZURgRB0F7agJMscdZ7jwxSk4grilevo/r9Z5fz5SC+WQ8Hn5gLa/oADNi8X1Z0i/mMO4nYgzkLIrKXkGnu17NcuhAdwSFR2BLBVzrwEGKlg6jpF84IO6WDLcJQ6cCCzKE235Pzg1eZn2hTYPIvzf8wKGFL/u8bYyQmhCW5TYURv7n8ikUNk0DkAQYKdNxX7tJBkcYxnUYDrXQf8gSMA/mxMcUl0QAAAABJRU5ErkJggg==');
+    background-repeat: no-repeat;    
+}
+
+#gegnerLeben, #deinLeben {
+    color: #FFF;
+    display: inline-block;
+    padding-left: 8px;
+    min-width: 25px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAvklEQVR4Ac3RQaqCUBhH8bOFJj1wARkNooGOpQKhYdAygrZURgRB0F7agJMscdZ7jwxSk4grilevo/r9Z5fz5SC+WQ8Hn5gLa/oADNi8X1Z0i/mMO4nYgzkLIrKXkGnu17NcuhAdwSFR2BLBVzrwEGKlg6jpF84IO6WDLcJQ6cCCzKE235Pzg1eZn2hTYPIvzf8wKGFL/u8bYyQmhCW5TYURv7n8ikUNk0DkAQYKdNxX7tJBkcYxnUYDrXQf8gSMA/mxMcUl0QAAAABJRU5ErkJggg==');
+    background-repeat: no-repeat;  
+}
+
+.karte #name {
+    clear: both
+}
+
+#message {
+    padding-top: 5px;
+    font-size: 90%;
+    clear: both;
+}

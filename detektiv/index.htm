@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+Created with Squiffy 5.1.0
+
+
+https://github.com/textadventures/squiffy
+
+-->
+	<head>
+		<title>Detektiv X (Textadventure)</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script src="jquery.min.js"></script>
+		<script src="Kunstdiebe.js" charset="UTF-8"></script>
+        	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<script>
+			jQuery(function($){
+				$('#squiffy').squiffy();
+				var restart = function () {
+					$('#squiffy').squiffy('restart');
+				};
+				$('#restart').click(restart);
+				$('#restart').keypress(function (e) {
+					if (e.which !== 13) return;
+					restart();
+				});
+			});
+            // play audio files
+            function playAudio(file) {
+                var paudio = new Audio(file);
+                paudio.volume = 0.7;
+                paudio.play();
+            }
+            
+            // play audio files in background
+            function playAudioBackground(file) {
+                var baudio = new Audio(file);
+                baudio.volume = 0.5;
+                baudio.play();
+                baudio.loop = true;
+            }
+		</script>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<div id="squiffy-container">
+			<div id="squiffy-header">
+				<a class="squiffy-header-link" id="restart" tabindex="0">Neustart</a>
+			</div>
+			<div id="squiffy">
+			</div>
+		</div>
+	</body>
+</html>

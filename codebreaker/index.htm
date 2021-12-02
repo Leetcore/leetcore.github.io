@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Codebreaker</title>
+        <style>
+            body {
+                background-color: #DDD;
+                font-size: 120%;
+                font-family: monospace;
+                line-height: 120%;
+            }
+            #main {
+                width: 300px;
+                margin: 0 auto;
+            }
+            .pin {
+                cursor: pointer;
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background-color: #000;
+                padding: 20px;
+                margin: 20px;
+                box-shadow: 5px 5px 0px 0px rgb(199, 199, 199)
+            }
+            .pin.active {
+                background-color: #4caf50;
+            }
+        </style>        
+    </head>
+    <body>
+        <div id="main">
+            Du bist in Level <span id="level">1</span>
+            <div id="brett"></div>
+            <div id="message">Finde die richtige Kombination!</div>
+        </div>
+        <script>
+            var Wincode = []
+            var number = 0
+            var level = 1
+
+            function newWincode() {
+                Wincode = []
+                var pins = document.querySelectorAll(".pin")
+                for (var index = 0; index < pins.length; index++) {
+                    Wincode.push(index)
+                }
+                Wincode.sort(function (a,b) {
+                    if (getRandomInt(0,1) == 0) {
+                        return a-b;
+                    } else {
+                        return b-a;
+                    }
+                })                                
+            }
+            function newRound() {
+                number = 0
+                document.getElementById("brett").insertAdjacentHTML('beforeend', '<div class="pin"></div>')
+
+                var pins = document.querySelectorAll(".pin")
+                for (var index = 0; index < pins.length; index++) {
+                    pins[index].addEventListener("click", clickHandler)
+                }
+            }
+
+            function clickHandler() {
+                this.classList.add("active")
+                this.setAttribute("data-number", number)
+                number++
+                checkCode()
+            }
+
+            function newLevel() {                
+                var pins = document.querySelectorAll(".pin")
+                for (var index = 0; index < pins.length; index++) {
+                    pins[index].classList.remove("active")
+                    pins[index].removeAttribute("data-number")
+                }                
+                level++
+                document.getElementById("level").textContent = level
+                document.getElementById("message").textContent = ""
+                newRound()
+                newWincode()
+            }
+
+            function checkCode() {
+                var pins = document.querySelectorAll(".pin")
+                for (var index = 0; index < pins.length; index++) {
+                    if (pins[index].getAttribute("data-number") != null && pins[index].getAttribute("data-number") == Wincode[index].toString()) {
+                        document.getElementById("message").textContent = "*TICK*"
+                        if (pins[index].getAttribute("data-number") == pins.length - 1) {
+                            for (var index = 0; index < pins.length; index++) {
+                                pins[index].removeEventListener('click', clickHandler)
+                            }                            
+                            document.getElementById("message").textContent = "Du hast diesen Code geknackt!"
+                            setTimeout(newLevel, 5000)
+                        }
+                    } else if (pins[index].getAttribute("data-number") !== null) {
+                        document.getElementById("message").textContent = "*BEEP*"
+                        for (var index = 0; index < pins.length; index++) {
+                            pins[index].classList.remove("active")
+                            pins[index].removeAttribute("data-number")
+                        }
+                        setTimeout(function () {
+                            document.getElementById("message").textContent = ""
+                        }, 1000)
+                        number = 0
+                    }
+                }
+            }
+
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min +1)) + min; 
+            }
+
+            newRound()
+            newWincode()
+        </script>
+    </body>
+</html>

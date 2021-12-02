@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Verspottify - Kostenlose Musik abspielen!</title>
+	<style>
+		body {
+			background-color: #000;
+			text-align: center;
+			font-size: 200%;
+			color: white;
+			font-family: sans-serif;
+		}
+
+		input,
+		button {
+			padding: 10px 20px;
+		}
+
+		input {
+			min-width: 250px;
+		}
+
+		img {
+			vertical-align: bottom;
+			max-width: 120px;
+		}
+
+		.color {
+			color: #1ed760;
+		}
+	</style>
+</head>
+
+<body>
+	<h1 class="color"><img src="verspottify.png" alt="Logo"> Verspottify</h1>
+	<p>Spiele deine Lieblingssongs kostenlos mit Verspottify ab!</p>
+	<input placeholder="Nach Genre, Künstler oder Album suchen." type="text" /><input type="submit" onclick="play()"
+		value="Abspielen" />
+	<p class="color" id="player"></p>
+
+	<script>
+		var tracks = [
+			"Als würde ich so einen Mist abspielen!",
+			"Such dir mal Musikgeschmack, dann kannste wieder her kommen!",
+			"Lächerliche Musik, das spiele ich nicht ab!",
+			"Wer das hört, ist doch nicht mehr richtig!",
+			"Das ist keine Musik. Das ist nur Krach!",
+			"Meine Oma hört aktuellere Musik. Ich will das nicht abspielen!",
+			"Nein, das spiele ich nicht ab. Versuche es doch mal mit Justin Bieber",
+			"Hahaha! Dein Ernst? Das hört doch niemand außer dir.",
+			"Versuch es doch mal mit einem Genre, was nicht bescheuert ist.",
+			"LOL, wer hört denn so etwas? Such etwas anderes!",
+			"Wer hört denn bitte so etwas??!",
+			"Oh Gott, ist das schlecht! Niemals spiele ich das.",
+			"Dann kannst du doch gleich Radio hören, bei dem Geschmack...",
+			"Also dein Musikgeschmack ist wie RTL. Lass es besser.",
+			"Das ist keine Musik. Sorry!"
+		]
+
+		var input = document.querySelector('input');
+
+		function play() {
+			if (input.value.length > 0) {
+				if (input.value.toLowerCase() == "justin bieber") {
+					document.location.href = "https://open.spotify.com/artist/1uNFoZAHBGtllmzznpCI3s"
+				} else {
+					document.getElementById('player').innerText = tracks[getRandomIntInclusive(0, tracks.length - 1)];
+				}
+			}
+
+
+		}
+
+		function getRandomIntInclusive(min, max) {
+			min = Math.ceil(min);
+			max = Math.floor(max);
+			return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+		}
+
+		input.addEventListener("keyup", function (event) {
+			// Number 13 is the "Enter" key on the keyboard
+			if (input.value.length > 0 && event.keyCode === 13) {
+				// Cancel the default action, if needed
+				event.preventDefault();
+				// Trigger the button element with a click
+				play();
+			}
+		}); 
+	</script>
+</body>
+
+</html>

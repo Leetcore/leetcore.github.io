@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <title>HOMÖOPATHISCHER VIREN- UND TROJANERSCHUTZ!</title>
+        <style>
+            body {
+                padding: 15px;
+                font-family: sans-serif;
+                background-color: #DDD;
+            }
+            h1 {
+                font-size: 300%;
+            }
+            p {
+                line-height: 150%;
+            }
+            #main {
+                max-width: 600px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            #text {
+                display: none;
+            }
+            #sicher {
+                margin: 0 auto;
+                max-width: 90%;
+                background-color: rgb(67, 196, 125);
+                color: #FFF;
+                font-size: 250%;
+                padding: 10px;
+            }
+            .loader {
+                margin-top: 20px;
+                height: 50px;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                background-color: #EEE;
+            }
+            .loader:before{
+                display: block;
+                position: absolute;
+                content: "";
+                left: -200px;
+                width: 200px;
+                height: 50px;
+                background-color: rgb(67, 196, 125);
+                animation: loading 2s linear infinite;
+            }
+
+            @keyframes loading {
+                from {left: -200px; width: 30%;}
+                50% {width: 30%;}
+                70% {width: 70%;}
+                80% { left: 50%;}
+                95% {left: 120%;}
+                to {left: 100%;}
+            }
+        </style>
+    </head>
+<body>
+    <div id='main'>
+        <h1>HOMÖOPATHISCHER<br/>
+        VIREN- UND TROJANERSCHUTZ!</h1>
+        <div id='loadingtext'>BITTE WARTEN! SCHUTZ WIRD AKTIVIERT!</div>
+        <div class='loader'></div>
+        <div id='text'>
+            <h2>AKTIVIEREN SIE SELBSTHEILUNGSKRÄFTE</h2>
+            <img src='staatstrojaner.png'/>
+            <p>
+                Dieser homöopathische Virenschutz zeigt einen verdünnten Teil des <b>deutschen Staatstrojaners</b> an. Durch das Aufrufen dieser Webseite erinnert sich ihr Computer an diesen Schädling und aktiviert damit die <b>lebenswichtigen Selbstheilungskräfte</b>.
+            </p>
+            <p>
+                H. Schutz funktioniert unter Windows, Linux, Mac, <br/>Android, iPhone, Toaster, Gameboy Color.
+            </p>
+            <p>
+                VIRENSCANNER? ABER SCHONEND!<br/>
+                VERDÜNNTE SOFTWARE IST BESTE!<br/>
+                NUR HEUTE: <b>ANTI-PHISHING AMULETT IM ANGEBOT!</b>
+            </p>
+            <div id='sicher'>
+                HOMÖOPATHISCH GESCHÜTZT!
+            </div>
+            <p>Bitte rufen Sie diese Webseite dreimal täglich auf.</p>
+        </div>
+    </div>
+    <script>
+        var loader = document.querySelector('.loader')
+        var text = document.querySelector('#text')
+        var textloader = document.querySelector('#loadingtext')
+        setTimeout( function () {
+            loader.remove()
+            textloader.remove()
+            text.style.display = 'block'
+        }, 7000)
+    </script>
+</body>
+</html>

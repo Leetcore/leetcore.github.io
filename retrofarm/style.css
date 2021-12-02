@@ -1,0 +1,95 @@
+body {
+    /*background-image: repeating-linear-gradient(#62a256, #90b78d);*/
+    padding-top: 10px;
+    background-color: #91d78c;
+    font-family: sans-serif;
+    line-height: 150%;
+    margin: auto 0px;
+}
+
+a {
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+#frame {
+    max-width: 320px;
+    margin: 0 auto;
+    border-top: 3px #a26524 dashed;
+    border-bottom: 3px #a26524 dashed;
+}
+
+hr {
+  border: 1px solid brown;
+}
+
+.gameover {
+    background-color: #cc4646;
+}
+
+div#feld {
+    border: 10px dashed brown;
+}
+
+.feld {
+  -webkit-touch-callout: none; /* iOS Safari */
+ -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+     -ms-user-select: none; /* Internet Explorer/Edge */
+         user-select: none; /* Non-prefixed version, currently
+                               supported by Chrome and Opera */
+    color: #FFF;
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    opacity: 0.4;
+    border: 5px solid #5c5c5c;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+    font-size: 200%;
+    transition: background 1s;
+}
+.blue {
+    border: 5px solid #2257f3;
+    /*border: 1px #2257f3 solid;*/
+}
+#menu {
+    position: absolute;
+    left: calc(50% + 200px);
+    font-size: 90%;
+    min-width: 150px;
+    max-width: 250px;
+}
+#menu a {
+  background-color: #729567;
+  padding: 4px 10px;
+  margin-right: 5px;
+}
+#menu a:hover {
+    cursor: pointer;
+    background-color: #C1E3AF;
+}
+#nachricht {
+  font-style: italic;
+}
+.waechst {
+    cursor: wait;
+    opacity: 0.50;
+}
+.reif {
+    opacity: 1;
+    cursor: grabbing;
+}
+.schlecht {
+    cursor: not-allowed;
+    opacity: 0.3;
+    background-color: #463624;
+}
