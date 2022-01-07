@@ -2,6 +2,7 @@ html {
     box-shadow: inset 0 0 100px #000;
     margin: 0;
     padding: 0;
+    min-height: 100%;
 }
 body {
     background-color: #0C1C0E;
@@ -40,6 +41,9 @@ abbr {
 }
 ul {
     list-style-type: square;
+}
+ul.hacklist li {
+    margin-bottom: 20px;
 }
 img {
     max-width: 100%;
