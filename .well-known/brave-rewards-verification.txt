@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: 1337core.de
-Token: eab17040ac6260c20cc8cb7e1e3f778616534092afe5a9a90ef9d7d6b96cb668
