@@ -54,7 +54,11 @@ hr {
     border: none;
     height: 2px;
     margin: 5px 2px;
-}   
+}
+.border {
+    padding: 10px;
+    border: 5px double #333;
+}
 .comics img {
     max-height: 100%;
 }

@@ -47,24 +47,28 @@
     <script>
         var wins = 0;
         var enemys = [
+            {emoji: "🧟‍♀️", name: "Undead Human", health: 100, mindamage: 1, maxdamage: 30},
+            {emoji: "🦥", name: "Sleepy Sloth", health: 500, mindamage: 5, maxdamage: 10},
             {emoji: "🐒", name: "Crazy monkey", health: 80, mindamage: 3, maxdamage: 15},
-            {emoji: "🦍", name: "King Kong", health: 250, mindamage: 5, maxdamage: 25},
-            {emoji: "🐺", name: "Big bad wolf", health: 150, mindamage: 5, maxdamage: 20},
-            {emoji: "🦁", name: "Lion King", health: 180, mindamage: 8, maxdamage: 25},
-            {emoji: "🐅", name: "Evil tigger", health: 80, mindamage: 15, maxdamage: 20},
+            {emoji: "🦍", name: "King Kong", health: 250, mindamage: 5, maxdamage: 20},
+            {emoji: "🐺", name: "Big bad wolf", health: 150, mindamage: 5, maxdamage: 15},
+            {emoji: "🦁", name: "Lion King", health: 180, mindamage: 8, maxdamage: 20},
+            {emoji: "🐅", name: "Evil tigger", health: 80, mindamage: 15, maxdamage: 15},
             {emoji: "🗿", name: "Moai", health: 300, mindamage: 1, maxdamage: 10},
             {emoji: "🐓", name: "Angry rooster", health: 50, mindamage: 1, maxdamage: 10},
-            {emoji: "🤡", name: "Creepy clown", health: 100, mindamage: 10, maxdamage: 20},
-            {emoji: "👻", name: "Haunting ghost", healt: 100, mindamage: 10, maxdamage: 25}
+            {emoji: "🤡", name: "Creepy clown", health: 100, mindamage: 10, maxdamage: 15},
+            {emoji: "👻", name: "Haunting ghost", healt: 100, mindamage: 10, maxdamage: 20}
         ]
         var weapons = [
-            {emoji: "🏹", name: "bow and arrow like Robin Hood", mindamage: 35, maxdamage: 30},
+            {emoji: "🔮", name: "magic thingy", mindamage: 30, maxdamage: 50},
+            {emoji: "☢️", name: "nuclear power, WHAT?!", mindamage: 999, maxdamage: 999999999},
+            {emoji: "🏹", name: "bow and arrow like Robin Hood", mindamage: 35, maxdamage: 100},
             {emoji: "🏒", name: "bloody hockey stick from a horror movie", mindamage: 15, maxdamage: 40},
             {emoji: "💉", name: "medicine for yourself and kick this thing", mindamage: 10, maxdamage: 25},
             {emoji: "💣", name: "a crazy overreaction. Bombs", mindamage: 25, maxdamage: 80},
             {emoji: "🔍", name: "magnifying glass burning like ants.", mindamage: 15, maxdamage: 30},
             {emoji: "📌", name: "pushpins on the floor. So mean", mindamage: 15, maxdamage: 25},
-            {emoji: "💌", name: "talking a lot about love", mindamage: 30, maxdamage: 100},
+            {emoji: "💌", name: "talking a lot about love", mindamage: 15, maxdamage: 30},
             {emoji: "🏆", name: "bragging about your strength", mindamage: 15, maxdamage: 20},
             {emoji: "🤖", name: "your own build fighting roboter", mindamage: 25, maxdamage: 75},
             {emoji: "💍", name: "magic ring of power from Sauron", mindamage: 15, maxdamage: 25}
@@ -127,7 +131,7 @@
                 }
             });
             updateStats();
-            showMessage('Let\'s do this with '+ player.weaponname +'!', startFight);
+            showMessage('Let\'s do this with '+ player.weaponname +'!', startFight, 4000);
         }
         function startFight () {
             if (player.health < 0) {
@@ -136,10 +140,10 @@
             }
             if (player.weapon == "💉" || player.weapon == "💍" || player.weapon == "🏆") {
                 setTimeout(function () {
-                    var addhealth = random(5, 10);
+                    var addhealth = random(5, 15);
                     player.health += addhealth;
                     updateStats(addhealth);
-                }, 2000)
+                }, 1000)
             }
             if (enemy.health > 0) {
                 // fight
@@ -175,21 +179,22 @@
         function updateStats (addhealth) {
             var health = player.health;
             if (addhealth) {
-                health = '+'+ addhealth;
+                health = '+' + addhealth;
             }
-            document.getElementById('stats').innerHTML = (player.emoji || '') + (player.weapon || '') +' '+ health +' HP '+ wins +' WINS';
+            document.getElementById('stats').innerHTML = (player.emoji || '') + 
+            (player.weapon || '') +' '+ health +' HP '+ wins +' WINS';
             if (enemy.health > 0) {
                 document.getElementById('enemyhealth').style.width = enemy.health +'px';
             } else {
                 document.getElementById('enemyhealth').style.width = '1px';
             }
         }
-        function showMessage (text, callback) {
+        function showMessage (text, callback, time) {
             document.getElementById('emojis').innerHTML = '';
             document.getElementById('infotext').innerHTML = text;
             setTimeout(function () {
                 callback();
-            }, 4000);
+            }, (time || 2000));
         }
         function random (min, max) {
             min = Math.ceil(min);

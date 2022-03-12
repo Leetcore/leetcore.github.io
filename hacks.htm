@@ -19,93 +19,123 @@
 	<div id="main">
 		<h1><a href="/">1337core</a></h1>
 		<p>
-			Ich suche und melde gefundene Sicherheitslücken als Hobby. Die Betreiber wurden 
-			von mir über mögliche Sicherheitsprobleme informiert.<br/>
-			Es wird nur ein Proof of Concept ("Machbarkeitsnachweis") getestet - mehr nicht. 
-			Um nicht allen Betreibern hinterherlaufen zu müssen, <br/>
-			sende ich meine Hinweise auch an das BSI (Bundesamt für Sicherheit in der 
-			Informationstechnik).
+			Ich suche und melde gefundene Sicherheitslücken als Hobby, damit
+			die Lücken geschlossen werden und das Intenet ein Stück sicherer wird.
+			Die Betreiber wurden von mir (oder dem BSI) über die Sicherheitsprobleme 
+			informiert.<br/>
+			Ich teste nur ein "Proof of Concept" (= Machbarkeitsnachweis)
+			und nicht mehr. Damit ich nicht selbst nachprüfen muss, ob die Lücken
+			auch wirklich geschlossen wurden, sende ich meine Hinweise auch 
+			an das BSI (Bundesamt für Sicherheit in der Informationstechnik).
 		</p>
 		<h2>neu</h2>
 		<ul class="hacklist">
 			<li>
-				
 				Warnung vor kritischen Sicherheitslücken im "Deutschland-Scan".
 				Ein Hobby-Projekt, um die gesamte deutsche, öffentliche Infrastruktur 
-				automatisch auf Sicherheitslücken zu scannen.
+				automatisch auf Sicherheitslücken zu scannen. Es wurden über
+				2.000 Bundesbehörden, Landkreise, Verwaltungen, Schulen und
+				Städten in ganz Deutschland getestet und dabei 59.000 Webserver
+				untersucht.<br/>
+				Ingesamt wurden über 70 kritische Sicherheitslücken an das BSI 
+				gemeldet und behoben. Sicherheitslücken, die als kritisch
+				eingestuft werden, können einem Angreifer z.B. Zugriff auf den 
+				Server geben, sodass interne Daten ungeschützt waren.
 			</li>
 			<li>
 				<a name="Bundesjustizamt"></a>
-				<span style="color: #ff0000;">Bundesjustizamt</span>: Kritische RCE 
-				(Remote Code Execution)<br/>
-				CVE-2021-26084: "OGNL injection vulnerability exists that would allow an 
-				unauthenticated attacker to execute arbitrary code on a Confluence Server 
-				or Data Center instance"<br/>
-				<img src="img/Bundesjustizamt.png" alt="Jira Screenshot vom Bundesjustizamt"/>
+				<span style="color: #ff0000;">Bundesjustizamt</span>:
+				Kritische RCE (Remote Code Execution)<br/>
+				CVE-2021-26084: "OGNL injection vulnerability exists that would 
+				allow an unauthenticated attacker to execute arbitrary code on a 
+				Confluence Server or Data Center instance"<br/>
+				<img src="img/Bundesjustizamt.png"
+					alt="Jira Screenshot vom Bundesjustizamt"/>
 			</li>
 			<li>
 				<a name="FinanzamtBW"></a>
 				Critical server-side request forgery (SSRF) vulnerability.<br/>
-				CVE-2021-40438: "mod_proxy to forward the request to an origin server choosen by the remote user"<br/>
-				<span style="color: #ff0000;">Finanzamt Baden-Württemberg</span>, Breitbandseite Bayern, 
-				Bundesamt für Materialforschung, Videokonferenzen von Niedersachsen, 
+				CVE-2021-40438: "mod_proxy to forward the request to an origin 
+				server choosen by the remote user"<br/>
+				<span style="color: #ff0000;">Finanzamt Baden-Württemberg</span>,
+				Breitbandseite Bayern, 
+				Bundesamt für Materialforschung, Videokonferenzen von 
+				Niedersachsen, 
 				Bibliothek der Helmut Schmidt Universität,
-				Kommunales Informationssystem in Ludwigsburg, Stadtverwaltung Baden-Baden, 
+				Kommunales Informationssystem in Ludwigsburg, Stadtverwaltung 
+				Baden-Baden, 
 				Stadt Bocholt, Stadt Aschaffenburg, ... <br/>
 				Nach meiner Meldung wurden vom CERT-Bund bereits
-				<a href="https://twitter.com/certbund/status/1464216049637801984">gehackte Server</a> vorgefunden.
+				<a href="https://twitter.com/certbund/status/1464216049637801984">
+					gehackte Server
+				</a> vorgefunden.
 			</li>
 			<li>
 				<a name="BundesministeriumDV"></a>
 				Directory traversal, read and delete access to sensitive files<br/>
-				CVE-2020-3187: "allow an unauthenticated, remote attacker to conduct directory traversal 
-				attacks and obtain read and delete access to sensitive files on a targeted system."<br/>
-				<span style="color: #ff0000;">Bundesministerium für Digitales und Verkehr</span>, 
-				Deutscher Wetterdienst, Deutschen Nationalbibliothek, im VPN der SWU Stadtwerke Ulm, 
+				CVE-2020-3187: "allow an unauthenticated, remote attacker to 
+				conduct directory traversal 
+				attacks and obtain read and delete access to sensitive files 
+				on a targeted system."<br/>
+				<span style="color: #ff0000;">Bundesministerium für Digitales
+					 und Verkehr</span>, 
+				Deutscher Wetterdienst, Deutschen Nationalbibliothek, im VPN
+				 der SWU Stadtwerke Ulm,
 				Forst Lausitz, Essener Arbeitsgesellschaft.
 			</li>
 			<li>
-				SQL Injection in JCK Editor in Joomla (CVE-2018-17254) bei der Stadt Dessau-Rosslau.
+				SQL Injection in JCK Editor in Joomla (CVE-2018-17254) bei 
+				der Stadt Dessau-Rosslau.
 			</li>
 			<li>
-				Weak encryption flaw resulting in remote code execution (CVE-2017-1000486) bei 
+				Weak encryption flaw resulting in remote code execution 
+				(CVE-2017-1000486) bei 
 				der Stadt Burglengenfeld, Straßendatenbank Bochum.
 			</li>
 			<li>
-				ThinkPHP, kritische RCE (Remote Code Execution): Lernstandserhebungen an Hamburger Schulen.
+				ThinkPHP, kritische RCE (Remote Code Execution): 
+				Lernstandserhebungen an Hamburger Schulen.
 			</li>
 			<li>
 				<a name="EX"></a>
-				Ungepatchte Exchange-Server mit <span style="color: #ff0000;">kritischer Sicherheitslücke</span><br/>
-				CVE-2021-34473: "Microsoft Exchange Server Remote Code Execution Vulnerability"<br/>
-				Volkshochschule in Amberg, Landkreis Merzig-Wadern und mehreren Stadtverwaltungen: 
+				Ungepatchte Exchange-Server mit 
+				<span style="color: #ff0000;">kritischer Sicherheitslücke</span><br/>
+				CVE-2021-34473: "Microsoft Exchange Server Remote Code 
+				Execution Vulnerability"<br/>
+				Volkshochschule in Amberg, Landkreis Merzig-Wadern und 
+				mehreren Stadtverwaltungen: 
 				Bernsdorf, Bleckede, Dachau, Erkner, 
 				Heilbald Heiligenstadt, Klötze, Mölln, Plauen, Rendsburg,
-				Sassnitz, Stadtbergen, Sulzbach Saar, Vellmar und im Exchange-Server im Theater in Freiburg, ...
+				Sassnitz, Stadtbergen, Sulzbach Saar, Vellmar und im 
+				Exchange-Server im Theater in Freiburg, ...
 				<a href="https://www.heise.de/news/Verwundbare-Exchange-Server-der-oeffentlichen-Verwaltung-6320504.html">
 					Heise Online Artikel
 				</a>
 			</li>
 			<li>
-				Proxyshell-Lücke (CVE-2021-34473) 1 von 3 möglicherweise nicht vollständig behoben: 
-				"Microsoft Exchange Server Autodiscover Server Side Request 
-				Forgery Authentication Bypass Vulnerability"
+				Proxyshell-Lücke (CVE-2021-34473) 1 von 3 möglicherweise nicht
+				vollständig behoben:  "Microsoft Exchange Server Autodiscover 
+				Server Side Request Forgery Authentication Bypass Vulnerability"
 				<p>
-					Selbst auf manchen gepatchen Systemen (Version: 15.2.986.13, Version: 15.1.2308.20) 
-					ist es möglich über eine spezielle URL an interne Exchange-Seiten 
-					zu kommen. Mir ist aufgefallen, dass dies nur zu bestimmten Zeitpunkten möglich ist, 
-					also möglicherweise nur gleichzeitig mit einer Aktion eines 
-					Nutzer im Outlook Webclient auftritt.<br/>
-					Das führt dazu, dass mindestens der interne Anmeldenamen geleakt wird und 
-					möglicherweise weitere interne Exploit-Ketten zu bestimmten 
-					Zeitpunkten möglich sind.
+					Selbst auf manchen gepatchen Systemen (Version: 15.2.986.13, 
+					Version: 15.1.2308.20) ist es möglich über eine spezielle 
+					URL an interne Exchange-Seiten zu kommen. Mir ist 
+					aufgefallen, dass dies nur zu bestimmten Zeitpunkten möglich 
+					ist, also möglicherweise nur gleichzeitig mit einer Aktion 
+					eines Nutzer im Outlook Webclient auftritt.<br/>
+					Das führt dazu, dass mindestens der interne Anmeldenamen 
+					geleakt wird und möglicherweise weitere interne 
+					Exploit-Ketten zu bestimmten Zeitpunkten möglich sind.
 				</p>
 			</li>
 			<li>
-				Citykey Website (Bürgerservice App der Telekom zur digitalen Verwaltung), versehentlich 
-				öffentliche GIT-Config mit CI-Token.<br/>
+				Citykey Website (Bürgerservice App der Telekom zur digitalen 
+				Verwaltung), versehentlich öffentliche GIT-Config mit CI-Token.
+				<br/>
 				Server: osca-wbench.workbench.telekom.de/gitlab/smart_city_sol/citykey-website.git<br/>
-				<img src="img/CityKey-git-config.jpg" alt="Screenshot der Git-Config"/>
+				<img
+				src="img/CityKey-git-config.jpg"
+				alt="Screenshot der Git-Config"/>
 			</li>
 			<li>
 				<a name="Kartographie"></a>
@@ -193,9 +223,8 @@
 			<li>
 				<span style="color: #ff0000;">National Center EDU Research</span> – 
 				<strong>SQL Injection,</strong> Risiko:
-				Hoch, <a href="https://web.archive.org/web/20150926090250/http://www.vulnerability-lab.com/get_content.php?id=415">
-					Advisory
-				</a>. (Datenbank, Server)
+				Hoch, <a href="https://web.archive.org/web/20150926090250/http://www.vulnerability-lab.com/get_content.php?id=415">Advisory</a>.
+				(Datenbank, Server)
 			</li>
 			<li>Firewall Analyzer, <strong>Persistent Cross Site Scripting</strong>, 
 				Risiko: Mittel, Livehacking.</li>
@@ -216,9 +245,7 @@
 				<span style="color: #ff0000;">OSCommerce 3.0.2</span> (Shopsoftware),
 				<strong>Persistant XSS</strong>, Risiko:
 				Mittel. 
-				<a href="https://web.archive.org/web/20120529115051/http://www.vulnerability-lab.com/get_content.php?id=407">
-					Advisory
-				</a>.<br />
+				<a href="https://web.archive.org/web/20120529115051/http://www.vulnerability-lab.com/get_content.php?id=407">Advisory</a>.<br />
 				<img src="img/oscommerce.jpg" />
 			</li>
 			<li>
@@ -257,9 +284,7 @@
 				(<strong>Local File Inclusion</strong>),
 				Risiko: Hoch, <a href="https://www.youtube.com/watch?v=3aoccJlgiZo">Demo-Video</a>, 
 				<a
-					href="https://web.archive.org/web/20111126165200/http://news.hitb.org/content/critical-bug-nato-research-technologie-rtootan-0">
-					Interview
-				</a>.<br />
+					href="https://web.archive.org/web/20111126165200/http://news.hitb.org/content/critical-bug-nato-research-technologie-rtootan-0">Interview</a>.<br />
 				<img src="img/NATO.png" />
 			</li>
 			<li>
@@ -268,9 +293,7 @@
 			</li>
 			<li>Apple.com Errormessage, (Reflexives XSS – Cross Site Script), Risiko: Mittel.
 				<a
-					href="http://news.softpedia.com/news/Apple-com-Suffering-from-a-Scripting-Vulnerability-Says-Advisory-226701.shtml">
-					Presse
-				</a>,
+					href="http://news.softpedia.com/news/Apple-com-Suffering-from-a-Scripting-Vulnerability-Says-Advisory-226701.shtml">Presse</a>,
 				<a href="https://support.apple.com/de-de/HT207626">Hall of Fame</a>.<br />
 				<img src="img/Apple-XSS.jpg" />
 			</li>
@@ -290,17 +313,13 @@
 				Presse:
 				<a href="http://www.spiegel.de/netzwelt/web/0,1518,782546,00.html">Spiegel</a>,
 				<a
-					href="http://www.sueddeutsche.de/digital/nach-gamescom-bericht-bei-explosiv-erboste-gamer-kapern-rtl-website-1.1135021">
-					Süddeutsche
-				</a>.<br/>
+					href="http://www.sueddeutsche.de/digital/nach-gamescom-bericht-bei-explosiv-erboste-gamer-kapern-rtl-website-1.1135021">Süddeutsche</a>.<br/>
 				<img src="img/rtl-xss.png" />
 			</li>
 			<li>bundestag.de, (Reflexives Cross Site Script), Risiko: Niedrig.</li>
 			<li>Microsoft Academic Search, (Reflexives Cross Site Script), Risiko: Mittel.
 				<a
-					href="https://portal.msrc.microsoft.com/en-us/security-guidance/researcher-acknowledgments-online-services-archive">
-					Hall of Fame
-				</a>.<br />
+					href="https://portal.msrc.microsoft.com/en-us/security-guidance/researcher-acknowledgments-online-services-archive">Hall of Fame</a>.<br />
 				<img src="img/microsoft-xss.png" />
 			</li>
 			<li>
