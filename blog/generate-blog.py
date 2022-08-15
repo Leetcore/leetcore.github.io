@@ -47,6 +47,7 @@ def read_blog_posts():
         with open(filename) as f:
             # default values
             headline = ""
+            article = ""
             description = ""
             the_date = datetime.now()
 
@@ -64,16 +65,21 @@ def read_blog_posts():
                         date_string.group(), "%d.%m.%Y")
             pubdate = the_date.strftime("%a, %d %b %Y %H:%M:%S +0100")
 
+            # find description
+            description_tag = soup.find("p")
+            if description_tag:
+                description = description_tag.text
+                
             # find headline
             headline_tag = soup.find("h1")
             if headline_tag:
                 headline = headline_tag.text
             print(headline)
 
-            # find description
-            description_tag = soup.find("p")
-            if description_tag:
-                description = description_tag.text
+            # find content
+            article_tag = soup.find("article")
+            if article_tag:
+                article = str(article_tag)
 
             # build link
             link = filename
@@ -82,6 +88,7 @@ def read_blog_posts():
             posts.append({
                 'headline': headline,
                 'description': description,
+                'article': article,
                 'pubdate': pubdate,
                 'link': link,
                 'guid': guid
@@ -94,7 +101,7 @@ def generate_post_output(posts: List[Dict[str, str]]):
         rss_output.append("<item>")
         rss_output.append(f'<title>{post.get("headline")}</title>')
         rss_output.append(
-            f'<description>{post.get("description")}</description>')
+            f'<description>{post.get("article")}</description>')
         rss_output.append(
             f'<link>{parsed_config["link"]}{parsed_config["public_folder"]}{parsed_config["post_folder"]}{post.get("link")}</link>')
         rss_output.append(

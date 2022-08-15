@@ -7,31 +7,212 @@
 <atom:link href="https://www.1337core.de/blog/feed.rss" rel="self" type="application/rss+xml" />
 <item>
 <title>Recon Deutschland</title>
-<description>
+<description><article>
+<p>
                 Mal eben alle Webseiten der öffentlichen Verwaltung in ganz 
                 Deutschland abchecken? Geht! Automatisierung macht halt auch 
                 Laune. Zuerst hab ich mir die Daten von Wikipedia runter 
                 gezogen wie so ein Amateur. Richtig gute Leute finden Wikidata.
-            </description>
+            </p>
+<p>
+                Der Query Builder, um dort Daten zu finden, ist zwar ziemlich 
+                komplex, aber mit Hilfe konnte ich ihn benutzen. Meine 
+                Community rockt mal wieder. <b>!love</b>
+</p>
+<h2>Vorgehen</h2>
+<p>
+                Wenn man die URLs von Wikidata hat, nimmt man nur die Domain 
+                und checkt dann erstmal die Subdomains und Hosts. Danach mit 
+                irgendeinem Script die typischen Webseitenports anfragen. Davon 
+                die Banner ziehen mit Server-Version und Titel. Das ergibt eine 
+                schöne Liste, die mit <i>grep</i> auch schnell durchsucht ist.
+            </p>
+<p>
+                Eine aktuelle Liste davon ist hier: 
+                <a href="https://github.com/Leetcore/recon-deutschland">Recon Deutschland</a>.
+            </p>
+</article></description>
 <link>https://www.1337core.de/blog/recon-deutschland.html</link>
 <guid>https://www.1337core.de/blog/recon-deutschland.html</guid>
 <pubDate>Mon, 15 Aug 2022 00:00:00 +0100</pubDate>
 </item>
 <item>
 <title>Cyber Cyber Bullshit</title>
-<description>
+<description><article>
+<p>
                 Es gab in meinem Leben bisher nicht viele Erlebnisse von denen 
                 ich mich erstmal erholen musste, aber mein Job bei 
                 „Michael Backes Cybersecurity“ gehörte dazu. Die Story hat 
                 alles: Witz, Stolz, Realitätscheck und Erkenntnisse.
-            </description>
+            </p>
+<p>
+                Seitdem ich den Entschluss gefasst hatte „Wie werde ich Hacker?“ 
+                zu schreiben (gibt es auf meiner Website), wollte ich wieder 
+                in den Cybersecurity-Bereich. Irgendetwas mit Hacking, schönen 
+                Exploits und sich einfach scheiß-geniale Tricks ausdenken. 
+                Also habe ich mich bei allem beworben was im Saarland mit 
+                Cyber zu tun hat, aber da gibt es halt fast nichts in dem 
+                Bereich.
+            </p>
+<h2>Startup</h2>
+<p>
+                Am Ende meiner erfolglosen Suche nach Unternehmen, stand ich 
+                vor der Glastür von „Michael Backes Cybersecurity“. Ein 
+                Spin-off von CISPA (Helmholtz-Zentrum für 
+                Informationssicherheit) mit Kronleuchter in der Lobby und 
+                Billard-Tisch im Meetingraum. 
+            </p>
+<p>
+                Also stand ich dort wie ein kleiner Junge: Aufgewachsen auf’m 
+                Dorf - in einem Ort mit 900 Einwohnern. Ich war (noch) 
+                ehrfürchtig vor der (O-Ton) „Speerspitze der Sicherheitsforschung“. 
+                Wenn jemand einen Doktortitel hat, war das für mich die 
+                offizielle Auszeichnung für einen genialen Menschen, bei dem 
+                pures Gold aus seinen grauen Zellen kommt und dem einfach 
+                alles gelingt.
+            </p>
+<p>
+                Ich wusste es nicht besser, ich kannte es nicht anders und 
+                ich war auch selbst weit weg davon mit meinem 
+                durchschnittlichen Realschulabschluss und meiner IT-Ausbildung. 
+                Doch meine Erkenntnisse waren unvermeidbar. Später wurde 
+                mir einiges klar.
+            </p>
+<h2>Red Flag</h2>
+<p>
+                Als ich erzählte, dass ich dort anfange, wurde ich nochmal 
+                auf den grandiosen ersten Fehlschlag der Klitsche aufmerksam 
+                gemacht: Die „innovative“ Idee von X-Pire. Damit sollten 
+                Fotos wieder aus dem Internet verschwinden. Die Umsetzung 
+                war simple: Es wurde über die Firma geprüft, ob man sich 
+                ein Foto immer noch anschauen darf. Wenn ich mich richtig 
+                erinnere, sollte man dafür 7 Euro im Monat zahlen. Dafür, 
+                dass man über eine spezielle Software sich Fotos anschauen 
+                kann, die dann eben irgendwann nicht mehr verfügbar sind.
+            </p>
+<p>
+                Jeder, der googeln kann wie sich ein Screenshot erzeugen lässt, 
+                kann dieses System umgehen. Alleine das Konzept wurde verrissen 
+                und sogar bei Heise als „Totgeburt“ bezeichnet. Ich fand aber 
+                keine andere Cyber-Cyber-Firma in Saarbrücken, also versuchte 
+                ich mein Glück dort.
+            </p>
+<h2>Warum ich?</h2>
+<p>
+                Alle waren sehr nett zu mir und ich zu ihnen. Doch ich fragte 
+                mich schon, weshalb ich jetzt da bin, obwohl sonst fast nur 
+                studierte Menschen dort saßen?
+            </p>
+<p>
+                Ich bin sehr praktisch orientiert. Wenn ich etwas machen will, 
+                finde ich einen Weg es zu machen. Austesten und experimentieren 
+                macht mir Spaß. Ich hatte das Buch geschrieben und mit Anfang 
+                20 Sicherheitslücken auf den Webseiten der NATO oder dem 
+                Weißen Haus gemeldet. Das war mein Einstieg in den ganzen 
+                Security-Hokuspokus.
+            </p>
+<p>
+                Dann war mir klar, dass sie fast gar kein sinnvolles Feature 
+                in ihrer Insider Threat Detection Software hatten. Die Software sollte 
+                Lateral Movement in Windows-Netzwerken erkennen. Ich will gar 
+                nicht auf die Probleme eingehen, dass sie z.B. mit nur 
+                Linux-Entwickler eine Erkennung für Windows-Netzwerke bauen 
+                wollten.
+            </p>
+<h2>Mach es halt!</h2>
+<p>
+                Als ich (alleine) die ersten Pentests und Security Awareness 
+                Kampagne gemacht hatte, bot sich mir auch die Gelegenheit die 
+                Softwareentwicklung zu übernehmen. Ich wusste, dass ich dort 
+                nicht ewig bleiben werde, weil die Einschläge links und rechts 
+                näher kamen, aber ich mag so eine Herausforderung und ich war 
+                ja sowieso schon da.
+            </p>
+<p>
+                Ich schweife kurz ins Technische ab, wie man so etwas bauen 
+                kann (wer das nicht lesen will, kann zur nächsten Überschrift 
+                springen): Im ersten Schritt dreht man das Windows Security 
+                Audit Log auf dem Domain Controller hoch und liest dann 
+                diese Logs automatisiert aus.
+            </p>
+<p>
+                Dort lässt sich pro AD-Nutzer speichern und analysieren z.B. 
+                wann sich diese üblicherweise einloggen. Es ist einfacher nur 
+                die Logs auf dem DC zu analysieren, die sind allerdings dann 
+                anders als auf den Clients.
+            </p>
+<p>
+                Mit Kerbrute testete ich echte Angriffe mit Password Spraying, 
+                Brute Force oder Pass The Hash und entwickelte anhand der Logs 
+                die entsprechende Detection für diese Angriffe. Eigentlich 
+                ziemlich straightforward, keine Ahnung wieso es niemand vor  
+                mir gemacht hat.
+            </p>
+<p>
+                Weil ich praktisch veranlagt bin, hatte ich eine Demo mit 
+                einem Ransomware-Angriff, der einen geteilten Ordner 
+                verschlüsselt. Die Zugriffslogs werden normalerweise nur auf 
+                dem Client geschrieben, aber auf dem DC sieht man genau 
+                welche Zugriffsrechte abgefragt werden, die vor jedem 
+                Zugriff geloggt werden. Deshalb lässt sich das auch nur 
+                über den DC-Server machen.
+            </p>
+<p>
+                Da wir die Daten auf den eigenen Servern analysieren wollten, 
+                wollten wir da noch Datenschutz oben drauf setzen, also die 
+                Logins gehashed (damit man die Logs gruppieren kann) und danach 
+                clientseitig encrypted, sodass nur der Kunde entschlüsseln 
+                und nachlesen kann welcher Account was gemacht hat.
+            </p>
+<p>
+                Das war mein Realitätscheck. Ich bekomme die komplette Software 
+                besser und auch (alleine!) schneller hin, als das, was die seit 
+                Monaten dort versuchen zu machen. Und ich bin selbst nichtmal 
+                Windows Admin. Zu dem Zeitpunkt bemerkte ich, dass andere 
+                auch nur mit Wasser kochen - und manchmal  ist das nicht mal 
+                lauwarm.
+            </p>
+<p>
+                Die Umsetzung einer solchen Erkennungssoftware ist auch kein 
+                furchtbar innovatives Betriebsgeheimnis, denn es lässt sich 
+                in der <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/advanced-security-auditing-faq">Windows Log Security Dokumentation</a> 
+                nachlesen.
+            </p>
+<h2>Viel Geld</h2>
+<p>
+                Was mich auch geschockt hat, war einfach wie (und da muss ich 
+                die Leute gleich etwas in Schutz nehmen) in dem Startup-Bereich 
+                Geld auf Unternehmen geworfen wird, die halt gut auf dem Papier 
+                aussehen. Tolle Forschungseinrichtung, mehr Doktortitel oder 
+                PhD-Studenten als ich Finger an der Hand habe, noch ein paar 
+                Buzzwords dazu: „Machine Learning“ und es gibt Geldregen!!!1
+            </p>
+<p>
+                Die Leute, die das Geld werfen… Ups, Moment: Investoren, die 
+                Geld möglichst gewinnbringend anlegen möchten, sind vielleicht 
+                auch einfach so wie ich damals auf’m Dorf war 
+                (bevor ich so ein Startup in echt erlebt habe). Dazu fehlt 
+                denen noch der IT-Hintergrund. Vielleicht denken sie, dass 
+                es mit einem solchen Team funktionieren muss! Es geht gar 
+                nicht anders, so toll. Mehr Doktortitel als Kunden. Aber es 
+                sind doch die Besten der Besten!
+            </p>
+<p>
+                Das war einfach nur erschreckend zu sehen, wie das Geld dort 
+                den Bach runter fließen. Ich dachte, dass alle aus der 
+                Dotcom-Blase etwas gelernt hätten. Jedenfalls kündigte ich 
+                und ging danach zur c’t und Heise. Die Cyber-Cyber-Firma 
+                ging pleite. Das ist garantiert auch besser so.
+            </p>
+</article></description>
 <link>https://www.1337core.de/blog/cyber-cyber-bullshit.html</link>
 <guid>https://www.1337core.de/blog/cyber-cyber-bullshit.html</guid>
 <pubDate>Sun, 14 Aug 2022 00:00:00 +0100</pubDate>
 </item>
 <item>
 <title>Passwortleaks der 100 größten Unternehmen in Deutschland!</title>
-<description>
+<description><article>
+<p>
                 Ich dachte das Projekt wird super easy. Die entsprechenden
                 öffentlichen Passwortleaks sind leicht zu finden und im Prinzip
                 muss ich die nur durchsuchen und daraus eine Statistik machen.
@@ -40,20 +221,166 @@
                 "email:password". Nach etwas Rechenzeit und viele kleine
                 Pythonscripte später hatte ich endlich ein paar Statistiken
                 zur Hand.
-            </description>
+            </p>
+<h2>Der Plan</h2>
+<p>
+                * 100 Domains der Unternehmen<br/>
+                * Passwortleak<br/>
+                * Auswertung der Leaks
+            </p>
+<h2>Vorbereitung</h2>
+<p>
+                Der erste Schritt war der einfachste: Ich schrieb ein Script
+                für Wikipedia, um sich dort
+                die Domains der 100 größten Unternehmen in Deutschland zu
+                ziehen. Damit hatte ich schon mal den Domainteil der
+                E-Mailadresse a la @unternehmen.de
+            </p>
+<p>
+                Das Problem ist die große Datenmenge und eben die 100
+                Domains. Das würde bedeuten, dass ich 100 mal die ganzen
+                Datenmenge durchsuchen muss. Meine Laune hält sich in Grenzen.
+            </p>
+<p>
+                Deshalb war es meine Idee, dass in einer Regex für 20 Domains
+                in einem Durchgang zu machen. Der Versuch direkt alle zu
+                machen ist gescheitert. Aber immerhin muss ich dann nur 5 mal
+                über die komplette Datei. Also baute ich mir ein Script, was
+                mir die Regex baut, die dann per grep alle Leaks nur von diesen
+                Unternehmen filtert. Das macht die Auswertung dann
+                auch deutlich schneller!
+            </p>
+<p>
+                Am Ende kommt eine kleinere Datei mit E-Mails und
+                Passwörtern heraus, die ich durchsuchen kann.
+            </p>
+<h2>Unternehmen</h2>
+<p>
+                Airbus, Volkswagen, Mercedes Benz, BMW, Deutsche Bahn, Bosch, Siemens, Telekom
+                und alle weiteren aus <a href="https://de.wikipedia.org/wiki/Liste_der_gr%C3%B6%C3%9Ften_Unternehmen_in_Deutschland_(Wertsch%C3%B6pfung)">
+                    dieser Liste</a>.
+            </p>
+<p>
+                Es wurden 307.530 Passwörter dieser Unternehmen untersucht.
+            </p>
+<h2>Aufbau</h2>
+<p>
+                Liste der Top-Unternehmen von Wikipedia. Filter eines
+                Combo-Passwortleaks nach Domain. Zum Beispiel "@siemens.com", danach
+                zähle ich die beliebtesten Passwörter und erstelle eine Statistik
+                über die Zeichenlänge und Komplexität.
+            </p>
+<h2>Quelle</h2>
+<p>
+                "Öffentliche Passwortleaks" bedeutet, dass sich jeder mit etwas Geschick und
+                einem Torrent-Client die Leaks selbst herunterladen kann. Im Leak sind
+                Passwörter im Klartext von Adobe, LinkedIn, MySpace und viele weitere...
+                Es handelt sich um eine insgesamt 106 GB große entpackte Datei mit E-Mails
+                und Passwörtern. Mein Rechner lief circa 30 Stunden, um 5 x per Regex durch
+                die Daten zu gehen.
+            </p>
+<h2>Ergebnisse</h2>
+<p>
+                Auf Platz 1 ist natürlich 123456, wie auch bei den meisten Listen über bekannte
+                Passwörter. Danach wird es interessiert: Erstaunlich oft wird der Firmenname
+                oder die Domain der Firma verwendet. Die komplexeren Passwörter bestehen oft
+                aus einem Ort und einer Jahreszahl mit Sonderzeichen.
+            </p>
+<h2>Beliebte Passwörter</h2>
+            1. 123456 (1085 Passwörter)<br/>
+            2. password (794 Passwörter)<br/>
+            3. Exigent (777 Passwörter)<br/>
+            4. passport (683 Passwörter)<br/>
+            5. 12345678 (656 Passwörter)<br/>
+            6. ********* (Projektname mit 443 am Ende) (582 Passwörter)<br/>
+            7. ********* (Firmendomain.com) (484 Passwörter)<br/>
+            8. dttesc (455 Passwörter)<br/>
+            9. aaron431 (356 Passwörter)<br/>
+            10. ********* (Firmendomain.com) (324 Passwörter)<br/>
+            11. ********* (Firmendomain.com) (318 Passwörter)<br/>
+            12. linkedin (283 Passwörter)<br/>
+            13. ********* (Firmenname) (280 Passwörter)<br/>
+            14. ********* (Firmenname) (190 Passwörter)<br/>
+            15. ********* (Firmendomain.com) (183 Passwörter)
+
+            <p>
+                Passwörter die ********* enthalten, musste ich zensieren, weil sich daraus
+                direkt auf ein Unternehmen schließen lässt.
+            </p>
+<h2>Komplexität</h2>
+<p>
+                Damit ich nicht einzelne Passwörter veröffentliche, zeige ich hier
+                nur die Muster der "besten" Passwörter in der Liste.
+            </p>
+
+            1. Climbinging[ORT]2015<br/>
+            2. !!!![BLUME]2008!!!<br/>
+            3. [ORT]2015!1995<br/>
+            4. Ontherocks[ZAHL][SONDERZEICHEN]<br/>
+            5. [ORT]2016!!!<br/>
+            6. Pistol[NAME][ZAHL]][SONDERZEICHEN]<br/>
+            7. [NAME]]20rlovely_babes[ZAHL]<br/>
+            8. [PFLANZE]123!<br/>
+            9. [FIRMENNAME][ZAHL]_[WEBSEITE]<br/>
+            10. [PFLANZE]1!<br/>
+<h2>Weitere Passwörter</h2>
+            Password (109 Passwörter)<br/>
+            111111 (105 Passwörter)<br/>
+            adv24 (103 Passwörter)<br/>
+            research (96 Passwörter)<br/>
+            demo (94 Passwörter)<br/>
+            Password1 (89 Passwörter)<br/>
+            snowman (89 Passwörter)<br/>
+            sunshine (75 Passwörter)<br/>
+            password1 (72 Passwörter)<br/>
+            welcome1 (66 Passwörter)<br/>
+            daniel (52 Passwörter)<br/>
+            michelle (51 Passwörter)<br/>
+            abc123 (51 Passwörter)<br/>
+            michael (49 Passwörter)<br/>
+            654321 (47 Passwörter)<br/>
+            letmein (44 Passwörter)<br/>
+            london (42 Passwörter)<br/>
+            summer (41 Passwörter)
+
+            <h2>Fazit</h2>
+<p>
+                Das Ergebnis ist etwas überrachend, weil die Mitarbeiter/-innen 
+                vor allem den eigenen Firmennamen als Passwort verwendent. In 
+                den größeren Listen sind eher allgemeine Passwörter zu finden. 
+                Hier wird es dem Angreifer sogar noch einfacher gemacht, weil 
+                er direkt von der E-Mailadresse auf das Passwort schließen kann.
+            </p>
+</article></description>
 <link>https://www.1337core.de/blog/password-leaks.html</link>
 <guid>https://www.1337core.de/blog/password-leaks.html</guid>
 <pubDate>Tue, 26 Jul 2022 00:00:00 +0100</pubDate>
 </item>
 <item>
 <title>Willkommen!</title>
-<description>
+<description><article>
+<p>
                 Manchmal braucht es mehr Zeichen, um etwas zu erklären. Damit 
                 niemand den Überblick über meine Projekte verliert - und damit 
                 meine ich vor allem mich selbst - dokumentierte ich diese auch 
                 wieder in Textform. Das heißt, werft euren RSS-Reader an: 
-                Es gibt wieder Futter!
-            </description>
+                <a href="/blog/feed.rss">Es gibt wieder Futter</a>!
+            </p>
+<p>
+                Hier wird es also wieder Cyber-Cyber-Content geben und ich 
+                berichte von aktuellen Software-Projekten, die ich so auf 
+                GitHub hochlade. Also ran an den Abo-Button!
+            </p>
+<p>
+                BTW: Ich bastele diesen Blog mit bisschen HTML und meiner 
+                dummsten selbstgeschriebenen Template Engine (replace 4 the win)! 
+                Der RSS-Feed wird auch so zusammengeschraubt. Den Code dafür 
+                findet ihr auf <a href="https://github.com/Leetcore/python-blog-generator">GitHub</a>.
+            </p>
+<p>
+                TSCHÖÖÖ, Alex
+            </p>
+</article></description>
 <link>https://www.1337core.de/blog/willkommen.html</link>
 <guid>https://www.1337core.de/blog/willkommen.html</guid>
 <pubDate>Wed, 27 Jul 2022 00:00:00 +0100</pubDate>
