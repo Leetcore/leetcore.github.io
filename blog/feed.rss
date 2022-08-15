@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>1337core Blog</title>
+<link>https://www.1337core.de</link>
+<description>Spaß mit Unsicherheit!</description>
+<atom:link href="https://www.1337core.de/blog/feed.rss" rel="self" type="application/rss+xml" />
+<item>
+<title>Recon Deutschland</title>
+<description>
+                Mal eben alle Webseiten der öffentlichen Verwaltung in ganz 
+                Deutschland abchecken? Geht! Automatisierung macht halt auch 
+                Laune. Zuerst hab ich mir die Daten von Wikipedia runter 
+                gezogen wie so ein Amateur. Richtig gute Leute finden Wikidata.
+            </description>
+<link>https://www.1337core.de/blog/recon-deutschland.html</link>
+<guid>https://www.1337core.de/blog/recon-deutschland.html</guid>
+<pubDate>Mon, 15 Aug 2022 00:00:00 +0100</pubDate>
+</item>
+<item>
+<title>Cyber Cyber Bullshit</title>
+<description>
+                Es gab in meinem Leben bisher nicht viele Erlebnisse von denen 
+                ich mich erstmal erholen musste, aber mein Job bei 
+                „Michael Backes Cybersecurity“ gehörte dazu. Die Story hat 
+                alles: Witz, Stolz, Realitätscheck und Erkenntnisse.
+            </description>
+<link>https://www.1337core.de/blog/cyber-cyber-bullshit.html</link>
+<guid>https://www.1337core.de/blog/cyber-cyber-bullshit.html</guid>
+<pubDate>Sun, 14 Aug 2022 00:00:00 +0100</pubDate>
+</item>
+<item>
+<title>Passwortleaks der 100 größten Unternehmen in Deutschland!</title>
+<description>
+                Ich dachte das Projekt wird super easy. Die entsprechenden
+                öffentlichen Passwortleaks sind leicht zu finden und im Prinzip
+                muss ich die nur durchsuchen und daraus eine Statistik machen.
+                Das Problem war aber, dass es einfach echt dauert 110GB
+                effizient zu durchsuchen. Der Leak ist im Format:
+                "email:password". Nach etwas Rechenzeit und viele kleine
+                Pythonscripte später hatte ich endlich ein paar Statistiken
+                zur Hand.
+            </description>
+<link>https://www.1337core.de/blog/password-leaks.html</link>
+<guid>https://www.1337core.de/blog/password-leaks.html</guid>
+<pubDate>Tue, 26 Jul 2022 00:00:00 +0100</pubDate>
+</item>
+<item>
+<title>Willkommen!</title>
+<description>
+                Manchmal braucht es mehr Zeichen, um etwas zu erklären. Damit 
+                niemand den Überblick über meine Projekte verliert - und damit 
+                meine ich vor allem mich selbst - dokumentierte ich diese auch 
+                wieder in Textform. Das heißt, werft euren RSS-Reader an: 
+                Es gibt wieder Futter!
+            </description>
+<link>https://www.1337core.de/blog/willkommen.html</link>
+<guid>https://www.1337core.de/blog/willkommen.html</guid>
+<pubDate>Wed, 27 Jul 2022 00:00:00 +0100</pubDate>
+</item>
+</channel>
+</rss>

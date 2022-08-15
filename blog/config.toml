@@ -1,0 +1,5 @@
+title = "1337core Blog"
+link = "https://www.1337core.de"
+description = "Spaß mit Unsicherheit!"
+public_folder = "/blog/"
+post_folder = ""

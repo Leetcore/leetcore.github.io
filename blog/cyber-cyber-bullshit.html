@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <title>Cyber Cyber Bullshit</title>
+</head>
+
+<body>
+    <div id="main">
+        <h3><a href="/blog">1337core Blog</a></h3>
+        <h1>Cyber Cyber Bullshit</h1>
+        <span id="date">14.08.2022</span>
+        <article>
+            <p>
+                Es gab in meinem Leben bisher nicht viele Erlebnisse von denen 
+                ich mich erstmal erholen musste, aber mein Job bei 
+                „Michael Backes Cybersecurity“ gehörte dazu. Die Story hat 
+                alles: Witz, Stolz, Realitätscheck und Erkenntnisse.
+            </p>
+            <p>
+                Seitdem ich den Entschluss gefasst hatte „Wie werde ich Hacker?“ 
+                zu schreiben (gibt es auf meiner Website), wollte ich wieder 
+                in den Cybersecurity-Bereich. Irgendetwas mit Hacking, schönen 
+                Exploits und sich einfach scheiß-geniale Tricks ausdenken. 
+                Also habe ich mich bei allem beworben was im Saarland mit 
+                Cyber zu tun hat, aber da gibt es halt fast nichts in dem 
+                Bereich.
+            </p>
+
+            <h2>Startup</h2>
+            <p>
+                Am Ende meiner erfolglosen Suche nach Unternehmen, stand ich 
+                vor der Glastür von „Michael Backes Cybersecurity“. Ein 
+                Spin-off von CISPA (Helmholtz-Zentrum für 
+                Informationssicherheit) mit Kronleuchter in der Lobby und 
+                Billard-Tisch im Meetingraum. 
+            </p>
+            <p>
+                Also stand ich dort wie ein kleiner Junge: Aufgewachsen auf’m 
+                Dorf - in einem Ort mit 900 Einwohnern. Ich war (noch) 
+                ehrfürchtig vor der (O-Ton) „Speerspitze der Sicherheitsforschung“. 
+                Wenn jemand einen Doktortitel hat, war das für mich die 
+                offizielle Auszeichnung für einen genialen Menschen, bei dem 
+                pures Gold aus seinen grauen Zellen kommt und dem einfach 
+                alles gelingt.
+            </p>
+            <p>
+                Ich wusste es nicht besser, ich kannte es nicht anders und 
+                ich war auch selbst weit weg davon mit meinem 
+                durchschnittlichen Realschulabschluss und meiner IT-Ausbildung. 
+                Doch meine Erkenntnisse waren unvermeidbar. Später wurde 
+                mir einiges klar.
+            </p>
+
+            <h2>Red Flag</h2>
+            <p>
+                Als ich erzählte, dass ich dort anfange, wurde ich nochmal 
+                auf den grandiosen ersten Fehlschlag der Klitsche aufmerksam 
+                gemacht: Die „innovative“ Idee von X-Pire. Damit sollten 
+                Fotos wieder aus dem Internet verschwinden. Die Umsetzung 
+                war simple: Es wurde über die Firma geprüft, ob man sich 
+                ein Foto immer noch anschauen darf. Wenn ich mich richtig 
+                erinnere, sollte man dafür 7 Euro im Monat zahlen. Dafür, 
+                dass man über eine spezielle Software sich Fotos anschauen 
+                kann, die dann eben irgendwann nicht mehr verfügbar sind.
+            </p>
+            <p>
+                Jeder, der googeln kann wie sich ein Screenshot erzeugen lässt, 
+                kann dieses System umgehen. Alleine das Konzept wurde verrissen 
+                und sogar bei Heise als „Totgeburt“ bezeichnet. Ich fand aber 
+                keine andere Cyber-Cyber-Firma in Saarbrücken, also versuchte 
+                ich mein Glück dort.
+            </p>
+
+            <h2>Warum ich?</h2>
+            <p>
+                Alle waren sehr nett zu mir und ich zu ihnen. Doch ich fragte 
+                mich schon, weshalb ich jetzt da bin, obwohl sonst fast nur 
+                studierte Menschen dort saßen?
+            </p>
+            <p>
+                Ich bin sehr praktisch orientiert. Wenn ich etwas machen will, 
+                finde ich einen Weg es zu machen. Austesten und experimentieren 
+                macht mir Spaß. Ich hatte das Buch geschrieben und mit Anfang 
+                20 Sicherheitslücken auf den Webseiten der NATO oder dem 
+                Weißen Haus gemeldet. Das war mein Einstieg in den ganzen 
+                Security-Hokuspokus.
+            </p>
+            <p>
+                Dann war mir klar, dass sie fast gar kein sinnvolles Feature 
+                in ihrer Insider Threat Detection Software hatten. Die Software sollte 
+                Lateral Movement in Windows-Netzwerken erkennen. Ich will gar 
+                nicht auf die Probleme eingehen, dass sie z.B. mit nur 
+                Linux-Entwickler eine Erkennung für Windows-Netzwerke bauen 
+                wollten.
+            </p>
+
+            <h2>Mach es halt!</h2>
+            <p>
+                Als ich (alleine) die ersten Pentests und Security Awareness 
+                Kampagne gemacht hatte, bot sich mir auch die Gelegenheit die 
+                Softwareentwicklung zu übernehmen. Ich wusste, dass ich dort 
+                nicht ewig bleiben werde, weil die Einschläge links und rechts 
+                näher kamen, aber ich mag so eine Herausforderung und ich war 
+                ja sowieso schon da.
+            </p>
+            <p>
+                Ich schweife kurz ins Technische ab, wie man so etwas bauen 
+                kann (wer das nicht lesen will, kann zur nächsten Überschrift 
+                springen): Im ersten Schritt dreht man das Windows Security 
+                Audit Log auf dem Domain Controller hoch und liest dann 
+                diese Logs automatisiert aus.
+            </p>
+            <p>
+                Dort lässt sich pro AD-Nutzer speichern und analysieren z.B. 
+                wann sich diese üblicherweise einloggen. Es ist einfacher nur 
+                die Logs auf dem DC zu analysieren, die sind allerdings dann 
+                anders als auf den Clients.
+            </p>
+            <p>
+                Mit Kerbrute testete ich echte Angriffe mit Password Spraying, 
+                Brute Force oder Pass The Hash und entwickelte anhand der Logs 
+                die entsprechende Detection für diese Angriffe. Eigentlich 
+                ziemlich straightforward, keine Ahnung wieso es niemand vor  
+                mir gemacht hat.
+            </p>
+            <p>
+                Weil ich praktisch veranlagt bin, hatte ich eine Demo mit 
+                einem Ransomware-Angriff, der einen geteilten Ordner 
+                verschlüsselt. Die Zugriffslogs werden normalerweise nur auf 
+                dem Client geschrieben, aber auf dem DC sieht man genau 
+                welche Zugriffsrechte abgefragt werden, die vor jedem 
+                Zugriff geloggt werden. Deshalb lässt sich das auch nur 
+                über den DC-Server machen.
+            </p>
+            <p>
+                Da wir die Daten auf den eigenen Servern analysieren wollten, 
+                wollten wir da noch Datenschutz oben drauf setzen, also die 
+                Logins gehashed (damit man die Logs gruppieren kann) und danach 
+                clientseitig encrypted, sodass nur der Kunde entschlüsseln 
+                und nachlesen kann welcher Account was gemacht hat.
+            </p>
+            <p>
+                Das war mein Realitätscheck. Ich bekomme die komplette Software 
+                besser und auch (alleine!) schneller hin, als das, was die seit 
+                Monaten dort versuchen zu machen. Und ich bin selbst nichtmal 
+                Windows Admin. Zu dem Zeitpunkt bemerkte ich, dass andere 
+                auch nur mit Wasser kochen - und manchmal  ist das nicht mal 
+                lauwarm.
+            </p>
+            <p>
+                Die Umsetzung einer solchen Erkennungssoftware ist auch kein 
+                furchtbar innovatives Betriebsgeheimnis, denn es lässt sich 
+                in der <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/advanced-security-auditing-faq">Windows Log Security Dokumentation</a> 
+                nachlesen.
+            </p>
+
+            <h2>Viel Geld</h2>
+            <p>
+                Was mich auch geschockt hat, war einfach wie (und da muss ich 
+                die Leute gleich etwas in Schutz nehmen) in dem Startup-Bereich 
+                Geld auf Unternehmen geworfen wird, die halt gut auf dem Papier 
+                aussehen. Tolle Forschungseinrichtung, mehr Doktortitel oder 
+                PhD-Studenten als ich Finger an der Hand habe, noch ein paar 
+                Buzzwords dazu: „Machine Learning“ und es gibt Geldregen!!!1
+            </p>
+            <p>
+                Die Leute, die das Geld werfen… Ups, Moment: Investoren, die 
+                Geld möglichst gewinnbringend anlegen möchten, sind vielleicht 
+                auch einfach so wie ich damals auf’m Dorf war 
+                (bevor ich so ein Startup in echt erlebt habe). Dazu fehlt 
+                denen noch der IT-Hintergrund. Vielleicht denken sie, dass 
+                es mit einem solchen Team funktionieren muss! Es geht gar 
+                nicht anders, so toll. Mehr Doktortitel als Kunden. Aber es 
+                sind doch die Besten der Besten!
+            </p>
+            <p>
+                Das war einfach nur erschreckend zu sehen, wie das Geld dort 
+                den Bach runter fließen. Ich dachte, dass alle aus der 
+                Dotcom-Blase etwas gelernt hätten. Jedenfalls kündigte ich 
+                und ging danach zur c’t und Heise. Die Cyber-Cyber-Firma 
+                ging pleite. Das ist garantiert auch besser so.
+            </p>
+        </article>
+    </div>
+</body>
+
+</html>
