@@ -16,8 +16,8 @@
             </p>
 <p>
                 Der Query Builder, um dort Daten zu finden, ist zwar ziemlich 
-                komplex, aber mit Hilfe konnte ich ihn benutzen. Meine 
-                Community rockt mal wieder. <b>!love</b>
+                komplex, aber mit eurer Hilfe konnte ich ihn benutzen. Meine 
+                Community rockt. <b>!love</b>
 </p>
 <h2>Vorgehen</h2>
 <p>
@@ -35,6 +35,58 @@
 <link>https://www.1337core.de/blog/recon-deutschland.html</link>
 <guid>https://www.1337core.de/blog/recon-deutschland.html</guid>
 <pubDate>Mon, 15 Aug 2022 00:00:00 +0100</pubDate>
+</item>
+<item>
+<title>Ninja Hacker Cat für Firefox</title>
+<description><article>
+<p>
+                Projekte, Projekte, Projekte. Diese Idee war erstaunlich gut: 
+                Wie kann man Webseiten auf Sicherheitslücken testen und das für 
+                viele Menschen einfacher machen? Mit einer Browser-Erweiterung:
+                Eine Browser-Erweiterung, die automatisch verschiedene Tests 
+                durchführt. Also den Twitch-Stream angeworfen und den hübschesten 
+                Texteditor aller Zeiten gestartet. Ja, ich habe jetzt auch eine 
+                Katze in meinem Code-Editor. Weil... KATZE!
+            </p>
+<img alt="Code-Editor mit animierter Katze" src="images/Code-Editor.png"/>
+<p>
+                Einfache Sicherheitslücken, lassen sich relativ gut auch automatisch 
+                erkennen. Das bringe ich meiner Hacker-Katze nun bei. Wenn sich 
+                die Version der Web Anwendung herausfinden lässt, kann ich auch 
+                anhand der Version vor Lücken warnen. Dazu überprüft die Katze 
+                die Version oder macht direkt das Proof of Concept.
+            </p>
+<p>
+                Der Fokus liegt (wie immer) auf kritischen Sicherheitslücken. 
+                Alles was bekannt ist und aktiv ausgenutzt wird. Alle Lücken, 
+                die auch für Massenhacks in Frage kommen.
+                Wovor ich nicht warne: Eventuell, wenn Vollmond ist 
+                und die Anwendung an einem Samstag auf Windows 98 installiert wurde, 
+                könnte eine Sicherheitslücke entstehen...
+            </p>
+<p>
+                Ich wollte etwas bauen, was einfach zu bedienen ist und nicht 
+                abhängig von irgendeinem Dienst (wobei sich das optional noch 
+                erweitern lässt). Dinge, wie Proxyshell, die kritische Lücke 
+                in den Microsoft Exchange Servern. Die lässt sich damit 
+                erkennen, wenn man mit der Erweiterung auf die Weboberfläche geht.
+            </p>
+<p>
+                Unterstützung des Projekts:
+                <a href="https://ko-fi.com/leetcore">https://ko-fi.com/leetcore</a><br/>
+                Code auf GitHub:
+                <a href="https://github.com/Leetcore/ninja-hacker-cat">
+                    https://github.com/Leetcore/ninja-hacker-cat
+                </a><br/>
+                Firefox Erweiterung:
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/ninja-hacker-cat/">
+                    https://addons.mozilla.org/en-US/firefox/addon/ninja-hacker-cat/
+                </a>
+</p>
+</article></description>
+<link>https://www.1337core.de/blog/ninja-hacker-cat.html</link>
+<guid>https://www.1337core.de/blog/ninja-hacker-cat.html</guid>
+<pubDate>Sat, 15 Oct 2022 00:00:00 +0100</pubDate>
 </item>
 <item>
 <title>Cyber Cyber Bullshit</title>
@@ -76,7 +128,7 @@
                 ich war auch selbst weit weg davon mit meinem 
                 durchschnittlichen Realschulabschluss und meiner IT-Ausbildung. 
                 Doch meine Erkenntnisse waren unvermeidbar. Später wurde 
-                mir einiges klar.
+                mir einiges klar...
             </p>
 <h2>Red Flag</h2>
 <p>
@@ -85,7 +137,9 @@
                 gemacht: Die „innovative“ Idee von X-Pire. Damit sollten 
                 Fotos wieder aus dem Internet verschwinden. Die Umsetzung 
                 war simple: Es wurde über die Firma geprüft, ob man sich 
-                ein Foto immer noch anschauen darf. Wenn ich mich richtig 
+                ein Foto immer noch anschauen darf.</p>
+<p>
+                Wenn ich mich richtig 
                 erinnere, sollte man dafür 7 Euro im Monat zahlen. Dafür, 
                 dass man über eine spezielle Software sich Fotos anschauen 
                 kann, die dann eben irgendwann nicht mehr verfügbar sind.
@@ -117,14 +171,15 @@
                 Lateral Movement in Windows-Netzwerken erkennen. Ich will gar 
                 nicht auf die Probleme eingehen, dass sie z.B. mit nur 
                 Linux-Entwickler eine Erkennung für Windows-Netzwerke bauen 
-                wollten.
+                wollten. Es gab eine Menge Gründe, weshalb man dem gesetzen 
+                Ziel nicht näher kam...
             </p>
 <h2>Mach es halt!</h2>
 <p>
                 Als ich (alleine) die ersten Pentests und Security Awareness 
                 Kampagne gemacht hatte, bot sich mir auch die Gelegenheit die 
                 Softwareentwicklung zu übernehmen. Ich wusste, dass ich dort 
-                nicht ewig bleiben werde, weil die Einschläge links und rechts 
+                nicht ewig bleiben würde, weil die Einschläge links und rechts 
                 näher kamen, aber ich mag so eine Herausforderung und ich war 
                 ja sowieso schon da.
             </p>
@@ -138,8 +193,8 @@
 <p>
                 Dort lässt sich pro AD-Nutzer speichern und analysieren z.B. 
                 wann sich diese üblicherweise einloggen. Es ist einfacher nur 
-                die Logs auf dem DC zu analysieren, die sind allerdings dann 
-                anders als auf den Clients.
+                die Logs auf dem DC zu lesen und auszuwerten, die Events sind 
+                allerdings auf dem DC anders als auf den Clients.
             </p>
 <p>
                 Mit Kerbrute testete ich echte Angriffe mit Password Spraying, 
@@ -150,26 +205,25 @@
             </p>
 <p>
                 Weil ich praktisch veranlagt bin, hatte ich eine Demo mit 
-                einem Ransomware-Angriff, der einen geteilten Ordner 
+                einem Ransomware-Angriff, der einen geteilten Netzwerkordner 
                 verschlüsselt. Die Zugriffslogs werden normalerweise nur auf 
                 dem Client geschrieben, aber auf dem DC sieht man genau 
-                welche Zugriffsrechte abgefragt werden, die vor jedem 
-                Zugriff geloggt werden. Deshalb lässt sich das auch nur 
-                über den DC-Server machen.
+                welche Zugriffsrechte kurz vorher abgefragt werden. Deshalb 
+                lässt sich das auch nur über den DC-Server machen.
             </p>
 <p>
                 Da wir die Daten auf den eigenen Servern analysieren wollten, 
-                wollten wir da noch Datenschutz oben drauf setzen, also die 
-                Logins gehashed (damit man die Logs gruppieren kann) und danach 
-                clientseitig encrypted, sodass nur der Kunde entschlüsseln 
+                sollten wir da noch Datenschutz oben drauf setzen, also die 
+                Logins gehashed (damit man die Hostnamen/Logins gruppieren kann) 
+                und danach clientseitig encrypted, sodass nur der Kunde entschlüsseln 
                 und nachlesen kann welcher Account was gemacht hat.
             </p>
 <p>
                 Das war mein Realitätscheck. Ich bekomme die komplette Software 
                 besser und auch (alleine!) schneller hin, als das, was die seit 
                 Monaten dort versuchen zu machen. Und ich bin selbst nichtmal 
-                Windows Admin. Zu dem Zeitpunkt bemerkte ich, dass andere 
-                auch nur mit Wasser kochen - und manchmal  ist das nicht mal 
+                Windows-Admin. Zu dem Zeitpunkt bemerkte ich, dass andere 
+                auch nur mit Wasser kochen - und manchmal ist es nicht mal 
                 lauwarm.
             </p>
 <p>
