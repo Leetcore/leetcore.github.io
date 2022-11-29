@@ -55,9 +55,7 @@ hr {
     height: 2px;
     margin: 5px 2px;
 }
-.img-bigger {
-    max-width: initial;
-    margin-left: -120px;
+.border {
     border: 3px solid #333;
 }
 .border {
