@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live-Hacking | Sicherheitsdienstleistung</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: #f0f0f0;
+            background: radial-gradient(circle at top left, #1f4725 0%, #071108 55%, #0a1710 100%);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 700;
+        }
+
+        p,
+        li {
+            font-family: 'Inter', Arial, sans-serif;
+            font-weight: 400;
+        }
+
+        .features li {
+            padding: 0.75rem 1rem;
+            background: rgba(126, 231, 135, 0.08);
+            border-left: 4px solid #4ade80;
+            border-radius: 12px;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .content {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(12, 26, 16, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .left,
+        .right {
+            padding: 3rem;
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, #000000 0%, rgba(8, 8, 8, 0.95) 60%, rgba(20, 20, 20, 0.85) 100%);
+            padding: 2rem;
+            border-radius: 0 20px 20px 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 520px;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .center {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .subtitle {
+            color: #c7f9d7;
+            max-width: 36rem;
+        }
+
+        a {
+            color: #7ee787;
+            text-decoration: none;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
+        }
+
+        a:hover,
+        a:focus {
+            color: #d1fae5;
+            text-decoration: underline;
+        }
+
+        .features {
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .features li {
+            padding: 15px 5px;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            padding: 1rem 2rem;
+            background: #53b878;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .cta:hover {
+            transform: translateY(-2px);
+            background: #47e07f;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #bbbbbb;
+        }
+
+        .center {
+            margin: 0 auto;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 1rem;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .font {
+            color: #111;
+        }
+
+        .black,
+        .black:hover {
+            color: #111;
+        }
+
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+
+            .right {
+                padding: 0 3rem 3rem;
+            }
+
+            .hero-image {
+                height: 360px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .left,
+            .right {
+                padding: 1.5rem;
+            }
+
+            .hero-image {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section class="content">
+            <div class="left">
+                <p>Live-Hacking für Veranstaltungen</p>
+                <h1 class="headline">
+                    Hacker-Mindset erleben.
+                </h1>
+                <p class="subtitle">
+                    Ich nehme Ihr Publikum mit hinter die Kulissen der Cybersicherheit.
+                    Erleben Sie hautnah, wie Hacker Schwachstellen aufspüren und welche raffinierten Taktiken sie einsetzen.
+                </p>
+                <ul class="features">
+                    <li>Live-Hacking:
+                        Ich demonstriere live und verständlich,
+                        wie Angreifer Sicherheitslücken im System aufspüren und gezielt ausnutzen.</li>
+                    <li>Ethical Hacking: Ich dekonstruiere die Denkweise der Gegenseite und erkläre 
+                        die konkreten Methoden und Techniken moderner Hacker.</li>
+                    <li>Infotainment: Keine trockene Theorie: Spannende Geschichten und echte Insider-Beispiele aus der Welt des Hackings.</li>
+                </ul>
+
+                <h2>Fachartikel</h2>
+                <ul class="features">
+                    <li>
+                        <a href="https://www.heise.de/news/Verwundbare-Exchange-Server-der-oeffentlichen-Verwaltung-6320504.html"
+                            target="_blank" rel="noopener noreferrer">
+                            Mehrere verwundbare Exchange-Server der öffentlichen
+                            Verwaltung
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.heise.de/select/ct/2021/23/2124514385122190550"
+                            target="_blank" rel="noopener noreferrer">
+                            c't 23/2021 Hacking-Tools: Hacking-Werkzeug für
+                            Fortgeschrittene
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.heise.de/select/ct/2022/5/2129206492473553394"
+                            target="_blank" rel="noopener noreferrer">
+                            c't 5/2022 Hackerspielplatz: Websites hacken mit ZAP
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.heise.de/news/Top-25-der-Sicherheitsluecken-Buffer-Overflows-als-groesste-Gefahrenquelle-6148053.html"
+                            target="_blank" rel="noopener noreferrer">
+                            Top 25 der Sicherheitslücken: Buffer Overflows als
+                            größte Gefahrenquelle
+                        </a>
+                    </li>
+                </ul>
+
+                <h2>Vergangene Veranstaltungen</h2>
+                <p>IT.con Cybersecurity Messe, secure your world (IT-Hausmesse),
+                    Datenschutzforum Bayern, WebMontag Saarbrücken, ...</p>
+
+                <a href="mailto:alex&#64;1337core&#46;de" class="cta">Kontakt
+                    aufnehmen</a>
+            </div>
+            <div class="right">
+                <div class="hero-image">
+                    <img src="profil-right.png" class="center"
+                        alt="Live-Hacking Vortrag" /><br />
+                    <p class="font center">Alexander Fuchs</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
