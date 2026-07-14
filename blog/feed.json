@@ -10,6 +10,23 @@
     },
     "items": [
         {
+            "id": "https://www.1337core.de/blog/ne.html",
+            "url": "https://www.1337core.de/blog/ne.html",
+            "title": "Nette Nebeneffekte von Flipper One",
+            "summary": "Im Kreise der Hackerfreunde ist der Flipper Zero jedem ein Begriff. Der Mini-Computer mit dem süßen Delfin, der auch unter 1 GHz Spektrum mitlesen kann. Der Nachfolger dieses Tools ist in Arbeit und ein Nebeneffekt der Entwicklung ist eine Oberfläche namens FlipCTL, die sich wunderbar für beliebte Cyberdecks eignet. Wer sich irgendwo eine Art Minicomputer zusammenschrauben möchte, der hat am Ende einen viel zu kleinen Desktop oder ein reines Terminal. FlipCTL soll aus dem Terminal eine Art Formular-Interface bauen - was man mit Pfeiltasten nutzen kann. Ich bin sehr gespannt in welche Richtung das gehen wird, aber die Idee ist&hellip;",
+            "content_html": "<p>Im Kreise der Hackerfreunde ist der Flipper Zero jedem ein Begriff. Der Mini-Computer mit dem süßen Delfin, der auch unter 1 GHz Spektrum mitlesen kann. Der Nachfolger dieses Tools ist in Arbeit und ein Nebeneffekt der Entwicklung ist eine Oberfläche namens FlipCTL, die sich wunderbar für beliebte Cyberdecks eignet.</p>\n<p>Wer sich irgendwo eine Art Minicomputer zusammenschrauben möchte, der hat am Ende einen viel zu kleinen Desktop oder ein reines Terminal. FlipCTL soll aus dem Terminal eine Art Formular-Interface bauen - was man mit Pfeiltasten nutzen kann.</p>\n<figure class=\"kg-image\"><img  src=\"https://blog.flipper.net/content/images/2026/06/flipctl_gui_scheme-_compressed.png\" sizes=\"(min-width: 1200px) 1200px\" srcset=\"https://blog.flipper.net/content/images/size/w600/2026/06/flipctl_gui_scheme-_compressed.png 600w, https://blog.flipper.net/content/images/size/w1000/2026/06/flipctl_gui_scheme-_compressed.png 1000w, https://blog.flipper.net/content/images/size/w1600/2026/06/flipctl_gui_scheme-_compressed.png 1600w, https://blog.flipper.net/content/images/size/w2400/2026/06/flipctl_gui_scheme-_compressed.png 2400w\" alt=\"\" width=\"2000\" height=\"561\" loading=\"lazy\" data-is-external-image=\"true\"></figure>\n<p>Ich bin sehr gespannt in welche Richtung das gehen wird, aber die Idee ist sehr sehr gut und lange überfällig. Wir brauchen kein \"neues System\" und alle Entwickler auf der ganzen Welt müssen halt umsteigen - sondern wir brauchen einen App Wrapper um bestehende CLI-Tools und eine Umsetzung für kleine Displays.</p>\n<p>Die Initiative ist großartig. Allerdings wird es nicht einfach werden, die entsprechenden Optionen aus jeder Software raus zu lesen. Manche haben seitenweise Manpages mit Parametern.</p>\n<p>Quelle: <a href=\"https://blog.flipper.net/flipctl-our-gui-framework-for-embedded-linux-systems/\">https://blog.flipper.net/flipctl-our-gui-framework-for-embedded-linux-systems/</a></p>",
+            "author": {
+                "name": "Leetcore"
+            },
+            "tags": [
+                   "Linux",
+                   "FlipperZero",
+                   "FlipperOne"
+            ],
+            "date_published": "2026-07-14T18:38:29+02:00",
+            "date_modified": "2026-07-14T18:46:56+02:00"
+        },
+        {
             "id": "https://www.1337core.de/blog/newsflash-app-fuer-linux.html",
             "url": "https://www.1337core.de/blog/newsflash-app-fuer-linux.html",
             "title": "Newsflash App für Linux",
